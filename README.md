@@ -9,7 +9,8 @@ RenderPacket、Render Graph 和资源生命周期，记录性能优化的收益�
 ![固定 PBR 场景的实际运行截图](docs/portfolio/media/render-preview.png)
 
 截图是本仓库构建的固定场景输出；[采集身份与验证范围](docs/evidence/BATCH-B.md)。
-当前尚无公开 Release 或动态演示视频，下载运行入口待候选包验收后提供。
+Release 的 `v0.1.0-preview` 提供**运行 ZIP、双后端演示视频与去标识性能证据包**，
+它们是本仓库源码在指定提交上构建并通过核验的产物，见 [候选裁定](docs/evidence/CANDIDATE-REVIEW.md)。
 
 ## 从这里开始
 
@@ -45,7 +46,13 @@ out/build/windows-msvc-debug/samples/rhi_sandbox/Release/MiniEngineSandbox.exe -
 ~~~
 
 上面的 smoke 不需要烘焙场景。PBR 场景、双后端运行、测试分类及环境排错见
-[开发指南](docs/DEVELOPMENT.md)。目前没有可下载的已验收运行包，也不要求读者访问私有源库。
+[开发指南](docs/DEVELOPMENT.md)。
+
+若不想构建：下载 Release `v0.1.0-preview` 里的运行 ZIP，解压后按包内 `RUN.md` 两条命令即可双后端运行，
+不需要 Visual Studio、SDK、DXC 或 Python；下载后请先按 `SHA256SUMS-external.txt` 校验哈希。
+**已验证范围**：Windows 10/11 x64、D3D11 与 D3D12、场景 `m4-visual-baseline`，第二台机器独立运行通过；
+**未做**真实读者走查，`m7-*` 性能场景与 GPU Capture 工具链不在包内。见
+[支持矩阵与候选裁定](docs/evidence/CANDIDATE-REVIEW.md)。
 
 ## 许可与贡献
 
