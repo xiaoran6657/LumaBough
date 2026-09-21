@@ -12,3 +12,9 @@
 - 因此 P 的结论对本提交仍适用（无测量路径改动）；P 不重开正式组
 - 证据目录：out/e-batch/rehearsal-committed、out/e-batch/capture（仅本地）
 - 双后端成片按新 EXE 重录：D3D12 133e92d0…（1,399,205 B）、D3D11 f5ef8a16…（1,495,826 B）
+## E2 打包（进行中）
+- 打包器 tools/portfolio/build_candidate_package.py：显式输入、fresh 输出、干净工作树、--built-at 与 HEAD 差异只允许 docs/tools
+- 首个候选包 out/e-batch/package/lumabough-b92cda4：135 文件 / 10,029,539 B；含 EXE、WinPixEventRuntime.dll、4 个 VC 运行时 DLL、双后端 shaders、烘焙场景、许可与说明
+- 包清单 PACKAGE-MANIFEST.json 记录 packagingCommit=8ef79fc4、builtAtCommit=b92cda4、exeSha256=16ebb979…、场景 4ae6eda9…、逐文件 SHA-256；无 PDB
+- 发现（E2 要求）：M610_PROJECT_ROOT 是编译期绝对路径，着色器语义哈希与日志都依赖源码树；本机恰好存在源码树，所以同机运行掩盖了这一点
+- 修复方案（待执行）：调用点改为优先用 EXE 旁 shaders（运行包携带），缺失时回退源码树；同时把 d3d12 的 HLSL 源一并入包；修复后需重建 + D 验证性重跑 + 重新打包
