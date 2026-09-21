@@ -1,0 +1,6 @@
+离线 AssetCooker 内嵌依赖；runtime 不链接此实现。
+许可：Zlib
+复核提交：3e895b49d05ea07e4c2133156cfa94369e19e409
+2026-09-20 与上游逐字节比对一致；保留源文件内完整许可证。
+tools/asset_cooker/deps/mikktspace/mikktspace.c SHA-256 de87e74107df766ce68108801262bd8d53899414236b59810509a8fc2a51e288
+tools/asset_cooker/deps/mikktspace/mikktspace.h SHA-256 17fc433894f24c73753d548086cc4d8c5c0379f4a6edfb98b5da243e4f0bc3d0

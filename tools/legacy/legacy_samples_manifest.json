@@ -1,0 +1,5 @@
+{
+  "schemaVersion": 1,
+  "note": "旧 concrete samples 已于 2026-09-16 退役（LEGACY-SAMPLES-RETIRE，用户批准）；目录已删除，可从 git 历史（9fb65c1 之前）找回。清单保留为空以维持有界豁免机制。",
+  "files": []
+}
