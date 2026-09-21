@@ -37,3 +37,7 @@
 - 修复后身份与重跑：EXE 7e75b7767d0b4273b4b77c8d14e0e5ded682b9538581265f16951e17cffc6f28（内嵌 0403d20）；彩排 6/6；D3D11 Capture Screenshot=798、D3D12 Capture Screenshot=677、两次运行 warningErrors=0 且 anchor.ppm 与 color.ppm 逐字节一致；成片重录 D3D12 216e9b44…、D3D11 3a1aea63…
 - E4 第二次：待所有者用修复后的 ZIP 重跑（步骤见 E4 操作手册；程序化捕获要求目标目录先存在，否则应用启动即退出，本轮踩到并已记入手册）
 - 最终包 v7：157 文件 / 10,092,318 B，ZIP 3,464,797 B / SHA-256 071fbc41c6fa7fed772d9607776e6bbd901a14146d48c2efd7e1223fc413f77f；扫描器复扫 116 项全部已批准、退出 0
+- E4 第二次（2026-09-21，第二台机器 Windows 11 + RTX 3090 Ti / driver 32.0.16.1692，管理员 PowerShell）：ZIP 哈希校验通过；D3D12 与 D3D11 各 1202 帧 PASS（exit 0、warningErrors 0、windowForeground true）；换工作目录 60 帧 PASS；负例（改名 shaders\d3d11）报出带完整路径的明确错误、exit 2
+- 跨机身份（重要）：两机 shaderSemanticSha256 均为 7aeedd02…、assetManifestSha256 4ae6eda9…、environmentArtifactSha256 3416f0cd…；把本机改为 1920×1061（第二台机器客户区被工作区裁到 1061）后，graphHash 0x76556127671CCB84 与 commandHash 3d95ea89… 与第二台机器逐字节一致
+- 已知差异（非缺陷）：graphHash/commandHash 随 extent 变化，跨机对比必须同 extent；第二台机器 --height=1080 被桌面工作区裁成 1061，故与首次本机 1080 的哈希不同。手册已加 extent 记录要求
+- E4 仍缺：第二台机器的 Demo 事件路径（手册 2.4b：--exercise-changes，期望末行 complete-clean-exit、resizeCount=3、reloadSuccess=1、reloadRejected=1）与真实读者反馈；两者未完成前 E4 不标通过

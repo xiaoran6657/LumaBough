@@ -6843,8 +6843,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 6092,
-      "sha256": "b7193dad398a8ae00b2f69511875281a9f923d64915a18ebffd28f76836eb462",
+      "size": 7245,
+      "sha256": "112972f09970038761722871dba75602edab5ac77844018fde12077063b309ef",
       "reason": "E批次记录：候选范围与提交身份、打包、隐私与独立运行；不含机器私有信息；仅本地候选"
     },
     {
@@ -6897,8 +6897,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 6994,
-      "sha256": "90759ab216646aa369975f991dcaa15ab4f15a8acae3a38e4570ef1486849a31",
+      "size": 8084,
+      "sha256": "0a165ecd36b97d69697e7d2c05d316605dd31a612e22dc4ca732744b4e4ef27d",
       "reason": "E4新增：第二台机器与真实读者走查的具体步骤、记录表与回传要求"
     }
   ],

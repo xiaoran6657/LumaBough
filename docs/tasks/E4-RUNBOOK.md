@@ -40,11 +40,12 @@ cd .\lb-e4
 ### 2.2 证明不依赖开发环境
 
 ```powershell
-where.exe python ; where.exe cmake ; where.exe dxc        # 期望：都找不到（或与本次运行无关）
-$env:PATH -split ';' | Select-String -Pattern 'Visual Studio|CMake|Windows Kits'   # 期望：无匹配
+where.exe python ; where.exe cmake ; where.exe dxc
+$env:PATH -split ';' | Select-String -Pattern 'Visual Studio|CMake|Windows Kits'
 ```
 
-记录实际输出。若机器上确实装了这些工具，记录它们的存在，并在下面注明"未使用"。
+记录实际输出。**判据不是"这些工具必须不存在"，而是"运行没有用到它们"**：机器上装了 Python/CMake 也可以
+（第一台就有），只要 `dxc` 缺失、PATH 里没有 VS/CMake，且下面各步不依赖它们即可。
 
 ### 2.3 双后端启动（主验证）
 
@@ -64,12 +65,27 @@ $env:PATH -split ';' | Select-String -Pattern 'Visual Studio|CMake|Windows Kits'
 
 ```powershell
 Get-ChildItem out-run-d3d12 | Select-Object Name, Length
-Get-Content out-run-d3d12\metadata.json -Raw | Select-String -Pattern 'sourceCommit|shaderSemanticSha256|warningErrors|resizeCount'
-Get-Content out-run-d3d12\tour-events.jsonl | Select-Object -Last 3
+Get-Content out-run-d3d12\metadata.json -Raw | Select-String -Pattern 'sourceCommit|shaderSemanticSha256|warningErrors|resolution'
 ```
 
-要记进记录表的关键值：`sourceCommit` 应含 `b7012b7`；`warningErrors` 应为 0；
-`tour-events.jsonl` 末行应是 `complete-clean-exit`。`out-run-d3d11` 同样记录一份。
+要记进记录表的关键值：`sourceCommit` 应含 `0403d20`；`warningErrors` 应为 0；
+`shaderSemanticSha256` 应为 `7aeedd02…`；**`resolution` 记录实际客户区**（窗口被桌面工作区裁过时会小于 `--height`，
+例如 1920×1080 的窗口得到 1920×1061——`graphHash`/`commandHash` 随 extent 变化，跨机对比必须同 extent）。
+`out-run-d3d11` 同样记录一份。
+
+### 2.4b Demo 事件路径（`--exercise-changes`，必做）
+
+上面两次是普通渲染路径；Demo 的挂起/临时尺寸/恢复事件只在 `--exercise-changes` 下产生：
+
+```powershell
+.\runtime\MiniEngineSandbox.exe --rhi=d3d12 --scene=m4-visual-baseline --manifest=scene\manifest.json --migration-level=9 --frames=1202 --width=1920 --height=1080 --exercise-changes --headless --output=out-run-events
+"exit=$LASTEXITCODE"
+Get-Content out-run-events\tour-events.jsonl | Select-Object -Last 3
+Get-ChildItem out-run-events | Select-Object Name, Length
+```
+
+期望：`exit=0`；`tour-events.jsonl` 末行 `complete-clean-exit`；目录里有 `anchor.json`、`anchor.ppm`、`color.ppm`、
+`metadata.json`（`resizeCount=3`、`reloadSuccess=1`、`reloadRejected=1`）。D3D11 同样跑一次。
 
 ### 2.5 换工作目录启动（确认不依赖 cwd）
 
@@ -103,7 +119,8 @@ Rename-Item .\runtime\shaders\d3d11_off d3d11
 | 2.2 开发环境检查输出 | |
 | 2.3 D3D12 退出码 / status / graphHash | |
 | 2.3 D3D11 退出码 / status / graphHash | |
-| 2.4 sourceCommit / warningErrors / 末行事件 | |
+| 2.4 sourceCommit / warningErrors / 实际 resolution | |
+| 2.4b Demo 事件：退出码 / 末行事件 / resizeCount | |
 | 2.5 换目录退出码 | |
 | 2.6 负例错误文本（可选） | |
 | 异常与截图 | |
