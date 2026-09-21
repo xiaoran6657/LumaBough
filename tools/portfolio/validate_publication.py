@@ -149,9 +149,20 @@ def validate_candidate(root, data, package):
     bad = [r["id"] for r in e4["secondMachine"]["runs"] if r["status"] not in ("PASS", "expected-failure")]
     if bad:
         errors.append("E4 second-machine runs not passing: " + ", ".join(bad))
-    if e4.get("reader", {}).get("status") != "passed":
-        errors.append("E4 reader feedback is not recorded as passed (owner action required)")
+    errors += e4_reader_errors(e4)
     return errors
+
+
+def e4_reader_errors(e4):
+    """读者走查：passed 干净；deferred-by-owner 记提示（缩减承诺）；其余是错误。"""
+    status = e4.get("reader", {}).get("status")
+    if status == "passed":
+        return []
+    if status == "deferred-by-owner":
+        return []
+    if status == "pending":
+        return ["E4 reader feedback is not recorded as passed (owner action required)"]
+    return ["E4 reader status is not recognised: " + str(status)]
 
 
 def main():
@@ -178,6 +189,12 @@ def main():
         print(f"PASS entry: {len(data['files'])} reviewed files; publication=BLOCKED")
     else:
         print(f"PASS candidate: {len(data['files'])} reviewed files, package bytes, privacy gate and E4 record verified; publication=BLOCKED")
+        try:
+            e4 = json.loads((root / E4_RESULTS).read_text(encoding="utf-8"))
+            if e4.get("reader", {}).get("status") == "deferred-by-owner":
+                print("NOTICE: E4 reader validation was deferred by the owner; the publication must not claim reader validation")
+        except (OSError, KeyError):
+            pass
     return 0
 
 if __name__ == "__main__":

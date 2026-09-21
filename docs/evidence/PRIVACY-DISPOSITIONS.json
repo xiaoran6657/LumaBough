@@ -490,7 +490,9 @@
       "matchSha256": "098b067513b3db7cd7543ca7ba28ad185fb1c748860e7393c968b53f61c3bef0",
       "disposition": "keep",
       "reason": "E4 记录里复述的运行错误原文（路径分隔符），非真实 UNC 路径",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     }
   ]
 }

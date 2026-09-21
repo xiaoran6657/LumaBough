@@ -48,8 +48,9 @@ python -B tools/validation/check_rhi_boundary.py
 ~~~
 
 文档改动只做相关检查；C++、运行路径或打包改动做相应构建/测试。测试数量以本次输出为准，不照搬旧 84/1003。
-validate_publication 当前只有 entry，且输出 publication=BLOCKED；它不验证发布 readiness。
-E/F 必须实现并测试对应验收机制或提供逐项可复核手工记录，不能调用不存在的 --stage candidate/published。
+validate_publication 现有 entry 与 candidate 两级，均输出 publication=BLOCKED；它不验证远程发布 readiness。
+`--stage candidate --package <pack|zip>` 核对清单/链接、包字节与包内清单、构建提交关系、E3 隐私门与 E4 记录；
+published 仍未实现，F 需要所有者授权后的实际发布步骤。
 
 ## 身份冻结与返工顺序
 

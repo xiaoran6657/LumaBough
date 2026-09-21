@@ -7,7 +7,7 @@ import unittest
 
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "tools/portfolio"))
-from validate_publication import validate_package_files
+from validate_publication import e4_reader_errors, validate_package_files
 
 
 def blob(name, payload):
@@ -66,6 +66,14 @@ class CandidateGateTests(unittest.TestCase):
                                                      "selfExcluded": ["PACKAGE-MANIFEST.json", "SHA256SUMS.txt"]}).encode()
         errors, _ = validate_package_files(files)
         self.assertTrue(any("does not match exeSha256" in e for e in errors))
+
+
+    def test_reader_status_semantics(self):
+        self.assertEqual([], e4_reader_errors({"reader": {"status": "passed"}}))
+        self.assertEqual([], e4_reader_errors({"reader": {"status": "deferred-by-owner"}}))
+        self.assertTrue(e4_reader_errors({"reader": {"status": "pending"}}))
+        self.assertTrue(e4_reader_errors({"reader": {"status": "something-else"}}))
+        self.assertTrue(e4_reader_errors({}))
 
 
 if __name__ == "__main__":

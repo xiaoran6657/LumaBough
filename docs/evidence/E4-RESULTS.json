@@ -107,8 +107,11 @@
     "pixelNote": "pixel hashes differ across GPUs and backends by design; identity is asserted through the hashes above"
   },
   "reader": {
-    "status": "pending",
-    "note": "owner to arrange a reader who did not implement the project; the agent cannot substitute",
-    "checklist": ["extract", "run per RUN.md", "find graphHash and one event record", "state the supported scope in one sentence", "report raw confusion without being prompted"]
+    "status": "deferred-by-owner",
+    "decidedAt": "2026-09-21",
+    "decision": "所有者决定本次跳过真实读者走查（部分跳过，后续再看）；因此公开时必须缩减承诺：不得声称经过真实读者验证，也不得把跑通示例当作可用性证据",
+    "notValidated": ["首次读者是否能按包内文档独立跑通", "文档中的误解点与耗时", "能力范围表述是否可被读者正确复述"],
+    "checklist": ["extract", "run per RUN.md", "find graphHash and one event record", "state the supported scope in one sentence", "report raw confusion without being prompted"],
+    "note": "owners word is recorded verbatim; the agent does not mark this item as passed"
   }
 }

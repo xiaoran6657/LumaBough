@@ -370,8 +370,8 @@
     {
       "path": "docs/CHANGELOG.md",
       "category": "docs",
-      "size": 2191,
-      "sha256": "536349dce492949f54e309b5cebd221a72aa34b96768164dfcec19269c7cb049",
+      "size": 3040,
+      "sha256": "fa888fe125b62c9f8200415d350644eeb86a23a337ce1b10873613a300958556",
       "sourcePath": null,
       "sourceSha256": null,
       "reason": "所有者授权修订P/D/E/F串行任务；明确逐文件审阅的任务/导航/状态文档，不包含原始产物；仅本地候选，受发布门约束"
@@ -397,8 +397,8 @@
     {
       "path": "docs/ROADMAP.md",
       "category": "docs",
-      "size": 2820,
-      "sha256": "b73febae4a577cf83c8fc3e0d33f432c59d81f05ac8def8dc46c786ceeb39d77",
+      "size": 2955,
+      "sha256": "c1484b31c12cd37d59f5c3db3378496bba0f782b479428ac92e6a419f272c9c7",
       "sourcePath": null,
       "sourceSha256": null,
       "reason": "所有者授权修订P/D/E/F串行任务；明确逐文件审阅的任务/导航/状态文档，不包含原始产物；仅本地候选，受发布门约束"
@@ -649,8 +649,8 @@
     {
       "path": "docs/evidence/README.md",
       "category": "docs",
-      "size": 2313,
-      "sha256": "359511255f23b76f635fbba1449ae3913a6d68049fa87e81704b3f08c24744bd",
+      "size": 2498,
+      "sha256": "46d4176eed27308ea45860abd527e50cf7906a43234a494bda4ac120cf6ec0cd",
       "sourcePath": null,
       "sourceSha256": null,
       "reason": "所有者授权修订P/D/E/F串行任务；明确逐文件审阅的任务/导航/状态文档，不包含原始产物；仅本地候选，受发布门约束"
@@ -1362,8 +1362,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 6118,
-      "sha256": "5399635837bea7811c02ba48ce0c5b1290a19f19da623dff4802ce8505e0d208",
+      "size": 6218,
+      "sha256": "921094e35ef157be6c44b854a6c70ba968df535b54e874ecc447e0851157b0d0",
       "reason": "所有者授权修订P/D/E/F串行任务；明确逐文件审阅的任务/导航/状态文档，不包含原始产物；仅本地候选，受发布门约束"
     },
     {
@@ -6625,8 +6625,8 @@
     {
       "path": "tools/portfolio/validate_publication.py",
       "category": "tools",
-      "size": 9868,
-      "sha256": "6a7cb467a5e7f8353e981bb9f5c3083ee3cb29a31e1ef3024731c63872e2e60d",
+      "size": 10568,
+      "sha256": "d82b4576e6e97b4794fc2e28c0b5fdfdede8f4eda4e2f783fedf9553faeaafca",
       "sourcePath": null,
       "sourceSha256": null,
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
@@ -6870,8 +6870,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 19379,
-      "sha256": "f3416ae419cbd12afc7445dea1cfa8b2879f0099e7657fe6d57dd22ddaf09c7e",
+      "size": 19444,
+      "sha256": "11044af73596a62a1451e9c21602ca0d9b74d4b0dfa4b1c4dc93140c8ffb17b6",
       "reason": "E3新增：112 项逐项处置（keep/脱敏/排除 + 理由 + matchSha256），status=proposed 待所有者批准"
     },
     {
@@ -6906,8 +6906,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 4835,
-      "sha256": "bad1a37a71b8329a540b8102f512d6ccb5824d7df8e06316a3f2df82c259610a",
+      "size": 5249,
+      "sha256": "b68b72070d6364d09355bb0f48bd1492a11590a7423bc56d90e0d22f778f77f6",
       "reason": "E4新增：第二台机器逐项结果、跨机身份、首轮失败与修复、读者状态（供 candidate 门读取）"
     },
     {
@@ -6915,9 +6915,27 @@
       "category": "tests",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 3731,
-      "sha256": "1faf70c19862d59dbd4e3a53de8931ce0b5a3ffeaa2cc85e4351885dca2888a2",
+      "size": 4183,
+      "sha256": "43c81f014fc2ad4143f529bd0496ef4d3c23512744f186cfec0a2b95036e0dba",
       "reason": "E5新增：候选门字节核对（manifest/SHA256SUMS/EXE 不一致必须报错）"
+    },
+    {
+      "path": "docs/evidence/CANDIDATE-REVIEW.md",
+      "category": "docs",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 3561,
+      "sha256": "ec0ce47a998c3929481502f05fdd6369c5ebe77fa0e8a6e2a063f6c9ebfb09d3",
+      "reason": "E5新增：候选绑定、门禁逐项含义、缩减承诺与未授权项"
+    },
+    {
+      "path": "docs/evidence/F-PROPOSAL.md",
+      "category": "docs",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 4086,
+      "sha256": "86133f13b682c1e3934fc5246169aefb7e4085255d38d094232dc4c3a68d1e85",
+      "reason": "E5新增：F 发布提案草案（仓库/ref/文件集合/附件/文案/风险与回退/授权清单）"
     }
   ],
   "pending": [],
