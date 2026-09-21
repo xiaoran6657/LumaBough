@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 2,
+  "name": "portfolio-video",
+  "scene": "m4-visual-baseline",
+  "frames": 1562,
+  "warmupFrames": 780,
+  "width": 1920,
+  "height": 1080,
+  "vsync": true,
+  "tourHoldFrames": 90,
+  "tourTemporaryExtent": {
+    "width": 960,
+    "height": 540
+  },
+  "captureAnchor": "portfolio-capture",
+  "anchorSemantics": "after 780 warmup frames; pre-action capture; frame number is diagnostic only",
+  "backends": [
+    "d3d11",
+    "d3d12"
+  ],
+  "expected": {
+    "width": 1920,
+    "height": 1080,
+    "assetManifestSha256": "4ae6eda980221395a80e3bb03374d051a07b8cd197f8a5c0b55097f427ba6260",
+    "shaderSemanticSha256": "7aeedd02200971d450e502e57d6dad67545e7d41d04804fe4636a23ccbd05b3a",
+    "visibleSequenceHash": "0x61E54BF2EB73DB0E",
+    "graphHash": "0xBC2FC5CF0A38B0FD",
+    "warningErrors": 0
+  },
+  "limitations": [
+    "fixed camera; no animation/seed/fixed-delta CLI in M6 scene",
+    "same-bytecode pipeline reload; no file-watcher or shader revision demo",
+    "programmatic RHI suspension and resize; not OS minimize",
+    "hold frames and the 960x540 temporary extent exist only so the change is perceivable on screen; they do not add capabilities",
+    "the suspended (0x0) state presents nothing, so the on-screen picture simply keeps the last frame"
+  ]
+}

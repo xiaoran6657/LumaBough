@@ -1,0 +1,1373 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "MiniEngine tools/gen-m4-visual-baseline.py"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "m4-visual-baseline",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "M4VisualBaseline",
+      "children": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    },
+    {
+      "name": "GroundPlane",
+      "mesh": 25,
+      "translation": [
+        0.0,
+        -0.25,
+        5.0
+      ],
+      "scale": [
+        24.0,
+        0.5,
+        20.0
+      ]
+    },
+    {
+      "name": "Sphere_c0_r0",
+      "mesh": 0,
+      "translation": [
+        -4.0,
+        1.4,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c1_r0",
+      "mesh": 1,
+      "translation": [
+        -2.0,
+        1.4,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c2_r0",
+      "mesh": 2,
+      "translation": [
+        0.0,
+        1.4,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c3_r0",
+      "mesh": 3,
+      "translation": [
+        2.0,
+        1.4,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c4_r0",
+      "mesh": 4,
+      "translation": [
+        4.0,
+        1.4,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c0_r1",
+      "mesh": 5,
+      "translation": [
+        -4.0,
+        3.0,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c1_r1",
+      "mesh": 6,
+      "translation": [
+        -2.0,
+        3.0,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c2_r1",
+      "mesh": 7,
+      "translation": [
+        0.0,
+        3.0,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c3_r1",
+      "mesh": 8,
+      "translation": [
+        2.0,
+        3.0,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c4_r1",
+      "mesh": 9,
+      "translation": [
+        4.0,
+        3.0,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c0_r2",
+      "mesh": 10,
+      "translation": [
+        -4.0,
+        4.6,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c1_r2",
+      "mesh": 11,
+      "translation": [
+        -2.0,
+        4.6,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c2_r2",
+      "mesh": 12,
+      "translation": [
+        0.0,
+        4.6,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c3_r2",
+      "mesh": 13,
+      "translation": [
+        2.0,
+        4.6,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c4_r2",
+      "mesh": 14,
+      "translation": [
+        4.0,
+        4.6,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c0_r3",
+      "mesh": 15,
+      "translation": [
+        -4.0,
+        6.200000000000001,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c1_r3",
+      "mesh": 16,
+      "translation": [
+        -2.0,
+        6.200000000000001,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c2_r3",
+      "mesh": 17,
+      "translation": [
+        0.0,
+        6.200000000000001,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c3_r3",
+      "mesh": 18,
+      "translation": [
+        2.0,
+        6.200000000000001,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c4_r3",
+      "mesh": 19,
+      "translation": [
+        4.0,
+        6.200000000000001,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c0_r4",
+      "mesh": 20,
+      "translation": [
+        -4.0,
+        7.800000000000001,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c1_r4",
+      "mesh": 21,
+      "translation": [
+        -2.0,
+        7.800000000000001,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c2_r4",
+      "mesh": 22,
+      "translation": [
+        0.0,
+        7.800000000000001,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c3_r4",
+      "mesh": 23,
+      "translation": [
+        2.0,
+        7.800000000000001,
+        0.5
+      ]
+    },
+    {
+      "name": "Sphere_c4_r4",
+      "mesh": 24,
+      "translation": [
+        4.0,
+        7.800000000000001,
+        0.5
+      ]
+    },
+    {
+      "name": "ThinColumn",
+      "mesh": 26,
+      "translation": [
+        7.0,
+        1.5,
+        2.0
+      ],
+      "scale": [
+        0.3,
+        3.0,
+        0.3
+      ]
+    },
+    {
+      "name": "Slope",
+      "mesh": 27,
+      "translation": [
+        -6.0,
+        0.45,
+        5.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.15643446504023087,
+        0.9876883405951378
+      ],
+      "scale": [
+        4.0,
+        0.3,
+        3.0
+      ]
+    },
+    {
+      "name": "MirroredSlope",
+      "mesh": 29,
+      "translation": [
+        -13.0,
+        0.45,
+        12.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.15643446504023087,
+        0.9876883405951378
+      ],
+      "scale": [
+        -4.0,
+        0.3,
+        3.0
+      ]
+    },
+    {
+      "name": "TexturedSlab",
+      "mesh": 28,
+      "translation": [
+        9.0,
+        1.6,
+        12.0
+      ],
+      "scale": [
+        3.0,
+        3.0,
+        3.0
+      ]
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Sphere00",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "Sphere01",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 1
+        }
+      ]
+    },
+    {
+      "name": "Sphere02",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 2
+        }
+      ]
+    },
+    {
+      "name": "Sphere03",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 3
+        }
+      ]
+    },
+    {
+      "name": "Sphere04",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 4
+        }
+      ]
+    },
+    {
+      "name": "Sphere05",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 5
+        }
+      ]
+    },
+    {
+      "name": "Sphere06",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 6
+        }
+      ]
+    },
+    {
+      "name": "Sphere07",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 7
+        }
+      ]
+    },
+    {
+      "name": "Sphere08",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 8
+        }
+      ]
+    },
+    {
+      "name": "Sphere09",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 9
+        }
+      ]
+    },
+    {
+      "name": "Sphere10",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 10
+        }
+      ]
+    },
+    {
+      "name": "Sphere11",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 11
+        }
+      ]
+    },
+    {
+      "name": "Sphere12",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 12
+        }
+      ]
+    },
+    {
+      "name": "Sphere13",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 13
+        }
+      ]
+    },
+    {
+      "name": "Sphere14",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 14
+        }
+      ]
+    },
+    {
+      "name": "Sphere15",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 15
+        }
+      ]
+    },
+    {
+      "name": "Sphere16",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 16
+        }
+      ]
+    },
+    {
+      "name": "Sphere17",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 17
+        }
+      ]
+    },
+    {
+      "name": "Sphere18",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 18
+        }
+      ]
+    },
+    {
+      "name": "Sphere19",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 19
+        }
+      ]
+    },
+    {
+      "name": "Sphere20",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 20
+        }
+      ]
+    },
+    {
+      "name": "Sphere21",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 21
+        }
+      ]
+    },
+    {
+      "name": "Sphere22",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 22
+        }
+      ]
+    },
+    {
+      "name": "Sphere23",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 23
+        }
+      ]
+    },
+    {
+      "name": "Sphere24",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1,
+            "TEXCOORD_0": 2
+          },
+          "indices": 3,
+          "material": 24
+        }
+      ]
+    },
+    {
+      "name": "GroundSlab",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 25
+        }
+      ]
+    },
+    {
+      "name": "ColumnSlab",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 26
+        }
+      ]
+    },
+    {
+      "name": "SlopeSlab",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 27
+        }
+      ]
+    },
+    {
+      "name": "TexturedSlab",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 28
+        }
+      ]
+    },
+    {
+      "name": "MirrorSlopeSlab",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 4,
+            "NORMAL": 5,
+            "TEXCOORD_0": 6
+          },
+          "indices": 7,
+          "material": 27
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "SphereGrid_m00_r00",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.1
+      }
+    },
+    {
+      "name": "SphereGrid_m01_r00",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.1
+      }
+    },
+    {
+      "name": "SphereGrid_m02_r00",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.1
+      }
+    },
+    {
+      "name": "SphereGrid_m03_r00",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 0.75,
+        "roughnessFactor": 0.1
+      }
+    },
+    {
+      "name": "SphereGrid_m04_r00",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 1.0,
+        "roughnessFactor": 0.1
+      }
+    },
+    {
+      "name": "SphereGrid_m00_r01",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.30000000000000004
+      }
+    },
+    {
+      "name": "SphereGrid_m01_r01",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.30000000000000004
+      }
+    },
+    {
+      "name": "SphereGrid_m02_r01",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.30000000000000004
+      }
+    },
+    {
+      "name": "SphereGrid_m03_r01",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 0.75,
+        "roughnessFactor": 0.30000000000000004
+      }
+    },
+    {
+      "name": "SphereGrid_m04_r01",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 1.0,
+        "roughnessFactor": 0.30000000000000004
+      }
+    },
+    {
+      "name": "SphereGrid_m00_r02",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.5
+      }
+    },
+    {
+      "name": "SphereGrid_m01_r02",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.5
+      }
+    },
+    {
+      "name": "SphereGrid_m02_r02",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.5
+      }
+    },
+    {
+      "name": "SphereGrid_m03_r02",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 0.75,
+        "roughnessFactor": 0.5
+      }
+    },
+    {
+      "name": "SphereGrid_m04_r02",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 1.0,
+        "roughnessFactor": 0.5
+      }
+    },
+    {
+      "name": "SphereGrid_m00_r03",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.7000000000000001
+      }
+    },
+    {
+      "name": "SphereGrid_m01_r03",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.7000000000000001
+      }
+    },
+    {
+      "name": "SphereGrid_m02_r03",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.7000000000000001
+      }
+    },
+    {
+      "name": "SphereGrid_m03_r03",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 0.75,
+        "roughnessFactor": 0.7000000000000001
+      }
+    },
+    {
+      "name": "SphereGrid_m04_r03",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 1.0,
+        "roughnessFactor": 0.7000000000000001
+      }
+    },
+    {
+      "name": "SphereGrid_m00_r04",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.9
+      }
+    },
+    {
+      "name": "SphereGrid_m01_r04",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 0.25,
+        "roughnessFactor": 0.9
+      }
+    },
+    {
+      "name": "SphereGrid_m02_r04",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.9
+      }
+    },
+    {
+      "name": "SphereGrid_m03_r04",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 0.75,
+        "roughnessFactor": 0.9
+      }
+    },
+    {
+      "name": "SphereGrid_m04_r04",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.92,
+          0.92,
+          0.94,
+          1.0
+        ],
+        "metallicFactor": 1.0,
+        "roughnessFactor": 0.9
+      }
+    },
+    {
+      "name": "GroundPlane",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.42,
+          0.44,
+          0.47,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.85
+      }
+    },
+    {
+      "name": "ThinColumn",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.78,
+          0.72,
+          0.62,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.6
+      }
+    },
+    {
+      "name": "Slope",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.3,
+          0.38,
+          0.52,
+          1.0
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.5
+      }
+    },
+    {
+      "name": "TexturedSlab",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "metallicFactor": 1.0,
+        "roughnessFactor": 1.0,
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 2
+        }
+      },
+      "normalTexture": {
+        "index": 1
+      },
+      "occlusionTexture": {
+        "index": 3
+      },
+      "emissiveTexture": {
+        "index": 4
+      },
+      "emissiveFactor": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    },
+    {
+      "sampler": 0,
+      "source": 3
+    },
+    {
+      "sampler": 0,
+      "source": 4
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "images": [
+    {
+      "uri": "m4-pbr-basecolor.png"
+    },
+    {
+      "uri": "m4-pbr-normal.png"
+    },
+    {
+      "uri": "m4-pbr-metallic-roughness.png"
+    },
+    {
+      "uri": "m4-pbr-occlusion.png"
+    },
+    {
+      "uri": "m4-pbr-emissive.png"
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 561,
+      "type": "VEC3",
+      "min": [
+        -0.5,
+        -0.5,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 561,
+      "type": "VEC3",
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 561,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5125,
+      "count": 3072,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3",
+      "min": [
+        -0.5,
+        -0.5,
+        -0.5
+      ],
+      "max": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3",
+      "min": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "max": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5125,
+      "count": 36,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 6732,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 6732,
+      "byteLength": 6732,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 13464,
+      "byteLength": 4488,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 17952,
+      "byteLength": 12288,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 30240,
+      "byteLength": 288,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 30528,
+      "byteLength": 288,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 30816,
+      "byteLength": 192,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 31008,
+      "byteLength": 144,
+      "target": 34963
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "m4-visual-baseline.bin",
+      "byteLength": 31152
+    }
+  ]
+}

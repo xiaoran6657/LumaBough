@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "schema": "miniengine.m6-10.graph-baseline.v1",
+  "scene": "m4-visual-baseline",
+  "resolution": [1280, 720],
+  "backends": ["d3d11", "d3d12"],
+  "requiredPasses": ["Shadow", "ForwardHDR", "Skybox", "ToneMap", "Present"],
+  "optionalPasses": ["Screenshot", "Timestamps"],
+  "transientResources": ["SceneDepth", "HdrColor"],
+  "imageThresholds": {
+    "mae": 0.0078431373,
+    "p99": 0.0196078431,
+    "changedRateAboveP99": 0.005
+  },
+  "rhiSelfConsistencyRuns": 10,
+  "determinismRuns": 10,
+  "screenshotRepeats": 10,
+  "stabilityFrames": 10000,
+  "performance": {
+    "warmupFrames": 120,
+    "measureFrames": 600,
+    "runs": 3,
+    "vsync": false
+  },
+  "metadata": {
+    "requiredIdentityKeys": [
+      "scene", "width", "height", "fixedTick", "assetManifestSha256",
+      "environmentArtifactSha256", "shaderSemanticSha256", "visibleSequenceHash",
+      "cameraValues", "lightValues", "debugView", "exposureEv", "iblProfile",
+      "iblEnabled", "toneMapper", "culling", "shadow", "skyboxEnabled",
+      "renderer", "backend", "migrationLevel", "graphHash", "commandHash",
+      "warningErrors", "fallbackUsed"
+    ],
+    "graphHashBinding": "GraphDump planHash: lowercase 16-hex FNV-1a value shared by all three dumps; metadata uses 0x prefix",
+    "commandHashBinding": "sha256 of semantic-trace.txt raw bytes"
+  }
+}

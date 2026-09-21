@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "source": "tests/m4-visual-baseline.gltf",
+  "assetRoot": "asset://tests/m4-visual-baseline",
+  "scene": "m4-visual-baseline",
+  "profile": "windows-d3d11",
+  "import": {
+    "meshes": true,
+    "textures": true,
+    "world": true,
+    "generateMissingNormals": true
+  },
+  "environment": {
+    "source": "environments/qwantani_1k.hdr",
+    "assetUri": "asset://environments/m4-baseline",
+    "usage": "HdrEnvironment",
+    "license": "CC0-1.0",
+    "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/qwantani_1k.hdr",
+    "sourceSha256": "E4CE25AA40CC5BD2C5345119BE31D36798BB7D8A96D20BF0DC8776A572C1D2B6"
+  },
+  "limits": {
+    "maxFileBytes": 67108864,
+    "maxVerticesPerPrimitive": 1000000,
+    "maxIndicesPerPrimitive": 3000000,
+    "maxTextureDimension": 8192,
+    "maxNodes": 100000
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "source": "demo/scene.gltf",
+  "assetRoot": "asset://demo/scene",
+  "scene": "default",
+  "profile": "windows-d3d11",
+  "import": {
+    "meshes": true,
+    "textures": true,
+    "world": true,
+    "generateMissingNormals": true
+  },
+  "limits": {
+    "maxFileBytes": 67108864,
+    "maxVerticesPerPrimitive": 1000000,
+    "maxIndicesPerPrimitive": 3000000,
+    "maxTextureDimension": 8192,
+    "maxNodes": 100000
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "contractId": "m5-parity",
+  "schemaVersion": 1,
+  "purpose": "D3D11 与 D3D12 两个 concrete composition 在 m4-visual-baseline 固定场景上的输出一致性契约（M5-01 冻结）。",
+  "scene": "asset://tests/m4-visual-baseline",
+  "backends": ["d3d11", "d3d12"],
+  "resolution": [1280, 720],
+  "fixedTick": 300,
+  "camera": "m4-golden",
+  "exposureEv": 0.0,
+  "toneMapper": "reinhard",
+  "iblProfile": "baseline",
+  "shadow": {
+    "resolution": 2048,
+    "pcf": "3x3",
+    "depthBias": 0.0,
+    "slopeBias": 0.1,
+    "profile": "m4-fixed"
+  },
+  "requiredDebugViews": [
+    "BaseColor",
+    "WorldNormal",
+    "Metallic",
+    "Roughness",
+    "ShadowFactor",
+    "IblDiffuse",
+    "IblSpecular",
+    "SceneLuminance",
+    "Lit"
+  ],
+  "comparatorConfigKeys": [
+    "schemaVersion",
+    "scene",
+    "resolution",
+    "fixedTick",
+    "assetManifestSha256",
+    "environmentArtifactSha256",
+    "iblProfile",
+    "exposureEv",
+    "toneMapper"
+  ],
+  "comparatorConfigKeysNote": "9 个键覆盖 ScreenshotConfigIdentity 的全部 10 个字段（resolution 是 [width, height] 一个键对两个字段）；任一键不同即 INCOMPARABLE。",
+  "sameBackendRepeat": {
+    "expectation": "同一后端连续 10 次 capture 的 PNG 必须字节级一致（M4-09 实测 10/10 SHA-256 相同）",
+    "mae": 0.0,
+    "p99": 0.0,
+    "changedRate": 0.0,
+    "changedThreshold": 1
+  },
+  "crossBackendParity": {
+    "expectation": "D3D11 golden 与 D3D12 candidate 必须落在下阈值内；超过即先定位并修掉结构性差异，不允许放宽阈值",
+    "mae": 0.0078431373,
+    "p99": 0.0196078431,
+    "changedRate": 0.005,
+    "changedThreshold": 5
+  },
+  "packetHash": {
+    "algorithm": "fnv1a64-per-frame-chain",
+    "frames": 100,
+    "perFrameInputs": [
+      "mainOpaque 队列长度",
+      "对每个 opaque draw 依序混入：meshId(16B)、materialId(16B)、entityIndex(8B 小端)、mirrored、castsShadow、receivesShadow（各 8B，1/0）",
+      "shadowCasters 队列长度",
+      "对每个 shadow draw 混入同一组身份字段",
+      "trianglesSubmitted(8B)"
+    ],
+    "note": "每帧用 FNV-1a 64（offset 14695981039346656037、prime 1099511628211）按上述顺序混入，逐帧值再以同一算法链接为 chainHash；不含 world/normal 矩阵，因此只回答“draw 序列是否相同”。字段清单以 samples/sandbox/main.cpp 的 HashRenderPacketSequence 为唯一真源（审查修正：旧 note 漏了队列长度、castsShadow、receivesShadow、trianglesSubmitted，照旧文实现会得到不同 chainHash）。"
+  },
+  "allowedDifferences": [
+    "DXBC/FXC 与 DXIL/DXC 的浮点舍入",
+    "resource layout、descriptor 编号、PSO 数量",
+    "CPU submit 与 GPU pass 时间",
+    "D3D11 RenderDoc 与 D3D12 PIX 的证据格式"
+  ],
+  "unacceptableDifferences": [
+    "纹理通道或颜色空间错误",
+    "cubemap face、normal Y、winding 或 depth range 翻转",
+    "漏 draw、重复 draw、shadow/IBL slot 错误",
+    "tone map 双重 sRGB",
+    "fallback asset 或 fallback shader 被静默使用"
+  ]
+}

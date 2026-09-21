@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "experimentId": "E-M7-BASELINE",
+  "seed": 6657,
+  "common": {
+    "width": 1920,
+    "height": 1080,
+    "vsync": false,
+    "warmupFrames": 300,
+    "measuredFrames": 1800,
+    "runsPerCell": 5,
+    "rhis": ["d3d11", "d3d12"],
+    "workers": 1,
+    "chunkSize": 256,
+    "packetBuild": "serial",
+    "scheduler": "none",
+    "chunkReserve": true,
+    "uploadMiBPerFrame": 4,
+    "cameraPath": "assets/tests/m7/fixed-camera.bin",
+    "cameraPathSha256": "160466991F23B7021343824AC3DE781781FA65E1DE92D9C9F1D49F151337D43C",
+    "assetManifest": "out/m4-09/scene/manifest.json",
+    "machineManifest": "tests/baselines/m7/environment.json",
+    "outputDirectory": "out/m7-01/baseline"
+  },
+  "scenes": [
+    {
+      "name": "m7-cpu-scale",
+      "purpose": "RenderPacket/culling/task scaling",
+      "renderProxyCount": 50000,
+      "visibleRatio": 0.5,
+      "shadowRatio": 0.02,
+      "updateRatio": 1.0,
+      "streaming": false,
+      "loaderMode": "serial-sync-scene",
+      "expectedSemanticHash": "FILL_AFTER_SERIAL_BASELINE"
+    },
+    {
+      "name": "m7-layout",
+      "purpose": "AoS/hot-cold/SoA Transform+Bounds 单变量实验",
+      "entityCounts": [10000, 50000, 100000],
+      "visibleRatios": [0.1, 0.5, 0.9],
+      "updateRatios": [0.0, 0.1, 1.0],
+      "baselineCell": {
+        "entityCount": 50000,
+        "visibleRatio": 0.5,
+        "updateRatio": 1.0
+      },
+      "loaderMode": "serial-sync-scene",
+      "expectedSemanticHash": "FILL_AFTER_SERIAL_BASELINE"
+    },
+    {
+      "name": "m7-streaming",
+      "purpose": "I/O/decode/upload/热重载的串行基线",
+      "requestScript": "assets/tests/m7/streaming-script.bin",
+      "requestScriptSha256": "C60412A996DF43E66D4B1EA21CAB6235D0AB7B93A374C8003E37D6F8AD73A488",
+      "requestCount": 66,
+      "totalRequestBytes": 6946812,
+      "cacheState": "cold-controlled",
+      "renderBackdropProxies": 500,
+      "loaderMode": "serial-sync-read-validate",
+      "expectedFinalRevisionManifestHash": "FILL_AFTER_BASELINE"
+    }
+  ],
+  "notes": [
+    "运行时通过 CLI 接收全部控制变量，并把实际解析值写入 raw JSON；benchmark 模式缺任一控制变量即报错，不静默取默认值。",
+    "workers>1 需要任务系统（M7-03），M7-01 基线固定 workers=1 + packet-build=serial。",
+    "M7-05 起 packetBuild/scheduler/chunkReserve 是显式控制变量：serial 只能 workers=1 + scheduler=none；parallel 在 benchmark 下必须显式 scheduler。",
+    "m7-streaming 的 upload 与热重载在 M7-01 尚未实现（loaderMode=serial-sync-read-validate），upload* 指标在 raw JSON 的 unavailableMetrics 中显式列出。",
+    "M7-07 起 m7-streaming 支持异步上传流水线（--async-assets=on → loaderMode=async-budget-pipeline，默认预算 4 MiB / 0.5 ms / 16 请求 / 份额 50%，raw JSON 为 schemaVersion 3）：本 recipe 的 m7-streaming 仍描述串行基线；异步与预算 sweep 由 tools/performance/run_m7_load_sweep.ps1 驱动，使用 assets/tests/m7/streaming-burst.bin（同一批 66 个资产的突发变体）。",
+    "FILL_AFTER_* 占位由 M7-01 串行基线采集成后回填；回填前不得引用这些字段作为已验证值。"
+  ]
+}

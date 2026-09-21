@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 2,
+  "name": "portfolio-main",
+  "scene": "m4-visual-baseline",
+  "frames": 1202,
+  "warmupFrames": 600,
+  "width": 1920,
+  "height": 1080,
+  "captureAnchor": "portfolio-capture",
+  "anchorSemantics": "after 600 warmup frames; pre-action capture; frame number is diagnostic only",
+  "backends": [
+    "d3d11",
+    "d3d12"
+  ],
+  "expected": {
+    "width": 1920,
+    "height": 1080,
+    "assetManifestSha256": "4ae6eda980221395a80e3bb03374d051a07b8cd197f8a5c0b55097f427ba6260",
+    "shaderSemanticSha256": "7aeedd02200971d450e502e57d6dad67545e7d41d04804fe4636a23ccbd05b3a",
+    "visibleSequenceHash": "0x61E54BF2EB73DB0E",
+    "graphHash": "0xBC2FC5CF0A38B0FD",
+    "warningErrors": 0
+  },
+  "limitations": [
+    "fixed camera; no animation/seed/fixed-delta CLI in M6 scene",
+    "same-bytecode pipeline reload; no file-watcher or shader revision demo",
+    "programmatic RHI suspension and resize; not OS minimize",
+    "CPU-side logical marker; GPU capture validation belongs to batch D"
+  ]
+}
