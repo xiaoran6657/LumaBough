@@ -19,6 +19,7 @@ def main():
     ap.add_argument('--scene',type=Path,default=R/'out/demo/scene')
     ap.add_argument('--crt-dir',type=Path,default=Path('C:/Program Files (x86)/Microsoft Visual Studio/18/BuildTools/VC/Redist/MSVC/14.51.36231/x64/Microsoft.VC145.CRT'))
     ap.add_argument('--pix-src',type=Path,default=R/'out/build/windows-msvc-debug/_deps/miniengine_pix-src')
+    ap.add_argument('--built-at',default=None,help='构建该二进制的提交（默认=当前 HEAD）')
     a=ap.parse_args()
     out=a.output.resolve()
     if out.exists(): raise SystemExit('output must be fresh: '+str(out))
@@ -29,6 +30,11 @@ def main():
     for p in [exe,a.exe_dir/'WinPixEventRuntime.dll',a.crt_dir]: _=[x for x in [p]][0]
     for p in [exe,a.exe_dir/'WinPixEventRuntime.dll',a.crt_dir,a.scene,a.pix_src/'license.txt']:
         if not Path(p).exists(): raise SystemExit('missing input: '+str(p))
+    built=a.built_at or commit
+    if built!=commit:
+        changed=subprocess.run(['git','-C',str(R),'diff','--name-only',built+'..'+commit],capture_output=True,text=True,check=True).stdout.split()
+        bad=[c for c in changed if not (c.startswith('docs/') or c.startswith('tools/'))]
+        if bad: raise SystemExit('runtime code changed since --built-at; rebuild required: '+', '.join(bad))
     plan={}
     plan['runtime/MiniEngineSandbox.exe']=exe
     plan['runtime/WinPixEventRuntime.dll']=a.exe_dir/'WinPixEventRuntime.dll'
@@ -58,7 +64,7 @@ def main():
     (out/'README.md').write_text(readme,encoding='utf-8'); (out/'RUN.md').write_text(chr(10).join(run)+chr(10),encoding='utf-8')
     (out/'SUPPORT-MATRIX.md').write_text(chr(10).join(sup)+chr(10),encoding='utf-8')
     files={f.relative_to(out).as_posix():{'size':f.stat().st_size,'sha256':sha(f)} for f in sorted(out.rglob('*')) if f.is_file()}
-    man={'schemaVersion':1,'kind':'LumaBough candidate runtime package','commit':commit,'exeSha256':exe_sha}
+    man={'schemaVersion':1,'kind':'LumaBough candidate runtime package','packagingCommit':commit,'builtAtCommit':built,'exeSha256':exe_sha}
     man['sceneManifestSha256']=scene_sha; man['files']=files
     man['excluded']=['DXC/VS/SDK','asset sources','PDB','captures','videos','Tracy']
     (out/'PACKAGE-MANIFEST.json').write_text(json.dumps(man,ensure_ascii=False,indent=2)+chr(10),encoding='utf-8')
