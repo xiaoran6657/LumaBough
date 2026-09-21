@@ -21,6 +21,8 @@ PRIVACY_SCANNER = "tools/portfolio/scan_privacy.py"
 BUILD_SENSITIVE_PREFIXES = ("engine/", "samples/", "shaders/", "assets/", "tests/", "cmake/",
                             "tools/shader_compiler/", "tools/asset_cooker/", "tools/benchmark/", "tools/assets/")
 BUILD_SENSITIVE_FILES = ("CMakeLists.txt", "CMakePresets.json", "tools/CMakeLists.txt")
+# 明确排除：tests/tools 下的 Python 契约测试只验证工具与记录，不参与运行包构建。
+BUILD_EXEMPT_PREFIXES = ("tests/tools/",)
 # 包内免逐文件校验的清单文件只允许这两个（包自身引用自己不可行）。
 SELF_EXCLUDED = ("PACKAGE-MANIFEST.json", "SHA256SUMS.txt")
 # E4 第二台机器必须覆盖的六个运行：ID → 期望退出码（正例 0，负例 2）。
@@ -30,7 +32,9 @@ E4_REQUIRED_RUNS = (("d3d12-1202", 0), ("d3d11-1202", 0), ("d3d12-cwd-60", 0),
 
 
 def build_sensitive(path):
-    """该路径是否属于"改了就必须重建"的构建输入。"""
+    """该路径是否属于"改了就必须重建"的构建输入（tests/tools 的 Python 契约测试不算）。"""
+    if path.startswith(BUILD_EXEMPT_PREFIXES):
+        return False
     return path.startswith(BUILD_SENSITIVE_PREFIXES) or path in BUILD_SENSITIVE_FILES
 
 def links(root, files):

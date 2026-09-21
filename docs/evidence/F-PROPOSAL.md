@@ -23,7 +23,7 @@
 
 | 范围 | 内容 | 现状 |
 | --- | --- | --- |
-| 源码仓库 | `PUBLICATION-FILES.json` 的 768 个受审文件 + 清单自身 = 769 个 Git 文件；**包含** `assets/source/` 的 11 个源资产（glTF/bin/HDR，许可见 `assets/LICENSES.md`） | 由 entry/candidate 门强制 |
+| 源码仓库 | `PUBLICATION-FILES.json` 的 771 个受审文件 + 清单自身 = 772 个 Git 文件；**包含** `assets/source/` 的 11 个源资产（glTF/bin/HDR，许可见 `assets/LICENSES.md`） | 由 entry/candidate 门强制 |
 | 运行 ZIP | 160 条目 = 158 个受覆盖文件 + 2 个自排除清单文件；不含资产源树（只带烘焙后的 `scene/`） | 附件，见第 4 节 |
 | 成片 | D 批次双后端 mp4（1.21 MB / 1.43 MB） | 提案：**随 Release 附件公开**，README 给预览图与明确入口 |
 
@@ -37,7 +37,7 @@
 | `lumabough-demo-d3d12.mp4` | 1,431,663 B | `542e3b3e829afdf81b706000b9c913a22212eda10b6ad790002f3cc1601517af` |
 | `lumabough-demo-d3d11.mp4` | 1,205,881 B | `1602ca64ef79af1f71ae10958c50826b3e61a217ade04ef5560b40d71ced95c2` |
 | `lumabough-performance-evidence-v1.zip` | 1,082,886 B | `c33c5b39d05b77b5587acdfe85b9131e377aeb48828c61ebe21acc0c10489ff5` |
-| `SHA256SUMS-external.txt` | 小 | **包含以上每个附件自身的哈希**，供下载后先校验再解压 |
+| `SHA256SUMS-external.txt` | 小 | **包含以上每个附件自身的哈希**，供下载后先校验再解压；已按最终附件名生成于 `out/e5/attachments/SHA256SUMS-external.txt`（附件副本同目录） |
 
 ### 4b 性能证据包（去标识、可复算）
 

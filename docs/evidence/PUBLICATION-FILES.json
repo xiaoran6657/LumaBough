@@ -6625,8 +6625,8 @@
     {
       "path": "tools/portfolio/validate_publication.py",
       "category": "tools",
-      "size": 13597,
-      "sha256": "87c5b295341c98c1c551158d7d03c5ae13004d28344bd922b4f7a73a2c2d56a1",
+      "size": 13864,
+      "sha256": "af5986151fa84045ac664e78b5d6571b7a71a0ca47af83d926ecb63dbdaca361",
       "sourcePath": null,
       "sourceSha256": null,
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
@@ -6843,8 +6843,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 12103,
-      "sha256": "24c132837801648fbf51fe022c9c2bf23cc796987e5cf807536c599b0c0ce715",
+      "size": 12410,
+      "sha256": "f2283ec4303c8afe932e04d1cbc781d2e2c4ca87e29a91dd9e3f4c8acf15c107",
       "reason": "E批次记录：候选范围与提交身份、打包、隐私与独立运行；不含机器私有信息；仅本地候选"
     },
     {
@@ -6852,8 +6852,8 @@
       "category": "tools",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 10293,
-      "sha256": "7bd5f3b67865fa92f6bd7dd68be56d02f1da51ee51fba87d79ab8b587ad77e3a",
+      "size": 10209,
+      "sha256": "566433895358bac61bed6ae47ec7b57bd2f51479b9e4ddea6b9f441cd1b96982",
       "reason": "E2新增：候选运行包打包器（显式输入、fresh 输出、干净工作树闸门、排除 PDB/工具链）；仅本地候选"
     },
     {
@@ -6870,8 +6870,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 22383,
-      "sha256": "b222668a48f93786e66d32d96c463e77bfda3a0c58370390badb2a0d05383146",
+      "size": 22903,
+      "sha256": "906ef33a4a138a3934977fb4cd111169a4f233f875e9d64e2c6f273eabd03219",
       "reason": "E3新增：112 项逐项处置（keep/脱敏/排除 + 理由 + matchSha256），status=proposed 待所有者批准"
     },
     {
@@ -6915,8 +6915,8 @@
       "category": "tests",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 7959,
-      "sha256": "ce931432fb6ec13b327b977654a0bb9e0eaa422af1a4ccf318ba2a99fd74f91c",
+      "size": 8457,
+      "sha256": "988295dc92f19ca5706037a6631ec3ef27d489a8eb73e959408a7ab19a1a2adb",
       "reason": "E5新增：候选门字节核对（manifest/SHA256SUMS/EXE 不一致必须报错）"
     },
     {
@@ -6924,8 +6924,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 4508,
-      "sha256": "1340b003b4d6fc137064dfe0035ba48e84c53905ffedb8d319fd6389e2708820",
+      "size": 5826,
+      "sha256": "31863f32a8c26d66c6f038d29720a86d840a9f67c6c4ebf1c098208dd59a8617",
       "reason": "E5新增：候选绑定、门禁逐项含义、缩减承诺与未授权项"
     },
     {
@@ -6933,8 +6933,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 6907,
-      "sha256": "0388de4c6eb30979e8981bc0dcc9691843d738f3b2eec43ef87913ddaf9c6865",
+      "size": 7012,
+      "sha256": "0c2b6eb96a0cf3a3d24a83790b5bdf4edb22a323176a40c8842b06498bb71664",
       "reason": "E5新增：F 发布提案草案（仓库/ref/文件集合/附件/文案/风险与回退/授权清单）"
     },
     {

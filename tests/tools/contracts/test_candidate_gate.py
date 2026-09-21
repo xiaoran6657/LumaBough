@@ -100,8 +100,16 @@ class CandidateGateTests(unittest.TestCase):
                      "tests/rhi/CMakeLists.txt", "cmake/MiniEngineWarnings.cmake",
                      "CMakeLists.txt", "CMakePresets.json"):
             self.assertTrue(build_sensitive(path), path)
-        for path in ("docs/evidence/BATCH-E.md", "tools/portfolio/scan_privacy.py", "AGENTS.md", "README.md"):
+        for path in ("docs/evidence/BATCH-E.md", "tools/portfolio/scan_privacy.py", "AGENTS.md", "README.md",
+                     "tests/tools/contracts/test_candidate_gate.py",
+                     "tests/tools/contracts/test_public_performance_evidence.py",
+                     "tests/tools/test_compare_m5_parity.py"):
             self.assertFalse(build_sensitive(path), path)
+
+    def test_cpp_tests_under_tests_are_still_build_inputs(self):
+        for path in ("tests/rhi/CMakeLists.txt", "tests/rhi/NativeDeviceTests.cpp",
+                     "tests/render_graph/GraphDiagnosticsTests.cpp"):
+            self.assertTrue(build_sensitive(path), path)
 
     def test_complete_e4_record_passes(self):
         self.assertEqual([], e4_run_errors(e4_record(), EXE))
