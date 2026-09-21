@@ -67,7 +67,7 @@ def rules(user, machine):
     return out
 
 
-def scan_bytes(data, display, findings, compiled):
+def scan_bytes(data, display, findings, compiled, target="package"):
     if not text_like(data):
         return
     text = data.decode("utf-8", "replace")
@@ -77,6 +77,7 @@ def scan_bytes(data, display, findings, compiled):
             findings.append({
                 "rule": rid,
                 "severity": severity,
+                "target": target,
                 "path": display,
                 "line": text.count("\n", 0, match.start()) + 1,
                 "match": fragment if len(fragment) <= 120 else fragment[:117] + "...",
@@ -85,19 +86,19 @@ def scan_bytes(data, display, findings, compiled):
             })
 
 
-def scan_file(path, display, findings, compiled):
+def scan_file(path, display, findings, compiled, target="package"):
     data = Path(path).read_bytes()
     suffix = Path(display).suffix.lower()
     if suffix in FORBIDDEN_SUFFIX:
-        findings.append({"rule": "forbidden-artifact", "severity": "block", "path": display,
+        findings.append({"rule": "forbidden-artifact", "severity": "block", "target": target, "path": display,
                          "line": 0, "match": suffix, "matchSha256": hashlib.sha256(suffix.encode()).hexdigest(),
                          "why": "不应公开的产物类型（PDB/Capture/视频/中间文件）"})
     if CACHE_PARTS & set(Path(display).parts):
-        findings.append({"rule": "cache-or-build-dir", "severity": "block", "path": display,
+        findings.append({"rule": "cache-or-build-dir", "severity": "block", "target": target, "path": display,
                          "line": 0, "match": str(Path(display).parts[0]),
                          "matchSha256": hashlib.sha256(str(Path(display).parts[0]).encode()).hexdigest(),
                          "why": "缓存/构建目录内容"})
-    scan_bytes(data, display, findings, compiled)
+    scan_bytes(data, display, findings, compiled, target)
 
 
 def target_source_set(root, findings, compiled):
@@ -106,7 +107,7 @@ def target_source_set(root, findings, compiled):
     for name in names:
         path = root / name
         if path.is_file():
-            scan_file(path, name, findings, compiled)
+            scan_file(path, name, findings, compiled, "source-set")
     return {"target": "source-set", "files": len(names)}
 
 
@@ -121,7 +122,7 @@ def target_git(root, findings, compiled):
         suffix = path.suffix.lower()
         if suffix not in TEXT_SUFFIX and not text_like(path.read_bytes()[:8192]):
             continue
-        scan_file(path, name, findings, compiled)
+        scan_file(path, name, findings, compiled, "git")
         scanned += 1
     return {"target": "git", "tracked": len(names), "scanned": scanned}
 
@@ -131,14 +132,14 @@ def target_package(package, findings, compiled):
     if package.is_dir():
         for path in sorted(package.rglob("*")):
             if path.is_file():
-                scan_file(path, path.relative_to(package).as_posix(), findings, compiled)
+                scan_file(path, path.relative_to(package).as_posix(), findings, compiled, "package")
                 scanned += 1
     elif package.suffix.lower() == ".zip":
         with zipfile.ZipFile(package) as archive:
             for info in sorted(archive.infolist(), key=lambda i: i.filename):
                 if info.is_dir():
                     continue
-                scan_bytes(archive.read(info), info.filename, findings, compiled)
+                scan_bytes(archive.read(info), info.filename, findings, compiled, "package")
                 scanned += 1
     else:
         raise ValueError("package must be a directory or .zip: " + str(package))

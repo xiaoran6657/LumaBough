@@ -30,3 +30,9 @@ entry 只证明当前本地清单、链接与验证范围。candidate、publishe
 
 [批次记录](BATCH-D.md)：双后端 anchor Capture 已采集并做无 GUI 结构核对；视频因本机没有可用录屏工具 BLOCKED。Capture、原片与 PDB 均留在本地，公开前单独审查。
 - D 阶段收口（2026-09-21）：双后端 anchor Capture 的 CLI＋GUI 复核通过，双后端成片已产出；证据见 [批次记录](BATCH-D.md)，大文件留本地。
+
+## E 批次（候选包、隐私终审、独立运行）
+
+[批次记录](BATCH-E.md) · [隐私与内容终审](PRIVACY-REVIEW.md) · [逐项处置基线](PRIVACY-DISPOSITIONS.json)。
+E1/E2 完成（候选包 v4：148 文件 / 10,074,798 B，包内 manifest 与 SHA256SUMS）；E3 扫描完成、
+116 项处置待所有者批准；E4 独立运行与真实读者待所有者安排。

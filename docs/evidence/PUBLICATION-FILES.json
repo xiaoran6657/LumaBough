@@ -649,8 +649,8 @@
     {
       "path": "docs/evidence/README.md",
       "category": "docs",
-      "size": 1834,
-      "sha256": "b08c18274296c60dd3410a946a404a42300b406d4855243b6fc5fa2e872db8a9",
+      "size": 2225,
+      "sha256": "2a9917cdf210d1ec50eeec7b24cb7a35611a4840eb26fe28bc91ca8b26eeca89",
       "sourcePath": null,
       "sourceSha256": null,
       "reason": "所有者授权修订P/D/E/F串行任务；明确逐文件审阅的任务/导航/状态文档，不包含原始产物；仅本地候选，受发布门约束"
@@ -6843,8 +6843,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 3374,
-      "sha256": "df02b84617b09b4912fc6846e9e7b266d1d94f12295d90cb2bbc5eb2a3848a92",
+      "size": 4062,
+      "sha256": "114e386ee1ce4f8b9673337afc3363b0859e0008f4d50d733438f5505248d688",
       "reason": "E批次记录：候选范围与提交身份、打包、隐私与独立运行；不含机器私有信息；仅本地候选"
     },
     {
@@ -6861,8 +6861,8 @@
       "category": "tools",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 12305,
-      "sha256": "e8f6bb283474541404e551a8ec7c88c052caed7c25ae170342ca699ee32f58eb",
+      "size": 12463,
+      "sha256": "24bb65acb512e1499c8e1d2fb6b96287830ac6dff7216d6ac050c075dd4eca64",
       "reason": "E3新增：隐私/内容扫描器（三目标分开扫、只产出待审项、裁定读基线）；仅本地候选"
     },
     {
@@ -6870,8 +6870,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 36809,
-      "sha256": "b5d9d89a4700e45de3a90d806ab7c6982029834cd1d405fb045a7a38a039ebd3",
+      "size": 15934,
+      "sha256": "21c32e00abfbb16d020b4c0f58cfa50724d2fc3c10c17a9ad61b41f552de2b3b",
       "reason": "E3新增：112 项逐项处置（keep/脱敏/排除 + 理由 + matchSha256），status=proposed 待所有者批准"
     },
     {
@@ -6882,6 +6882,15 @@
       "size": 3490,
       "sha256": "2df370fcf4c5eef0039ddda7e4a9875771da300f991675c24b0c892ef8d84284",
       "reason": "E3新增：扫描器契约测试（未裁定/待批准/已批准三种门禁结果）"
+    },
+    {
+      "path": "docs/evidence/PRIVACY-REVIEW.md",
+      "category": "docs",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 3352,
+      "sha256": "7551013acacdb4254f89e9f2c2533f1816b9e21236ed46e0fa5567fe13cd1a5b",
+      "reason": "E3新增：三目标扫描方法、112 项处置汇总与修复记录；原始报告留本地"
     }
   ],
   "pending": [],

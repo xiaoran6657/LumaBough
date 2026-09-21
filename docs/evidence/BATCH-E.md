@@ -24,3 +24,7 @@
 - 双后端成片按最终 EXE 重录：D3D12 e71df9e1df17c58f6836d4c97529d5b004c9ab196fd5e8af5063078a2ef89d32（1,610,489 B）、D3D11 c5b076220064e68e31350deeadb561f9e64a18e788fc8ceb8b88b70e2ccdcf0d（1,532,709 B）
 - 候选包 v2：out/e-batch/package/lumabough-b7012b7（149 文件 / 10,085,393 B，含 d3d12 HLSL 源）；包内直接运行 D3D12 3 帧 PASS，语义哈希 7aeedd02… 与源码树一致
 - 限制：同机无法隔离验证不依赖源码树，须由 E4 在第二台机器确认；E3 日志路径脱敏已完成
+- E3 扫描器 tools/portfolio/scan_privacy.py：source-set / git / package 三目标分开扫，findings 默认 pending，approved 才算裁定
+- E3 结果：116 项待审（48 唯一键；block 20 / review 96），处置全部提议 keep，状态 proposed 待所有者批准；未裁定 0、待批准 116（门禁退出码 1）
+- E3 修复：包 v4 不含 scene/reports（烘焙报告含烘焙机绝对源路径）；CMakeLists 注释泛化；包清单显式标注自引用排除项；包 v4 = 148 文件 / 10,074,798 B
+- E3 未决：116 项处置需所有者 approved；详细方法与逐项理由见 [隐私终审](PRIVACY-REVIEW.md) 与 [处置基线](PRIVACY-DISPOSITIONS.json)
