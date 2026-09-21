@@ -1,0 +1,18 @@
+# M6-01：核对 CMake 实际 target 属性，而非对源码字符串作链接推断。
+get_target_property(rhi_links MiniEngineRhiPublic INTERFACE_LINK_LIBRARIES)
+if(rhi_links)
+    message(FATAL_ERROR "M6-01 RhiPublic must not acquire transitive libraries: ${rhi_links}")
+endif()
+get_target_property(rhi_includes MiniEngineRhiPublic INTERFACE_INCLUDE_DIRECTORIES)
+set(expected_rhi_include "$<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/engine/rhi/include>")
+if(NOT "${rhi_includes}" STREQUAL "${expected_rhi_include}")
+    message(FATAL_ERROR "M6-01 RhiPublic include boundary changed: ${rhi_includes}")
+endif()
+if(TARGET RhiPublicHeaderSmoke)
+    get_target_property(smoke_links RhiPublicHeaderSmoke LINK_LIBRARIES)
+    if(NOT "${smoke_links}" STREQUAL "MiniEngineRhiPublic")
+        message(FATAL_ERROR "Public header smoke acquired extra dependencies: ${smoke_links}")
+    endif()
+endif()
+file(GENERATE OUTPUT "${CMAKE_BINARY_DIR}/rhi-public-boundary-$<CONFIG>.txt"
+    CONTENT "target=MiniEngineRhiPublic\nkind=$<TARGET_PROPERTY:MiniEngineRhiPublic,TYPE>\ninclude=$<TARGET_PROPERTY:MiniEngineRhiPublic,INTERFACE_INCLUDE_DIRECTORIES>\nlinks=$<TARGET_PROPERTY:MiniEngineRhiPublic,INTERFACE_LINK_LIBRARIES>\n")
