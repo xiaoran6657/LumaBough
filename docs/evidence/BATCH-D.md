@@ -196,3 +196,6 @@ D3D12 / PIX 2603.25：
 - D3D12 通过：Draw 71（M6.ToneMap）的 RTV0 M6.BackBuffer.Buffer[0] 为 1920x1080 / B8G8R8A8_UNORM，预览为同一 PBR 画面
 - 结论：双后端 anchor Capture 的 CLI 与 GUI 复核均通过，D 阶段收口
 - 提交后验证性重跑（2026-09-21，新 EXE b92cda44…）：彩排 6/6 通过、双后端 Capture 重采并复核通过；细节见 [E 记录](BATCH-E.md)
+- 提交后重录（新 EXE 16ebb979…，2026-09-21）：D3D12 demo.mp4 SHA-256 133e92d0a9fef1b771c52fa459b79668d4165eb93943a2c09fac9e4f254c83fa，1,399,205 B
+- 提交后重录 D3D11 demo.mp4 SHA-256 f5ef8a16a7ce40465f5ff9ef5783fc9f07872866f33a64de40bd93e19983044b，1,495,826 B
+- 此前两份绑定旧 EXE f0a9894f… 的成片（df7405e0… / d9e4a002…）由此作废，仅留在本地

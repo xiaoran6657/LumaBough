@@ -11,3 +11,4 @@
 - P 适用性检查：当前源码与 P 冻结源码（lb-current-004 快照）差异 10 个文件，全部为文档/清单/.gitignore，无测量代码改动
 - 因此 P 的结论对本提交仍适用（无测量路径改动）；P 不重开正式组
 - 证据目录：out/e-batch/rehearsal-committed、out/e-batch/capture（仅本地）
+- 双后端成片按新 EXE 重录：D3D12 133e92d0…（1,399,205 B）、D3D11 f5ef8a16…（1,495,826 B）

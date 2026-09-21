@@ -535,8 +535,8 @@
       "reason": "D批次记录：双后端anchor Capture、工具链身份与阻断项；已去除机器/私人路径；原始Capture与视频留本地不进本集合；仅本地候选，受全局发布门约束",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 15532,
-      "sha256": "25b68ab02db0512ba940c10c084bce7048a7f90a777ba8c38663d1df5cc5f587"
+      "size": 15926,
+      "sha256": "cbd990a057892e519ea909a1d7069d72b2d51d3515d002e719b07103f287209e"
     },
     {
       "path": "docs/evidence/CLAIM-LEDGER.csv",
@@ -1291,8 +1291,8 @@
       "reason": "C批次明确选中并逐项审阅：指定实验完整脱敏数值、取证/重算工具及中文报告；D批次补充视频/Capture协议与可读性控制说明，能力声明收窄不变；仅本地候选",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 4804,
-      "sha256": "ce04177c7d0bfe7adf1198be06383711be548a68a0e03cc4605219aa46913602"
+      "size": 4894,
+      "sha256": "3d4f1dd7a2329b4ca6f721cc042f1783c412e20c57b4e2e3dc582f19dc562dff"
     },
     {
       "path": "docs/portfolio/PERFORMANCE.md",
@@ -6843,8 +6843,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 1295,
-      "sha256": "6ee7642bd169d6dc5930c43623b77b7a0a6bd006ed96f2b40a6e787f6eb3b9dd",
+      "size": 1405,
+      "sha256": "685c785ef12b14e0a339d2e776ea431b4b63946286d4208154d56cb2e9371aed",
       "reason": "E批次记录：候选范围与提交身份、打包、隐私与独立运行；不含机器私有信息；仅本地候选"
     }
   ],
