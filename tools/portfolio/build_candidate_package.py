@@ -33,7 +33,8 @@ def main():
     built=a.built_at or commit
     if built!=commit:
         changed=subprocess.run(['git','-C',str(R),'diff','--name-only',built+'..'+commit],capture_output=True,text=True,check=True).stdout.split()
-        bad=[c for c in changed if not (c.startswith('docs/') or c.startswith('tools/'))]
+        # 只有 docs/、tools/、tests/ 允许在构建之后继续改动：它们不进 EXE。engine/samples/shaders/assets 一旦改动必须重建。
+        bad=[c for c in changed if not c.startswith(('docs/','tools/','tests/'))]
         if bad: raise SystemExit('runtime code changed since --built-at; rebuild required: '+', '.join(bad))
     plan={}
     plan['runtime/MiniEngineSandbox.exe']=exe
