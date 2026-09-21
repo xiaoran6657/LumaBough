@@ -5599,8 +5599,8 @@
     {
       "path": "tools/CMakeLists.txt",
       "category": "tools",
-      "size": 1385,
-      "sha256": "12986eba83f7e78bb25fcaef652c70c1610bc495deeaf9fc2b32514cadbbc566",
+      "size": 1382,
+      "sha256": "cd79285fc0bac52c1753c710cef42f271f5c5510000aa364904de14864bda416",
       "sourcePath": "tools/CMakeLists.txt",
       "sourceSha256": "12986eba83f7e78bb25fcaef652c70c1610bc495deeaf9fc2b32514cadbbc566",
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
@@ -6852,8 +6852,8 @@
       "category": "tools",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 6508,
-      "sha256": "73030e12f20c41293556a6af73da6567861921806e47a10d09193c7e2031e710",
+      "size": 6732,
+      "sha256": "ee7eaf348670d3c24ce0672d59abd751a1990090d1866517a8a392ca8c8d7041",
       "reason": "E2新增：候选运行包打包器（显式输入、fresh 输出、干净工作树闸门、排除 PDB/工具链）；仅本地候选"
     }
   ],

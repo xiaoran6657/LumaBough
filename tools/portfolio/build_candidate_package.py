@@ -44,7 +44,9 @@ def main():
         if f.is_file() and f.suffix.lower()!='.pdb':
             plan['runtime/'+f.relative_to(a.exe_dir).as_posix()]=f
     for f in sorted(a.scene.rglob('*')):
-        if f.is_file(): plan['scene/'+f.relative_to(a.scene).as_posix()]=f
+        # E3：scene/reports/*.asset.json 记录烘焙机的绝对源路径，不随包交付（运行不需要它）。
+        if f.is_file() and 'reports' not in f.relative_to(a.scene).parts:
+            plan['scene/'+f.relative_to(a.scene).as_posix()]=f
     # d3d12 的 HLSL 源：运行包需要它才能算着色器语义哈希（EXE 旁的 shaders/d3d12 只有编译产物）。
     for f in sorted((R / 'shaders/d3d12').rglob('*')):
         if f.is_file() and f.suffix.lower() in {'.hlsl', '.hlsli'}:
@@ -70,7 +72,7 @@ def main():
     files={f.relative_to(out).as_posix():{'size':f.stat().st_size,'sha256':sha(f)} for f in sorted(out.rglob('*')) if f.is_file()}
     man={'schemaVersion':1,'kind':'LumaBough candidate runtime package','packagingCommit':commit,'builtAtCommit':built,'exeSha256':exe_sha}
     man['sceneManifestSha256']=scene_sha; man['files']=files
-    man['excluded']=['DXC/VS/SDK','asset sources','PDB','captures','videos','Tracy']
+    man['excluded']=['DXC/VS/SDK','asset sources','PDB','captures','videos','Tracy','scene reports (baker absolute paths)']
     (out/'PACKAGE-MANIFEST.json').write_text(json.dumps(man,ensure_ascii=False,indent=2)+chr(10),encoding='utf-8')
     sums=chr(10).join(v['sha256']+'  '+k for k,v in files.items())+chr(10)
     (out/'SHA256SUMS.txt').write_text(sums,encoding='utf-8')

@@ -4,7 +4,7 @@ include(FetchContent)
 # 共享 DLL 版，从不随 exe 交付 → 运行时 STATUS_DLL_NOT_FOUND(0xC0000135)。
 # 旧策略只毒化 simdjson_DIR 指向不存在的目录——但 CONFIG 模式在 _DIR 无效时仍会
 # 搜索其他前缀并把 _DIR 覆盖回真实位置（2026-09-06 实锤：cache 里出现过
-# C:/ProgramData/miniconda3/Library/...，fastgltf 动态链接 conda 的 simdjson.dll，
+# 某个 conda 前缀的 Library/...，fastgltf 动态链接 conda 的 simdjson.dll，
 # ABI 不匹配 → GltfImportAdapterTests SEH 0xc0000005 空栈崩溃）。
 # CMAKE_DISABLE_FIND_PACKAGE_simdjson 使 find_package 无条件 NOT FOUND，
 # fastgltf 稳定回退到自带 single-header simdjson（deps/simdjson，静态编入 fastgltf.lib）。
