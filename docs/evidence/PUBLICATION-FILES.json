@@ -6846,6 +6846,15 @@
       "size": 1405,
       "sha256": "685c785ef12b14e0a339d2e776ea431b4b63946286d4208154d56cb2e9371aed",
       "reason": "E批次记录：候选范围与提交身份、打包、隐私与独立运行；不含机器私有信息；仅本地候选"
+    },
+    {
+      "path": "tools/portfolio/build_candidate_package.py",
+      "category": "tools",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 5655,
+      "sha256": "6e4e662134df8017230424b2688a7e83ac78dad9c8d4234767862b9d00f44fc9",
+      "reason": "E2新增：候选运行包打包器（显式输入、fresh 输出、干净工作树闸门、排除 PDB/工具链）；仅本地候选"
     }
   ],
   "pending": [],
