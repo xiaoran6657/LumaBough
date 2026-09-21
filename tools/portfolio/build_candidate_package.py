@@ -73,6 +73,7 @@ def main():
     man={'schemaVersion':1,'kind':'LumaBough candidate runtime package','packagingCommit':commit,'builtAtCommit':built,'exeSha256':exe_sha}
     man['sceneManifestSha256']=scene_sha; man['files']=files
     man['excluded']=['DXC/VS/SDK','asset sources','PDB','captures','videos','Tracy','scene reports (baker absolute paths)']
+    man['selfExcluded']=['PACKAGE-MANIFEST.json','SHA256SUMS.txt']  # 自引用不可行，明确标注而非静默省略
     (out/'PACKAGE-MANIFEST.json').write_text(json.dumps(man,ensure_ascii=False,indent=2)+chr(10),encoding='utf-8')
     sums=chr(10).join(v['sha256']+'  '+k for k,v in files.items())+chr(10)
     (out/'SHA256SUMS.txt').write_text(sums,encoding='utf-8')
