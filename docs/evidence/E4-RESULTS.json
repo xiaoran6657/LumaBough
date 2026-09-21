@@ -4,14 +4,14 @@
   "date": "2026-09-21",
   "package": {
     "zip": "out/e-batch/package/lumabough-5d320c7-v8.zip",
-    "zipBytes": null,
-    "zipSha256": null,
-    "files": null,
-    "bytes": null,
-    "exeSha256": null,
-    "builtAtCommit": null,
-    "packagingCommit": null,
-    "note": "打包后由 tools/portfolio/rebind_e4.py 回填实际字节身份"
+    "zipBytes": 3466423,
+    "zipSha256": "a94e41dbbb4438d82c1752734f8fd60cc224e7b95a63b6fa39c2e44fe96a5132",
+    "files": 158,
+    "bytes": 10093885,
+    "exeSha256": "f673d0baf9168574a59a75cc9bb68c8c48d23a816ff4c30496a5d195aa6d5b18",
+    "builtAtCommit": "5d320c7",
+    "packagingCommit": "1744504beae686757351279f360fab60b670459d",
+    "externalChecksum": "out/e-batch/package/lumabough-5d320c7-v8-external.txt"
   },
   "firstAttempt": {
     "date": "2026-09-21",
