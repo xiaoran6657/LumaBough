@@ -159,6 +159,8 @@ def main():
     parser.add_argument("--git", action="store_true", help="扫 Git 待提交内容")
     parser.add_argument("--package", type=Path, default=None, help="扫包目录或 .zip 的实际字节")
     parser.add_argument("--baseline", type=Path, default=None, help="逐项裁定基线 JSON")
+    parser.add_argument("--propose", type=Path, default=None,
+                        help="把未裁定项写成骨架基线（disposition=pending，理由留空，必须人工填写）")
     parser.add_argument("--output", type=Path, default=None, help="报告 JSON 输出路径")
     parser.add_argument("--markdown", type=Path, default=None, help="待审清单 Markdown 输出路径")
     parser.add_argument("--user", default=os.environ.get("USERNAME", ""), help="要判定的用户名（默认当前用户）")
@@ -217,6 +219,13 @@ def main():
                       f"review {summary['bySeverity']['review']}；未裁定 {len(unadjudicated)}、待批准 {len(pending)}。"]
         args.markdown.parent.mkdir(parents=True, exist_ok=True)
         args.markdown.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    if args.propose:
+        skeleton = {"schemaVersion": 1, "stage": "E3", "kind": "privacy dispositions",
+                    "note": "自动扫描只产出待审项；disposition 与 reason 必须逐项人工填写，approved 表示所有者已批准。",
+                    "items": [{"rule": row["rule"], "path": row["path"], "matchSha256": row["matchSha256"],
+                               "disposition": "pending", "reason": "", "status": "proposed"} for row in unadjudicated]}
+        args.propose.parent.mkdir(parents=True, exist_ok=True)
+        args.propose.write_text(json.dumps(skeleton, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(summary, ensure_ascii=False))
     return 1 if (unadjudicated or pending) else 0
 

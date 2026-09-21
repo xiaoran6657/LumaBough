@@ -6861,9 +6861,27 @@
       "category": "tools",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 11448,
-      "sha256": "6fca516ddc80a1225cd7e7a82e47c611584ed3556a63974a4085952cd6e4df40",
+      "size": 12305,
+      "sha256": "e8f6bb283474541404e551a8ec7c88c052caed7c25ae170342ca699ee32f58eb",
       "reason": "E3新增：隐私/内容扫描器（三目标分开扫、只产出待审项、裁定读基线）；仅本地候选"
+    },
+    {
+      "path": "docs/evidence/PRIVACY-DISPOSITIONS.json",
+      "category": "docs",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 36809,
+      "sha256": "b5d9d89a4700e45de3a90d806ab7c6982029834cd1d405fb045a7a38a039ebd3",
+      "reason": "E3新增：112 项逐项处置（keep/脱敏/排除 + 理由 + matchSha256），status=proposed 待所有者批准"
+    },
+    {
+      "path": "tests/tools/contracts/test_scan_privacy.py",
+      "category": "tests",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 3490,
+      "sha256": "2df370fcf4c5eef0039ddda7e4a9875771da300f991675c24b0c892ef8d84284",
+      "reason": "E3新增：扫描器契约测试（未裁定/待批准/已批准三种门禁结果）"
     }
   ],
   "pending": [],
