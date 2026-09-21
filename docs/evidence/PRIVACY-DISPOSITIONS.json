@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "stage": "E3",
   "kind": "privacy dispositions",
-  "note": "自动扫描只产出待审项；status=proposed 表示处置已提出、待所有者批准；approved 才视为已裁定。",
+  "note": "自动扫描只产出待审项；status=approved 表示所有者已逐项批准该处置（2026-09-21）。",
   "items": [
     {
       "rule": "machine-name",
@@ -10,7 +10,9 @@
       "matchSha256": "a5a7744cfb98b38e30dc2a5b49f639ec9d54127d4ae7facd5d8a6415ef0c18f6",
       "disposition": "keep",
       "reason": "作者署名（LICENSE 版权持有人与 Git 提交身份），非机器名泄露",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "machine-name",
@@ -18,7 +20,9 @@
       "matchSha256": "a5a7744cfb98b38e30dc2a5b49f639ec9d54127d4ae7facd5d8a6415ef0c18f6",
       "disposition": "keep",
       "reason": "作者署名（LICENSE 版权持有人与 Git 提交身份），非机器名泄露",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "machine-name",
@@ -26,7 +30,9 @@
       "matchSha256": "a5a7744cfb98b38e30dc2a5b49f639ec9d54127d4ae7facd5d8a6415ef0c18f6",
       "disposition": "keep",
       "reason": "作者署名（LICENSE 版权持有人与 Git 提交身份），非机器名泄露",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "machine-name",
@@ -34,7 +40,9 @@
       "matchSha256": "a5a7744cfb98b38e30dc2a5b49f639ec9d54127d4ae7facd5d8a6415ef0c18f6",
       "disposition": "keep",
       "reason": "作者署名（LICENSE 版权持有人与 Git 提交身份），非机器名泄露",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "machine-name",
@@ -42,7 +50,9 @@
       "matchSha256": "a5a7744cfb98b38e30dc2a5b49f639ec9d54127d4ae7facd5d8a6415ef0c18f6",
       "disposition": "keep",
       "reason": "作者署名（LICENSE 版权持有人与 Git 提交身份），非机器名泄露",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "machine-name",
@@ -50,7 +60,9 @@
       "matchSha256": "a5a7744cfb98b38e30dc2a5b49f639ec9d54127d4ae7facd5d8a6415ef0c18f6",
       "disposition": "keep",
       "reason": "作者署名（LICENSE 版权持有人与 Git 提交身份），非机器名泄露",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "machine-name",
@@ -58,7 +70,9 @@
       "matchSha256": "a5a7744cfb98b38e30dc2a5b49f639ec9d54127d4ae7facd5d8a6415ef0c18f6",
       "disposition": "keep",
       "reason": "作者署名（LICENSE 版权持有人与 Git 提交身份），非机器名泄露",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "history-number",
@@ -66,7 +80,9 @@
       "matchSha256": "cb99c4f2d893e0c3dfe0c0cb2e5b8e18b0033cb362e027e01e2e5df4925b68d4",
       "disposition": "keep",
       "reason": "明确标注历史判定与范围限制，未作为当前包收益",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "absolute-path",
@@ -74,7 +90,9 @@
       "matchSha256": "9ddc83af9fa359b9c67c2d4b752cf461c2b91446740b9caa599eef02e87ab5d2",
       "disposition": "keep",
       "reason": "工具安装位置说明，不含用户名或机器名",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "email",
@@ -82,7 +100,9 @@
       "matchSha256": "45ebb1ea18c9487033e63a7c4b6aea9b54fff2aa54f9861bd9847650a95661f0",
       "disposition": "keep",
       "reason": "第三方许可原文或 GitHub noreply 公开地址",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "history-number",
@@ -90,7 +110,9 @@
       "matchSha256": "cb99c4f2d893e0c3dfe0c0cb2e5b8e18b0033cb362e027e01e2e5df4925b68d4",
       "disposition": "keep",
       "reason": "明确标注历史判定与范围限制，未作为当前包收益",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "history-number",
@@ -98,7 +120,9 @@
       "matchSha256": "cb99c4f2d893e0c3dfe0c0cb2e5b8e18b0033cb362e027e01e2e5df4925b68d4",
       "disposition": "keep",
       "reason": "明确标注历史判定与范围限制，未作为当前包收益",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "email",
@@ -106,7 +130,9 @@
       "matchSha256": "2691a8deac3985ed8ad12abdfb4fbe46e8f2b2aee6b0d70410d4d51e22047119",
       "disposition": "keep",
       "reason": "第三方许可原文或 GitHub noreply 公开地址",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "history-number",
@@ -114,7 +140,9 @@
       "matchSha256": "cb99c4f2d893e0c3dfe0c0cb2e5b8e18b0033cb362e027e01e2e5df4925b68d4",
       "disposition": "keep",
       "reason": "明确标注历史判定与范围限制，未作为当前包收益",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "history-number",
@@ -122,7 +150,9 @@
       "matchSha256": "cb99c4f2d893e0c3dfe0c0cb2e5b8e18b0033cb362e027e01e2e5df4925b68d4",
       "disposition": "keep",
       "reason": "明确标注历史判定与范围限制，未作为当前包收益",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "absolute-path",
@@ -130,7 +160,9 @@
       "matchSha256": "9ddc83af9fa359b9c67c2d4b752cf461c2b91446740b9caa599eef02e87ab5d2",
       "disposition": "keep",
       "reason": "注释中的路径示例",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "unc-path",
@@ -138,7 +170,9 @@
       "matchSha256": "1f077e29e66c4a005a68ff53e9fdceaa2ed2b73ac041d21687ed816b4d7252d3",
       "disposition": "keep",
       "reason": "C/C++ 转义序列或反例测试字符串，非真实 UNC 路径",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "unc-path",
@@ -146,7 +180,9 @@
       "matchSha256": "cd4b46868de0e0ab98febfc625ed319f62a582bd7c1cc0c4279c2bc64195bdc2",
       "disposition": "keep",
       "reason": "C/C++ 转义序列或反例测试字符串，非真实 UNC 路径",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "unc-path",
@@ -154,7 +190,9 @@
       "matchSha256": "17fbcadf491e39e2f676f1ad4245a6dc0262aa48a25a1df91bda78759a880e14",
       "disposition": "keep",
       "reason": "C/C++ 转义序列或反例测试字符串，非真实 UNC 路径",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "unc-path",
@@ -162,7 +200,9 @@
       "matchSha256": "58eac94d9a78b0dc45def503f5e06223c96cdb073bf3cf8fc594708e0daaf768",
       "disposition": "keep",
       "reason": "C/C++ 转义序列或反例测试字符串，非真实 UNC 路径",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "absolute-path",
@@ -170,7 +210,9 @@
       "matchSha256": "502bbf49951d60e01a1df1d722dcdc5ddeb813a547ec20e3e94db6a8a2d4f711",
       "disposition": "keep",
       "reason": "测试用合成路径，非真实机器路径",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "absolute-path",
@@ -178,7 +220,9 @@
       "matchSha256": "d93b06776f1d1568a1ebbe39d2e6d4a254e7261f1c215238db215596f4bc37cf",
       "disposition": "keep",
       "reason": "测试用合成路径，非真实机器路径",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "absolute-path",
@@ -186,7 +230,9 @@
       "matchSha256": "e053fea29a603dedba874870153697d76cf4af8844e9c5f57a8af916d4be7a79",
       "disposition": "keep",
       "reason": "测试用合成路径，非真实机器路径",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "absolute-path",
@@ -194,7 +240,9 @@
       "matchSha256": "5f0539ab9128bde0a09f18e26341fefc375aa3e672fcb4cf62c70e8daa682d23",
       "disposition": "keep",
       "reason": "测试用合成路径，非真实机器路径",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "absolute-path",
@@ -202,7 +250,9 @@
       "matchSha256": "572aba9e79224cbf9c496b92f9d60ddebdaf458792173491eb68daea86e06c9c",
       "disposition": "keep",
       "reason": "测试用合成路径，非真实机器路径",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "absolute-path",
@@ -210,7 +260,9 @@
       "matchSha256": "b46a2746f3b4d2ad668a77cfdf1d1ea9593a8ccee1a40f8d3eaef871edcd0856",
       "disposition": "keep",
       "reason": "测试用合成路径，非真实机器路径",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "absolute-path",
@@ -218,7 +270,9 @@
       "matchSha256": "10c75c5687ac13c3cee3387d630fff9a3f1e571fd0eaaa21d6554e7c95bf50fd",
       "disposition": "keep",
       "reason": "测试用合成路径，非真实机器路径",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "absolute-path",
@@ -226,7 +280,9 @@
       "matchSha256": "5f4bc062b4a0c55d286914a733dfebe00d342c7bc38c676a2c6dcf0c9266f7d7",
       "disposition": "keep",
       "reason": "测试用合成路径，非真实机器路径",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "absolute-path",
@@ -234,7 +290,9 @@
       "matchSha256": "668071099866613be03b84c338276008a0ab803b2e2438c07de6b7588d46131f",
       "disposition": "keep",
       "reason": "测试用合成路径，非真实机器路径",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "unc-path",
@@ -242,7 +300,9 @@
       "matchSha256": "60873a471a45331e9048c01bcb943615d1e43a13b9230e63be1bedea7e240ae8",
       "disposition": "keep",
       "reason": "C/C++ 转义序列或反例测试字符串，非真实 UNC 路径",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "absolute-path",
@@ -250,7 +310,9 @@
       "matchSha256": "0a2d0e91b517ee3feac96be08451040a004dd686953a0e0e8af50bd001388a0f",
       "disposition": "keep",
       "reason": "测试用合成路径，非真实机器路径",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "absolute-path",
@@ -258,7 +320,9 @@
       "matchSha256": "9ddc83af9fa359b9c67c2d4b752cf461c2b91446740b9caa599eef02e87ab5d2",
       "disposition": "keep",
       "reason": "测试用合成路径，非真实机器路径",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "absolute-path",
@@ -266,7 +330,9 @@
       "matchSha256": "5c891d171e93791834cda2aba75c9a71326222dbc1a0c74869d65551aac9c766",
       "disposition": "keep",
       "reason": "测试用合成路径，非真实机器路径",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "unc-path",
@@ -274,7 +340,9 @@
       "matchSha256": "a3115328331cf15fae9127a4177de1754086542dcbd1ced192f4bf633b9817ad",
       "disposition": "keep",
       "reason": "C/C++ 转义序列或反例测试字符串，非真实 UNC 路径",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "unc-path",
@@ -282,7 +350,9 @@
       "matchSha256": "b7481d115411e8f055d0463e796bbe1a47144d3b196861c98b406d0d7e97a558",
       "disposition": "keep",
       "reason": "C/C++ 转义序列或反例测试字符串，非真实 UNC 路径",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "absolute-path",
@@ -290,7 +360,9 @@
       "matchSha256": "6c9c2cb1bcac83261f52fb9d287e54414129e3aa851fbcafeeac8c8c2d070b21",
       "disposition": "keep",
       "reason": "可配置默认路径或示例，不含用户名或机器名",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "absolute-path",
@@ -298,7 +370,9 @@
       "matchSha256": "836fafb1e6d8c94222b39c75a5701f27577e033dc8c423224715d81966dd0977",
       "disposition": "keep",
       "reason": "可配置默认路径或示例，不含用户名或机器名",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "absolute-path",
@@ -306,7 +380,9 @@
       "matchSha256": "836fafb1e6d8c94222b39c75a5701f27577e033dc8c423224715d81966dd0977",
       "disposition": "keep",
       "reason": "可配置默认路径或示例，不含用户名或机器名",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "local-endpoint",
@@ -314,7 +390,9 @@
       "matchSha256": "12ca17b49af2289436f303e0166030a21e525d266e209267433801a8fd4071a0",
       "disposition": "keep",
       "reason": "本地工具默认端点（Tracy 采集/调试），非对外服务",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "absolute-path",
@@ -322,7 +400,9 @@
       "matchSha256": "9bf287fdd4d9de9e54ef1c585150e5c8082f2cf0c24d046108592f5de09a6658",
       "disposition": "keep",
       "reason": "可配置默认路径或示例，不含用户名或机器名",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "absolute-path",
@@ -330,7 +410,9 @@
       "matchSha256": "9ddc83af9fa359b9c67c2d4b752cf461c2b91446740b9caa599eef02e87ab5d2",
       "disposition": "keep",
       "reason": "可配置默认路径或示例，不含用户名或机器名",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "absolute-path",
@@ -338,7 +420,9 @@
       "matchSha256": "9ddc83af9fa359b9c67c2d4b752cf461c2b91446740b9caa599eef02e87ab5d2",
       "disposition": "keep",
       "reason": "可配置默认路径或示例，不含用户名或机器名",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "unc-path",
@@ -346,7 +430,9 @@
       "matchSha256": "652f6131c69a636917a782e6f8f7c835f5c9391e606c7b8791802afd6b85b07e",
       "disposition": "keep",
       "reason": "C/C++ 转义序列或反例测试字符串，非真实 UNC 路径",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "unc-path",
@@ -354,7 +440,9 @@
       "matchSha256": "5119357b5ca3f876ec90557d1c166f114894fb5a101cd95ede9c916d8913b89d",
       "disposition": "keep",
       "reason": "C/C++ 转义序列或反例测试字符串，非真实 UNC 路径",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "absolute-path",
@@ -362,7 +450,9 @@
       "matchSha256": "17d3f487f00e97f59c19b9665151c53da4ef9222094ea78ddfb503b6e22fc2f9",
       "disposition": "keep",
       "reason": "可配置默认路径或示例，不含用户名或机器名",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "absolute-path",
@@ -370,7 +460,9 @@
       "matchSha256": "f014c5000f62e02f0aa15c3b5c38de986a42b9ed393e4e3b4cc616c497d4554c",
       "disposition": "keep",
       "reason": "可配置默认路径或示例，不含用户名或机器名",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "local-endpoint",
@@ -378,7 +470,9 @@
       "matchSha256": "49960de5880e8c687434170f6476605b8fe4aeb9a28632c7995cf3ba831d9763",
       "disposition": "keep",
       "reason": "扫描器自身规则定义里的示例文本，非真实端点",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     },
     {
       "rule": "absolute-path",
@@ -386,7 +480,9 @@
       "matchSha256": "d734b6453380a72412e47031d60536e00252695202b4742bb0f05ef8a472cf7e",
       "disposition": "keep",
       "reason": "可配置默认路径或示例，不含用户名或机器名",
-      "status": "proposed"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-21"
     }
   ]
 }
