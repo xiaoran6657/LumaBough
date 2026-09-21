@@ -34,7 +34,11 @@ add_custom_command(TARGET MiniEngineSandbox POST_BUILD
     COMMAND "${CMAKE_COMMAND}" -E copy_directory
         "${PROJECT_SOURCE_DIR}/shaders/d3d11" "$<TARGET_FILE_DIR:MiniEngineSandbox>/shaders/d3d11"
     COMMAND "${CMAKE_COMMAND}" -E copy_directory
-        "${MINIENGINE_D3D12_SHADER_OUTPUT_DIR}" "$<TARGET_FILE_DIR:MiniEngineSandbox>/shaders/d3d12")
+        "${MINIENGINE_D3D12_SHADER_OUTPUT_DIR}" "$<TARGET_FILE_DIR:MiniEngineSandbox>/shaders/d3d12"
+    # E4：双变体包按 shaders/<backend>/<name> 平铺发布（d3d11 的 .dxbc 只在 revisions 里，
+    # legacy 目录没有），否则运行包换机后会 "shader artifact missing"。
+    COMMAND "${CMAKE_COMMAND}" -E copy_directory
+        "${CMAKE_BINARY_DIR}/shaders/m6-04/$<CONFIG>/artifacts" "$<TARGET_FILE_DIR:MiniEngineSandbox>/shaders")
 
 # 已安装 RenderDoc 的可选 application API；普通渲染不依赖其 DLL 或工具安装。
 find_path(M610_RENDERDOC_INCLUDE_DIR renderdoc_app.h

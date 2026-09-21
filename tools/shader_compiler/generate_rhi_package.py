@@ -64,8 +64,14 @@ def build(manifest_path:Path,contract_path:Path):
             if not code.is_relative_to(manifest_path.parent.resolve()):raise ValueError('bytecode outside package output')
             data=code.read_bytes()
             if len(data)!=v['bytecode']['bytes'] or hashlib.sha256(data).hexdigest()!=v['bytecode']['sha256']:raise ValueError('bytecode SHA mismatch')
+            runtime=manifest_path.parent/'artifacts'/backend/code.name
+            runtime.parent.mkdir(parents=True,exist_ok=True)
+            runtime.write_bytes(data)
             semantic_hash=hashlib.sha256((asset['semanticHash']+'\n'+canonical(interface)).encode()).hexdigest()
-            variants.append({'backend':backend,'sourceHash':v['sourceHash'],'semanticHash':semantic_hash,'bytecodePath':str(code).replace('\\','/'),
+            variants.append({'backend':backend,'sourceHash':v['sourceHash'],'semanticHash':semantic_hash,
+                             'bytecodePath':'shaders/'+backend+'/'+code.name,
+                             # E4：把运行期要读的字节码按 "shaders/<backend>/<name>" 平铺发布，
+                             # 构建产物（含 d3d11 的 .dxbc，legacy 目录里没有）随 EXE 一起进运行包。
                              'bytecodeSha256':v['bytecode']['sha256'],'bytecodeHash':fnv(data),'interface':interface})
         if variants[0]['semanticHash']!=variants[1]['semanticHash']:raise ValueError('logical package parity blocked')
         packages.append({'assetId':asset['assetId'],'sourceStem':asset['sourceStem'],'entry':asset['entry'],'stage':asset['stage'],
@@ -73,9 +79,11 @@ def build(manifest_path:Path,contract_path:Path):
     return {'schemaVersion':1,'status':'ready','compilerRevision':raw['revision'],'bindingContractSha256':hashlib.sha256(contract_path.read_bytes()).hexdigest(),'packages':packages}
 
 def header(package):
-    lines=['#pragma once','#include <MiniEngine/Rhi/RhiShaderPackage.h>','#include <filesystem>','#include <fstream>','#include <stdexcept>',
+    lines=['#pragma once','#include <MiniEngine/Rhi/RhiShaderPackage.h>','#include <array>','#include <filesystem>','#include <fstream>','#include <stdexcept>','#include <windows.h>',
            'namespace MiniEngine::Rhi::M604 {',
-           'inline std::vector<std::byte> ReadPackageBytes(const std::filesystem::path& path) { std::ifstream f(path,std::ios::binary|std::ios::ate); if(!f)throw std::runtime_error("shader artifact missing"); auto size=f.tellg(); if(size<=0)throw std::runtime_error("empty shader artifact"); std::vector<std::byte> bytes(static_cast<std::size_t>(size)); f.seekg(0); if(!f.read(reinterpret_cast<char*>(bytes.data()),size))throw std::runtime_error("shader artifact truncated"); return bytes; }',
+           '// E4：运行包里没有构建机的绝对路径，字节码一律按"EXE 旁 shaders/<backend>/<name>"解析。',
+           'inline std::filesystem::path ExecutableDirectory() { std::array<wchar_t,4096> buffer{}; const DWORD written=GetModuleFileNameW(nullptr,buffer.data(),static_cast<DWORD>(buffer.size())); if(written==0||written==buffer.size())return {}; return std::filesystem::path(buffer.data()).parent_path(); }',
+           'inline std::vector<std::byte> ReadPackageBytes(const std::filesystem::path& relative) { const auto resolved=ExecutableDirectory()/relative; std::ifstream f(resolved,std::ios::binary|std::ios::ate); if(!f)throw std::runtime_error("shader artifact missing: "+resolved.string()); auto size=f.tellg(); if(size<=0)throw std::runtime_error("empty shader artifact: "+resolved.string()); std::vector<std::byte> bytes(static_cast<std::size_t>(size)); f.seekg(0); if(!f.read(reinterpret_cast<char*>(bytes.data()),size))throw std::runtime_error("shader artifact truncated: "+resolved.string()); return bytes; }',
            'inline std::vector<ShaderPackage> LoadM604Packages() { std::vector<ShaderPackage> packages;']
     q=lambda x:json.dumps(x,ensure_ascii=True)
     for p in package['packages']:

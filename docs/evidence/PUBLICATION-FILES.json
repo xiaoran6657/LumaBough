@@ -3565,8 +3565,8 @@
     {
       "path": "samples/rhi_sandbox/CMakeLists.txt",
       "category": "samples",
-      "size": 2945,
-      "sha256": "5635bd16df7aa317d6e30e3ecbd1f732c65a6297cf04dd725a3f64f92ff3f05b",
+      "size": 3300,
+      "sha256": "625e818caf3054cc096ca487773d507548f8ac7f5f5b06422518d15677440701",
       "sourcePath": "samples/rhi_sandbox/CMakeLists.txt",
       "sourceSha256": "c1725d7a75c5ec4f97926aace1d9d8e1ee02853320fb88825fafc5cdc966556c",
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
@@ -4564,8 +4564,8 @@
     {
       "path": "tests/rhi/CMakeLists.txt",
       "category": "tests",
-      "size": 12268,
-      "sha256": "70b863d589f4e2299829f17dbf1b7fc1c33d31360d037b1ffddd87587cdbcbfb",
+      "size": 12544,
+      "sha256": "60599954b2c42561f269ea462276e1b403bca6cc4247e4b1d5edb5eebb0132a0",
       "sourcePath": "tests/rhi/CMakeLists.txt",
       "sourceSha256": "92da24f42951a9ae824beed344b95f98160e30814fc9e768db974c8c5cd98363",
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
@@ -6643,8 +6643,8 @@
     {
       "path": "tools/shader_compiler/generate_rhi_package.py",
       "category": "tools",
-      "size": 8529,
-      "sha256": "5c6176a1317fc2b1109a459f01bb6ee64aa31f8af5ba79521f39e3b7b90dc6ae",
+      "size": 9578,
+      "sha256": "0b160d59603e48097a20a712737d8be2dac8b46d8b5fc70ba81246777f532429",
       "sourcePath": "tools/shader_compiler/generate_rhi_package.py",
       "sourceSha256": "5c6176a1317fc2b1109a459f01bb6ee64aa31f8af5ba79521f39e3b7b90dc6ae",
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"

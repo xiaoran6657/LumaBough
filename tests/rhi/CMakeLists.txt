@@ -150,7 +150,11 @@ add_custom_command(TARGET MiniEngineM606AdapterDeviceTests POST_BUILD
     COMMAND "${CMAKE_COMMAND}" -E copy_directory "${PROJECT_SOURCE_DIR}/shaders/d3d11"
         "$<TARGET_FILE_DIR:MiniEngineM606AdapterDeviceTests>/shaders/d3d11"
     COMMAND "${CMAKE_COMMAND}" -E copy_directory "${MINIENGINE_D3D12_SHADER_OUTPUT_DIR}"
-        "$<TARGET_FILE_DIR:MiniEngineM606AdapterDeviceTests>/shaders/d3d12")
+        "$<TARGET_FILE_DIR:MiniEngineM606AdapterDeviceTests>/shaders/d3d12"
+    # E4：与 sandbox 一致，带上双变体包的平铺字节码（d3d11 的 .dxbc）。
+    COMMAND "${CMAKE_COMMAND}" -E copy_directory
+        "${CMAKE_BINARY_DIR}/shaders/m6-04/$<CONFIG>/artifacts"
+        "$<TARGET_FILE_DIR:MiniEngineM606AdapterDeviceTests>/shaders")
 
 add_test(NAME M610PerformanceEvidence
     COMMAND "${Python3_EXECUTABLE}" -B "${PROJECT_SOURCE_DIR}/tests/tools/contracts/test_m610_performance.py")
