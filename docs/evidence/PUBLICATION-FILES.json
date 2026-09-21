@@ -397,8 +397,8 @@
     {
       "path": "docs/ROADMAP.md",
       "category": "docs",
-      "size": 3037,
-      "sha256": "f5ea664c960f163af26f551f11962fd0d30d3a69c563e7de1791168b2beac670",
+      "size": 3115,
+      "sha256": "b2d23eec94369669be3d534520de60c4a22b5d6ff140b4241f919a85cf5bc21e",
       "sourcePath": null,
       "sourceSha256": null,
       "reason": "所有者授权修订P/D/E/F串行任务；明确逐文件审阅的任务/导航/状态文档，不包含原始产物；仅本地候选，受发布门约束"
