@@ -40,5 +40,8 @@
 - E4 第二次（2026-09-21，第二台机器 Windows 11 + RTX 3090 Ti / driver 32.0.16.1692，管理员 PowerShell）：ZIP 哈希校验通过；D3D12 与 D3D11 各 1202 帧 PASS（exit 0、warningErrors 0、windowForeground true）；换工作目录 60 帧 PASS；负例（改名 shaders\d3d11）报出带完整路径的明确错误、exit 2
 - 跨机身份（重要）：两机 shaderSemanticSha256 均为 7aeedd02…、assetManifestSha256 4ae6eda9…、environmentArtifactSha256 3416f0cd…；把本机改为 1920×1061（第二台机器客户区被工作区裁到 1061）后，graphHash 0x76556127671CCB84 与 commandHash 3d95ea89… 与第二台机器逐字节一致
 - 已知差异（非缺陷）：graphHash/commandHash 随 extent 变化，跨机对比必须同 extent；第二台机器 --height=1080 被桌面工作区裁成 1061，故与首次本机 1080 的哈希不同。手册已加 extent 记录要求
-- E4 仍缺：第二台机器的 Demo 事件路径（手册 2.4b：--exercise-changes，期望末行 complete-clean-exit、resizeCount=3、reloadSuccess=1、reloadRejected=1）与真实读者反馈；两者未完成前 E4 不标通过
+- E4 第二台机器全部完成（2026-09-21）：D3D12 与 D3D11 各 1202 帧 --exercise-changes PASS、exit 0；两后端 resizeCount=3 / reloadSuccess=1 / reloadRejected=1 / warningErrors=0；两组 anchor.ppm 与 color.ppm 逐字节相等（equal=True）
+- 同口径跨机对比（均为 headless 1920×1080、1202 帧、--exercise-changes）：graphHash 0xBC2FC5CF0A38B0FD、commandHash d87bf3a6…、visibleSequenceHash 0x61E54BF2EB73DB0E 在两台机器（AMD RX 9070 / NVIDIA RTX 3090 Ti）上完全一致；像素哈希不同属预期（不同 GPU/后端）
+- E4 仍缺：真实读者反馈（手册第 4 节）；未完成前 E4 不标通过
 - E4 第二次补充（第二台机器，headless 1920×1080）：D3D12 --exercise-changes 1202 帧 PASS、exit 0，graphHash 0xBC2FC5CF0A38B0FD 与本机 headless 同协议一致；tour-events 末三行 temporary-frame-presented(602,1936) / original-extent-restored(602,1920) / complete-clean-exit(1202)，产物含 anchor.json/anchor.ppm/color.ppm/metadata.json
+- E5 候选门已实现：validate_publication.py --stage candidate --package <zip|dir> 核对清单/链接 + 包内 manifest/SHA256SUMS/EXE 与实际字节 + builtAtCommit 与 HEAD 关系 + E3 隐私门 + E4 记录绑定；当前 BLOCKED 项：1 条新增处置待批准（E4 记录里复述的错误原文，属误报）、E4 读者反馈未完成

@@ -1,14 +1,22 @@
-"""验证本地公开入口、逐文件清单与来源；不实现远程发布验收。"""
+"""验证本地公开入口、逐文件清单与来源；candidate 阶段额外核对包字节、E3 隐私门与 E4 记录。"""
 from __future__ import annotations
 import argparse
+import hashlib
 import json
 from pathlib import Path
 import re
+import subprocess
 import sys
+import zipfile
 from urllib.parse import unquote, urlsplit
 sys.dont_write_bytecode = True
 from audit_import import safe_root, source_file, sha
 from validate_import import MANIFEST, relative, validate_tree, validate_evidence
+
+E4_RESULTS = "docs/evidence/E4-RESULTS.json"
+PRIVACY_BASELINE = "docs/evidence/PRIVACY-DISPOSITIONS.json"
+PRIVACY_SCANNER = "tools/portfolio/scan_privacy.py"
+BUILD_SENSITIVE = ("engine/", "samples/", "shaders/", "assets/")
 
 def links(root, files):
     errors = []
@@ -69,21 +77,107 @@ def validate_entry(root, data):
             errors.append("stale architecture export: " + row["path"])
     return errors
 
+def package_bytes(package):
+    """包目录或 .zip → {相对路径: 字节}，只读实际交付字节。"""
+    if package.is_dir():
+        return {p.relative_to(package).as_posix(): p.read_bytes() for p in sorted(package.rglob("*")) if p.is_file()}
+    if package.suffix.lower() == ".zip":
+        with zipfile.ZipFile(package) as archive:
+            return {i.filename: archive.read(i) for i in archive.infolist() if not i.is_dir()}
+    raise ValueError("package must be a directory or .zip: " + str(package))
+
+
+def validate_package_files(files):
+    """纯字节核对：manifest / SHA256SUMS / EXE 与实际包内容一致，且没有未列出的文件。"""
+    errors = []
+    if "PACKAGE-MANIFEST.json" not in files:
+        return ["package has no PACKAGE-MANIFEST.json"], None
+    manifest = json.loads(files["PACKAGE-MANIFEST.json"].decode("utf-8"))
+    sums = {line.split("  ", 1)[1]: line.split("  ", 1)[0]
+            for line in files.get("SHA256SUMS.txt", b"").decode("utf-8").splitlines() if "  " in line}
+    for name, row in manifest["files"].items():
+        payload = files.get(name)
+        if payload is None:
+            errors.append("manifest lists a missing file: " + name)
+            continue
+        if len(payload) != row["size"] or hashlib.sha256(payload).hexdigest() != row["sha256"]:
+            errors.append("package file does not match its manifest: " + name)
+        if sums.get(name) != row["sha256"]:
+            errors.append("SHA256SUMS.txt disagrees with the manifest: " + name)
+    for name in files:
+        if name not in manifest["files"] and name not in manifest.get("selfExcluded", []):
+            errors.append("package file is not covered by the manifest: " + name)
+    for name in manifest.get("selfExcluded", []):
+        if name not in files:
+            errors.append("selfExcluded file is missing: " + name)
+    exe = files.get("runtime/MiniEngineSandbox.exe")
+    if exe is None:
+        errors.append("package has no runtime/MiniEngineSandbox.exe")
+    elif hashlib.sha256(exe).hexdigest() != manifest.get("exeSha256"):
+        errors.append("packaged EXE does not match exeSha256")
+    return errors, manifest
+
+
+def validate_candidate(root, data, package):
+    if not package.exists():
+        return ["candidate requires an existing --package: " + str(package)]
+    files = package_bytes(package)
+    errors, manifest = validate_package_files(files)
+    if manifest is None:
+        return errors
+    built = manifest.get("builtAtCommit", "")
+    head = subprocess.run(["git", "-C", str(root), "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip()
+    if subprocess.run(["git", "-C", str(root), "merge-base", "--is-ancestor", built, head]).returncode != 0:
+        errors.append("builtAtCommit is not an ancestor of HEAD: " + built)
+    else:
+        changed = subprocess.run(["git", "-C", str(root), "diff", "--name-only", built + ".." + head],
+                                 capture_output=True, text=True).stdout.split()
+        stale = [c for c in changed if c.startswith(BUILD_SENSITIVE)]
+        if stale:
+            errors.append("runtime inputs changed after builtAtCommit: " + ", ".join(stale[:5]))
+    scan = subprocess.run([sys.executable, str(root / PRIVACY_SCANNER), "--source-set", "--git",
+                           "--package", str(package), "--baseline", str(root / PRIVACY_BASELINE),
+                           "--output", str(root / "out/e5/candidate-scan.json")],
+                          capture_output=True, text=True)
+    if scan.returncode != 0:
+        errors.append("privacy gate failed (unadjudicated or pending items): " + scan.stdout.strip()[:200])
+    e4 = json.loads((root / E4_RESULTS).read_text(encoding="utf-8"))
+    if e4["package"]["exeSha256"] != manifest.get("exeSha256"):
+        errors.append("E4 record was produced for a different EXE")
+    if package.suffix.lower() == ".zip" and e4["package"]["zipSha256"] != hashlib.sha256(package.read_bytes()).hexdigest():
+        errors.append("E4 record was produced for a different package archive")
+    bad = [r["id"] for r in e4["secondMachine"]["runs"] if r["status"] not in ("PASS", "expected-failure")]
+    if bad:
+        errors.append("E4 second-machine runs not passing: " + ", ".join(bad))
+    if e4.get("reader", {}).get("status") != "passed":
+        errors.append("E4 reader feedback is not recorded as passed (owner action required)")
+    return errors
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--stage", required=True, choices=["entry"])
+    parser.add_argument("--stage", required=True, choices=["entry", "candidate"])
+    parser.add_argument("--package", type=Path, default=None, help="candidate 阶段要核对的包目录或 .zip")
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[2])
     args = parser.parse_args()
     try:
         root = safe_root(args.root)
         data = json.loads((root / MANIFEST).read_text(encoding="utf-8"))
         errors = validate_entry(root, data)
+        if args.stage == "candidate" and not errors:
+            if args.package is None:
+                errors = ["candidate requires --package"]
+            else:
+                errors = validate_candidate(root, data, args.package.resolve())
     except (ValueError, KeyError, OSError) as exc:
         errors = [str(exc)]
     if errors:
         print("\n".join(errors), file=sys.stderr)
         return 1
-    print(f"PASS entry: {len(data['files'])} reviewed files; publication=BLOCKED")
+    if args.stage == "entry":
+        print(f"PASS entry: {len(data['files'])} reviewed files; publication=BLOCKED")
+    else:
+        print(f"PASS candidate: {len(data['files'])} reviewed files, package bytes, privacy gate and E4 record verified; publication=BLOCKED")
     return 0
 
 if __name__ == "__main__":

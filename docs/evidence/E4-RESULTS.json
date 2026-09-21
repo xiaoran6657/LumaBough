@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "stage": "E4",
+  "date": "2026-09-21",
+  "package": {
+    "zip": "out/e-batch/package/lumabough-0403d20-v7.zip",
+    "zipBytes": 3464797,
+    "zipSha256": "071fbc41c6fa7fed772d9607776e6bbd901a14146d48c2efd7e1223fc413f77f",
+    "files": 157,
+    "bytes": 10092318,
+    "exeSha256": "7e75b7767d0b4273b4b77c8d14e0e5ded682b9538581265f16951e17cffc6f28",
+    "builtAtCommit": "0403d203419694cd185d3223ba77c75175456bcf",
+    "packagingCommit": "e27f8c20d3fc584e01206636a62c63d934eb311e"
+  },
+  "firstAttempt": {
+    "date": "2026-09-21",
+    "result": "FAIL",
+    "observed": "both backends exit 2: MiniEngineSandbox failed: shader artifact missing",
+    "rootCause": "the generated M604ShaderFixtures.h embedded build-machine absolute bytecode paths (out/build/.../revisions/<rev>/<backend>/<name>); absent on another machine",
+    "falsePass": "the earlier same-machine packaged run passed only because the build tree existed",
+    "fixCommit": "0403d203419694cd185d3223ba77c75175456bcf"
+  },
+  "localIsolation": {
+    "method": "renamed the whole build-tree shaders directory, then ran the packaged EXE",
+    "result": "PASS",
+    "detail": "both backends at 60 and 1202 frames; graphHash 0xBC2FC5CF0A38B0FD; zero references to revisions/m6-04 inside the EXE"
+  },
+  "secondMachine": {
+    "os": "Windows 11 x64",
+    "gpu": "NVIDIA GeForce RTX 3090 Ti",
+    "driver": "32.0.16.1692",
+    "shell": "PowerShell (administrator)",
+    "devTools": {
+      "dxc": "absent",
+      "vsOrCmakeInPath": false,
+      "python": "present but unused by the package",
+      "note": "the criterion is that the run does not depend on them, not that they are absent"
+    },
+    "runs": [
+      {
+        "id": "d3d12-1202",
+        "exitCode": 0,
+        "status": "PASS",
+        "graphHash": "0x76556127671CCB84",
+        "resolution": "1920x1061",
+        "note": "window client area clamped by the desktop work area (requested 1080)"
+      },
+      {
+        "id": "d3d11-1202",
+        "exitCode": 0,
+        "status": "PASS",
+        "graphHash": "0x76556127671CCB84",
+        "resolution": "1920x1061"
+      },
+      {
+        "id": "d3d12-cwd-60",
+        "exitCode": 0,
+        "status": "PASS",
+        "graphHash": "0x435B344F438E02DA",
+        "note": "started from a different working directory with absolute paths"
+      },
+      {
+        "id": "d3d12-events-1202",
+        "exitCode": 0,
+        "status": "PASS",
+        "graphHash": "0xBC2FC5CF0A38B0FD",
+        "resolution": "1920x1080",
+        "events": ["temporary-frame-presented", "original-extent-restored", "complete-clean-exit"],
+        "resizeCount": 3,
+        "reloadSuccess": 1,
+        "reloadRejected": 1,
+        "warningErrors": 0,
+        "anchorEqualsColor": true
+      },
+      {
+        "id": "d3d11-events-1202",
+        "exitCode": 0,
+        "status": "PASS",
+        "graphHash": "0xBC2FC5CF0A38B0FD",
+        "resolution": "1920x1080",
+        "events": ["temporary-frame-presented", "original-extent-restored", "complete-clean-exit"],
+        "resizeCount": 3,
+        "reloadSuccess": 1,
+        "reloadRejected": 1,
+        "warningErrors": 0,
+        "anchorEqualsColor": true
+      },
+      {
+        "id": "negative-shaders-renamed",
+        "exitCode": 2,
+        "status": "expected-failure",
+        "message": "shader artifact missing: <package>\\runtime\\shaders/d3d11/GraphTriangle.VSMain.vs.dxbc",
+        "note": "loud failure with the resolved path; restored afterwards"
+      }
+    ]
+  },
+  "crossMachineIdentity": {
+    "protocol": "headless 1920x1080, 1202 frames, --exercise-changes",
+    "machines": ["AMD Radeon RX 9070 (first)", "NVIDIA GeForce RTX 3090 Ti (second)"],
+    "graphHash": "0xBC2FC5CF0A38B0FD",
+    "commandHash": "d87bf3a62817b8f7d2c4f2ce975b86f8a7e22a8de5c4070a96e1f429db666801",
+    "visibleSequenceHash": "0x61E54BF2EB73DB0E",
+    "shaderSemanticSha256": "7aeedd02200971d450e502e57d6dad67545e7d41d04804fe4636a23ccbd05b3a",
+    "assetManifestSha256": "4ae6eda980221395a80e3bb03374d051a07b8cd197f8a5c0b55097f427ba6260",
+    "environmentArtifactSha256": "3416f0cd007b4faea66c21fefbd183f97cf1a8690401aa955c4501e15bfa0618",
+    "extentSensitivity": "graphHash/commandHash depend on the render extent; compare only at equal extents",
+    "pixelNote": "pixel hashes differ across GPUs and backends by design; identity is asserted through the hashes above"
+  },
+  "reader": {
+    "status": "pending",
+    "note": "owner to arrange a reader who did not implement the project; the agent cannot substitute",
+    "checklist": ["extract", "run per RUN.md", "find graphHash and one event record", "state the supported scope in one sentence", "report raw confusion without being prompted"]
+  }
+}

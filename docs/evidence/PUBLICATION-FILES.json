@@ -6625,8 +6625,8 @@
     {
       "path": "tools/portfolio/validate_publication.py",
       "category": "tools",
-      "size": 4558,
-      "sha256": "0fe83ce5324132f53ecb44b122456312f557f6ed67b7b32b783af391bf353594",
+      "size": 9868,
+      "sha256": "6a7cb467a5e7f8353e981bb9f5c3083ee3cb29a31e1ef3024731c63872e2e60d",
       "sourcePath": null,
       "sourceSha256": null,
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
@@ -6843,8 +6843,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 7610,
-      "sha256": "ccf65dff68e6b71ecde3ebb85f1691f8a33a34b0378c024e34fde8ea1d0c4741",
+      "size": 8381,
+      "sha256": "312017e93b5c2e88938b7793b3c5283ad22271797cc2a4155c7b3ff77fa6f7b8",
       "reason": "E批次记录：候选范围与提交身份、打包、隐私与独立运行；不含机器私有信息；仅本地候选"
     },
     {
@@ -6870,8 +6870,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 19037,
-      "sha256": "24e2e6965e9dd1ea802ae1f6696de4c65ab86b1fe854234c52a4be38e5f3180e",
+      "size": 19379,
+      "sha256": "f3416ae419cbd12afc7445dea1cfa8b2879f0099e7657fe6d57dd22ddaf09c7e",
       "reason": "E3新增：112 项逐项处置（keep/脱敏/排除 + 理由 + matchSha256），status=proposed 待所有者批准"
     },
     {
@@ -6900,6 +6900,24 @@
       "size": 8084,
       "sha256": "0a165ecd36b97d69697e7d2c05d316605dd31a612e22dc4ca732744b4e4ef27d",
       "reason": "E4新增：第二台机器与真实读者走查的具体步骤、记录表与回传要求"
+    },
+    {
+      "path": "docs/evidence/E4-RESULTS.json",
+      "category": "docs",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 4835,
+      "sha256": "bad1a37a71b8329a540b8102f512d6ccb5824d7df8e06316a3f2df82c259610a",
+      "reason": "E4新增：第二台机器逐项结果、跨机身份、首轮失败与修复、读者状态（供 candidate 门读取）"
+    },
+    {
+      "path": "tests/tools/contracts/test_candidate_gate.py",
+      "category": "tests",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 3731,
+      "sha256": "1faf70c19862d59dbd4e3a53de8931ce0b5a3ffeaa2cc85e4351885dca2888a2",
+      "reason": "E5新增：候选门字节核对（manifest/SHA256SUMS/EXE 不一致必须报错）"
     }
   ],
   "pending": [],
