@@ -18,3 +18,9 @@
 - 包清单 PACKAGE-MANIFEST.json 记录 packagingCommit=8ef79fc4、builtAtCommit=b92cda4、exeSha256=16ebb979…、场景 4ae6eda9…、逐文件 SHA-256；无 PDB
 - 发现（E2 要求）：M610_PROJECT_ROOT 是编译期绝对路径，着色器语义哈希与日志都依赖源码树；本机恰好存在源码树，所以同机运行掩盖了这一点
 - 修复方案（待执行）：调用点改为优先用 EXE 旁 shaders（运行包携带），缺失时回退源码树；同时把 d3d12 的 HLSL 源一并入包；修复后需重建 + D 验证性重跑 + 重新打包
+- 修复落地：着色器语义根优先 EXE 旁 shaders（要求该后端至少有一个 .hlsl/.hlsli），否则回退源码树；日志只打印文件名
+- 最终 EXE 内嵌 b7012b7168cbd423addb68ec27c7c6845a9bfcac，1,879,040 B，SHA-256 9dd31e66ee472c7ced99985f4593d8bb0bf6f82a6abd4a9a6a0369d7ced6e709
+- 修复后验证性重跑：双后端彩排 6/6 通过；D3D11 Capture 206 事件 / Screenshot=798 / 与 anchor.ppm 平均差 0.0846；D3D12 Capture Screenshot=677
+- 双后端成片按最终 EXE 重录：D3D12 e71df9e1df17c58f6836d4c97529d5b004c9ab196fd5e8af5063078a2ef89d32（1,610,489 B）、D3D11 c5b076220064e68e31350deeadb561f9e64a18e788fc8ceb8b88b70e2ccdcf0d（1,532,709 B）
+- 候选包 v2：out/e-batch/package/lumabough-b7012b7（149 文件 / 10,085,393 B，含 d3d12 HLSL 源）；包内直接运行 D3D12 3 帧 PASS，语义哈希 7aeedd02… 与源码树一致
+- 限制：同机无法隔离验证不依赖源码树，须由 E4 在第二台机器确认；E3 日志路径脱敏已完成
