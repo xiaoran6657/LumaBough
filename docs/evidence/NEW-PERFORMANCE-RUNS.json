@@ -1,0 +1,3627 @@
+{
+  "schemaVersion": 1,
+  "attempt": "lb-current-004",
+  "kind": "desensitized run-level recompute material (no raw frame arrays, no machine paths)",
+  "validation": "PASS_LOCAL",
+  "preregistrationSha256": "45778477c770a542df9517a809e15dea50dceb07d47a305dc55ec66b9322ecdb",
+  "analyzerSha256": "e3ec4545fc9feed6d1d3ad021870ca83f10a4d9d841ce0002ef1160c7fed6300",
+  "analysisSha256": "f7d28a660d4844fdd8e46a187824c2938af22dd043c8b26c49cb934fad47b971",
+  "executableSha256": "325e9e43cb2e2d6e3ff3aaa1176d434b55a94909cccfc5d22610c2496d2144ad",
+  "sourceSnapshotSha256": "56e15b71b34716e7f427d9b6e084dc549fb8657b39ff104ab1b507e17a4ed669",
+  "method": {
+    "cells": [
+      "packet-serial",
+      "packet-parallel",
+      "stream-sync",
+      "stream-async",
+      "stream-parallel"
+    ],
+    "order": [
+      {
+        "sequence": 1,
+        "cell": "stream-sync",
+        "runId": "01-stream-sync-r1"
+      },
+      {
+        "sequence": 2,
+        "cell": "packet-serial",
+        "runId": "02-packet-serial-r1"
+      },
+      {
+        "sequence": 3,
+        "cell": "packet-parallel",
+        "runId": "03-packet-parallel-r1"
+      },
+      {
+        "sequence": 4,
+        "cell": "stream-parallel",
+        "runId": "04-stream-parallel-r1"
+      },
+      {
+        "sequence": 5,
+        "cell": "stream-async",
+        "runId": "05-stream-async-r1"
+      },
+      {
+        "sequence": 6,
+        "cell": "stream-parallel",
+        "runId": "06-stream-parallel-r2"
+      },
+      {
+        "sequence": 7,
+        "cell": "stream-async",
+        "runId": "07-stream-async-r2"
+      },
+      {
+        "sequence": 8,
+        "cell": "packet-serial",
+        "runId": "08-packet-serial-r2"
+      },
+      {
+        "sequence": 9,
+        "cell": "stream-sync",
+        "runId": "09-stream-sync-r2"
+      },
+      {
+        "sequence": 10,
+        "cell": "packet-parallel",
+        "runId": "10-packet-parallel-r2"
+      },
+      {
+        "sequence": 11,
+        "cell": "stream-async",
+        "runId": "11-stream-async-r3"
+      },
+      {
+        "sequence": 12,
+        "cell": "packet-serial",
+        "runId": "12-packet-serial-r3"
+      },
+      {
+        "sequence": 13,
+        "cell": "stream-sync",
+        "runId": "13-stream-sync-r3"
+      },
+      {
+        "sequence": 14,
+        "cell": "packet-parallel",
+        "runId": "14-packet-parallel-r3"
+      },
+      {
+        "sequence": 15,
+        "cell": "stream-parallel",
+        "runId": "15-stream-parallel-r3"
+      },
+      {
+        "sequence": 16,
+        "cell": "packet-serial",
+        "runId": "16-packet-serial-r4"
+      },
+      {
+        "sequence": 17,
+        "cell": "stream-async",
+        "runId": "17-stream-async-r4"
+      },
+      {
+        "sequence": 18,
+        "cell": "stream-sync",
+        "runId": "18-stream-sync-r4"
+      },
+      {
+        "sequence": 19,
+        "cell": "stream-parallel",
+        "runId": "19-stream-parallel-r4"
+      },
+      {
+        "sequence": 20,
+        "cell": "packet-parallel",
+        "runId": "20-packet-parallel-r4"
+      },
+      {
+        "sequence": 21,
+        "cell": "stream-parallel",
+        "runId": "21-stream-parallel-r5"
+      },
+      {
+        "sequence": 22,
+        "cell": "packet-serial",
+        "runId": "22-packet-serial-r5"
+      },
+      {
+        "sequence": 23,
+        "cell": "stream-sync",
+        "runId": "23-stream-sync-r5"
+      },
+      {
+        "sequence": 24,
+        "cell": "stream-async",
+        "runId": "24-stream-async-r5"
+      },
+      {
+        "sequence": 25,
+        "cell": "packet-parallel",
+        "runId": "25-packet-parallel-r5"
+      }
+    ],
+    "primaryMetric": "cpuFrameMs",
+    "aggregation": "median of five run medians",
+    "warmupFrames": 120,
+    "measuredFrames": 600,
+    "width": 1920,
+    "height": 1080,
+    "seed": 6657,
+    "foregroundMinimumRatio": 0.9,
+    "gpuMinimumValidSamples": 594,
+    "noiseRule": "max(3 percent, 2 * baseline run-median MAD / baseline median * 100)",
+    "drift": "each cell ordered by unique sequence; median last3 vs first2; abs change above noise threshold makes comparison INCONCLUSIVE",
+    "decisionOrder": [
+      "invalid input or missing runs => INVALID",
+      "excess drift => INCONCLUSIVE",
+      "protected regression => REJECTED",
+      "CPU decrease > noise => ACCEPTED",
+      "noise <=5 percent without sufficient decrease => REJECTED",
+      "otherwise INCONCLUSIVE"
+    ],
+    "protected": {
+      "p95Cpu": "candidate <= baseline * 1.05",
+      "gpuFrameMs": "positive samples only; coverage >=99 percent; median of run medians; <=5 percent regression",
+      "residentBytes": "median of run medians <=5 percent regression; transient pool only",
+      "hitch": "common baseline pooled median + 5*MAD threshold; if MAD zero use 3*median; candidate rate <= baseline rate + max(0.01,0.05*baseline rate)",
+      "unavailable": "allocation counters excluded, never interpreted as zero allocations"
+    },
+    "retries": 0,
+    "exclusion": "No silent exclusion or replacement; failed run aborts group, retain all attempts. New protocol/ID required for a restart."
+  },
+  "runs": [
+    {
+      "runId": "01-stream-sync-r1",
+      "cell": "stream-sync",
+      "sequence": 1,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 35.158950000000004,
+        "mad": 1.3734999999999964,
+        "p95": 37.521465,
+        "p99": 38.770253,
+        "maximum": 80.258
+      },
+      "gpuFrameMs": {
+        "median": 0.12816,
+        "mad": 0.0010400000000000131,
+        "p95": 0.13083999999999998,
+        "p99": 0.5507576,
+        "maximum": 0.6212
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 478,
+        "50": 1
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 0.0657,
+          "mad": 0.0017000000000000001,
+          "p95": 0.06910499999999999,
+          "p99": 0.075804,
+          "maximum": 0.2404
+        },
+        "worldExtractMs": {
+          "median": 0.0345,
+          "mad": 0.002100000000000001,
+          "p95": 0.07451499999999998,
+          "p99": 0.08958899999999974,
+          "maximum": 0.5133
+        },
+        "packetBuildMs": {
+          "median": 0.0947,
+          "mad": 0.0029,
+          "p95": 0.12351,
+          "p99": 0.13689499999999966,
+          "maximum": 0.2559
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 0.0197,
+          "mad": 0.00015000000000000083,
+          "p95": 0.022009999999999988,
+          "p99": 0.025701999999999996,
+          "maximum": 0.0327
+        },
+        "packetWaitMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "cullMs": {
+          "median": 0.0728,
+          "mad": 0.002700000000000008,
+          "p95": 0.10160499999999999,
+          "p99": 0.11496499999999966,
+          "maximum": 0.2325
+        },
+        "renderGraphBuildMs": {
+          "median": 2.69395,
+          "mad": 0.08560000000000012,
+          "p95": 3.06817,
+          "p99": 3.23662,
+          "maximum": 3.5186
+        },
+        "renderGraphCompileMs": {
+          "median": 1.9784,
+          "mad": 0.031849999999999934,
+          "p95": 2.3273449999999998,
+          "p99": 2.509576,
+          "maximum": 2.7892
+        },
+        "rhiSubmitMs": {
+          "median": 24.0608,
+          "mad": 1.0691500000000005,
+          "p95": 25.45432,
+          "p99": 26.053044,
+          "maximum": 26.7879
+        },
+        "presentMs": {
+          "median": 3.93635,
+          "mad": 0.08274999999999988,
+          "p95": 4.3218749999999995,
+          "p99": 4.387853999999999,
+          "maximum": 5.9669
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 263.0,
+        "mad": 0.0,
+        "p95": 263.0,
+        "p99": 263.0,
+        "maximum": 263
+      },
+      "receiptSha256": "8484dec5a9e6c1172f0ae25d0cd89cff343f57e3744501a619437197dc759367",
+      "rawSha256": "50c585a796e016e23634eefecb6701e474a13f4ce0950c720c136469f3f19440",
+      "notesSha256": "414486c349622019918b19cdfdcec6deedb40e122711bc2c432a1dfa0d00228f"
+    },
+    {
+      "runId": "02-packet-serial-r1",
+      "cell": "packet-serial",
+      "sequence": 2,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 70.14775,
+        "mad": 3.3762499999999918,
+        "p95": 76.39121,
+        "p99": 78.210832,
+        "maximum": 83.1253
+      },
+      "gpuFrameMs": {
+        "median": 0.13268000000000002,
+        "mad": 0.0011199999999999821,
+        "p95": 0.13663999999999998,
+        "p99": 0.5966736,
+        "maximum": 0.60884
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 600,
+        "50": 600
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 6.2644,
+          "mad": 0.20370000000000044,
+          "p95": 6.708705,
+          "p99": 6.802001999999999,
+          "maximum": 6.9877
+        },
+        "worldExtractMs": {
+          "median": 5.9116,
+          "mad": 0.24175000000000013,
+          "p95": 6.56436,
+          "p99": 6.771592999999999,
+          "maximum": 11.7482
+        },
+        "packetBuildMs": {
+          "median": 15.2853,
+          "mad": 1.0038,
+          "p95": 17.521259999999998,
+          "p99": 18.666847999999998,
+          "maximum": 26.4439
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 6.6998,
+          "mad": 0.6548999999999996,
+          "p95": 8.632779999999999,
+          "p99": 9.290408,
+          "maximum": 13.872200000000001
+        },
+        "packetWaitMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "cullMs": {
+          "median": 8.445,
+          "mad": 0.19734999999999925,
+          "p95": 9.073445,
+          "p99": 9.503516999999997,
+          "maximum": 20.3012
+        },
+        "renderGraphBuildMs": {
+          "median": 3.1003499999999997,
+          "mad": 0.10540000000000016,
+          "p95": 3.4737199999999997,
+          "p99": 3.5956680000000003,
+          "maximum": 4.0544
+        },
+        "renderGraphCompileMs": {
+          "median": 2.2231,
+          "mad": 0.050000000000000044,
+          "p95": 2.5205349999999997,
+          "p99": 2.60281,
+          "maximum": 2.7804
+        },
+        "rhiSubmitMs": {
+          "median": 27.4206,
+          "mad": 2.174949999999999,
+          "p95": 30.84248,
+          "p99": 31.492509,
+          "maximum": 32.61
+        },
+        "presentMs": {
+          "median": 4.5154,
+          "mad": 0.1059000000000001,
+          "p95": 4.93354,
+          "p99": 5.070566,
+          "maximum": 6.2839
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 26159.0,
+        "mad": 1.0,
+        "p95": 26161.0,
+        "p99": 26161.0,
+        "maximum": 26161
+      },
+      "receiptSha256": "122ff38216776437571c749008f7aa84ebc31be15bc4da29ca4ee7610c358611",
+      "rawSha256": "447fbed6c1f73d01d4bb4e9a03f06e4dc480aa2e5ab3734874323313334d5cfc",
+      "notesSha256": "d453c5ac088b48f5ac89fb772e61623c3997ee2fef88009458a61deb7aa7c739"
+    },
+    {
+      "runId": "03-packet-parallel-r1",
+      "cell": "packet-parallel",
+      "sequence": 3,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 58.299,
+        "mad": 2.074300000000001,
+        "p95": 62.117985,
+        "p99": 63.488989,
+        "maximum": 73.4118
+      },
+      "gpuFrameMs": {
+        "median": 0.13184,
+        "mad": 0.0010400000000000131,
+        "p95": 0.135904,
+        "p99": 0.5524055999999999,
+        "maximum": 0.61666
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 600,
+        "50": 600
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 6.4021,
+          "mad": 0.24929999999999986,
+          "p95": 6.76311,
+          "p99": 6.846258999999999,
+          "maximum": 7.1306
+        },
+        "worldExtractMs": {
+          "median": 5.3036,
+          "mad": 0.22229999999999972,
+          "p95": 6.061445,
+          "p99": 6.7411699999999986,
+          "maximum": 12.3249
+        },
+        "packetBuildMs": {
+          "median": 2.5429,
+          "mad": 0.18609999999999993,
+          "p95": 3.3747649999999996,
+          "p99": 3.720619,
+          "maximum": 7.5734
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 1.20735,
+          "mad": 0.08930000000000016,
+          "p95": 1.5212199999999998,
+          "p99": 1.6679799999999996,
+          "maximum": 6.1602
+        },
+        "packetWaitMs": {
+          "median": 0.88255,
+          "mad": 0.028100000000000125,
+          "p95": 1.0157450000000001,
+          "p99": 1.144716,
+          "maximum": 1.267
+        },
+        "cullMs": {
+          "median": 7.342400000000001,
+          "mad": 0.28710000000000413,
+          "p95": 9.162485000000002,
+          "p99": 10.318628999999994,
+          "maximum": 13.218699999999998
+        },
+        "renderGraphBuildMs": {
+          "median": 3.1484,
+          "mad": 0.13575000000000004,
+          "p95": 3.63914,
+          "p99": 3.8257009999999996,
+          "maximum": 4.5235
+        },
+        "renderGraphCompileMs": {
+          "median": 2.235,
+          "mad": 0.06420000000000003,
+          "p95": 2.6776400000000002,
+          "p99": 2.8587219999999998,
+          "maximum": 2.9323
+        },
+        "rhiSubmitMs": {
+          "median": 29.39255,
+          "mad": 1.2681499999999986,
+          "p95": 30.903239999999997,
+          "p99": 31.506999999999994,
+          "maximum": 35.1286
+        },
+        "presentMs": {
+          "median": 4.473800000000001,
+          "mad": 0.12925000000000075,
+          "p95": 4.888344999999999,
+          "p99": 5.119037999999999,
+          "maximum": 5.5089
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 26159.0,
+        "mad": 1.0,
+        "p95": 26161.0,
+        "p99": 26161.0,
+        "maximum": 26161
+      },
+      "receiptSha256": "f9ccca06bfe17c846dc22b136bab4aede8834932079bd5d1b1e50bc2ac010f42",
+      "rawSha256": "6ea8c82a44b5bbdc849be789cd91906bf271001ef98d1da59491752734f99932",
+      "notesSha256": "c8a0f73b2530de65cfc0b3e41e88c8f5526439d30b561b2558eabf56d3fc737a"
+    },
+    {
+      "runId": "04-stream-parallel-r1",
+      "cell": "stream-parallel",
+      "sequence": 4,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 35.94235,
+        "mad": 1.1498500000000007,
+        "p95": 38.06487,
+        "p99": 39.214366999999996,
+        "maximum": 42.607
+      },
+      "gpuFrameMs": {
+        "median": 0.12752,
+        "mad": 0.0010400000000000131,
+        "p95": 0.13032000000000002,
+        "p99": 0.5797483999999999,
+        "maximum": 0.61088
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 580,
+        "50": 0
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 0.0664,
+          "mad": 0.0013999999999999985,
+          "p95": 0.069505,
+          "p99": 0.08112999999999988,
+          "maximum": 0.267
+        },
+        "worldExtractMs": {
+          "median": 0.0357,
+          "mad": 0.0019000000000000059,
+          "p95": 0.07570500000000001,
+          "p99": 0.08864599999999996,
+          "maximum": 0.2329
+        },
+        "packetBuildMs": {
+          "median": 0.09864999999999999,
+          "mad": 0.006650000000000003,
+          "p95": 0.13800500000000002,
+          "p99": 0.19465099999999902,
+          "maximum": 0.6251
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 0.01105,
+          "mad": 0.0008500000000000018,
+          "p95": 0.026704999999999993,
+          "p99": 0.03380899999999999,
+          "maximum": 0.0426
+        },
+        "packetWaitMs": {
+          "median": 0.054799999999999995,
+          "mad": 0.005699999999999997,
+          "p95": 0.08173499999999997,
+          "p99": 0.11298899999999965,
+          "maximum": 0.559
+        },
+        "cullMs": {
+          "median": 0.08654999999999999,
+          "mad": 0.003149999999999986,
+          "p95": 0.12312999999999998,
+          "p99": 0.14493099999999995,
+          "maximum": 1.0844
+        },
+        "renderGraphBuildMs": {
+          "median": 2.74025,
+          "mad": 0.11029999999999984,
+          "p95": 3.0974,
+          "p99": 3.2181049999999995,
+          "maximum": 3.427
+        },
+        "renderGraphCompileMs": {
+          "median": 1.98955,
+          "mad": 0.04525000000000012,
+          "p95": 2.3500399999999995,
+          "p99": 2.60701,
+          "maximum": 2.7507
+        },
+        "rhiSubmitMs": {
+          "median": 24.44015,
+          "mad": 0.8982500000000009,
+          "p95": 25.630695,
+          "p99": 26.081753,
+          "maximum": 27.7999
+        },
+        "presentMs": {
+          "median": 3.97715,
+          "mad": 0.10625000000000018,
+          "p95": 4.355325,
+          "p99": 4.496548999999999,
+          "maximum": 5.0739
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 263.0,
+        "mad": 0.0,
+        "p95": 263.0,
+        "p99": 263.0,
+        "maximum": 263
+      },
+      "receiptSha256": "6681d474995d9f47e7f48b7789dbf3d366b2f790e9c482dc7d2e4894c98a0b4c",
+      "rawSha256": "2e9ee05c8faa015348406e4343beb5ef24474ccbc99ec27cbc9c29f8e0331d54",
+      "notesSha256": "51bd4f24270527e45095c22cc62f0fed99c0ae7848103cafe7643e99a546404f"
+    },
+    {
+      "runId": "05-stream-async-r1",
+      "cell": "stream-async",
+      "sequence": 5,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 35.76885,
+        "mad": 1.0870999999999995,
+        "p95": 37.853880000000004,
+        "p99": 40.090458,
+        "maximum": 45.1669
+      },
+      "gpuFrameMs": {
+        "median": 0.127,
+        "mad": 0.0010000000000000009,
+        "p95": 0.129608,
+        "p99": 0.5674391999999996,
+        "maximum": 0.6343
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 600,
+        "50": 0
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 0.0674,
+          "mad": 0.0007999999999999952,
+          "p95": 0.07020499999999999,
+          "p99": 0.07852599999999989,
+          "maximum": 0.6335
+        },
+        "worldExtractMs": {
+          "median": 0.0355,
+          "mad": 0.0015999999999999973,
+          "p95": 0.07740999999999999,
+          "p99": 0.0996199999999999,
+          "maximum": 0.1999
+        },
+        "packetBuildMs": {
+          "median": 0.0775,
+          "mad": 0.004500000000000004,
+          "p95": 0.1053,
+          "p99": 0.16115199999999996,
+          "maximum": 1.0091
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 0.008,
+          "mad": 0.0005999999999999998,
+          "p95": 0.013704999999999995,
+          "p99": 0.0246,
+          "maximum": 0.0269
+        },
+        "packetWaitMs": {
+          "median": 0.0584,
+          "mad": 0.0034000000000000002,
+          "p95": 0.07591999999999999,
+          "p99": 0.14134299999999997,
+          "maximum": 0.9937
+        },
+        "cullMs": {
+          "median": 0.08480000000000001,
+          "mad": 0.0040999999999999925,
+          "p95": 0.11151999999999998,
+          "p99": 0.13948999999999973,
+          "maximum": 0.2156
+        },
+        "renderGraphBuildMs": {
+          "median": 2.77485,
+          "mad": 0.09265000000000012,
+          "p95": 3.0871,
+          "p99": 3.2533139999999996,
+          "maximum": 3.702
+        },
+        "renderGraphCompileMs": {
+          "median": 1.9877,
+          "mad": 0.03510000000000013,
+          "p95": 2.32444,
+          "p99": 2.4491479999999997,
+          "maximum": 2.8016
+        },
+        "rhiSubmitMs": {
+          "median": 24.420749999999998,
+          "mad": 0.7836500000000015,
+          "p95": 25.5823,
+          "p99": 26.317611,
+          "maximum": 31.7083
+        },
+        "presentMs": {
+          "median": 3.96375,
+          "mad": 0.08204999999999996,
+          "p95": 4.333635,
+          "p99": 4.453689,
+          "maximum": 5.269
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 263.0,
+        "mad": 0.0,
+        "p95": 263.0,
+        "p99": 263.0,
+        "maximum": 263
+      },
+      "receiptSha256": "48eb0a1537995406997d1943fb45dd6183c29f4d7162066ca60d3297ae73f315",
+      "rawSha256": "02d7afe4ae910c624124e95b6b776bdb8d00148ccc0f335aacf0c6ec41db0841",
+      "notesSha256": "62cf94f8cd11a8614ae6095cd7f99b7870c4c5ff6a2dda11c4acaa175b229934"
+    },
+    {
+      "runId": "06-stream-parallel-r2",
+      "cell": "stream-parallel",
+      "sequence": 6,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 35.800799999999995,
+        "mad": 1.0102500000000028,
+        "p95": 38.106215,
+        "p99": 40.240242,
+        "maximum": 41.9097
+      },
+      "gpuFrameMs": {
+        "median": 0.12704000000000001,
+        "mad": 0.0010799999999999976,
+        "p95": 0.13097599999999998,
+        "p99": 0.5818663999999998,
+        "maximum": 0.61349
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 597,
+        "50": 0
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 0.0661,
+          "mad": 0.0013000000000000095,
+          "p95": 0.06920499999999999,
+          "p99": 0.075308,
+          "maximum": 0.2401
+        },
+        "worldExtractMs": {
+          "median": 0.0345,
+          "mad": 0.0017000000000000001,
+          "p95": 0.07210499999999999,
+          "p99": 0.0852079999999999,
+          "maximum": 0.2498
+        },
+        "packetBuildMs": {
+          "median": 0.10035,
+          "mad": 0.006899999999999996,
+          "p95": 0.13543999999999995,
+          "p99": 0.17517899999999992,
+          "maximum": 0.6016
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 0.011300000000000001,
+          "mad": 0.0009000000000000015,
+          "p95": 0.025304999999999994,
+          "p99": 0.030501999999999998,
+          "maximum": 0.041
+        },
+        "packetWaitMs": {
+          "median": 0.056,
+          "mad": 0.005899999999999999,
+          "p95": 0.08201499999999999,
+          "p99": 0.10242799999999998,
+          "maximum": 0.5464
+        },
+        "cullMs": {
+          "median": 0.08865,
+          "mad": 0.002950000000000022,
+          "p95": 0.12010499999999999,
+          "p99": 0.13720399999999996,
+          "maximum": 1.0417
+        },
+        "renderGraphBuildMs": {
+          "median": 2.76275,
+          "mad": 0.10404999999999998,
+          "p95": 3.1452649999999993,
+          "p99": 3.3703229999999995,
+          "maximum": 3.8282
+        },
+        "renderGraphCompileMs": {
+          "median": 1.98795,
+          "mad": 0.03705000000000003,
+          "p95": 2.34304,
+          "p99": 2.550575,
+          "maximum": 2.8986
+        },
+        "rhiSubmitMs": {
+          "median": 24.4239,
+          "mad": 0.751100000000001,
+          "p95": 25.69315,
+          "p99": 26.985283999999996,
+          "maximum": 28.2128
+        },
+        "presentMs": {
+          "median": 3.9739500000000003,
+          "mad": 0.09150000000000036,
+          "p95": 4.357395,
+          "p99": 4.530441000000001,
+          "maximum": 4.9635
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 263.0,
+        "mad": 0.0,
+        "p95": 263.0,
+        "p99": 263.0,
+        "maximum": 263
+      },
+      "receiptSha256": "f4565800c7f686ac95a6ff0008629051c04df78cc6d156c44cbe9772f693f730",
+      "rawSha256": "51249d039c2e3b15c4e5c590c828d4b17f3e2e14202d7aa287d5349aabda44a4",
+      "notesSha256": "593a82144f69c80ba6c0768a30e89aa5172167deecb93da9ec0632ae9dfc7eff"
+    },
+    {
+      "runId": "07-stream-async-r2",
+      "cell": "stream-async",
+      "sequence": 7,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 35.6646,
+        "mad": 0.9412500000000001,
+        "p95": 37.75333,
+        "p99": 38.502168,
+        "maximum": 44.3781
+      },
+      "gpuFrameMs": {
+        "median": 0.12704000000000001,
+        "mad": 0.0011200000000000376,
+        "p95": 0.12988,
+        "p99": 0.5916971999999998,
+        "maximum": 0.61297
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 599,
+        "50": 0
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 0.0662,
+          "mad": 0.0011000000000000038,
+          "p95": 0.0691,
+          "p99": 0.11049499999999964,
+          "maximum": 0.2358
+        },
+        "worldExtractMs": {
+          "median": 0.0349,
+          "mad": 0.0015999999999999973,
+          "p95": 0.07460999999999998,
+          "p99": 0.085806,
+          "maximum": 0.1914
+        },
+        "packetBuildMs": {
+          "median": 0.0793,
+          "mad": 0.004200000000000009,
+          "p95": 0.1069,
+          "p99": 0.13424099999999978,
+          "maximum": 1.2049
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 0.0078,
+          "mad": 0.0004999999999999996,
+          "p95": 0.0205,
+          "p99": 0.025403,
+          "maximum": 0.16419999999999998
+        },
+        "packetWaitMs": {
+          "median": 0.0606,
+          "mad": 0.003600000000000006,
+          "p95": 0.076415,
+          "p99": 0.09905099999999996,
+          "maximum": 1.1708
+        },
+        "cullMs": {
+          "median": 0.08880000000000002,
+          "mad": 0.004100000000000027,
+          "p95": 0.1191,
+          "p99": 0.13663599999999998,
+          "maximum": 0.8228
+        },
+        "renderGraphBuildMs": {
+          "median": 2.7653999999999996,
+          "mad": 0.08934999999999982,
+          "p95": 3.08993,
+          "p99": 3.247465,
+          "maximum": 3.4398
+        },
+        "renderGraphCompileMs": {
+          "median": 2.00055,
+          "mad": 0.045500000000000096,
+          "p95": 2.3947499999999997,
+          "p99": 2.621657,
+          "maximum": 3.2722
+        },
+        "rhiSubmitMs": {
+          "median": 24.278599999999997,
+          "mad": 0.6558500000000027,
+          "p95": 25.314845,
+          "p99": 25.780471,
+          "maximum": 31.6368
+        },
+        "presentMs": {
+          "median": 3.97255,
+          "mad": 0.0798000000000001,
+          "p95": 4.331745,
+          "p99": 4.408002,
+          "maximum": 4.5652
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 263.0,
+        "mad": 0.0,
+        "p95": 263.0,
+        "p99": 263.0,
+        "maximum": 263
+      },
+      "receiptSha256": "79214137dbb6ae2b7223f1fe3fc20c9f5bb2c393a52ac74984ce111b5464f50f",
+      "rawSha256": "4eddc33ed7019581b5ee0ae8e417788be1233f000d65c87efd8c8f72a9566410",
+      "notesSha256": "a931d7a5d06449f59380bc831da81bbf0c019d2d30cc9b318216e4c7ae908f05"
+    },
+    {
+      "runId": "08-packet-serial-r2",
+      "cell": "packet-serial",
+      "sequence": 8,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 70.80484999999999,
+        "mad": 3.1694499999999977,
+        "p95": 76.51805999999999,
+        "p99": 79.459127,
+        "maximum": 88.1298
+      },
+      "gpuFrameMs": {
+        "median": 0.13155999999999998,
+        "mad": 0.0009600000000000164,
+        "p95": 0.134168,
+        "p99": 0.5829979999999999,
+        "maximum": 0.60843
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 600,
+        "50": 600
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 6.3208,
+          "mad": 0.25305,
+          "p95": 6.680625,
+          "p99": 6.8173010000000005,
+          "maximum": 6.9128
+        },
+        "worldExtractMs": {
+          "median": 5.9758,
+          "mad": 0.23594999999999944,
+          "p95": 6.707685,
+          "p99": 6.940697,
+          "maximum": 17.8293
+        },
+        "packetBuildMs": {
+          "median": 15.486999999999998,
+          "mad": 1.0736000000000008,
+          "p95": 17.505409999999998,
+          "p99": 18.351700999999995,
+          "maximum": 22.6727
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 6.75315,
+          "mad": 0.7188999999999997,
+          "p95": 8.648549999999998,
+          "p99": 9.049904,
+          "maximum": 13.337299999999999
+        },
+        "packetWaitMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "cullMs": {
+          "median": 8.46725,
+          "mad": 0.2204499999999996,
+          "p95": 9.165890000000001,
+          "p99": 9.750427999999998,
+          "maximum": 13.4426
+        },
+        "renderGraphBuildMs": {
+          "median": 3.1109999999999998,
+          "mad": 0.1187999999999998,
+          "p95": 3.503675,
+          "p99": 3.649397,
+          "maximum": 3.9604
+        },
+        "renderGraphCompileMs": {
+          "median": 2.227,
+          "mad": 0.05364999999999975,
+          "p95": 2.55001,
+          "p99": 2.641804,
+          "maximum": 2.8373
+        },
+        "rhiSubmitMs": {
+          "median": 27.88425,
+          "mad": 2.4092499999999983,
+          "p95": 30.823805,
+          "p99": 31.341971,
+          "maximum": 36.2847
+        },
+        "presentMs": {
+          "median": 4.57245,
+          "mad": 0.13419999999999987,
+          "p95": 5.012,
+          "p99": 5.344455999999999,
+          "maximum": 6.3135
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 26159.0,
+        "mad": 1.0,
+        "p95": 26161.0,
+        "p99": 26161.0,
+        "maximum": 26161
+      },
+      "receiptSha256": "54a288b00a6a1b10266e84a1a69213291003259837055cd242c8e9b794f377b5",
+      "rawSha256": "effc5069ed3e46675b961c7470ec543d7f0bd897f7d00ef96b45e1ee1e5fe6f7",
+      "notesSha256": "d453c5ac088b48f5ac89fb772e61623c3997ee2fef88009458a61deb7aa7c739"
+    },
+    {
+      "runId": "09-stream-sync-r2",
+      "cell": "stream-sync",
+      "sequence": 9,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 35.6157,
+        "mad": 1.4933000000000014,
+        "p95": 38.60508,
+        "p99": 42.646943,
+        "maximum": 78.672
+      },
+      "gpuFrameMs": {
+        "median": 0.12716,
+        "mad": 0.0010400000000000131,
+        "p95": 0.131736,
+        "p99": 0.584024,
+        "maximum": 0.61175
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 543,
+        "50": 1
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 0.0656,
+          "mad": 0.00180000000000001,
+          "p95": 0.06940999999999999,
+          "p99": 0.07650399999999999,
+          "maximum": 0.0978
+        },
+        "worldExtractMs": {
+          "median": 0.0333,
+          "mad": 0.001850000000000001,
+          "p95": 0.07691499999999998,
+          "p99": 0.09668899999999993,
+          "maximum": 0.2114
+        },
+        "packetBuildMs": {
+          "median": 0.0955,
+          "mad": 0.003599999999999992,
+          "p95": 0.11995999999999996,
+          "p99": 0.14721399999999998,
+          "maximum": 0.5611
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 0.0197,
+          "mad": 0.0001999999999999988,
+          "p95": 0.022104999999999996,
+          "p99": 0.0259,
+          "maximum": 0.1061
+        },
+        "packetWaitMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "cullMs": {
+          "median": 0.0735,
+          "mad": 0.0034000000000000002,
+          "p95": 0.09580499999999999,
+          "p99": 0.118401,
+          "maximum": 0.5396
+        },
+        "renderGraphBuildMs": {
+          "median": 2.722,
+          "mad": 0.09890000000000021,
+          "p95": 3.1080499999999995,
+          "p99": 3.449354999999999,
+          "maximum": 4.64
+        },
+        "renderGraphCompileMs": {
+          "median": 1.98175,
+          "mad": 0.02894999999999981,
+          "p95": 2.3656,
+          "p99": 2.5647119999999997,
+          "maximum": 3.1436
+        },
+        "rhiSubmitMs": {
+          "median": 24.4336,
+          "mad": 1.157399999999999,
+          "p95": 26.14519,
+          "p99": 29.132967999999998,
+          "maximum": 31.7976
+        },
+        "presentMs": {
+          "median": 3.9391,
+          "mad": 0.08464999999999989,
+          "p95": 4.375215000000001,
+          "p99": 4.554985999999999,
+          "maximum": 6.9671
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 263.0,
+        "mad": 0.0,
+        "p95": 263.0,
+        "p99": 263.0,
+        "maximum": 263
+      },
+      "receiptSha256": "5153443fc087200437f4fdd8c5b43a9e20d925ba4809a1e9b9b3bce992f78f7a",
+      "rawSha256": "cdb6639e663c2d5760d0c73e767b3c70c34194f3bbf6ed93cd0d2880c82db92f",
+      "notesSha256": "414486c349622019918b19cdfdcec6deedb40e122711bc2c432a1dfa0d00228f"
+    },
+    {
+      "runId": "10-packet-parallel-r2",
+      "cell": "packet-parallel",
+      "sequence": 10,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 56.7131,
+        "mad": 1.534950000000002,
+        "p95": 60.36005,
+        "p99": 61.82638599999999,
+        "maximum": 65.2393
+      },
+      "gpuFrameMs": {
+        "median": 0.13056,
+        "mad": 0.0010799999999999976,
+        "p95": 0.133656,
+        "p99": 0.5915955999999998,
+        "maximum": 0.61043
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 600,
+        "50": 600
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 6.49485,
+          "mad": 0.22960000000000047,
+          "p95": 6.819164999999999,
+          "p99": 6.892618,
+          "maximum": 6.9872
+        },
+        "worldExtractMs": {
+          "median": 5.62415,
+          "mad": 0.24535000000000018,
+          "p95": 6.333404999999999,
+          "p99": 6.758741,
+          "maximum": 8.1057
+        },
+        "packetBuildMs": {
+          "median": 2.66195,
+          "mad": 0.26034999999999986,
+          "p95": 3.4409299999999994,
+          "p99": 3.6891249999999998,
+          "maximum": 3.7572
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 1.2076500000000001,
+          "mad": 0.09824999999999995,
+          "p95": 1.4946299999999995,
+          "p99": 1.7056019999999998,
+          "maximum": 2.2014
+        },
+        "packetWaitMs": {
+          "median": 0.89075,
+          "mad": 0.030799999999999994,
+          "p95": 1.0179449999999999,
+          "p99": 1.1102009999999998,
+          "maximum": 1.2212
+        },
+        "cullMs": {
+          "median": 7.469350000000002,
+          "mad": 0.3493500000000047,
+          "p95": 9.843300000000001,
+          "p99": 10.888827000000008,
+          "maximum": 11.749500000000006
+        },
+        "renderGraphBuildMs": {
+          "median": 3.2426500000000003,
+          "mad": 0.15660000000000007,
+          "p95": 3.69949,
+          "p99": 3.917153,
+          "maximum": 4.3356
+        },
+        "renderGraphCompileMs": {
+          "median": 2.2485999999999997,
+          "mad": 0.07654999999999967,
+          "p95": 2.8477699999999997,
+          "p99": 2.927913,
+          "maximum": 3.0487
+        },
+        "rhiSubmitMs": {
+          "median": 26.8148,
+          "mad": 0.949349999999999,
+          "p95": 28.913009999999996,
+          "p99": 29.715172,
+          "maximum": 30.393
+        },
+        "presentMs": {
+          "median": 4.5007,
+          "mad": 0.12695000000000034,
+          "p95": 4.892359999999999,
+          "p99": 5.050264,
+          "maximum": 6.0824
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 26159.0,
+        "mad": 1.0,
+        "p95": 26161.0,
+        "p99": 26161.0,
+        "maximum": 26161
+      },
+      "receiptSha256": "5b6906d21dfdd3fdda76ebf5e3f920e7c10f34076c7ca9c7cd151444ed0facf0",
+      "rawSha256": "2822535fe27d754cb9e2d95d4993b7ac589320d8d02775544e02090803fdb39e",
+      "notesSha256": "c8a0f73b2530de65cfc0b3e41e88c8f5526439d30b561b2558eabf56d3fc737a"
+    },
+    {
+      "runId": "11-stream-async-r3",
+      "cell": "stream-async",
+      "sequence": 11,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 35.8549,
+        "mad": 1.0103500000000025,
+        "p95": 37.860339999999994,
+        "p99": 38.652823,
+        "maximum": 45.2674
+      },
+      "gpuFrameMs": {
+        "median": 0.12688,
+        "mad": 0.0010799999999999976,
+        "p95": 0.130168,
+        "p99": 0.5740203999999999,
+        "maximum": 0.59044
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 600,
+        "50": 0
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 0.0662,
+          "mad": 0.0012500000000000011,
+          "p95": 0.0692,
+          "p99": 0.09412299999999997,
+          "maximum": 0.2309
+        },
+        "worldExtractMs": {
+          "median": 0.0327,
+          "mad": 0.0013999999999999985,
+          "p95": 0.074505,
+          "p99": 0.09214799999999997,
+          "maximum": 0.1918
+        },
+        "packetBuildMs": {
+          "median": 0.0833,
+          "mad": 0.00435,
+          "p95": 0.11692999999999998,
+          "p99": 0.14427199999999973,
+          "maximum": 0.5193
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 0.0095,
+          "mad": 0.0003999999999999993,
+          "p95": 0.020614999999999988,
+          "p99": 0.025800999999999998,
+          "maximum": 0.0322
+        },
+        "packetWaitMs": {
+          "median": 0.0628,
+          "mad": 0.003599999999999992,
+          "p95": 0.08571999999999999,
+          "p99": 0.10909299999999973,
+          "maximum": 0.5051
+        },
+        "cullMs": {
+          "median": 0.083,
+          "mad": 0.0030000000000000027,
+          "p95": 0.11851499999999998,
+          "p99": 0.135645,
+          "maximum": 0.24969999999999998
+        },
+        "renderGraphBuildMs": {
+          "median": 2.7628,
+          "mad": 0.08519999999999994,
+          "p95": 3.054505,
+          "p99": 3.2072089999999998,
+          "maximum": 3.35
+        },
+        "renderGraphCompileMs": {
+          "median": 1.9985,
+          "mad": 0.04094999999999993,
+          "p95": 2.3474,
+          "p99": 2.496503,
+          "maximum": 2.6218
+        },
+        "rhiSubmitMs": {
+          "median": 24.475450000000002,
+          "mad": 0.7397500000000008,
+          "p95": 25.538629999999998,
+          "p99": 25.972938,
+          "maximum": 31.9215
+        },
+        "presentMs": {
+          "median": 3.97455,
+          "mad": 0.08429999999999982,
+          "p95": 4.3174,
+          "p99": 4.464365999999999,
+          "maximum": 5.016
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 263.0,
+        "mad": 0.0,
+        "p95": 263.0,
+        "p99": 263.0,
+        "maximum": 263
+      },
+      "receiptSha256": "35e4d8db7a13a2a485383b86b323f747557473f0fe5ce2d60b339f692d943ee7",
+      "rawSha256": "96ac46f6b20cd881601da942d6f5c6390ee89fc1e097e56a42e276ac732d4860",
+      "notesSha256": "c42ad0264cb41554b9411c623c673d0df1692a1de6fe4e42434c0fe865743660"
+    },
+    {
+      "runId": "12-packet-serial-r3",
+      "cell": "packet-serial",
+      "sequence": 12,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 71.3021,
+        "mad": 3.039100000000005,
+        "p95": 76.87477000000001,
+        "p99": 79.171807,
+        "maximum": 82.1086
+      },
+      "gpuFrameMs": {
+        "median": 0.13144,
+        "mad": 0.0011199999999999821,
+        "p95": 0.134224,
+        "p99": 0.5659043999999998,
+        "maximum": 0.6137
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 600,
+        "50": 600
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 6.410349999999999,
+          "mad": 0.2610500000000009,
+          "p95": 6.75267,
+          "p99": 6.808059,
+          "maximum": 6.9273
+        },
+        "worldExtractMs": {
+          "median": 5.93355,
+          "mad": 0.2983500000000001,
+          "p95": 6.78689,
+          "p99": 7.5306079999999955,
+          "maximum": 11.8649
+        },
+        "packetBuildMs": {
+          "median": 15.03525,
+          "mad": 0.7678500000000001,
+          "p95": 17.579494999999998,
+          "p99": 18.378169,
+          "maximum": 20.3329
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 6.5397,
+          "mad": 0.40139999999999976,
+          "p95": 8.627425,
+          "p99": 9.436609,
+          "maximum": 11.7843
+        },
+        "packetWaitMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "cullMs": {
+          "median": 8.40005,
+          "mad": 0.2458499999999999,
+          "p95": 9.148175,
+          "p99": 9.399728999999999,
+          "maximum": 9.554
+        },
+        "renderGraphBuildMs": {
+          "median": 3.1239,
+          "mad": 0.12179999999999991,
+          "p95": 3.5425799999999996,
+          "p99": 3.7003139999999997,
+          "maximum": 4.0267
+        },
+        "renderGraphCompileMs": {
+          "median": 2.2388,
+          "mad": 0.058949999999999836,
+          "p95": 2.557855,
+          "p99": 2.6649469999999997,
+          "maximum": 2.8816
+        },
+        "rhiSubmitMs": {
+          "median": 29.454749999999997,
+          "mad": 1.759750000000004,
+          "p95": 31.288065,
+          "p99": 31.984847,
+          "maximum": 33.5916
+        },
+        "presentMs": {
+          "median": 4.5637,
+          "mad": 0.1492,
+          "p95": 5.076130000000001,
+          "p99": 5.341408,
+          "maximum": 5.7076
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 26159.0,
+        "mad": 1.0,
+        "p95": 26161.0,
+        "p99": 26161.0,
+        "maximum": 26161
+      },
+      "receiptSha256": "aa81d47ef9a7efb86cd8fead5957dce0bf99f54b167c894310f3b9598d0785ae",
+      "rawSha256": "ebd9c7e6ece58894024b4f4958ccfaff825c7d2844f69be603048fcce40ff354",
+      "notesSha256": "d453c5ac088b48f5ac89fb772e61623c3997ee2fef88009458a61deb7aa7c739"
+    },
+    {
+      "runId": "13-stream-sync-r3",
+      "cell": "stream-sync",
+      "sequence": 13,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 35.10225,
+        "mad": 1.6058500000000002,
+        "p95": 37.899784999999994,
+        "p99": 39.191967000000005,
+        "maximum": 79.9188
+      },
+      "gpuFrameMs": {
+        "median": 0.127,
+        "mad": 0.0011199999999999821,
+        "p95": 0.12976800000000002,
+        "p99": 0.48454319999999923,
+        "maximum": 0.56665
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 451,
+        "50": 1
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 0.06534999999999999,
+          "mad": 0.0017500000000000016,
+          "p95": 0.0681,
+          "p99": 0.074602,
+          "maximum": 0.1875
+        },
+        "worldExtractMs": {
+          "median": 0.0319,
+          "mad": 0.001899999999999999,
+          "p95": 0.0731,
+          "p99": 0.09590499999999999,
+          "maximum": 0.2113
+        },
+        "packetBuildMs": {
+          "median": 0.09665,
+          "mad": 0.005499999999999998,
+          "p95": 0.13703499999999996,
+          "p99": 0.626116,
+          "maximum": 0.8687
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 0.0197,
+          "mad": 0.0001999999999999988,
+          "p95": 0.0218,
+          "p99": 0.027110999999999993,
+          "maximum": 0.1979
+        },
+        "packetWaitMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "cullMs": {
+          "median": 0.0745,
+          "mad": 0.005099999999999993,
+          "p95": 0.11220499999999989,
+          "p99": 0.6039180000000001,
+          "maximum": 0.6684
+        },
+        "renderGraphBuildMs": {
+          "median": 2.6739,
+          "mad": 0.1192000000000002,
+          "p95": 3.06513,
+          "p99": 3.226217,
+          "maximum": 3.4171
+        },
+        "renderGraphCompileMs": {
+          "median": 2.0082500000000003,
+          "mad": 0.06469999999999998,
+          "p95": 2.3838799999999996,
+          "p99": 2.5529479999999993,
+          "maximum": 2.7085
+        },
+        "rhiSubmitMs": {
+          "median": 24.0863,
+          "mad": 1.1549000000000014,
+          "p95": 25.54836,
+          "p99": 26.127618000000002,
+          "maximum": 27.3774
+        },
+        "presentMs": {
+          "median": 3.9318999999999997,
+          "mad": 0.08300000000000018,
+          "p95": 4.344525000000001,
+          "p99": 4.439304000000001,
+          "maximum": 5.4275
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 263.0,
+        "mad": 0.0,
+        "p95": 263.0,
+        "p99": 263.0,
+        "maximum": 263
+      },
+      "receiptSha256": "37fd364cb7f26eb1a20521f786026a03a89709f2d9c36b4bb8d6e394eb7de107",
+      "rawSha256": "a1372fb3f755a880a3f9f7412576a96f69cf76b680f725da687a594826e10b20",
+      "notesSha256": "414486c349622019918b19cdfdcec6deedb40e122711bc2c432a1dfa0d00228f"
+    },
+    {
+      "runId": "14-packet-parallel-r3",
+      "cell": "packet-parallel",
+      "sequence": 14,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 61.0009,
+        "mad": 4.7416999999999945,
+        "p95": 116.073475,
+        "p99": 119.588824,
+        "maximum": 122.3367
+      },
+      "gpuFrameMs": {
+        "median": 0.1308,
+        "mad": 0.0010000000000000009,
+        "p95": 0.13344,
+        "p99": 0.5431007999999997,
+        "maximum": 0.59763
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 600,
+        "50": 600
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 6.68825,
+          "mad": 0.47655000000000003,
+          "p95": 62.854429999999994,
+          "p99": 65.26853199999998,
+          "maximum": 67.8474
+        },
+        "worldExtractMs": {
+          "median": 5.4133,
+          "mad": 0.2811500000000007,
+          "p95": 6.232809999999999,
+          "p99": 7.015319999999999,
+          "maximum": 9.9357
+        },
+        "packetBuildMs": {
+          "median": 2.7222,
+          "mad": 0.28945,
+          "p95": 3.49307,
+          "p99": 3.716506,
+          "maximum": 5.302
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 1.2027,
+          "mad": 0.09940000000000004,
+          "p95": 1.4932250000000002,
+          "p99": 1.6793139999999998,
+          "maximum": 3.8863000000000003
+        },
+        "packetWaitMs": {
+          "median": 0.8968,
+          "mad": 0.030200000000000005,
+          "p95": 1.0483949999999997,
+          "p99": 1.1621429999999997,
+          "maximum": 1.3724
+        },
+        "cullMs": {
+          "median": 7.6830500000000015,
+          "mad": 0.5259000000000009,
+          "p95": 9.723659999999999,
+          "p99": 11.073118000000003,
+          "maximum": 11.604299999999991
+        },
+        "renderGraphBuildMs": {
+          "median": 3.1950000000000003,
+          "mad": 0.1534500000000001,
+          "p95": 3.6779699999999997,
+          "p99": 3.8355099999999998,
+          "maximum": 4.172
+        },
+        "renderGraphCompileMs": {
+          "median": 2.2894,
+          "mad": 0.1200000000000001,
+          "p95": 2.81277,
+          "p99": 2.9841010000000003,
+          "maximum": 3.1655
+        },
+        "rhiSubmitMs": {
+          "median": 29.61945,
+          "mad": 1.4177999999999997,
+          "p95": 31.338279999999997,
+          "p99": 32.158923,
+          "maximum": 38.5827
+        },
+        "presentMs": {
+          "median": 4.505050000000001,
+          "mad": 0.14489999999999936,
+          "p95": 4.9776050000000005,
+          "p99": 5.2957399999999994,
+          "maximum": 5.9773
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 26159.0,
+        "mad": 1.0,
+        "p95": 26161.0,
+        "p99": 26161.0,
+        "maximum": 26161
+      },
+      "receiptSha256": "9b950ef1cde00501b37741fbd1c789126f64a6a969ad4530fcd9f64be86d1c8b",
+      "rawSha256": "fe160dbf5e3f5c2ee5eb2e1f41cabb3073893fb31ec0b6951772c7cbc362b4c1",
+      "notesSha256": "c8a0f73b2530de65cfc0b3e41e88c8f5526439d30b561b2558eabf56d3fc737a"
+    },
+    {
+      "runId": "15-stream-parallel-r3",
+      "cell": "stream-parallel",
+      "sequence": 15,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 35.68115,
+        "mad": 0.9309499999999957,
+        "p95": 37.936924999999995,
+        "p99": 38.466627,
+        "maximum": 45.3913
+      },
+      "gpuFrameMs": {
+        "median": 0.12668,
+        "mad": 0.0010000000000000009,
+        "p95": 0.129728,
+        "p99": 0.5812707999999999,
+        "maximum": 0.59715
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 558,
+        "50": 0
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 0.0661,
+          "mad": 0.0009500000000000064,
+          "p95": 0.0691,
+          "p99": 0.08273899999999997,
+          "maximum": 0.2315
+        },
+        "worldExtractMs": {
+          "median": 0.0317,
+          "mad": 0.0011999999999999997,
+          "p95": 0.07351499999999998,
+          "p99": 0.08310799999999999,
+          "maximum": 0.18
+        },
+        "packetBuildMs": {
+          "median": 0.0962,
+          "mad": 0.00605,
+          "p95": 0.133015,
+          "p99": 0.17086399999999982,
+          "maximum": 0.2582
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 0.01075,
+          "mad": 0.0007999999999999995,
+          "p95": 0.0255,
+          "p99": 0.03070899999999999,
+          "maximum": 0.040600000000000004
+        },
+        "packetWaitMs": {
+          "median": 0.054,
+          "mad": 0.005299999999999999,
+          "p95": 0.07842499999999998,
+          "p99": 0.09517499999999993,
+          "maximum": 0.21459999999999999
+        },
+        "cullMs": {
+          "median": 0.08524999999999999,
+          "mad": 0.0028499999999999984,
+          "p95": 0.11973499999999997,
+          "p99": 0.1306,
+          "maximum": 0.20989999999999998
+        },
+        "renderGraphBuildMs": {
+          "median": 2.6677,
+          "mad": 0.1047499999999999,
+          "p95": 3.03782,
+          "p99": 3.234129,
+          "maximum": 3.3801
+        },
+        "renderGraphCompileMs": {
+          "median": 1.9854500000000002,
+          "mad": 0.04170000000000018,
+          "p95": 2.31155,
+          "p99": 2.505044,
+          "maximum": 2.6882
+        },
+        "rhiSubmitMs": {
+          "median": 24.396,
+          "mad": 0.6686499999999977,
+          "p95": 25.51361,
+          "p99": 25.941292,
+          "maximum": 31.836
+        },
+        "presentMs": {
+          "median": 3.9504,
+          "mad": 0.08519999999999994,
+          "p95": 4.312855,
+          "p99": 4.439491,
+          "maximum": 4.7028
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 263.0,
+        "mad": 0.0,
+        "p95": 263.0,
+        "p99": 263.0,
+        "maximum": 263
+      },
+      "receiptSha256": "d9bcdd68b38ea9f7973623379696b394b107d0b483cdef02b3f27fc0e73ead7e",
+      "rawSha256": "0d30bb94113216fa462be7a67c0a9c633251b30241f25d9bcc89d42ba1aff607",
+      "notesSha256": "d64a14f60ab50f84d2a884fc9300cfea37288bbd46d96e10075fa1b2b5970f23"
+    },
+    {
+      "runId": "16-packet-serial-r4",
+      "cell": "packet-serial",
+      "sequence": 16,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 68.4109,
+        "mad": 2.0966000000000022,
+        "p95": 73.25628999999999,
+        "p99": 75.142773,
+        "maximum": 83.1049
+      },
+      "gpuFrameMs": {
+        "median": 0.13491999999999998,
+        "mad": 0.0010000000000000009,
+        "p95": 0.13763999999999998,
+        "p99": 0.579252799999999,
+        "maximum": 0.64332
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 600,
+        "50": 600
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 6.3877500000000005,
+          "mad": 0.2654000000000001,
+          "p95": 6.749605,
+          "p99": 6.855709,
+          "maximum": 7.0563
+        },
+        "worldExtractMs": {
+          "median": 5.78565,
+          "mad": 0.2881,
+          "p95": 6.4808200000000005,
+          "p99": 6.870324,
+          "maximum": 8.4911
+        },
+        "packetBuildMs": {
+          "median": 14.95675,
+          "mad": 0.7083499999999994,
+          "p95": 17.359305000000003,
+          "p99": 17.940433,
+          "maximum": 22.3574
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 6.4523,
+          "mad": 0.3650500000000001,
+          "p95": 8.52728,
+          "p99": 9.130015,
+          "maximum": 13.1836
+        },
+        "packetWaitMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "cullMs": {
+          "median": 8.41395,
+          "mad": 0.2433500000000004,
+          "p95": 9.066630000000002,
+          "p99": 9.388511999999997,
+          "maximum": 11.1433
+        },
+        "renderGraphBuildMs": {
+          "median": 3.0652999999999997,
+          "mad": 0.08714999999999984,
+          "p95": 3.45784,
+          "p99": 3.659201,
+          "maximum": 4.0431
+        },
+        "renderGraphCompileMs": {
+          "median": 2.19375,
+          "mad": 0.026599999999999957,
+          "p95": 2.459285,
+          "p99": 2.601023,
+          "maximum": 2.7945
+        },
+        "rhiSubmitMs": {
+          "median": 26.5049,
+          "mad": 1.0916499999999996,
+          "p95": 27.803305,
+          "p99": 28.170567,
+          "maximum": 29.7974
+        },
+        "presentMs": {
+          "median": 4.5206,
+          "mad": 0.12385000000000002,
+          "p95": 5.000595,
+          "p99": 5.155921,
+          "maximum": 5.7625
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 26159.0,
+        "mad": 1.0,
+        "p95": 26161.0,
+        "p99": 26161.0,
+        "maximum": 26161
+      },
+      "receiptSha256": "f46f881085360b5189c21a8cb8680e13d6f42cd64db7cbf48e0f052d5cda3f68",
+      "rawSha256": "e04cf6b5384b80d5bf3551c9e9bb15750694fca37b7f2f55c877026becc8795d",
+      "notesSha256": "d453c5ac088b48f5ac89fb772e61623c3997ee2fef88009458a61deb7aa7c739"
+    },
+    {
+      "runId": "17-stream-async-r4",
+      "cell": "stream-async",
+      "sequence": 17,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 35.77334999999999,
+        "mad": 0.8285000000000089,
+        "p95": 37.987265,
+        "p99": 41.048137,
+        "maximum": 48.6547
+      },
+      "gpuFrameMs": {
+        "median": 0.12672,
+        "mad": 0.0010000000000000009,
+        "p95": 0.12983999999999998,
+        "p99": 0.5840512,
+        "maximum": 0.6232300000000001
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 533,
+        "50": 0
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 0.0663,
+          "mad": 0.0012999999999999956,
+          "p95": 0.06941499999999998,
+          "p99": 0.15310200000000002,
+          "maximum": 0.2303
+        },
+        "worldExtractMs": {
+          "median": 0.0325,
+          "mad": 0.0022000000000000006,
+          "p95": 0.07492499999999996,
+          "p99": 0.09013599999999997,
+          "maximum": 0.2488
+        },
+        "packetBuildMs": {
+          "median": 0.0845,
+          "mad": 0.004799999999999999,
+          "p95": 0.12174499999999996,
+          "p99": 0.1797579999999993,
+          "maximum": 0.5516
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 0.0096,
+          "mad": 0.0005999999999999998,
+          "p95": 0.025004999999999996,
+          "p99": 0.030703999999999995,
+          "maximum": 0.0511
+        },
+        "packetWaitMs": {
+          "median": 0.0635,
+          "mad": 0.003700000000000009,
+          "p95": 0.08620499999999999,
+          "p99": 0.14980099999999935,
+          "maximum": 0.5085
+        },
+        "cullMs": {
+          "median": 0.08285000000000001,
+          "mad": 0.002950000000000008,
+          "p95": 0.11735499999999996,
+          "p99": 0.14102199999999995,
+          "maximum": 0.9629
+        },
+        "renderGraphBuildMs": {
+          "median": 2.67355,
+          "mad": 0.11569999999999991,
+          "p95": 3.03132,
+          "p99": 3.3371649999999997,
+          "maximum": 3.8594
+        },
+        "renderGraphCompileMs": {
+          "median": 1.99095,
+          "mad": 0.04655000000000009,
+          "p95": 2.370315,
+          "p99": 2.628396,
+          "maximum": 2.985
+        },
+        "rhiSubmitMs": {
+          "median": 24.3052,
+          "mad": 0.665300000000002,
+          "p95": 25.56816,
+          "p99": 27.836664,
+          "maximum": 34.1222
+        },
+        "presentMs": {
+          "median": 3.9736000000000002,
+          "mad": 0.09839999999999982,
+          "p95": 4.36632,
+          "p99": 4.615522999999999,
+          "maximum": 8.1283
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 263.0,
+        "mad": 0.0,
+        "p95": 263.0,
+        "p99": 263.0,
+        "maximum": 263
+      },
+      "receiptSha256": "6be925581dd88972ee06d41c526cd17d3b23af6f60e8d89bb9bfc658d6852a4b",
+      "rawSha256": "3efebcd166a6d431d79b2a57d46041b24fdf356070d4cee985fd46eec2830e44",
+      "notesSha256": "a13e21280716e7a820d30bef01d8136e90031513ebd74bcf20b3a5a483af6d86"
+    },
+    {
+      "runId": "18-stream-sync-r4",
+      "cell": "stream-sync",
+      "sequence": 18,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 35.16785,
+        "mad": 1.2171999999999983,
+        "p95": 37.138099999999994,
+        "p99": 38.436806,
+        "maximum": 76.3201
+      },
+      "gpuFrameMs": {
+        "median": 0.12747999999999998,
+        "mad": 0.0009200000000000319,
+        "p95": 0.13008,
+        "p99": 0.5814811999999999,
+        "maximum": 0.61109
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 448,
+        "50": 1
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 0.0662,
+          "mad": 0.0013999999999999985,
+          "p95": 0.06880999999999998,
+          "p99": 0.07530200000000001,
+          "maximum": 0.1614
+        },
+        "worldExtractMs": {
+          "median": 0.0332,
+          "mad": 0.001800000000000003,
+          "p95": 0.07652999999999997,
+          "p99": 0.097304,
+          "maximum": 0.2044
+        },
+        "packetBuildMs": {
+          "median": 0.0953,
+          "mad": 0.0029,
+          "p95": 0.12843999999999994,
+          "p99": 0.18453199999999997,
+          "maximum": 0.5812
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 0.0197,
+          "mad": 0.00010000000000000286,
+          "p95": 0.022104999999999996,
+          "p99": 0.025703999999999994,
+          "maximum": 0.0433
+        },
+        "packetWaitMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "cullMs": {
+          "median": 0.0731,
+          "mad": 0.002699999999999994,
+          "p95": 0.1055999999999999,
+          "p99": 0.1587709999999999,
+          "maximum": 0.5595
+        },
+        "renderGraphBuildMs": {
+          "median": 2.68745,
+          "mad": 0.10099999999999998,
+          "p95": 3.0306050000000004,
+          "p99": 3.194102,
+          "maximum": 3.3404
+        },
+        "renderGraphCompileMs": {
+          "median": 1.9877,
+          "mad": 0.03644999999999998,
+          "p95": 2.3323500000000004,
+          "p99": 2.5414449999999995,
+          "maximum": 2.7914
+        },
+        "rhiSubmitMs": {
+          "median": 24.056,
+          "mad": 0.8944499999999991,
+          "p95": 25.125715,
+          "p99": 25.641614,
+          "maximum": 26.9383
+        },
+        "presentMs": {
+          "median": 3.94625,
+          "mad": 0.08990000000000009,
+          "p95": 4.327515,
+          "p99": 4.414066,
+          "maximum": 4.7285
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 263.0,
+        "mad": 0.0,
+        "p95": 263.0,
+        "p99": 263.0,
+        "maximum": 263
+      },
+      "receiptSha256": "57354ff16361e7ee4019b65ab45b5b0fa626e4cd92a4dd911e19d07b352a7381",
+      "rawSha256": "41e3782174bb68d6a113b4a14779c3c079ae41341b71912c9e41b41ebef707f2",
+      "notesSha256": "414486c349622019918b19cdfdcec6deedb40e122711bc2c432a1dfa0d00228f"
+    },
+    {
+      "runId": "19-stream-parallel-r4",
+      "cell": "stream-parallel",
+      "sequence": 19,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 35.75935,
+        "mad": 1.2031000000000027,
+        "p95": 37.958985,
+        "p99": 39.57048399999999,
+        "maximum": 43.2534
+      },
+      "gpuFrameMs": {
+        "median": 0.12808,
+        "mad": 0.0010399999999999854,
+        "p95": 0.13083999999999998,
+        "p99": 0.5812191999999997,
+        "maximum": 0.6094400000000001
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 592,
+        "50": 0
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 0.0663,
+          "mad": 0.00145,
+          "p95": 0.06901499999999999,
+          "p99": 0.09498899999999992,
+          "maximum": 0.2371
+        },
+        "worldExtractMs": {
+          "median": 0.0328,
+          "mad": 0.0011999999999999997,
+          "p95": 0.07144499999999997,
+          "p99": 0.08380599999999999,
+          "maximum": 0.1953
+        },
+        "packetBuildMs": {
+          "median": 0.09705,
+          "mad": 0.005650000000000002,
+          "p95": 0.13686999999999996,
+          "p99": 0.18354099999999995,
+          "maximum": 0.3287
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 0.0111,
+          "mad": 0.0008000000000000004,
+          "p95": 0.026604999999999997,
+          "p99": 0.033212999999999986,
+          "maximum": 0.046200000000000005
+        },
+        "packetWaitMs": {
+          "median": 0.05405,
+          "mad": 0.005150000000000002,
+          "p95": 0.07921,
+          "p99": 0.10481799999999997,
+          "maximum": 0.2587
+        },
+        "cullMs": {
+          "median": 0.0866,
+          "mad": 0.002350000000000005,
+          "p95": 0.12270999999999997,
+          "p99": 0.13642599999999994,
+          "maximum": 0.3206
+        },
+        "renderGraphBuildMs": {
+          "median": 2.7371499999999997,
+          "mad": 0.10984999999999978,
+          "p95": 3.124825,
+          "p99": 3.3558779999999997,
+          "maximum": 3.5417
+        },
+        "renderGraphCompileMs": {
+          "median": 1.986,
+          "mad": 0.03269999999999995,
+          "p95": 2.3294200000000003,
+          "p99": 2.517137,
+          "maximum": 2.763
+        },
+        "rhiSubmitMs": {
+          "median": 24.43705,
+          "mad": 0.9123000000000001,
+          "p95": 25.584079999999997,
+          "p99": 26.446858000000002,
+          "maximum": 27.7215
+        },
+        "presentMs": {
+          "median": 3.9743500000000003,
+          "mad": 0.09950000000000037,
+          "p95": 4.34831,
+          "p99": 4.4621249999999995,
+          "maximum": 5.4713
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 263.0,
+        "mad": 0.0,
+        "p95": 263.0,
+        "p99": 263.0,
+        "maximum": 263
+      },
+      "receiptSha256": "7a0272bab0295dd166ed3e317f8e165b535448548d8e1416558a92405740e493",
+      "rawSha256": "7df2db1ca196a3ab6d3170f09357c4bf52ead4734dcfc9945f97800c25b39d0b",
+      "notesSha256": "bfa612d947e55d058261c1e50dd833acf0aad32e26527c187bdfe9bc676859d5"
+    },
+    {
+      "runId": "20-packet-parallel-r4",
+      "cell": "packet-parallel",
+      "sequence": 20,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 59.37425,
+        "mad": 2.141349999999999,
+        "p95": 62.85712,
+        "p99": 64.754446,
+        "maximum": 68.3767
+      },
+      "gpuFrameMs": {
+        "median": 0.13155999999999998,
+        "mad": 0.0010399999999999854,
+        "p95": 0.134408,
+        "p99": 0.5501296,
+        "maximum": 0.6143000000000001
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 600,
+        "50": 600
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 6.50815,
+          "mad": 0.23925000000000018,
+          "p95": 6.819595,
+          "p99": 6.902704,
+          "maximum": 6.9289
+        },
+        "worldExtractMs": {
+          "median": 5.69265,
+          "mad": 0.2225999999999999,
+          "p95": 6.352404999999999,
+          "p99": 6.872166999999999,
+          "maximum": 10.5893
+        },
+        "packetBuildMs": {
+          "median": 2.57925,
+          "mad": 0.19745000000000013,
+          "p95": 3.3531349999999995,
+          "p99": 3.587846,
+          "maximum": 4.3372
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 1.2318500000000001,
+          "mad": 0.0908000000000001,
+          "p95": 1.5324799999999996,
+          "p99": 1.80378,
+          "maximum": 3.0526
+        },
+        "packetWaitMs": {
+          "median": 0.90435,
+          "mad": 0.029950000000000032,
+          "p95": 1.0627099999999998,
+          "p99": 1.164109,
+          "maximum": 1.3225
+        },
+        "cullMs": {
+          "median": 7.362400000000001,
+          "mad": 0.29530000000000234,
+          "p95": 9.396594999999996,
+          "p99": 11.27603899999999,
+          "maximum": 14.094499999999998
+        },
+        "renderGraphBuildMs": {
+          "median": 3.2392000000000003,
+          "mad": 0.1487999999999996,
+          "p95": 3.6280599999999996,
+          "p99": 3.889685,
+          "maximum": 4.1219
+        },
+        "renderGraphCompileMs": {
+          "median": 2.25375,
+          "mad": 0.06595000000000018,
+          "p95": 2.7293799999999995,
+          "p99": 2.941048,
+          "maximum": 3.088
+        },
+        "rhiSubmitMs": {
+          "median": 29.77875,
+          "mad": 1.1351500000000012,
+          "p95": 31.179795,
+          "p99": 31.725907,
+          "maximum": 33.7783
+        },
+        "presentMs": {
+          "median": 4.5105,
+          "mad": 0.1493500000000001,
+          "p95": 4.97565,
+          "p99": 5.2408329999999985,
+          "maximum": 8.238
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 26159.0,
+        "mad": 1.0,
+        "p95": 26161.0,
+        "p99": 26161.0,
+        "maximum": 26161
+      },
+      "receiptSha256": "fe5898488586daad76c37f39bfe9a0257ca4a361b6c9d989db6f1b750e185bc0",
+      "rawSha256": "e3dfd762d4425cad9809c2b9b57b4dce48d468719d543110ab9a073ccb9f6737",
+      "notesSha256": "c8a0f73b2530de65cfc0b3e41e88c8f5526439d30b561b2558eabf56d3fc737a"
+    },
+    {
+      "runId": "21-stream-parallel-r5",
+      "cell": "stream-parallel",
+      "sequence": 21,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 35.734750000000005,
+        "mad": 1.2044999999999924,
+        "p95": 37.953140000000005,
+        "p99": 38.82704499999999,
+        "maximum": 41.375
+      },
+      "gpuFrameMs": {
+        "median": 0.12736,
+        "mad": 0.0010799999999999976,
+        "p95": 0.13024799999999997,
+        "p99": 0.6007655999999998,
+        "maximum": 0.6172000000000001
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 597,
+        "50": 0
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 0.0675,
+          "mad": 0.000899999999999998,
+          "p95": 0.07060999999999999,
+          "p99": 0.11867699999999975,
+          "maximum": 0.2172
+        },
+        "worldExtractMs": {
+          "median": 0.0321,
+          "mad": 0.001399999999999995,
+          "p95": 0.072205,
+          "p99": 0.08060300000000001,
+          "maximum": 0.1131
+        },
+        "packetBuildMs": {
+          "median": 0.0981,
+          "mad": 0.006150000000000003,
+          "p95": 0.13232499999999997,
+          "p99": 0.15621899999999986,
+          "maximum": 0.5822
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 0.0108,
+          "mad": 0.0008000000000000004,
+          "p95": 0.026404999999999998,
+          "p99": 0.03511199999999999,
+          "maximum": 0.0989
+        },
+        "packetWaitMs": {
+          "median": 0.05585,
+          "mad": 0.0052,
+          "p95": 0.076415,
+          "p99": 0.09792199999999998,
+          "maximum": 0.514
+        },
+        "cullMs": {
+          "median": 0.0879,
+          "mad": 0.0029,
+          "p95": 0.12212999999999997,
+          "p99": 0.141005,
+          "maximum": 1.032
+        },
+        "renderGraphBuildMs": {
+          "median": 2.75875,
+          "mad": 0.10335000000000005,
+          "p95": 3.095685,
+          "p99": 3.2782039999999997,
+          "maximum": 3.3692
+        },
+        "renderGraphCompileMs": {
+          "median": 1.99545,
+          "mad": 0.03649999999999998,
+          "p95": 2.3562049999999997,
+          "p99": 2.5498809999999996,
+          "maximum": 2.7528
+        },
+        "rhiSubmitMs": {
+          "median": 24.42085,
+          "mad": 0.8380499999999991,
+          "p95": 25.574865,
+          "p99": 26.367514,
+          "maximum": 29.3864
+        },
+        "presentMs": {
+          "median": 3.96915,
+          "mad": 0.09054999999999991,
+          "p95": 4.338375,
+          "p99": 4.488528,
+          "maximum": 5.6164
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 263.0,
+        "mad": 0.0,
+        "p95": 263.0,
+        "p99": 263.0,
+        "maximum": 263
+      },
+      "receiptSha256": "248dbd041a2b16c9160766b6429fb7431aac5f4575b06d8ed2c84a2549bfb159",
+      "rawSha256": "6ccf4728b4fcd3b43c30c02d15435d351afcc0cd1ff7a3b52b05335cdcc02d7d",
+      "notesSha256": "572f940f63e2cfc5dd904cb533f3329457789bba1b28ae7d987933cf6679e4c6"
+    },
+    {
+      "runId": "22-packet-serial-r5",
+      "cell": "packet-serial",
+      "sequence": 22,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 70.1577,
+        "mad": 2.9612499999999926,
+        "p95": 75.898385,
+        "p99": 77.452201,
+        "maximum": 80.5315
+      },
+      "gpuFrameMs": {
+        "median": 0.13144,
+        "mad": 0.0008400000000000074,
+        "p95": 0.133808,
+        "p99": 0.5648179999999999,
+        "maximum": 0.61493
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 600,
+        "50": 600
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 6.2258,
+          "mad": 0.1772999999999998,
+          "p95": 6.774445,
+          "p99": 6.878567,
+          "maximum": 6.9984
+        },
+        "worldExtractMs": {
+          "median": 5.6776,
+          "mad": 0.20215000000000005,
+          "p95": 6.4484,
+          "p99": 6.812679999999999,
+          "maximum": 10.386
+        },
+        "packetBuildMs": {
+          "median": 15.265699999999999,
+          "mad": 1.0257000000000005,
+          "p95": 17.528850000000002,
+          "p99": 18.437973000000003,
+          "maximum": 18.7047
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 6.7545,
+          "mad": 0.6819500000000001,
+          "p95": 8.698249999999998,
+          "p99": 9.250691,
+          "maximum": 10.3089
+        },
+        "packetWaitMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "cullMs": {
+          "median": 8.383,
+          "mad": 0.21479999999999944,
+          "p95": 9.02671,
+          "p99": 9.53223,
+          "maximum": 10.2378
+        },
+        "renderGraphBuildMs": {
+          "median": 3.0901,
+          "mad": 0.10040000000000027,
+          "p95": 3.5208549999999996,
+          "p99": 3.671855,
+          "maximum": 4.6585
+        },
+        "renderGraphCompileMs": {
+          "median": 2.2205,
+          "mad": 0.039349999999999996,
+          "p95": 2.49981,
+          "p99": 2.549829,
+          "maximum": 2.5904
+        },
+        "rhiSubmitMs": {
+          "median": 27.3247,
+          "mad": 2.1313999999999993,
+          "p95": 30.78147,
+          "p99": 31.261439,
+          "maximum": 34.2176
+        },
+        "presentMs": {
+          "median": 4.47905,
+          "mad": 0.0919500000000002,
+          "p95": 4.955125,
+          "p99": 5.145773,
+          "maximum": 5.2557
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 26159.0,
+        "mad": 1.0,
+        "p95": 26161.0,
+        "p99": 26161.0,
+        "maximum": 26161
+      },
+      "receiptSha256": "066f7298e40500ecb1ba1f9cef3a639b728f903da3e081a1b4f7a66b49000627",
+      "rawSha256": "f92b24bd333a46e0b8034bd74131b8766e30aa79b9ad44995072774d82236e63",
+      "notesSha256": "d453c5ac088b48f5ac89fb772e61623c3997ee2fef88009458a61deb7aa7c739"
+    },
+    {
+      "runId": "23-stream-sync-r5",
+      "cell": "stream-sync",
+      "sequence": 23,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 35.5038,
+        "mad": 1.3506,
+        "p95": 38.0615,
+        "p99": 41.38298799999999,
+        "maximum": 81.0053
+      },
+      "gpuFrameMs": {
+        "median": 0.12688,
+        "mad": 0.0010399999999999854,
+        "p95": 0.13059199999999999,
+        "p99": 0.5718724,
+        "maximum": 0.60286
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 549,
+        "50": 1
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 0.06515,
+          "mad": 0.0016499999999999987,
+          "p95": 0.068705,
+          "p99": 0.07530200000000001,
+          "maximum": 0.0953
+        },
+        "worldExtractMs": {
+          "median": 0.03485,
+          "mad": 0.00315,
+          "p95": 0.0782,
+          "p99": 0.11274999999999995,
+          "maximum": 0.2102
+        },
+        "packetBuildMs": {
+          "median": 0.0959,
+          "mad": 0.004199999999999995,
+          "p95": 0.12882499999999997,
+          "p99": 0.15196499999999996,
+          "maximum": 0.1834
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 0.0197,
+          "mad": 0.00010000000000000286,
+          "p95": 0.022404999999999994,
+          "p99": 0.026303999999999998,
+          "maximum": 0.0315
+        },
+        "packetWaitMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "cullMs": {
+          "median": 0.0736,
+          "mad": 0.003799999999999998,
+          "p95": 0.10522499999999999,
+          "p99": 0.13035899999999995,
+          "maximum": 0.16169999999999998
+        },
+        "renderGraphBuildMs": {
+          "median": 2.7451499999999998,
+          "mad": 0.11894999999999989,
+          "p95": 3.1496649999999997,
+          "p99": 3.2917769999999993,
+          "maximum": 4.7592
+        },
+        "renderGraphCompileMs": {
+          "median": 2.0205,
+          "mad": 0.06260000000000021,
+          "p95": 2.41262,
+          "p99": 2.640752,
+          "maximum": 2.8419
+        },
+        "rhiSubmitMs": {
+          "median": 24.2509,
+          "mad": 1.0681999999999992,
+          "p95": 25.687054999999997,
+          "p99": 27.416275999999996,
+          "maximum": 30.2876
+        },
+        "presentMs": {
+          "median": 3.9644000000000004,
+          "mad": 0.09770000000000012,
+          "p95": 4.358315,
+          "p99": 4.6842179999999995,
+          "maximum": 5.1111
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 263.0,
+        "mad": 0.0,
+        "p95": 263.0,
+        "p99": 263.0,
+        "maximum": 263
+      },
+      "receiptSha256": "c53cf9cd6e32619e43c0a83a006dd10c07b115830f2c4221f702533ebc06be78",
+      "rawSha256": "7008c950beed512f5401bdb126b25f03c1ac717b2b0db6d101145c789d483033",
+      "notesSha256": "414486c349622019918b19cdfdcec6deedb40e122711bc2c432a1dfa0d00228f"
+    },
+    {
+      "runId": "24-stream-async-r5",
+      "cell": "stream-async",
+      "sequence": 24,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 35.5156,
+        "mad": 1.3072000000000017,
+        "p95": 37.53283,
+        "p99": 38.60580099999999,
+        "maximum": 45.282
+      },
+      "gpuFrameMs": {
+        "median": 0.12752,
+        "mad": 0.0012000000000000066,
+        "p95": 0.130776,
+        "p99": 0.5966516,
+        "maximum": 0.62166
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 590,
+        "50": 0
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 0.0661,
+          "mad": 0.001700000000000007,
+          "p95": 0.0685,
+          "p99": 0.076401,
+          "maximum": 0.232
+        },
+        "worldExtractMs": {
+          "median": 0.0333,
+          "mad": 0.0016000000000000042,
+          "p95": 0.07281,
+          "p99": 0.08411099999999999,
+          "maximum": 0.2159
+        },
+        "packetBuildMs": {
+          "median": 0.077,
+          "mad": 0.003349999999999999,
+          "p95": 0.10582499999999999,
+          "p99": 0.15930899999999992,
+          "maximum": 0.6844
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 0.0077,
+          "mad": 0.0005000000000000004,
+          "p95": 0.017109999999999993,
+          "p99": 0.02350899999999999,
+          "maximum": 0.0291
+        },
+        "packetWaitMs": {
+          "median": 0.0589,
+          "mad": 0.002799999999999997,
+          "p95": 0.07670500000000001,
+          "p99": 0.13995799999999994,
+          "maximum": 0.6695
+        },
+        "cullMs": {
+          "median": 0.08664999999999999,
+          "mad": 0.003599999999999999,
+          "p95": 0.11115499999999993,
+          "p99": 0.13620699999999983,
+          "maximum": 0.985
+        },
+        "renderGraphBuildMs": {
+          "median": 2.7137000000000002,
+          "mad": 0.0915999999999999,
+          "p95": 3.0436849999999995,
+          "p99": 3.2194899999999995,
+          "maximum": 3.8323
+        },
+        "renderGraphCompileMs": {
+          "median": 1.98675,
+          "mad": 0.03539999999999999,
+          "p95": 2.319925,
+          "p99": 2.5020589999999996,
+          "maximum": 2.7964
+        },
+        "rhiSubmitMs": {
+          "median": 24.30035,
+          "mad": 0.9331499999999977,
+          "p95": 25.47589,
+          "p99": 26.444276,
+          "maximum": 32.148
+        },
+        "presentMs": {
+          "median": 3.95045,
+          "mad": 0.07939999999999992,
+          "p95": 4.296355,
+          "p99": 4.402495,
+          "maximum": 5.0365
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 263.0,
+        "mad": 0.0,
+        "p95": 263.0,
+        "p99": 263.0,
+        "maximum": 263
+      },
+      "receiptSha256": "de8b0f5c28fb3f9b16d1aaec361643b34173cdac8a2724aba861263df9355000",
+      "rawSha256": "13277804060581be36fdb4564d54a6f82f30fe22578cf31dba5dfff8c4c72242",
+      "notesSha256": "e30e5316d9e9bccbffbd8b7316379ea77c8985c2ccc1899fee09056bdb23f7e5"
+    },
+    {
+      "runId": "25-packet-parallel-r5",
+      "cell": "packet-parallel",
+      "sequence": 25,
+      "status": "PASS",
+      "foregroundRatio": 1,
+      "gpuValidSamples": 597,
+      "cpuFrameMs": {
+        "median": 56.754599999999996,
+        "mad": 1.64715,
+        "p95": 60.616944999999994,
+        "p99": 62.319112000000004,
+        "maximum": 66.151
+      },
+      "gpuFrameMs": {
+        "median": 0.13104,
+        "mad": 0.0010000000000000009,
+        "p95": 0.134016,
+        "p99": 0.5814883999999998,
+        "maximum": 0.60362
+      },
+      "gpuValidCount": 597,
+      "residentBytes": {
+        "median": 124981248.0,
+        "mad": 0.0,
+        "p95": 124981248.0,
+        "p99": 124981248.0,
+        "maximum": 124981248
+      },
+      "absoluteHitches": {
+        "16.67": 600,
+        "33.33": 600,
+        "50": 600
+      },
+      "phasesMs": {
+        "fixedUpdateMs": {
+          "median": 6.4877,
+          "mad": 0.22204999999999986,
+          "p95": 6.794480000000001,
+          "p99": 6.9532050000000005,
+          "maximum": 9.0561
+        },
+        "worldExtractMs": {
+          "median": 5.7509999999999994,
+          "mad": 0.29409999999999936,
+          "p95": 6.492279999999999,
+          "p99": 6.927133,
+          "maximum": 9.5244
+        },
+        "packetBuildMs": {
+          "median": 2.87855,
+          "mad": 0.3505999999999998,
+          "p95": 3.63643,
+          "p99": 3.995732999999998,
+          "maximum": 5.2316
+        },
+        "packetMergeMs": {
+          "median": 0.0,
+          "mad": 0.0,
+          "p95": 0.0,
+          "p99": 0.0,
+          "maximum": 0
+        },
+        "packetSortMs": {
+          "median": 1.17715,
+          "mad": 0.09234999999999993,
+          "p95": 1.52684,
+          "p99": 1.6820279999999999,
+          "maximum": 1.8137999999999999
+        },
+        "packetWaitMs": {
+          "median": 0.90125,
+          "mad": 0.04469999999999996,
+          "p95": 1.0917149999999998,
+          "p99": 1.250173,
+          "maximum": 1.3879000000000001
+        },
+        "cullMs": {
+          "median": 8.021899999999999,
+          "mad": 0.83575,
+          "p95": 11.174604999999996,
+          "p99": 12.946707999999997,
+          "maximum": 14.215899999999998
+        },
+        "renderGraphBuildMs": {
+          "median": 3.1948499999999997,
+          "mad": 0.1674,
+          "p95": 3.645805,
+          "p99": 3.774713,
+          "maximum": 4.0057
+        },
+        "renderGraphCompileMs": {
+          "median": 2.2567500000000003,
+          "mad": 0.09944999999999982,
+          "p95": 2.8040449999999995,
+          "p99": 2.9462460000000004,
+          "maximum": 3.0188
+        },
+        "rhiSubmitMs": {
+          "median": 26.790300000000002,
+          "mad": 0.8481999999999985,
+          "p95": 28.201430000000002,
+          "p99": 28.91407,
+          "maximum": 31.5748
+        },
+        "presentMs": {
+          "median": 4.49555,
+          "mad": 0.13365000000000027,
+          "p95": 4.94594,
+          "p99": 5.12028,
+          "maximum": 8.312
+        }
+      },
+      "drawCount": {
+        "median": 256.0,
+        "mad": 0.0,
+        "p95": 256.0,
+        "p99": 256.0,
+        "maximum": 256
+      },
+      "visibleCount": {
+        "median": 26159.0,
+        "mad": 1.0,
+        "p95": 26161.0,
+        "p99": 26161.0,
+        "maximum": 26161
+      },
+      "receiptSha256": "dfe9b50988a4927435056ea16bc21e38cacf6bcffba9335d1effb666d979c71d",
+      "rawSha256": "6e9e96223c131b0e972336550669a89be8c41445370354af6924b6af6fea6785",
+      "notesSha256": "c8a0f73b2530de65cfc0b3e41e88c8f5526439d30b561b2558eabf56d3fc737a"
+    }
+  ],
+  "comparisons": [
+    {
+      "baseline": "packet-serial",
+      "candidate": "packet-parallel",
+      "baselineMedianMs": 70.1577,
+      "candidateMedianMs": 58.299,
+      "changePercent": -16.90292013563729,
+      "noisePercent": 3,
+      "baselineRunMedianMadMs": 0.6471499999999821,
+      "drift": {
+        "baselinePercent": -0.4520668650312082,
+        "candidatePercent": 3.248701658347255
+      },
+      "protected": {
+        "p95Cpu": {
+          "baseline": 76.39121,
+          "candidate": 62.117985,
+          "pass": true,
+          "changePercent": -18.68438135748865
+        },
+        "gpuFrameMs": {
+          "baseline": 0.13155999999999998,
+          "candidate": 0.13104,
+          "pass": true,
+          "changePercent": -0.39525691699604193
+        },
+        "residentBytes": {
+          "baseline": 124981248.0,
+          "candidate": 124981248.0,
+          "pass": true,
+          "changePercent": 0.0
+        },
+        "hitch": {
+          "thresholdMs": 85.59505000000006,
+          "baselineRate": 0.0003333333333333333,
+          "candidateRate": 0.033666666666666664,
+          "maximumCandidateRate": 0.010333333333333333,
+          "pass": false
+        }
+      },
+      "result": "INCONCLUSIVE",
+      "reason": "chronological drift exceeds noise threshold"
+    },
+    {
+      "baseline": "stream-sync",
+      "candidate": "stream-async",
+      "baselineMedianMs": 35.16785,
+      "candidateMedianMs": 35.76885,
+      "changePercent": 1.7089472344769414,
+      "noisePercent": 3,
+      "baselineRunMedianMadMs": 0.06560000000000343,
+      "drift": {
+        "baselinePercent": -0.6202079416853428,
+        "candidatePercent": 0.1585391717745589
+      },
+      "protected": {
+        "p95Cpu": {
+          "baseline": 37.899784999999994,
+          "candidate": 37.853880000000004,
+          "pass": true,
+          "changePercent": -0.12112205913566672
+        },
+        "gpuFrameMs": {
+          "baseline": 0.12716,
+          "candidate": 0.127,
+          "pass": true,
+          "changePercent": -0.1258257313620584
+        },
+        "residentBytes": {
+          "baseline": 124981248.0,
+          "candidate": 124981248.0,
+          "pass": true,
+          "changePercent": 0.0
+        },
+        "hitch": {
+          "thresholdMs": 42.47024999999999,
+          "baselineRate": 0.005333333333333333,
+          "candidateRate": 0.002,
+          "maximumCandidateRate": 0.015333333333333334,
+          "pass": true
+        }
+      },
+      "result": "REJECTED",
+      "reason": "insufficient CPU improvement"
+    },
+    {
+      "baseline": "stream-async",
+      "candidate": "stream-parallel",
+      "baselineMedianMs": 35.76885,
+      "candidateMedianMs": 35.75935,
+      "changePercent": -0.026559422514290307,
+      "noisePercent": 3,
+      "baselineRunMedianMadMs": 0.08605000000000018,
+      "drift": {
+        "baselinePercent": 0.1585391717745589,
+        "candidatePercent": -0.381430143504955
+      },
+      "protected": {
+        "p95Cpu": {
+          "baseline": 37.853880000000004,
+          "candidate": 37.958985,
+          "pass": true,
+          "changePercent": 0.2776597801863235
+        },
+        "gpuFrameMs": {
+          "baseline": 0.127,
+          "candidate": 0.12736,
+          "pass": true,
+          "changePercent": 0.28346456692913324
+        },
+        "residentBytes": {
+          "baseline": 124981248.0,
+          "candidate": 124981248.0,
+          "pass": true,
+          "changePercent": 0.0
+        },
+        "hitch": {
+          "thresholdMs": 41.06965000000002,
+          "baselineRate": 0.004333333333333333,
+          "candidateRate": 0.0026666666666666666,
+          "maximumCandidateRate": 0.014333333333333333,
+          "pass": true
+        }
+      },
+      "result": "REJECTED",
+      "reason": "insufficient CPU improvement"
+    },
+    {
+      "baseline": "stream-sync",
+      "candidate": "stream-parallel",
+      "baselineMedianMs": 35.16785,
+      "candidateMedianMs": 35.75935,
+      "changePercent": 1.6819339254461,
+      "noisePercent": 3,
+      "baselineRunMedianMadMs": 0.06560000000000343,
+      "drift": {
+        "baselinePercent": -0.6202079416853428,
+        "candidatePercent": -0.381430143504955
+      },
+      "protected": {
+        "p95Cpu": {
+          "baseline": 37.899784999999994,
+          "candidate": 37.958985,
+          "pass": true,
+          "changePercent": 0.15620141380750352
+        },
+        "gpuFrameMs": {
+          "baseline": 0.12716,
+          "candidate": 0.12736,
+          "pass": true,
+          "changePercent": 0.15728216420258395
+        },
+        "residentBytes": {
+          "baseline": 124981248.0,
+          "candidate": 124981248.0,
+          "pass": true,
+          "changePercent": 0.0
+        },
+        "hitch": {
+          "thresholdMs": 42.47024999999999,
+          "baselineRate": 0.005333333333333333,
+          "candidateRate": 0.001,
+          "maximumCandidateRate": 0.015333333333333334,
+          "pass": true
+        }
+      },
+      "result": "REJECTED",
+      "reason": "insufficient CPU improvement"
+    }
+  ],
+  "limitations": [
+    "Run-level statistics only; verifying per-frame medians themselves requires the local raw files.",
+    "Single machine, five runs per cell, D3D12, VSync off; not a cross-machine or generic speedup claim.",
+    "Historical C-M9-002 identity gap and BLOCKED status are unchanged by this material."
+  ]
+}

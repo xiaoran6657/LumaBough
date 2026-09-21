@@ -1,0 +1,534 @@
+{
+  "schemaVersion": 2,
+  "kind": "historical-raw-recomputation",
+  "evidenceStatus": "BLOCKED",
+  "accessStatus": "LOCAL",
+  "runtimeCommit": null,
+  "publicationCommit": null,
+  "sourceCommit": null,
+  "embeddedSourceCommit": "0c7a1a3b9c6f442148ed703fb4fa9282537b6d67",
+  "sourceIdentityStatus": "UNRESOLVED_CONFIGURE_TIME_COMMIT",
+  "generator": {
+    "version": 1,
+    "sha256": "3782be063a359e1cbfc9e77d95fd82a1e1608764d70d08fafa1f9fbf8255fa33",
+    "comparatorSha256": "9cad4175a7ae4f8b0082e6a167776a01a54894927cae19939a5c1d207c5c0e9b",
+    "command": "python tools/portfolio/recompute_performance.py --output out/performance-recomputed"
+  },
+  "inputManifestSha256": "d5738de48bfa315f5706839486f0552c740100b74e33f27414fb6605e37ae732",
+  "metricsScope": "CPU frame time, ms; median of per-run medians; linear interpolated quantiles",
+  "warmupFrames": 120,
+  "measuredFrames": 600,
+  "runsPerCell": 5,
+  "experiments": [
+    {
+      "id": "E-M7-METHOD-003",
+      "preregistrationCommit": "2429dc1639ed2c53b4c9b49a7ff7c5ea8dfbb911",
+      "runCount": 10,
+      "sampleCount": 6000,
+      "inputHashes": {
+        "2026-09-19-m7-method-003/batch2/par-pw-w8-c256-r1/run-notes.json": "afdd1009a87fa4be48b36333fb4f56e37b51acb30b433cf5984b8020c66bf6f1",
+        "2026-09-19-m7-method-003/batch2/par-pw-w8-c256-r1/run.json": "6dcddec23d13c27332bb8b4c70b57b8149b6f7109a38f8b416ff3e55b62b02b4",
+        "2026-09-19-m7-method-003/batch2/par-pw-w8-c256-r2/run-notes.json": "afdd1009a87fa4be48b36333fb4f56e37b51acb30b433cf5984b8020c66bf6f1",
+        "2026-09-19-m7-method-003/batch2/par-pw-w8-c256-r2/run.json": "59da46ed428e4b004f61bc20ea7bb27c86d9a7d7f3318de21ef44b21a3e4c6be",
+        "2026-09-19-m7-method-003/batch2/serial-w1-c256-r1/run-notes.json": "12bf783104bbd1b4356dda2092e6bec277445bc3f60726d781976728e760af67",
+        "2026-09-19-m7-method-003/batch2/serial-w1-c256-r1/run.json": "087353608297442a43545b89732db00343af2a3db74b88dcf21b6fc14038608c",
+        "2026-09-19-m7-method-003/batch2/serial-w1-c256-r2/run-notes.json": "12bf783104bbd1b4356dda2092e6bec277445bc3f60726d781976728e760af67",
+        "2026-09-19-m7-method-003/batch2/serial-w1-c256-r2/run.json": "f8f295ab2824912043672d53e73bff16f4c10afa04aca98e126ea4b0ae307a3b",
+        "2026-09-19-m7-method-003/batch2/sweep-driver-summary.json": "43524bfba07809a18784a881435f13d5e1658a1a1017f589ab6570fbf75df7d7",
+        "2026-09-19-m7-method-003/par-pw-w8-c256-r1/run-notes.json": "afdd1009a87fa4be48b36333fb4f56e37b51acb30b433cf5984b8020c66bf6f1",
+        "2026-09-19-m7-method-003/par-pw-w8-c256-r1/run.json": "ebb7835d27d08bd9f27ba624e5cb0e7d84ce1d7b4dda359fb0cc23500fa3cb2d",
+        "2026-09-19-m7-method-003/par-pw-w8-c256-r2/run-notes.json": "afdd1009a87fa4be48b36333fb4f56e37b51acb30b433cf5984b8020c66bf6f1",
+        "2026-09-19-m7-method-003/par-pw-w8-c256-r2/run.json": "7db9960108d49da87a6dc9c32bd45704d3491d2e06fca975d779104ee76b9ebb",
+        "2026-09-19-m7-method-003/par-pw-w8-c256-r3/run-notes.json": "afdd1009a87fa4be48b36333fb4f56e37b51acb30b433cf5984b8020c66bf6f1",
+        "2026-09-19-m7-method-003/par-pw-w8-c256-r3/run.json": "dc563ec0922185563b7b2a4b907c220af20cd8e547819b44209616a0aa96218c",
+        "2026-09-19-m7-method-003/protocol.json": "a7e186679a28da97539c922e1f50b117f761e2c0a1d91cff0ce261f20eb2b839",
+        "2026-09-19-m7-method-003/serial-w1-c256-r1/run-notes.json": "12bf783104bbd1b4356dda2092e6bec277445bc3f60726d781976728e760af67",
+        "2026-09-19-m7-method-003/serial-w1-c256-r1/run.json": "d22c0763a32600d47daedb25fdc8e21286f50af28c9f26433185a6de6d0dc92f",
+        "2026-09-19-m7-method-003/serial-w1-c256-r2/run-notes.json": "12bf783104bbd1b4356dda2092e6bec277445bc3f60726d781976728e760af67",
+        "2026-09-19-m7-method-003/serial-w1-c256-r2/run.json": "ab20b985d846ccb303c390e989ba06083ec0b357d662dfbc577c7027d73ca18a",
+        "2026-09-19-m7-method-003/serial-w1-c256-r3/run-notes.json": "12bf783104bbd1b4356dda2092e6bec277445bc3f60726d781976728e760af67",
+        "2026-09-19-m7-method-003/serial-w1-c256-r3/run.json": "ab3254ee5a4ece9e9fc38008edf5cba0ce91f5145cb664b317c1a92442b0400c",
+        "2026-09-19-m7-method-003/sweep-driver-summary.json": "79a85b4fa78a7a445ca276baddd917ba79272d05d066ff688a11c844f6092f5f"
+      },
+      "comparisons": [
+        {
+          "name": "compare",
+          "result": {
+            "cell": "sceneName=m7-cpu-scale|rhi=d3d12|chunkSize=256",
+            "result": "ACCEPTED",
+            "verdict": "IMPROVED",
+            "targetMetric": "cpuFrameMs",
+            "treatment": "packetBuildMode: serial -> parallel; schedulerMode: none -> per-worker; workers: 1 -> 8; variant: baseline -> candidate",
+            "baselineRuns": 5,
+            "candidateRuns": 5,
+            "baselineMedianMs": 65.7946,
+            "baselineRunToRunMadMs": 0.2846,
+            "baselineWithinRunMadMs": 0.7228,
+            "baselineP95Ms": 71.111,
+            "baselineP99Ms": 75.0219,
+            "candidateMedianMs": 54.9751,
+            "candidateP95Ms": 60.2014,
+            "candidateP99Ms": 61.4801,
+            "changePercent": -16.444,
+            "p95ChangePercent": -15.342,
+            "requiredPercent": 3,
+            "protectedOk": true,
+            "protected": {
+              "p95": {
+                "baseline": 71.111,
+                "candidate": 60.2014,
+                "changePercent": -15.342,
+                "ok": true,
+                "precision": {
+                  "limited": false,
+                  "spreadPercent": 3.543,
+                  "baselineMin": 69.5182,
+                  "baselineMax": 72.0374,
+                  "candidateInsideRange": false
+                }
+              },
+              "gpuFrameMs": {
+                "baseline": 0.1309,
+                "candidate": 0.1307,
+                "changePercent": -0.122,
+                "ok": true,
+                "precision": {
+                  "limited": false,
+                  "spreadPercent": 0.657,
+                  "baselineMin": 0.1305,
+                  "baselineMax": 0.1313,
+                  "candidateInsideRange": true
+                }
+              },
+              "residentBytes": {
+                "baseline": 124981248,
+                "candidate": 124981248,
+                "changePercent": 0,
+                "ok": true,
+                "precision": {
+                  "limited": false,
+                  "spreadPercent": 0,
+                  "baselineMin": 124981248,
+                  "baselineMax": 124981248,
+                  "candidateInsideRange": true
+                }
+              },
+              "hitch16_67": {
+                "baseline": 3000,
+                "candidate": 3000,
+                "changePercent": 0,
+                "ok": true
+              }
+            },
+            "precisionLimited": [],
+            "hitches": "3000/3000/3000 -> 3000/3000/3000",
+            "drift": {
+              "available": true,
+              "baselineDriftPercent": 0.797,
+              "candidateDriftPercent": -2.075,
+              "thresholdPercent": 3,
+              "flagged": false
+            },
+            "notComparableFields": [],
+            "sourceHashes": "134B71E362DD7FECA9AD67AA01360877073FC11AE2A94048870792CCB41D3B72,EF182274492A79158644E9AEF31A3A7DF3BD9D0F187A7DB6A2700E9128C31ED3,64B0B46EF0E9706107623BDBE7FF5A8900BF8EA078B3DF36FC5BA018AF8C146C,F20CFAEE1F1983233255D6FD8008FE162E976EA407AA33B06C6CC88BF509880C,E32365FC37A21BB3DEAEB726E4A793424C2F912012ED8DC6D2F3255810363C4F"
+          },
+          "chronologicalDrift": {
+            "baseline": {
+              "runOrder": [
+                "serial-w1-c256-r2/run.json",
+                "serial-w1-c256-r3/run.json",
+                "serial-w1-c256-r1/run.json",
+                "batch2/serial-w1-c256-r2/run.json",
+                "batch2/serial-w1-c256-r1/run.json"
+              ],
+              "changePercent": -0.10214566632490839
+            },
+            "candidate": {
+              "runOrder": [
+                "par-pw-w8-c256-r2/run.json",
+                "par-pw-w8-c256-r3/run.json",
+                "par-pw-w8-c256-r1/run.json",
+                "batch2/par-pw-w8-c256-r2/run.json",
+                "batch2/par-pw-w8-c256-r1/run.json"
+              ],
+              "changePercent": 2.7369331549675566
+            },
+            "flagged": false
+          },
+          "historicalResultReproduced": true
+        }
+      ]
+    },
+    {
+      "id": "E-M7-COMBINED-001",
+      "preregistrationCommit": "45b1c1a675479119e2fcb802fa82ef51c728ba41",
+      "runCount": 15,
+      "sampleCount": 9000,
+      "inputHashes": {
+        "2026-09-19-m7-combined-001/batch2/streaming-async-pw-w8-r1/run-notes.json": "8889f9af71f24e7d9fefac052bc7e7fedb9d8a53d4ce54a6f8f4c9e55ad07424",
+        "2026-09-19-m7-combined-001/batch2/streaming-async-pw-w8-r1/run.json": "bd9cf559a928225e3a045fa5d195f27ff7d8106a3025e19bf292b0710b68b184",
+        "2026-09-19-m7-combined-001/batch2/streaming-async-pw-w8-r2/run-notes.json": "8123f801a81a5737084bbac232aa7ddffc2decb1caa593706d8905890d447ef1",
+        "2026-09-19-m7-combined-001/batch2/streaming-async-pw-w8-r2/run.json": "2f89fea6ea785ca8d3aa9b67c70037d84409adf6c35e8bf9d090441839f04079",
+        "2026-09-19-m7-combined-001/batch2/streaming-async-serial-r1/run-notes.json": "528b00a4992df5f7513cd0c3e672ef011965efa34c22a6b9883e7d10b2e50968",
+        "2026-09-19-m7-combined-001/batch2/streaming-async-serial-r1/run.json": "aaad816881fb20b6af6a71f2d239066a84b8e51ec3ab57f29dd6627eceea4f19",
+        "2026-09-19-m7-combined-001/batch2/streaming-async-serial-r2/run-notes.json": "7ab6f2bc3dc63147b297574209280414eb2287273980a9e41b8992bbf975efb3",
+        "2026-09-19-m7-combined-001/batch2/streaming-async-serial-r2/run.json": "7358feaf0a0d145f378a5f397cfcf189f7b72214d7e5b97fb072f85616d1916e",
+        "2026-09-19-m7-combined-001/batch2/streaming-sync-serial-r1/run-notes.json": "975bec927f910f2de4719d5d2dff2cdc104187b3d6b442bc4b03def0172fe645",
+        "2026-09-19-m7-combined-001/batch2/streaming-sync-serial-r1/run.json": "eb256765b61e51e5b0d303d617b98d916858f0490a9d4663a59a5159c4c135c5",
+        "2026-09-19-m7-combined-001/batch2/streaming-sync-serial-r2/run-notes.json": "975bec927f910f2de4719d5d2dff2cdc104187b3d6b442bc4b03def0172fe645",
+        "2026-09-19-m7-combined-001/batch2/streaming-sync-serial-r2/run.json": "1aea0d781226914a0755694e6a8534f1a7275a553df3d8fe9ee3d8c9a4271957",
+        "2026-09-19-m7-combined-001/batch2/sweep-driver-summary.json": "b72155633023544cac77c54dddc8a2e94b96d05de91424937bcfffacc0c7b31a",
+        "2026-09-19-m7-combined-001/protocol.json": "ab65c7e0f06cc741f982e126091de46f19d117da70825cb22a78eb83f2e06e9d",
+        "2026-09-19-m7-combined-001/streaming-async-pw-w8-r1/run-notes.json": "8d76d499e46861c8492c3a0ac3ab3fad8f37c2074ce92daac1b7a24837fd9435",
+        "2026-09-19-m7-combined-001/streaming-async-pw-w8-r1/run.json": "1ac1180316bf74e0461bf72d562c2508ad5b424abfb002dbe96597f64f0edbfb",
+        "2026-09-19-m7-combined-001/streaming-async-pw-w8-r2/run-notes.json": "4c12fa8a92b4c8bdf80fb88f8db430bf13c7ddca1fb14144141c413f5e049342",
+        "2026-09-19-m7-combined-001/streaming-async-pw-w8-r2/run.json": "cbf74aa66b858146ca1b99e061115d44f29ecb4a183057c10fdd1faff23cdff4",
+        "2026-09-19-m7-combined-001/streaming-async-pw-w8-r3/run-notes.json": "18593a3ef4f667311257e16b30d385fa37131f7a59df86d6af86dc4822af7f8d",
+        "2026-09-19-m7-combined-001/streaming-async-pw-w8-r3/run.json": "85c48bfedcfabdcea3a23d34fcd100852a29e7368f29760c637ebd5c4888c883",
+        "2026-09-19-m7-combined-001/streaming-async-serial-r1/run-notes.json": "b3cbca30af5ca7f8161c94e1be083d43e846a89e458dc84e87b84dc2c5acf4e5",
+        "2026-09-19-m7-combined-001/streaming-async-serial-r1/run.json": "c44d8b9bd80f1a4d0ccf2a18d5b877d191adbbc7f7aaadfe7dab427141d877ec",
+        "2026-09-19-m7-combined-001/streaming-async-serial-r2/run-notes.json": "5cab8bef7638455211d2ed85c1d92b7bc3e35d16bbe5cc5b94d8a984c75ac5bb",
+        "2026-09-19-m7-combined-001/streaming-async-serial-r2/run.json": "04d6285905e0c964e60653b2344377affa244cdce429dd7e3a9c2739bfede6b2",
+        "2026-09-19-m7-combined-001/streaming-async-serial-r3/run-notes.json": "ed47a498c6ed53b612cd0d4291af639986168ad0f2e9cd9a06a5d2fb502c0613",
+        "2026-09-19-m7-combined-001/streaming-async-serial-r3/run.json": "599504a40bd534dff97bc321a637ea47d20ac02ef2aaa3f4afc43738cf717c5d",
+        "2026-09-19-m7-combined-001/streaming-sync-serial-r1/run-notes.json": "975bec927f910f2de4719d5d2dff2cdc104187b3d6b442bc4b03def0172fe645",
+        "2026-09-19-m7-combined-001/streaming-sync-serial-r1/run.json": "702aeea89059593c97f49db6defee4d4d9f6c29da55e508efd27e7d215c82225",
+        "2026-09-19-m7-combined-001/streaming-sync-serial-r2/run-notes.json": "975bec927f910f2de4719d5d2dff2cdc104187b3d6b442bc4b03def0172fe645",
+        "2026-09-19-m7-combined-001/streaming-sync-serial-r2/run.json": "b33449cbd839ddf94e54f42ed70002aaec22948e5168ce92c5710bbd09fe3ef8",
+        "2026-09-19-m7-combined-001/streaming-sync-serial-r3/run-notes.json": "975bec927f910f2de4719d5d2dff2cdc104187b3d6b442bc4b03def0172fe645",
+        "2026-09-19-m7-combined-001/streaming-sync-serial-r3/run.json": "40753966a89035aa60b1a835114d3a80232dc120ca7dc0853323e0aeb7ac5686",
+        "2026-09-19-m7-combined-001/sweep-driver-summary.json": "a3e56fa61d6b436a31b5857443d0d6074d98e4ab69275abe3d2def197fe2b4f7"
+      },
+      "comparisons": [
+        {
+          "name": "compare-async",
+          "result": {
+            "cell": "sceneName=m7-streaming|rhi=d3d12|chunkSize=256",
+            "result": "REJECTED",
+            "verdict": "PROTECTED-REGRESSION",
+            "targetMetric": "cpuFrameMs",
+            "treatment": "loaderMode: serial-sync-read-validate -> async-budget-pipeline; uploadBudgetCpuMs: 0 -> 0.5; uploadBudgetRequests: 0 -> 16; uploadBudgetReloadPercent: 0 -> 50; uploadAgingThresholdMs: 0 -> 50; variant: baseline -> candidate-async",
+            "baselineRuns": 5,
+            "candidateRuns": 5,
+            "baselineMedianMs": 33.598,
+            "baselineRunToRunMadMs": 0.0293,
+            "baselineWithinRunMadMs": 0.1753,
+            "baselineP95Ms": 36.0889,
+            "baselineP99Ms": 38.659,
+            "candidateMedianMs": 34.157,
+            "candidateP95Ms": 37.9349,
+            "candidateP99Ms": 39.3741,
+            "changePercent": 1.664,
+            "p95ChangePercent": 5.115,
+            "requiredPercent": 3,
+            "protectedOk": false,
+            "protected": {
+              "p95": {
+                "baseline": 36.0889,
+                "candidate": 37.9349,
+                "changePercent": 5.115,
+                "ok": false,
+                "precision": {
+                  "limited": false,
+                  "spreadPercent": 4.852,
+                  "baselineMin": 35.5865,
+                  "baselineMax": 37.3376,
+                  "candidateInsideRange": false
+                }
+              },
+              "gpuFrameMs": {
+                "baseline": 0.1276,
+                "candidate": 0.1274,
+                "changePercent": -0.157,
+                "ok": true,
+                "precision": {
+                  "limited": false,
+                  "spreadPercent": 1.191,
+                  "baselineMin": 0.127,
+                  "baselineMax": 0.1285,
+                  "candidateInsideRange": true
+                }
+              },
+              "residentBytes": {
+                "baseline": 124981248,
+                "candidate": 124981248,
+                "changePercent": 0,
+                "ok": true,
+                "precision": {
+                  "limited": false,
+                  "spreadPercent": 0,
+                  "baselineMin": 124981248,
+                  "baselineMax": 124981248,
+                  "candidateInsideRange": true
+                }
+              },
+              "hitch16_67": {
+                "baseline": 3000,
+                "candidate": 3000,
+                "changePercent": 0,
+                "ok": true
+              }
+            },
+            "precisionLimited": [],
+            "hitches": "3000/2682/5 -> 3000/2942/0",
+            "drift": {
+              "available": true,
+              "baselineDriftPercent": 0.366,
+              "candidateDriftPercent": -1.728,
+              "thresholdPercent": 3,
+              "flagged": false
+            },
+            "notComparableFields": [],
+            "sourceHashes": "13773BF7B7924193BABE7138FE9640C6BA530849AF90FA568AD18EE0E3892198,5A8ECBDFEC2C047EEF4408F2210C6B7A9AEBEFD6013DB1F9FABE88B53D51837A,97A1C5EBC97BDE67278D41A1036581AB3933D48390BF89D4DF128F84FFDF5913,05A3738B9E10AF1403C20A1D2F7DD37E1F3BE67CCFFAC00FA9C68BD08E6F0D90,ABB597FBB92E2948EDAA53FDB535A80412B138BD73A3A5726EE918F8BA78259A"
+          },
+          "chronologicalDrift": {
+            "baseline": {
+              "runOrder": [
+                "streaming-sync-serial-r2/run.json",
+                "streaming-sync-serial-r1/run.json",
+                "streaming-sync-serial-r3/run.json",
+                "batch2/streaming-sync-serial-r1/run.json",
+                "batch2/streaming-sync-serial-r2/run.json"
+              ],
+              "changePercent": -1.1397541297145182
+            },
+            "candidate": {
+              "runOrder": [
+                "streaming-async-serial-r2/run.json",
+                "streaming-async-serial-r1/run.json",
+                "streaming-async-serial-r3/run.json",
+                "batch2/streaming-async-serial-r1/run.json",
+                "batch2/streaming-async-serial-r2/run.json"
+              ],
+              "changePercent": -2.7022149913640368
+            },
+            "flagged": false
+          },
+          "historicalResultReproduced": true
+        },
+        {
+          "name": "compare-combined",
+          "result": {
+            "cell": "sceneName=m7-streaming|rhi=d3d12|chunkSize=256",
+            "result": "REJECTED",
+            "verdict": "PROTECTED-REGRESSION",
+            "targetMetric": "cpuFrameMs",
+            "treatment": "packetBuildMode: serial -> parallel; schedulerMode: none -> per-worker; loaderMode: serial-sync-read-validate -> async-budget-pipeline; uploadBudgetCpuMs: 0 -> 0.5; uploadBudgetRequests: 0 -> 16; uploadBudgetReloadPercent: 0 -> 50; uploadAgingThresholdMs: 0 -> 50; workers: 1 -> 8; variant: baseline -> candidate-combined",
+            "baselineRuns": 5,
+            "candidateRuns": 5,
+            "baselineMedianMs": 33.598,
+            "baselineRunToRunMadMs": 0.0293,
+            "baselineWithinRunMadMs": 0.1753,
+            "baselineP95Ms": 36.0889,
+            "baselineP99Ms": 38.659,
+            "candidateMedianMs": 34.6466,
+            "candidateP95Ms": 38.4588,
+            "candidateP99Ms": 39.5578,
+            "changePercent": 3.121,
+            "p95ChangePercent": 6.567,
+            "requiredPercent": 3,
+            "protectedOk": false,
+            "protected": {
+              "p95": {
+                "baseline": 36.0889,
+                "candidate": 38.4588,
+                "changePercent": 6.567,
+                "ok": false,
+                "precision": {
+                  "limited": false,
+                  "spreadPercent": 4.852,
+                  "baselineMin": 35.5865,
+                  "baselineMax": 37.3376,
+                  "candidateInsideRange": false
+                }
+              },
+              "gpuFrameMs": {
+                "baseline": 0.1276,
+                "candidate": 0.1278,
+                "changePercent": 0.125,
+                "ok": true,
+                "precision": {
+                  "limited": false,
+                  "spreadPercent": 1.191,
+                  "baselineMin": 0.127,
+                  "baselineMax": 0.1285,
+                  "candidateInsideRange": true
+                }
+              },
+              "residentBytes": {
+                "baseline": 124981248,
+                "candidate": 124981248,
+                "changePercent": 0,
+                "ok": true,
+                "precision": {
+                  "limited": false,
+                  "spreadPercent": 0,
+                  "baselineMin": 124981248,
+                  "baselineMax": 124981248,
+                  "candidateInsideRange": true
+                }
+              },
+              "hitch16_67": {
+                "baseline": 3000,
+                "candidate": 3000,
+                "changePercent": 0,
+                "ok": true
+              }
+            },
+            "precisionLimited": [],
+            "hitches": "3000/2682/5 -> 3000/2998/0",
+            "drift": {
+              "available": true,
+              "baselineDriftPercent": 0.366,
+              "candidateDriftPercent": 1.947,
+              "thresholdPercent": 3,
+              "flagged": false
+            },
+            "notComparableFields": [],
+            "sourceHashes": "13773BF7B7924193BABE7138FE9640C6BA530849AF90FA568AD18EE0E3892198,5A8ECBDFEC2C047EEF4408F2210C6B7A9AEBEFD6013DB1F9FABE88B53D51837A,97A1C5EBC97BDE67278D41A1036581AB3933D48390BF89D4DF128F84FFDF5913,05A3738B9E10AF1403C20A1D2F7DD37E1F3BE67CCFFAC00FA9C68BD08E6F0D90,ABB597FBB92E2948EDAA53FDB535A80412B138BD73A3A5726EE918F8BA78259A"
+          },
+          "chronologicalDrift": {
+            "baseline": {
+              "runOrder": [
+                "streaming-sync-serial-r2/run.json",
+                "streaming-sync-serial-r1/run.json",
+                "streaming-sync-serial-r3/run.json",
+                "batch2/streaming-sync-serial-r1/run.json",
+                "batch2/streaming-sync-serial-r2/run.json"
+              ],
+              "changePercent": -1.1397541297145182
+            },
+            "candidate": {
+              "runOrder": [
+                "streaming-async-pw-w8-r3/run.json",
+                "streaming-async-pw-w8-r1/run.json",
+                "streaming-async-pw-w8-r2/run.json",
+                "batch2/streaming-async-pw-w8-r1/run.json",
+                "batch2/streaming-async-pw-w8-r2/run.json"
+              ],
+              "changePercent": -1.6716035614097893
+            },
+            "flagged": false
+          },
+          "historicalResultReproduced": true
+        },
+        {
+          "name": "compare-parallel",
+          "result": {
+            "cell": "sceneName=m7-streaming|rhi=d3d12|chunkSize=256",
+            "result": "REJECTED",
+            "verdict": "WITHIN-NOISE-TIGHT",
+            "targetMetric": "cpuFrameMs",
+            "treatment": "packetBuildMode: serial -> parallel; schedulerMode: none -> per-worker; workers: 1 -> 8; variant: candidate-async -> candidate-combined",
+            "baselineRuns": 5,
+            "candidateRuns": 5,
+            "baselineMedianMs": 34.157,
+            "baselineRunToRunMadMs": 0.1883,
+            "baselineWithinRunMadMs": 0.3896,
+            "baselineP95Ms": 37.9349,
+            "baselineP99Ms": 39.3741,
+            "candidateMedianMs": 34.6466,
+            "candidateP95Ms": 38.4588,
+            "candidateP99Ms": 39.5578,
+            "changePercent": 1.433,
+            "p95ChangePercent": 1.381,
+            "requiredPercent": 3,
+            "protectedOk": true,
+            "protected": {
+              "p95": {
+                "baseline": 37.9349,
+                "candidate": 38.4588,
+                "changePercent": 1.381,
+                "ok": true,
+                "precision": {
+                  "limited": true,
+                  "spreadPercent": 20.133,
+                  "baselineMin": 37.8588,
+                  "baselineMax": 45.4964,
+                  "candidateInsideRange": true
+                }
+              },
+              "gpuFrameMs": {
+                "baseline": 0.1274,
+                "candidate": 0.1278,
+                "changePercent": 0.283,
+                "ok": true,
+                "precision": {
+                  "limited": false,
+                  "spreadPercent": 0.895,
+                  "baselineMin": 0.1264,
+                  "baselineMax": 0.1275,
+                  "candidateInsideRange": false
+                }
+              },
+              "residentBytes": {
+                "baseline": 124981248,
+                "candidate": 124981248,
+                "changePercent": 0,
+                "ok": true,
+                "precision": {
+                  "limited": false,
+                  "spreadPercent": 0,
+                  "baselineMin": 124981248,
+                  "baselineMax": 124981248,
+                  "candidateInsideRange": true
+                }
+              },
+              "hitch16_67": {
+                "baseline": 3000,
+                "candidate": 3000,
+                "changePercent": 0,
+                "ok": true
+              }
+            },
+            "precisionLimited": [
+              "p95"
+            ],
+            "hitches": "3000/2942/0 -> 3000/2998/0",
+            "drift": {
+              "available": true,
+              "baselineDriftPercent": -1.728,
+              "candidateDriftPercent": 1.947,
+              "thresholdPercent": 3,
+              "flagged": false
+            },
+            "notComparableFields": [],
+            "sourceHashes": "7E4B876ABE9E000F652E902CFDDDDA28E5706275A500D06924AE19169F746DD9,A15E0E7FABB7621C7BE61D22E01505FE90C6EBD9E3921631C3CE5236C5D691A4,C81E70D4D84CF3ED8E21C16BBC598F16B95CED2FAC9085F02AED75455667D781,B1539B6144BBE4900D32A07A5AFB7661D0CFD89C86C1A3F72A57C2A16BFAF93C,7185A2C6689342448A3E29A8F605B481E0180A1D62724C6833F8F531BDF26DC5"
+          },
+          "chronologicalDrift": {
+            "baseline": {
+              "runOrder": [
+                "streaming-async-serial-r2/run.json",
+                "streaming-async-serial-r1/run.json",
+                "streaming-async-serial-r3/run.json",
+                "batch2/streaming-async-serial-r1/run.json",
+                "batch2/streaming-async-serial-r2/run.json"
+              ],
+              "changePercent": -2.7022149913640368
+            },
+            "candidate": {
+              "runOrder": [
+                "streaming-async-pw-w8-r3/run.json",
+                "streaming-async-pw-w8-r1/run.json",
+                "streaming-async-pw-w8-r2/run.json",
+                "batch2/streaming-async-pw-w8-r1/run.json",
+                "batch2/streaming-async-pw-w8-r2/run.json"
+              ],
+              "changePercent": -1.6716035614097893
+            },
+            "flagged": false
+          },
+          "historicalResultReproduced": true
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Historical binary source cannot be proven from its configure-time embedded commit.",
+    "No current-machine performance remeasurement is represented.",
+    "Allocation counters are unavailable; raw zero values do not prove zero allocations.",
+    "GPU statistics retain historical zero placeholders for unread delayed samples.",
+    "Historical comparator order lookup can fall back to runIndex; corrected chronological drift is reported separately.",
+    "Numeric recomputation is reproducible; historical build-and-rerun provenance remains blocked."
+  ]
+}

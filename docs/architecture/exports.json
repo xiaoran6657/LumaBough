@@ -1,0 +1,32 @@
+[
+  {
+    "path": "docs/architecture/context.svg",
+    "sha256": "4e981ad0010efe2c3fe8b761fbf57c46363f2b4cc60ca495cf4795e1610571c8",
+    "sourceSha256": "ef69660520b77235309d8590791973566a84d20a0bb265f243171876c3536d84"
+  },
+  {
+    "path": "docs/architecture/context.png",
+    "sha256": "86babea0fda0517b8eb0c5bbc2330d312c775c414ad780e780baba8b881efb87",
+    "sourceSha256": "ef69660520b77235309d8590791973566a84d20a0bb265f243171876c3536d84"
+  },
+  {
+    "path": "docs/architecture/frame.svg",
+    "sha256": "5fc099fab94476a7c0da0a31d69889d1805a011050b0373659609361ec1594ce",
+    "sourceSha256": "ef69660520b77235309d8590791973566a84d20a0bb265f243171876c3536d84"
+  },
+  {
+    "path": "docs/architecture/frame.png",
+    "sha256": "074a2bcd6f586a386de1355d545beb5593e5edc5d0bec978067a9de5d3d3a60e",
+    "sourceSha256": "ef69660520b77235309d8590791973566a84d20a0bb265f243171876c3536d84"
+  },
+  {
+    "path": "docs/architecture/assets.svg",
+    "sha256": "e06c1e66fd074c77304eb6996f5fea18ab23c2e27392c4146f5b440ad33e3de7",
+    "sourceSha256": "ef69660520b77235309d8590791973566a84d20a0bb265f243171876c3536d84"
+  },
+  {
+    "path": "docs/architecture/assets.png",
+    "sha256": "385fb5ab5bacfcb349bfe89a3dc3ab5156e3a989f5ad3fa9ff684b3f66948517",
+    "sourceSha256": "ef69660520b77235309d8590791973566a84d20a0bb265f243171876c3536d84"
+  }
+]

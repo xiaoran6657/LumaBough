@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-09-20",
+  "khronosReviewCommit": "c6a6bd13ab2b3c685c7903d03561b8a9392f38b8",
+  "items": [
+    {
+      "path": "tests/fixtures/Triangle/Triangle.bin",
+      "sourceUrl": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/c6a6bd13ab2b3c685c7903d03561b8a9392f38b8/Models/Triangle/glTF/Triangle.bin",
+      "sourceCommit": "c6a6bd13ab2b3c685c7903d03561b8a9392f38b8",
+      "sha256": "898ed7f560dca9907a80c98be57fbbc0f3a092d2e3683b964ffcfa75c549ac62",
+      "upstreamSha256": "898ed7f560dca9907a80c98be57fbbc0f3a092d2e3683b964ffcfa75c549ac62",
+      "comparison": "exact",
+      "license": "CC0-1.0",
+      "author": "Marco Hutter",
+      "checkedDate": "2026-09-20"
+    },
+    {
+      "path": "tests/fixtures/Triangle/Triangle.gltf",
+      "sourceUrl": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/c6a6bd13ab2b3c685c7903d03561b8a9392f38b8/Models/Triangle/glTF/Triangle.gltf",
+      "sourceCommit": "c6a6bd13ab2b3c685c7903d03561b8a9392f38b8",
+      "sha256": "6f4a8a1fbefbac2d0adde0800864279fd98c3f119077380e6840810ed62b6cfc",
+      "upstreamSha256": "6f4a8a1fbefbac2d0adde0800864279fd98c3f119077380e6840810ed62b6cfc",
+      "comparison": "exact",
+      "license": "CC0-1.0",
+      "author": "Marco Hutter",
+      "checkedDate": "2026-09-20"
+    },
+    {
+      "path": "tests/fixtures/TriangleWithoutIndices/TriangleWithoutIndices.bin",
+      "sourceUrl": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/c6a6bd13ab2b3c685c7903d03561b8a9392f38b8/Models/TriangleWithoutIndices/glTF/TriangleWithoutIndices.bin",
+      "sourceCommit": "c6a6bd13ab2b3c685c7903d03561b8a9392f38b8",
+      "sha256": "d8b87038ed2ace74ed183166f6b0a541eab77f7184d50e65edc4bca5ccb5445a",
+      "upstreamSha256": "d8b87038ed2ace74ed183166f6b0a541eab77f7184d50e65edc4bca5ccb5445a",
+      "comparison": "exact",
+      "license": "CC0-1.0",
+      "author": "Marco Hutter",
+      "checkedDate": "2026-09-20"
+    },
+    {
+      "path": "tests/fixtures/TriangleWithoutIndices/TriangleWithoutIndices.gltf",
+      "sourceUrl": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/c6a6bd13ab2b3c685c7903d03561b8a9392f38b8/Models/TriangleWithoutIndices/glTF/TriangleWithoutIndices.gltf",
+      "sourceCommit": "c6a6bd13ab2b3c685c7903d03561b8a9392f38b8",
+      "sha256": "b273d61fdbde2b2cd3aeadaae524776a9703c8354d5dfb5fd0da636724c4a62c",
+      "upstreamSha256": "b273d61fdbde2b2cd3aeadaae524776a9703c8354d5dfb5fd0da636724c4a62c",
+      "comparison": "exact",
+      "license": "CC0-1.0",
+      "author": "Marco Hutter",
+      "checkedDate": "2026-09-20"
+    },
+    {
+      "path": "tests/fixtures/BoxTextured/BoxTextured.gltf",
+      "sourceUrl": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/c6a6bd13ab2b3c685c7903d03561b8a9392f38b8/Models/BoxTextured/glTF/BoxTextured.gltf",
+      "sourceCommit": "c6a6bd13ab2b3c685c7903d03561b8a9392f38b8",
+      "sha256": "1e9003a4a2a8822ff60da529357bd8e4dec4a59b1a479017993e7e2ad5fcebef",
+      "upstreamSha256": "1e9003a4a2a8822ff60da529357bd8e4dec4a59b1a479017993e7e2ad5fcebef",
+      "comparison": "exact",
+      "license": "CC-BY-4.0 + Cesium mark notice",
+      "author": "Cesium",
+      "checkedDate": "2026-09-20"
+    },
+    {
+      "path": "tests/fixtures/BoxTextured/BoxTextured0.bin",
+      "sourceUrl": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/c6a6bd13ab2b3c685c7903d03561b8a9392f38b8/Models/BoxTextured/glTF/BoxTextured0.bin",
+      "sourceCommit": "c6a6bd13ab2b3c685c7903d03561b8a9392f38b8",
+      "sha256": "2e8c0483fa6665c686ec345f89dcbb2a694a587442584d09f8a83a59633327bc",
+      "upstreamSha256": "2e8c0483fa6665c686ec345f89dcbb2a694a587442584d09f8a83a59633327bc",
+      "comparison": "exact",
+      "license": "CC-BY-4.0 + Cesium mark notice",
+      "author": "Cesium",
+      "checkedDate": "2026-09-20"
+    },
+    {
+      "path": "tests/fixtures/BoxTextured/CesiumLogoFlat.png",
+      "sourceUrl": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/c6a6bd13ab2b3c685c7903d03561b8a9392f38b8/Models/BoxTextured/glTF/CesiumLogoFlat.png",
+      "sourceCommit": "c6a6bd13ab2b3c685c7903d03561b8a9392f38b8",
+      "sha256": "9c22b05c5b136d03c5621a8765e50a8322be6c35b9de53e9fe22685840d7f469",
+      "upstreamSha256": "9c22b05c5b136d03c5621a8765e50a8322be6c35b9de53e9fe22685840d7f469",
+      "comparison": "exact",
+      "license": "CC-BY-4.0 + Cesium mark notice",
+      "author": "Cesium",
+      "checkedDate": "2026-09-20"
+    },
+    {
+      "path": "tests/fixtures/SimpleSparseAccessor/SimpleSparseAccessor.bin",
+      "sourceUrl": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/c6a6bd13ab2b3c685c7903d03561b8a9392f38b8/Models/SimpleSparseAccessor/glTF/SimpleSparseAccessor.bin",
+      "sourceCommit": "c6a6bd13ab2b3c685c7903d03561b8a9392f38b8",
+      "sha256": "8b01fde2d485b480626115ff804f972edb4ef87f23d2600054bcc859cee38f92",
+      "upstreamSha256": "8b01fde2d485b480626115ff804f972edb4ef87f23d2600054bcc859cee38f92",
+      "comparison": "exact",
+      "license": "CC-BY-4.0 (conservative; upstream description conflicts)",
+      "author": "Marco Hutter",
+      "checkedDate": "2026-09-20"
+    },
+    {
+      "path": "tests/fixtures/SimpleSparseAccessor/SimpleSparseAccessor.gltf",
+      "sourceUrl": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/c6a6bd13ab2b3c685c7903d03561b8a9392f38b8/Models/SimpleSparseAccessor/glTF/SimpleSparseAccessor.gltf",
+      "sourceCommit": "c6a6bd13ab2b3c685c7903d03561b8a9392f38b8",
+      "sha256": "852cea1ab8665caca6bee912422ed246feb42819c9905ba17a542937e058825a",
+      "upstreamSha256": "852cea1ab8665caca6bee912422ed246feb42819c9905ba17a542937e058825a",
+      "comparison": "exact",
+      "license": "CC-BY-4.0 (conservative; upstream description conflicts)",
+      "author": "Marco Hutter",
+      "checkedDate": "2026-09-20"
+    },
+    {
+      "path": "tools/asset_cooker/deps/mikktspace/mikktspace.c",
+      "sourceUrl": "https://raw.githubusercontent.com/mmikk/MikkTSpace/3e895b49d05ea07e4c2133156cfa94369e19e409/mikktspace.c",
+      "sourceCommit": "3e895b49d05ea07e4c2133156cfa94369e19e409",
+      "sha256": "de87e74107df766ce68108801262bd8d53899414236b59810509a8fc2a51e288",
+      "upstreamSha256": "de87e74107df766ce68108801262bd8d53899414236b59810509a8fc2a51e288",
+      "comparison": "exact",
+      "license": "Zlib",
+      "checkedDate": "2026-09-20"
+    },
+    {
+      "path": "tools/asset_cooker/deps/mikktspace/mikktspace.h",
+      "sourceUrl": "https://raw.githubusercontent.com/mmikk/MikkTSpace/3e895b49d05ea07e4c2133156cfa94369e19e409/mikktspace.h",
+      "sourceCommit": "3e895b49d05ea07e4c2133156cfa94369e19e409",
+      "sha256": "17fc433894f24c73753d548086cc4d8c5c0379f4a6edfb98b5da243e4f0bc3d0",
+      "upstreamSha256": "17fc433894f24c73753d548086cc4d8c5c0379f4a6edfb98b5da243e4f0bc3d0",
+      "comparison": "exact",
+      "license": "Zlib",
+      "checkedDate": "2026-09-20"
+    },
+    {
+      "path": "tools/asset_cooker/deps/stb/stb_image.h",
+      "sourceUrl": "https://raw.githubusercontent.com/nothings/stb/2c980bb59875b0d32144a71867fbdebb2f77cd20/stb_image.h",
+      "sourceCommit": "2c980bb59875b0d32144a71867fbdebb2f77cd20",
+      "sha256": "594c2fe35d49488b4382dbfaec8f98366defca819d916ac95becf3e75f4200b3",
+      "upstreamSha256": "594c2fe35d49488b4382dbfaec8f98366defca819d916ac95becf3e75f4200b3",
+      "comparison": "exact",
+      "license": "MIT OR Unlicense",
+      "checkedDate": "2026-09-20"
+    },
+    {
+      "path": "assets/source/demo/scene.gltf",
+      "sourceUrl": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/c6a6bd13ab2b3c685c7903d03561b8a9392f38b8/Models/Triangle/glTF/Triangle.gltf",
+      "sourceCommit": "c6a6bd13ab2b3c685c7903d03561b8a9392f38b8",
+      "sha256": "6f4a8a1fbefbac2d0adde0800864279fd98c3f119077380e6840810ed62b6cfc",
+      "upstreamSha256": "6f4a8a1fbefbac2d0adde0800864279fd98c3f119077380e6840810ed62b6cfc",
+      "comparison": "exact",
+      "license": "CC0-1.0",
+      "author": "Marco Hutter",
+      "checkedDate": "2026-09-20",
+      "renamedFrom": "Triangle.gltf"
+    },
+    {
+      "path": "assets/source/demo/Triangle.bin",
+      "sourceUrl": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/c6a6bd13ab2b3c685c7903d03561b8a9392f38b8/Models/Triangle/glTF/Triangle.bin",
+      "sourceCommit": "c6a6bd13ab2b3c685c7903d03561b8a9392f38b8",
+      "sha256": "898ed7f560dca9907a80c98be57fbbc0f3a092d2e3683b964ffcfa75c549ac62",
+      "upstreamSha256": "898ed7f560dca9907a80c98be57fbbc0f3a092d2e3683b964ffcfa75c549ac62",
+      "comparison": "exact",
+      "license": "CC0-1.0",
+      "author": "Marco Hutter",
+      "checkedDate": "2026-09-20",
+      "renamedFrom": "Triangle.bin"
+    },
+    {
+      "path": "assets/source/environments/qwantani_1k.hdr",
+      "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/qwantani_1k.hdr",
+      "sha256": "e4ce25aa40cc5bd2c5345119be31d36798bb7d8a96d20bf0dc8776a572c1d2b6",
+      "upstreamSha256": "e4ce25aa40cc5bd2c5345119be31d36798bb7d8a96d20bf0dc8776a572c1d2b6",
+      "comparison": "exact",
+      "license": "CC0-1.0",
+      "author": "Rob Tuytel / Poly Haven",
+      "checkedDate": "2026-09-20"
+    }
+  ],
+  "notices": [
+    {
+      "path": "docs/licenses/GoogleTest-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/google/googletest/v1.17.0/LICENSE",
+      "sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138"
+    },
+    {
+      "path": "docs/licenses/fastgltf-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/spnda/fastgltf/v0.9.0/LICENSE.md",
+      "sha256": "9753038feaa343951d5652302ee415291ddea7bacc3c3761140a079ebe2eb243"
+    },
+    {
+      "path": "docs/licenses/simdjson-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/simdjson/simdjson/v3.12.3/LICENSE",
+      "sha256": "5fa8894e890bd77958f93b165433e0fb0dffa5bc982bfb147e4748e95bad24e5"
+    },
+    {
+      "path": "docs/licenses/Tracy-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/wolfpld/tracy/v0.13.1/LICENSE",
+      "sha256": "16f7df4828bd89c880c17dd2f45e834b754b6d5e8c9a9ee886af1be4b89475ca"
+    },
+    {
+      "path": "docs/licenses/GoogleBenchmark-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/google/benchmark/v1.9.4/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "docs/licenses/Cesium-MARK-NOTICE.txt",
+      "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/c6a6bd13ab2b3c685c7903d03561b8a9392f38b8/LICENSES/LicenseRef-LegalMark-Cesium.txt",
+      "sha256": "7bafc8dbff0b9d04297bced53a47809e3ab6721cb35b4a2d780533476b28ebd4"
+    },
+    {
+      "path": "docs/licenses/CC-BY-4.0.txt",
+      "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/c6a6bd13ab2b3c685c7903d03561b8a9392f38b8/LICENSES/CC-BY-4.0.txt",
+      "sha256": "c8041334a99cb48852b2139253cbde5f8ac87e27f124aed51223e0d5bf0080eb"
+    },
+    {
+      "path": "docs/licenses/CC0-1.0.txt",
+      "url": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/c6a6bd13ab2b3c685c7903d03561b8a9392f38b8/LICENSES/CC0-1.0.txt",
+      "sha256": "a43fc2004d1e073f1107a1f6146664d08dae6cea93cb828742a4bec6da828e91"
+    },
+    {
+      "path": "docs/licenses/WinPixEventRuntime-LICENSE.txt",
+      "url": "https://www.nuget.org/packages/WinPixEventRuntime/1.0.240308001",
+      "packageFile": "license.txt",
+      "sha256": "903df5512f7d02609fed0c780a9b704f5a3eeb6e4d84ebe42a29845c81899a3c"
+    },
+    {
+      "path": "docs/licenses/WinPixEventRuntime-ThirdPartyNotices.txt",
+      "url": "https://www.nuget.org/packages/WinPixEventRuntime/1.0.240308001",
+      "packageFile": "ThirdPartyNotices.txt",
+      "sha256": "3f06560bbbf286c149c6fd4427f2a5d4e79824591fcba835fffab42b6950967c"
+    }
+  ]
+}

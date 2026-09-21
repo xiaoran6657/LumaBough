@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "diagrams": [
+    {
+      "name": "context",
+      "title": "LumaBough / boundaries",
+      "subtitle": "Windows Core · build tools produce data; backends execute commands",
+      "nodes": [
+        [
+          "Source assets",
+          "glTF / textures / recipes",
+          "external"
+        ],
+        [
+          "AssetCooker",
+          "validate / bake / manifest",
+          "owned"
+        ],
+        [
+          "Baked assets",
+          "versioned binary + manifest",
+          "state"
+        ],
+        [
+          "Asset runtime",
+          "read / request / upload",
+          "owned"
+        ],
+        [
+          "Windows + DXGI",
+          "window / adapter / swap chain",
+          "external"
+        ],
+        [
+          "D3D11 or D3D12",
+          "backend factory / devices",
+          "owned"
+        ],
+        [
+          "RenderGraph + packets",
+          "dependencies / stable ordering",
+          "owned"
+        ],
+        [
+          "Sandbox + world",
+          "scene / visibility / pipelines",
+          "owned"
+        ]
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          5,
+          4
+        ]
+      ],
+      "foot": "Blue: project code     Gray: external/input     Green: data/lifetime boundary"
+    },
+    {
+      "name": "frame",
+      "title": "One frame / ownership and order",
+      "subtitle": "Threaded packet recording is optional; execution remains backend-owned",
+      "nodes": [
+        [
+          "Frame input",
+          "camera / resize / scene",
+          "owned"
+        ],
+        [
+          "Visibility + culling",
+          "stable visible objects",
+          "owned"
+        ],
+        [
+          "Build frame graph",
+          "passes / resource uses",
+          "owned"
+        ],
+        [
+          "Compile graph",
+          "barriers / lifetime plan",
+          "state"
+        ],
+        [
+          "Present + collect",
+          "fence completion / retire",
+          "state"
+        ],
+        [
+          "Queue submission",
+          "D3D11 / D3D12 commands",
+          "owned"
+        ],
+        [
+          "Deterministic merge",
+          "ordered pass packets",
+          "owned"
+        ],
+        [
+          "Record packets",
+          "serial or worker tasks",
+          "owned"
+        ]
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          5,
+          4
+        ]
+      ],
+      "foot": "Device loss is diagnosed and fails explicitly; automatic device recovery is outside scope."
+    },
+    {
+      "name": "assets",
+      "title": "Asset request / upload / retirement",
+      "subtitle": "Dedicated I/O thread and decode workers have separate responsibilities",
+      "nodes": [
+        [
+          "Request + handle",
+          "caller / request identity",
+          "owned"
+        ],
+        [
+          "Read baked bytes",
+          "dedicated I/O thread",
+          "owned"
+        ],
+        [
+          "Decode CPU asset",
+          "bounded worker tasks",
+          "owned"
+        ],
+        [
+          "Ready CPU payload",
+          "cancellation checked",
+          "state"
+        ],
+        [
+          "Retire after fence",
+          "release staging / GPU refs",
+          "state"
+        ],
+        [
+          "Ready GPU handle",
+          "render-visible ownership",
+          "state"
+        ],
+        [
+          "Submit upload",
+          "fence ticket / staging",
+          "owned"
+        ],
+        [
+          "Render thread commit",
+          "create GPU resources",
+          "owned"
+        ]
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          5,
+          4
+        ]
+      ],
+      "foot": "CPU completion is not GPU readiness. Cancellation and shutdown preserve lifetime ownership."
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560">
+<metadata>source-sha256:ef69660520b77235309d8590791973566a84d20a0bb265f243171876c3536d84</metadata>
+<rect width="1200" height="560" fill="#f5f7fa"/>
+<text x="40" y="58" font-family="Segoe UI, sans-serif" font-size="32" fill="#1d2939">One frame / ownership and order</text>
+<text x="40" y="93" font-family="Segoe UI, sans-serif" font-size="17" fill="#475467">Threaded packet recording is optional; execution remains backend-owned</text>
+<rect x="40" y="155" width="250" height="108" rx="12" fill="#dceaff" stroke="#667085" stroke-width="2"/>
+<text x="55" y="197" font-family="Segoe UI, sans-serif" font-size="21" fill="#1d2939">Frame input</text>
+<text x="55" y="230" font-family="Segoe UI, sans-serif" font-size="15" fill="#1d2939">camera / resize / scene</text>
+<rect x="330" y="155" width="250" height="108" rx="12" fill="#dceaff" stroke="#667085" stroke-width="2"/>
+<text x="345" y="197" font-family="Segoe UI, sans-serif" font-size="21" fill="#1d2939">Visibility + culling</text>
+<text x="345" y="230" font-family="Segoe UI, sans-serif" font-size="15" fill="#1d2939">stable visible objects</text>
+<rect x="620" y="155" width="250" height="108" rx="12" fill="#dceaff" stroke="#667085" stroke-width="2"/>
+<text x="635" y="197" font-family="Segoe UI, sans-serif" font-size="21" fill="#1d2939">Build frame graph</text>
+<text x="635" y="230" font-family="Segoe UI, sans-serif" font-size="15" fill="#1d2939">passes / resource uses</text>
+<rect x="910" y="155" width="250" height="108" rx="12" fill="#d9f2e8" stroke="#667085" stroke-width="2"/>
+<text x="925" y="197" font-family="Segoe UI, sans-serif" font-size="21" fill="#1d2939">Compile graph</text>
+<text x="925" y="230" font-family="Segoe UI, sans-serif" font-size="15" fill="#1d2939">barriers / lifetime plan</text>
+<rect x="40" y="355" width="250" height="108" rx="12" fill="#d9f2e8" stroke="#667085" stroke-width="2"/>
+<text x="55" y="397" font-family="Segoe UI, sans-serif" font-size="21" fill="#1d2939">Present + collect</text>
+<text x="55" y="430" font-family="Segoe UI, sans-serif" font-size="15" fill="#1d2939">fence completion / retire</text>
+<rect x="330" y="355" width="250" height="108" rx="12" fill="#dceaff" stroke="#667085" stroke-width="2"/>
+<text x="345" y="397" font-family="Segoe UI, sans-serif" font-size="21" fill="#1d2939">Queue submission</text>
+<text x="345" y="430" font-family="Segoe UI, sans-serif" font-size="15" fill="#1d2939">D3D11 / D3D12 commands</text>
+<rect x="620" y="355" width="250" height="108" rx="12" fill="#dceaff" stroke="#667085" stroke-width="2"/>
+<text x="635" y="397" font-family="Segoe UI, sans-serif" font-size="21" fill="#1d2939">Deterministic merge</text>
+<text x="635" y="430" font-family="Segoe UI, sans-serif" font-size="15" fill="#1d2939">ordered pass packets</text>
+<rect x="910" y="355" width="250" height="108" rx="12" fill="#dceaff" stroke="#667085" stroke-width="2"/>
+<text x="925" y="397" font-family="Segoe UI, sans-serif" font-size="21" fill="#1d2939">Record packets</text>
+<text x="925" y="430" font-family="Segoe UI, sans-serif" font-size="15" fill="#1d2939">serial or worker tasks</text>
+<line x1="292" y1="209" x2="323" y2="209" stroke="#475467" stroke-width="2"/>
+<polygon points="327,209 318,204 318,214" fill="#475467"/>
+<line x1="582" y1="209" x2="613" y2="209" stroke="#475467" stroke-width="2"/>
+<polygon points="617,209 608,204 608,214" fill="#475467"/>
+<line x1="872" y1="209" x2="903" y2="209" stroke="#475467" stroke-width="2"/>
+<polygon points="907,209 898,204 898,214" fill="#475467"/>
+<line x1="1035" y1="265" x2="1035" y2="347" stroke="#475467" stroke-width="2"/>
+<polygon points="1035,352 1030,343 1040,343" fill="#475467"/>
+<line x1="908" y1="409" x2="877" y2="409" stroke="#475467" stroke-width="2"/>
+<polygon points="873,409 882,404 882,414" fill="#475467"/>
+<line x1="618" y1="409" x2="587" y2="409" stroke="#475467" stroke-width="2"/>
+<polygon points="583,409 592,404 592,414" fill="#475467"/>
+<line x1="328" y1="409" x2="297" y2="409" stroke="#475467" stroke-width="2"/>
+<polygon points="293,409 302,404 302,414" fill="#475467"/>
+<text x="40" y="525" font-family="Segoe UI, sans-serif" font-size="15" fill="#475467">Device loss is diagnosed and fails explicitly; automatic device recovery is outside scope.</text>
+</svg>

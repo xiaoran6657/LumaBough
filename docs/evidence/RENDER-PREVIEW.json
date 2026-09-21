@@ -1,0 +1,1992 @@
+{
+  "kind": "batch-b-local-preview",
+  "runtimeCommit": null,
+  "executableSha256": "c42fe0f74e6fee0b0123fcb1ff513ec5049a7c8d04fe882327ae9b90b3e63bc0",
+  "previewPath": "docs/portfolio/media/render-preview.png",
+  "previewSha256": "2a4ac022e5c9bdad03d065bcef785d66b6cd6d8bf8a58506c5fbad1b33eab3af",
+  "conversion": "PPM to PNG; decoded RGB pixels unchanged",
+  "runs": [
+    {
+      "backend": "d3d11",
+      "metadata": {
+        "schemaVersion": 1,
+        "renderer": "rhi",
+        "backend": "d3d11",
+        "scene": "m4-visual-baseline",
+        "iblEnabled": true,
+        "buildType": "Release",
+        "sourceCommit": "uncommitted",
+        "width": 1280,
+        "height": 720,
+        "resolution": {
+          "width": 1280,
+          "height": 720
+        },
+        "exposureEv": 0,
+        "toneMapper": "reinhard",
+        "iblProfile": "baseline",
+        "culling": {
+          "main": true,
+          "shadow": true
+        },
+        "skyboxEnabled": true,
+        "shadow": {
+          "resolution": 2048,
+          "depthBias": 0,
+          "slopeBias": 0.1,
+          "pcf": "3x3",
+          "casts": true,
+          "receives": true
+        },
+        "debugView": "0",
+        "debugViewName": "Lit",
+        "fixedTick": 300,
+        "migrationLevel": 9,
+        "assetManifestSha256": "4ae6eda980221395a80e3bb03374d051a07b8cd197f8a5c0b55097f427ba6260",
+        "environmentArtifactSha256": "3416f0cd007b4faea66c21fefbd183f97cf1a8690401aa955c4501e15bfa0618",
+        "shaderSemanticSha256": "7aeedd02200971d450e502e57d6dad67545e7d41d04804fe4636a23ccbd05b3a",
+        "visibleSequenceHash": "0x61E54BF2EB73DB0E",
+        "cameraValues": "view=1,0,0,0,0,1,0,0,0,0,1,0,0,-3,10,1,;projection=0.97427856922149658,0,0,0,0,1.7320507764816284,0,0,0,0,1.0010010004043579,1,0,0,-0.10010010004043579,0,;position=0,3,-10,",
+        "lightValues": "direction=0.40824800729751587,0.81649702787399292,0.40824800729751587,;color=1,1,1,;illuminance=3;shadow=-20,20,-20,20,0.10000000149011612,60",
+        "graphHash": "0x435B344F438E02DA",
+        "commandHash": "a74983f5042807a3e52bbe0e788eebe5a95c672f4f4ab1d3394c0b1b47c25ebf",
+        "warningErrors": 0,
+        "fallbackUsed": false,
+        "gpu": "AMD Radeon RX 9070",
+        "driver": "32.0.31035.1003",
+        "warp": false,
+        "debugLayer": true,
+        "gpuValidation": false,
+        "captureToolActive": false,
+        "vsync": false,
+        "windowForeground": true,
+        "dredRequested": false,
+        "benchmark": false,
+        "warmupFrames": 120,
+        "measuredFrames": 0,
+        "visibleCount": 30,
+        "opaqueDrawCalls": 30,
+        "shadowDrawCalls": 30,
+        "trianglesSubmitted": 25660,
+        "reloadSuccess": 0,
+        "reloadRejected": 0,
+        "resizeCount": 0,
+        "rhiCommandCount": 874
+      },
+      "rawMetadataSha256": "4091dd903c594d1b0e2c1434fe3405c10be87e974c9098bf2dc1dab70ad1ca4a",
+      "rawColorSha256": "165331f2d23d5f0440c407b881ae9ca5e9529d3b34256e58677bb58f8eb3ef04"
+    },
+    {
+      "backend": "d3d12",
+      "metadata": {
+        "schemaVersion": 1,
+        "renderer": "rhi",
+        "backend": "d3d12",
+        "scene": "m4-visual-baseline",
+        "iblEnabled": true,
+        "buildType": "Release",
+        "sourceCommit": "uncommitted",
+        "width": 1280,
+        "height": 720,
+        "resolution": {
+          "width": 1280,
+          "height": 720
+        },
+        "exposureEv": 0,
+        "toneMapper": "reinhard",
+        "iblProfile": "baseline",
+        "culling": {
+          "main": true,
+          "shadow": true
+        },
+        "skyboxEnabled": true,
+        "shadow": {
+          "resolution": 2048,
+          "depthBias": 0,
+          "slopeBias": 0.1,
+          "pcf": "3x3",
+          "casts": true,
+          "receives": true
+        },
+        "debugView": "0",
+        "debugViewName": "Lit",
+        "fixedTick": 300,
+        "migrationLevel": 9,
+        "assetManifestSha256": "4ae6eda980221395a80e3bb03374d051a07b8cd197f8a5c0b55097f427ba6260",
+        "environmentArtifactSha256": "3416f0cd007b4faea66c21fefbd183f97cf1a8690401aa955c4501e15bfa0618",
+        "shaderSemanticSha256": "7aeedd02200971d450e502e57d6dad67545e7d41d04804fe4636a23ccbd05b3a",
+        "visibleSequenceHash": "0x61E54BF2EB73DB0E",
+        "cameraValues": "view=1,0,0,0,0,1,0,0,0,0,1,0,0,-3,10,1,;projection=0.97427856922149658,0,0,0,0,1.7320507764816284,0,0,0,0,1.0010010004043579,1,0,0,-0.10010010004043579,0,;position=0,3,-10,",
+        "lightValues": "direction=0.40824800729751587,0.81649702787399292,0.40824800729751587,;color=1,1,1,;illuminance=3;shadow=-20,20,-20,20,0.10000000149011612,60",
+        "graphHash": "0x435B344F438E02DA",
+        "commandHash": "a74983f5042807a3e52bbe0e788eebe5a95c672f4f4ab1d3394c0b1b47c25ebf",
+        "warningErrors": 0,
+        "fallbackUsed": false,
+        "gpu": "AMD Radeon RX 9070",
+        "driver": "32.0.31035.1003",
+        "warp": false,
+        "debugLayer": true,
+        "gpuValidation": false,
+        "captureToolActive": false,
+        "vsync": false,
+        "windowForeground": true,
+        "dredRequested": true,
+        "benchmark": false,
+        "warmupFrames": 120,
+        "measuredFrames": 0,
+        "visibleCount": 30,
+        "opaqueDrawCalls": 30,
+        "shadowDrawCalls": 30,
+        "trianglesSubmitted": 25660,
+        "reloadSuccess": 0,
+        "reloadRejected": 0,
+        "resizeCount": 0,
+        "rhiCommandCount": 874
+      },
+      "rawMetadataSha256": "213ab0bb36a7710dedfd151209295b133037269ce762bef290fc4fde8a87a7b8",
+      "rawColorSha256": "a3879a23d315dd59c759307d455091ee5dea2e5c548ba370524034be538a6af3"
+    }
+  ],
+  "testedCodeSnapshot": [
+    {
+      "path": "engine/assets/async/include/MiniEngine/Assets/AssetLoadPayload.h",
+      "sha256": "9ec4abedc81c3f3471a33f9fa15f7a9ce421eb06dd59b1b7446a23be18353c38"
+    },
+    {
+      "path": "engine/assets/async/include/MiniEngine/Assets/AssetLoadRequest.h",
+      "sha256": "f8f703da96e709f86fd4f41e643ca77f6c3d079e6a351099f9cb880f6169f2ef"
+    },
+    {
+      "path": "engine/assets/async/include/MiniEngine/Assets/AssetLoadState.h",
+      "sha256": "091d5c0af20fb8510ce8928e2d8f985248817a946198e36eb85bbaf27d2e78c1"
+    },
+    {
+      "path": "engine/assets/async/include/MiniEngine/Assets/AssetUploadCoordinator.h",
+      "sha256": "e9c649f2f8901616ab2cc5ea3c139e204c09180210e332ccbeaa34aa779fca50"
+    },
+    {
+      "path": "engine/assets/async/include/MiniEngine/Assets/AsyncAssetLoader.h",
+      "sha256": "192250f26b7d22dddee54dd75da7f77ffebe47a9256abfdf1b4a419d4de4fb65"
+    },
+    {
+      "path": "engine/assets/async/include/MiniEngine/Assets/CookedFileSource.h",
+      "sha256": "c6c33b1b63880d9b25f76ae9bbf0e928d46f098bb3ac3c6684b0a5f84a9d5174"
+    },
+    {
+      "path": "engine/assets/async/include/MiniEngine/Assets/TaskSystemDecodeDispatcher.h",
+      "sha256": "51d5b9eb743b6c5f9d7b1d07ab091452172f2271cc6c264e69ab0bd31eedc30e"
+    },
+    {
+      "path": "engine/assets/async/include/MiniEngine/Assets/UploadBudget.h",
+      "sha256": "0d8f7d2232722fadb9aaf8af3d6f162d585031f1cfe38a2b08f0bad9359912de"
+    },
+    {
+      "path": "engine/assets/async/include/MiniEngine/Assets/UploadSink.h",
+      "sha256": "4cfc64ae112e7bdca668955991649c01ba72d3b83daef239fbc283552751f221"
+    },
+    {
+      "path": "engine/assets/async/src/AssetUploadCoordinator.cpp",
+      "sha256": "54d4c0d158797a370985239f09fae98bba11271abacbb5acda996d3ad195cccb"
+    },
+    {
+      "path": "engine/assets/async/src/AsyncAssetLoader.cpp",
+      "sha256": "52225ec397b0eb76bba44c1423928e5f1c58d7207c2de493ff98eef9f1fe87b0"
+    },
+    {
+      "path": "engine/assets/async/src/BoundedQueue.h",
+      "sha256": "7b1777a4fac62ea536216f54aaf7d60c2b019b2a71dffa41b7a17d40a6cfa29f"
+    },
+    {
+      "path": "engine/assets/async/src/CookedFileSource.cpp",
+      "sha256": "210c2a7cc83f611266706828e3f86a845c900561cc36724206ec2bdff1e6bb49"
+    },
+    {
+      "path": "engine/assets/include/MiniEngine/Assets/AssetHandle.h",
+      "sha256": "c90525c72b4237535a475e347deedc35f07cd406f4b7661cb53d7cfa63ac57ed"
+    },
+    {
+      "path": "engine/assets/include/MiniEngine/Assets/AssetId.h",
+      "sha256": "53875550e926d2729e15af9d404f94d4c6b7b4470e456ed3b66880c234f1b279"
+    },
+    {
+      "path": "engine/assets/include/MiniEngine/Assets/AssetManager.h",
+      "sha256": "b112f0bb0e8a1256802f82312f2fad4419cdaa8b86cd399ada81b543527499b9"
+    },
+    {
+      "path": "engine/assets/include/MiniEngine/Assets/AssetPool.h",
+      "sha256": "4cfbf913647eb24983a0ede13b3d185d0daac70e6e71968e99d6f9c5b33e9fb8"
+    },
+    {
+      "path": "engine/assets/include/MiniEngine/Assets/AssetRegistry.h",
+      "sha256": "e87090645e033aa89ddec2490684e357a6a846f823539a9b7f3b938bc83a4b45"
+    },
+    {
+      "path": "engine/assets/include/MiniEngine/Assets/BakedFormat.h",
+      "sha256": "74e7c1fbbfc2d49849e2256f78ea47f64ad3f6afd5c406df60e1022e7728f1ce"
+    },
+    {
+      "path": "engine/assets/include/MiniEngine/Assets/BakedReader.h",
+      "sha256": "1de4a57d9e6e82b102382cd833cf096a2420d9e1e3b2af88146181cfa0c6b027"
+    },
+    {
+      "path": "engine/assets/include/MiniEngine/Assets/Internal/AssetDecode.h",
+      "sha256": "7f4407259af46d0db1c4a752d855b057f9c6da386647d70f2f051a12e9bd0d30"
+    },
+    {
+      "path": "engine/assets/include/MiniEngine/Assets/Internal/BakedReadUtil.h",
+      "sha256": "7899280b145fc9565996d5ff6c8e2adb52651999f9b83670d0f7efd1d86c230b"
+    },
+    {
+      "path": "engine/assets/include/MiniEngine/Assets/MaterialAsset.h",
+      "sha256": "a50ce0625c44ae1aeb4e2bb284352be50d3b4fd036e21665b738ded0327079d4"
+    },
+    {
+      "path": "engine/assets/include/MiniEngine/Assets/MeshAsset.h",
+      "sha256": "fbeb997b7507952976da59525532b3ed248b9e01211a1156713494743921c6f5"
+    },
+    {
+      "path": "engine/assets/include/MiniEngine/Assets/PbrVertex.h",
+      "sha256": "4a24a9ba2e83dcf9c0d4f8e640ddf2f6fb5c0a858c33a1d3a2a659f9e8a415b9"
+    },
+    {
+      "path": "engine/assets/include/MiniEngine/Assets/Sha256.h",
+      "sha256": "5ec2ef4758799a7c46195c53b1a8828c2f9a1d9844cb1636f7cfb946865d00dd"
+    },
+    {
+      "path": "engine/assets/include/MiniEngine/Assets/TextureAsset.h",
+      "sha256": "58295312a91e9d9010f28f9955d6b96ae84b1f30afa10f1d44c8f6e3a1e29b42"
+    },
+    {
+      "path": "engine/assets/include/MiniEngine/Assets/TextureFormatV2.h",
+      "sha256": "a5808bb6409e6b31b7636eb30fff1b9c64ecdc4583b9f1bf685c4efb0b849a15"
+    },
+    {
+      "path": "engine/assets/src/AssetDecode.cpp",
+      "sha256": "d1ef9b5860f40e62a00ef554dce2aeb149b213de6bb15c1888ce33c16fdd62fa"
+    },
+    {
+      "path": "engine/assets/src/AssetId.cpp",
+      "sha256": "ebdbf0b49b7ac88643641f1eb41e034d3c8602e138926edf25329b7e7c2a352f"
+    },
+    {
+      "path": "engine/assets/src/AssetManager.cpp",
+      "sha256": "d1ff507631853077d45342954d64d9003437a1b48952cd8e6958879ee05179e1"
+    },
+    {
+      "path": "engine/assets/src/AssetRegistry.cpp",
+      "sha256": "dccd792fb6ad5106beed78b4014b245a861689d66954e6efc99b5b86296e8842"
+    },
+    {
+      "path": "engine/assets/src/BakedReader.cpp",
+      "sha256": "50025d16a49e16d7ad475e4b4967b552cfc2061c8a994d92877b66cda04a45b7"
+    },
+    {
+      "path": "engine/assets/src/Sha256.cpp",
+      "sha256": "51bcedd14672421467042950ff020f73735a89276fc532bc47b86e2cb8c9c72b"
+    },
+    {
+      "path": "engine/core/include/MiniEngine/Core/Assert.h",
+      "sha256": "8173c58fa65a3dedac62008dd6ba394dbacf39326253f88bc9f091a4d2d799d4"
+    },
+    {
+      "path": "engine/core/include/MiniEngine/Core/BuildInfo.h",
+      "sha256": "be0e579d5cbb54ec961d3d75f783ab50c291a7909186f5c511d38cd114729ad4"
+    },
+    {
+      "path": "engine/core/include/MiniEngine/Core/FileSystem.h",
+      "sha256": "ecd2f0c4d7061dd906f62b31f8901f14277f37ee058d7d36318f88f8c1515d46"
+    },
+    {
+      "path": "engine/core/include/MiniEngine/Core/FixedStep.h",
+      "sha256": "4c914227070391610f7e7c76b4f4ec65e450fff95d8053267a6ad260ee4b6372"
+    },
+    {
+      "path": "engine/core/include/MiniEngine/Core/Input.h",
+      "sha256": "7858e7fbe1cad748e69f6799324f0336a9014e29afa00cb8c9caf88ff2bb40d5"
+    },
+    {
+      "path": "engine/core/include/MiniEngine/Core/Log.h",
+      "sha256": "94dea996efbb17a14a768abe38bfdb5d98e5afb21ca8bb9a5c6d7e7f5464eb7d"
+    },
+    {
+      "path": "engine/core/include/MiniEngine/Core/Time.h",
+      "sha256": "38fd6bacdade19794d0fe7720a6b1270b51567af95b48475d978e746ea2e7ff6"
+    },
+    {
+      "path": "engine/core/src/Assert.cpp",
+      "sha256": "413d290d2fcdc0b89a9f38cedcc8dee6842d4fc8a2b70d9daacbf738e848430a"
+    },
+    {
+      "path": "engine/core/src/BuildInfo.cpp",
+      "sha256": "0ba2eea0c62968bdf4db822c6d20c1f83fb3dc34f496f9f5b81483e59ebbd123"
+    },
+    {
+      "path": "engine/core/src/FileSystem.cpp",
+      "sha256": "fa09da1c655837168c4ce5b2e944c378c32820cc74e3e3be6c10862c3f0a3e49"
+    },
+    {
+      "path": "engine/core/src/Input.cpp",
+      "sha256": "70c314c84995c893ffe3d79015529559b5de545a8bedece009808c62937e12ef"
+    },
+    {
+      "path": "engine/core/src/Log.cpp",
+      "sha256": "79e151325eb882d0a3141568bfd8cbe8d1f46e52773519b7c3f9cc5e3c3ec170"
+    },
+    {
+      "path": "engine/platform/windows/include/MiniEngine/Platform/Windows/DirectoryWatcherWin32.h",
+      "sha256": "f34ee1a2c82eb4627bfc2b438a657031d2bc1800ceecb3c015d3ca675caab90d"
+    },
+    {
+      "path": "engine/platform/windows/include/MiniEngine/Platform/Windows/ProcessMemoryWin32.h",
+      "sha256": "de9c2cc26c8e41f3db5f4ed620c26d9843d7d3361d7661c215c9ac4409ebdd4b"
+    },
+    {
+      "path": "engine/platform/windows/include/MiniEngine/Platform/Windows/WindowsClock.h",
+      "sha256": "d45e594888a6bf447ebac36aafde943dc8debddff34f84c045eea29892cbd270"
+    },
+    {
+      "path": "engine/platform/windows/include/MiniEngine/Platform/Windows/WindowsWindow.h",
+      "sha256": "95c6a90f4564589678d4f955d2cdca6b789b5ee40a6d7a36f3028495dee48f6c"
+    },
+    {
+      "path": "engine/platform/windows/src/DirectoryWatcherWin32.cpp",
+      "sha256": "fc0f8aa2a4c4373ce7caea5055bf4537912949a978ce81c6dfd81f167d6a88d0"
+    },
+    {
+      "path": "engine/platform/windows/src/ProcessMemoryWin32.cpp",
+      "sha256": "e46821a2d0a7fa129de9df0f47b49a8606f0b6267c294c0f296bf3eb8844d25c"
+    },
+    {
+      "path": "engine/platform/windows/src/WindowsClock.cpp",
+      "sha256": "5010bb65ef14501d51941a299d1d5630d80681ea93772348c5e667c20e1289c6"
+    },
+    {
+      "path": "engine/platform/windows/src/WindowsWindow.cpp",
+      "sha256": "449fc7b7b015b8356f9c509f0d713d39df69dfce8831aa5373dc0eee11dd0818"
+    },
+    {
+      "path": "engine/profiling/include/MiniEngine/Profiling/Profile.h",
+      "sha256": "6f82dfa0477143d9cd37d92ee8c7e0816bbafae661ca4c1b1995a9621ea1e7d3"
+    },
+    {
+      "path": "engine/profiling/src/Profile.cpp",
+      "sha256": "cfa3d6e6d6ccdc0e736a4bc5a379ea3dcce91c0d3a0ef4ca9e2221e5bc21d1af"
+    },
+    {
+      "path": "engine/profiling/src/ProfileLock.cpp",
+      "sha256": "44dfaf006634f24f691256f5f3e57a5fe069e40f03a2b70a74df11da70cd2463"
+    },
+    {
+      "path": "engine/render/include/MiniEngine/Render/M6RenderPipeline.h",
+      "sha256": "78dc22f764f231eaa70adddb113232e94934f380051b2cef0cd302ef8fa5ff52"
+    },
+    {
+      "path": "engine/render/include/MiniEngine/Render/M6SceneResources.h",
+      "sha256": "2677a3d048c6ab80ef10029370a185e43db9520d134393bed0265855cee4f397"
+    },
+    {
+      "path": "engine/render/include/MiniEngine/Render/RenderPacketBuilder.h",
+      "sha256": "fec3c7f6bad4f675a82e5579def69facb23abaa456f5ae6352b7122f0f5d3de7"
+    },
+    {
+      "path": "engine/render/include/MiniEngine/Render/SmokePasses.h",
+      "sha256": "00a637e248f575fda914a8aa17f618ff6da1a3adbe1d1e1fc4304a297d15d13e"
+    },
+    {
+      "path": "engine/render/src/M6RenderPipeline.cpp",
+      "sha256": "e75c8f0801a2e51cf99e133603c3d5004a40578e435149a7057c01953dfb730b"
+    },
+    {
+      "path": "engine/render/src/M6SceneResources.cpp",
+      "sha256": "67d048039b629201e87344086922635ea2362e79b372abd78556399f93c044a6"
+    },
+    {
+      "path": "engine/render/src/RenderPacketBuilder.cpp",
+      "sha256": "f8971b4f43a04738979be24bd953bb1b29a6300c0268f268a81a967da1fcde67"
+    },
+    {
+      "path": "engine/render/src/SmokePasses.cpp",
+      "sha256": "72acd96e6280a39cc9fb4f6463480a2d7c92a473922f642a1b8bccc09aff5107"
+    },
+    {
+      "path": "engine/render_graph/include/MiniEngine/RenderGraph/CompiledRenderGraph.h",
+      "sha256": "6135e434701205e6c3b86b3a693c1233996c14b8554523e4f49b6861d08efea4"
+    },
+    {
+      "path": "engine/render_graph/include/MiniEngine/RenderGraph/RenderGraph.h",
+      "sha256": "98f9e82530a8f3872de197d48b45b22692929f59704cee7b894db3bf39f66e09"
+    },
+    {
+      "path": "engine/render_graph/include/MiniEngine/RenderGraph/RenderGraphBuilder.h",
+      "sha256": "d18dcb00ca5803edbdbe86096b76586cc614ebad595df040af771b65eb843a4a"
+    },
+    {
+      "path": "engine/render_graph/include/MiniEngine/RenderGraph/RenderGraphHandle.h",
+      "sha256": "8728863105cefe61ac3e0c4a8fe7288a06bfb72fff1347c73e4e43009c4f64ad"
+    },
+    {
+      "path": "engine/render_graph/include/MiniEngine/RenderGraph/RenderGraphTypes.h",
+      "sha256": "c11a55fbbfb23d8ecc86c8364c13edc67148ee15fb0c64f99d191f335f59c42a"
+    },
+    {
+      "path": "engine/render_graph/include/MiniEngine/RenderGraph/RgResources.h",
+      "sha256": "080fbcc6ff60829d6d412d2414b2a5fdbee99f2577c633b17960cc121553c38d"
+    },
+    {
+      "path": "engine/render_graph/include/MiniEngine/RenderGraph/TransientResourcePool.h",
+      "sha256": "875b6593585d794dccd21e691fbc596162ba08fae4930bb4682f57480a0b0364"
+    },
+    {
+      "path": "engine/render_graph/src/DependencyAlgorithms.cpp",
+      "sha256": "cd48356a6e76b0b672b9ca9db918d3bba5742e4352f064d8d9f4263a012506be"
+    },
+    {
+      "path": "engine/render_graph/src/DependencyAlgorithms.h",
+      "sha256": "c8c8c11fccca9c1a2be0b6f65c69892d2814a11041c52a74f1cbe78b52c7fa6f"
+    },
+    {
+      "path": "engine/render_graph/src/GraphDiagnostics.cpp",
+      "sha256": "f289e956c86198fb0a5651a7c5a7cec43952d16dbce9f68b9d2c367487c062bc"
+    },
+    {
+      "path": "engine/render_graph/src/GraphJson.h",
+      "sha256": "d8edd439fe333af505de98d2ae5c157dffaa6b786597d2dcb08984e57ae05a31"
+    },
+    {
+      "path": "engine/render_graph/src/GraphState.h",
+      "sha256": "6cb34f513dbd5c5f212e9288247139d3828c208c58b807e8c4b2dc6fc180c981"
+    },
+    {
+      "path": "engine/render_graph/src/RenderGraph.cpp",
+      "sha256": "e382b4754334f3edc41c48f8271e46f91efa77b3d7c25ea3ded0c8f8fc522a2f"
+    },
+    {
+      "path": "engine/render_graph/src/RenderGraphBuilder.cpp",
+      "sha256": "98ba8694f768a8ad3a536c92a6b4eba1088085a01fd48e69bbf7cf8cf9ce4625"
+    },
+    {
+      "path": "engine/render_graph/src/RenderGraphCompile.cpp",
+      "sha256": "597a7067b2ee14002bc8279a198e1e341afc919af7160cac35a4831a152e703a"
+    },
+    {
+      "path": "engine/render_graph/src/RenderGraphDump.cpp",
+      "sha256": "b6f059a00728504a789397396b6d0ea43cdf609f9cba8439e78ab1acabf321bb"
+    },
+    {
+      "path": "engine/render_graph/src/RenderGraphExecute.cpp",
+      "sha256": "95983aabbd2c06b6b49234c76fca95906f5f2d0eb4484269c1cf15258817fcf6"
+    },
+    {
+      "path": "engine/render_graph/src/RgResources.cpp",
+      "sha256": "52a64a6f23f32a30026ac877fef325afbccd0fa4792c83349a3a2a1a7f85a7f3"
+    },
+    {
+      "path": "engine/render_graph/src/TransientResourcePool.cpp",
+      "sha256": "05b7aea45a8b895851db5beeee21ba0f86651b961de736ac2e7f9755c43516f9"
+    },
+    {
+      "path": "engine/rhi/d3d11/include/MiniEngine/Rhi/D3D11/D3D11AssetCache.h",
+      "sha256": "1eb9f20b0d9aa74758fb0ff2c77112018193441fbb53969f1355a2f144c89852"
+    },
+    {
+      "path": "engine/rhi/d3d11/include/MiniEngine/Rhi/D3D11/D3D11Camera.h",
+      "sha256": "cfd454600dc94f2fc2f8d7bd8d44cb6dba5deea9a73ff8ded544f6debd7df925"
+    },
+    {
+      "path": "engine/rhi/d3d11/include/MiniEngine/Rhi/D3D11/D3D11GpuTimer.h",
+      "sha256": "073cde7d2b89c8c92826342263d7f61d5e288408facfa67623dbbe148c5ce74c"
+    },
+    {
+      "path": "engine/rhi/d3d11/include/MiniEngine/Rhi/D3D11/D3D11HdrTarget.h",
+      "sha256": "e83c5b42af564a583f8150f173c094cb5ded362518149adf5b6a4a7164533fb1"
+    },
+    {
+      "path": "engine/rhi/d3d11/include/MiniEngine/Rhi/D3D11/D3D11IblResources.h",
+      "sha256": "8428f9644c3624c22f966ab803a4376ac832a2a49e1344254b47207eb5e8a587"
+    },
+    {
+      "path": "engine/rhi/d3d11/include/MiniEngine/Rhi/D3D11/D3D11ImageComparison.h",
+      "sha256": "18d57aa1036903bd5380f2566885e34817b6cc199949f2537153ff803255dbb6"
+    },
+    {
+      "path": "engine/rhi/d3d11/include/MiniEngine/Rhi/D3D11/D3D11RenderBindings.h",
+      "sha256": "5f00d1577ea7685839d6d18bf9f8a427c2a9b0534540817050666537b9b90b98"
+    },
+    {
+      "path": "engine/rhi/d3d11/include/MiniEngine/Rhi/D3D11/D3D11Renderer.h",
+      "sha256": "97d63f09b1d6839290ca694657ea5ca82185ed63b18819d389fc2cb53a7a8516"
+    },
+    {
+      "path": "engine/rhi/d3d11/src/D3D11AssetCache.cpp",
+      "sha256": "7b508922336d8da26006f49bc1d18c1fa6a4cc44fc530778451d484c740bbfd3"
+    },
+    {
+      "path": "engine/rhi/d3d11/src/D3D11Camera.cpp",
+      "sha256": "5ae009dc43894e362bfec8269b47c3d665f2e323babf94a348a51c93441b1d79"
+    },
+    {
+      "path": "engine/rhi/d3d11/src/D3D11Capabilities.cpp",
+      "sha256": "08d47d4b24bf4f06265f45885721ad339f4783c70910274c28c8afce5e394293"
+    },
+    {
+      "path": "engine/rhi/d3d11/src/D3D11Capabilities.h",
+      "sha256": "e0e6ceae9da51fcf3c44a71cf34aa627ea75adeab7105d1ec7a2d8755da9c329"
+    },
+    {
+      "path": "engine/rhi/d3d11/src/D3D11Error.cpp",
+      "sha256": "d2f0345f0df611f486b7dc85b146403d69511758d02952696f55bfae2482d5f9"
+    },
+    {
+      "path": "engine/rhi/d3d11/src/D3D11Error.h",
+      "sha256": "aab3ba1d3297c52ad562f01f9c7def1d1320d95d93ea0f785481c03f17719995"
+    },
+    {
+      "path": "engine/rhi/d3d11/src/D3D11GpuProfiler.cpp",
+      "sha256": "f092d32d722c12f1b31f8a0a5033854a6dc3581ece6f679a8e6f5a8ac5c34401"
+    },
+    {
+      "path": "engine/rhi/d3d11/src/D3D11GpuProfiler.h",
+      "sha256": "094c87683ff00eaa814993f4cc8dec5821ff19b07d0f50d8eca2a3db2b972ee9"
+    },
+    {
+      "path": "engine/rhi/d3d11/src/D3D11GpuTimer.cpp",
+      "sha256": "1e214c973118689d8d0100260a677d2a1d4fab71e6c6b88cf0a039e17007108a"
+    },
+    {
+      "path": "engine/rhi/d3d11/src/D3D11HdrTarget.cpp",
+      "sha256": "aec788112e389492fa7be94c0bbedb073d79777f5cd0181312bd84ef2365ef90"
+    },
+    {
+      "path": "engine/rhi/d3d11/src/D3D11IblResources.cpp",
+      "sha256": "2c737d7d0fc15eb028ef4316d6dbb9904c5c9298a622828fa121fbaa1b2fcb78"
+    },
+    {
+      "path": "engine/rhi/d3d11/src/D3D11Renderer.cpp",
+      "sha256": "ec4dc2803d81153294dc7ca565282bc9e7452f688859a6015c4a21e4b95ee5ce"
+    },
+    {
+      "path": "engine/rhi/d3d11/src/D3D11RhiBackend.cpp",
+      "sha256": "54eac1c2a4958ac70318fd8983fff57bfcad470cfc9ac8633c52e2478b54af9e"
+    },
+    {
+      "path": "engine/rhi/d3d11/src/D3D11RhiBackend.h",
+      "sha256": "783d552f581bf8037f33e0b9ead763f8c87ec2c6b043eb4a03514266eed877e6"
+    },
+    {
+      "path": "engine/rhi/d3d11/src/D3D11Screenshot.cpp",
+      "sha256": "d9e7a78c3bdd578552bb6f33ae9af058f63d46afd3cc84db2e3c95469538ca39"
+    },
+    {
+      "path": "engine/rhi/d3d11/src/D3D11Screenshot.h",
+      "sha256": "120f0f8b34190120ea6707d18f73eb644b6844222cbb0f48ab94f0f8e184310f"
+    },
+    {
+      "path": "engine/rhi/d3d11/src/D3D11ShaderCompiler.cpp",
+      "sha256": "7f8485a7af3c5cf6ea793e1507ebd6b1656e1696262869c34eb1f78363322a2a"
+    },
+    {
+      "path": "engine/rhi/d3d11/src/D3D11ShaderCompiler.h",
+      "sha256": "12f06e877f3761a9fbbc920e5a9141a1b2463be0a2924dcba3a6e8e8809c75e2"
+    },
+    {
+      "path": "engine/rhi/d3d11/src/D3D11ShadowMap.cpp",
+      "sha256": "8996fed4c7451df51accd8fdfcafd33d5362f08c5ca59cb89a7119ea42bc2441"
+    },
+    {
+      "path": "engine/rhi/d3d11/src/D3D11ShadowMap.h",
+      "sha256": "bfacb1428872ef3b52426a668f90eb38a9771a51d133f11cffc872b4859ae7b1"
+    },
+    {
+      "path": "engine/rhi/d3d12/include/MiniEngine/Rhi/D3D12/D3D12Camera.h",
+      "sha256": "f557ce3c06fcf059e242bd6d7089b769da4278dc66b01432bb2a943372e1721a"
+    },
+    {
+      "path": "engine/rhi/d3d12/include/MiniEngine/Rhi/D3D12/D3D12Common.h",
+      "sha256": "1a2b8e2297d379bed161542a196f10b106acefc6d1f99207698f0db61cbf0235"
+    },
+    {
+      "path": "engine/rhi/d3d12/include/MiniEngine/Rhi/D3D12/D3D12Device.h",
+      "sha256": "ca9c08fd705ed5f8c9fe5547ac4729cbd25869c3453a10d57b62010f901cba6d"
+    },
+    {
+      "path": "engine/rhi/d3d12/include/MiniEngine/Rhi/D3D12/D3D12PsoKey.h",
+      "sha256": "bec02c24137b7cb890ba2aab53b9633828db6c0eccba55f4d40d795d7f947ea2"
+    },
+    {
+      "path": "engine/rhi/d3d12/include/MiniEngine/Rhi/D3D12/D3D12RootBindings.h",
+      "sha256": "2a128cd4688f3b28617a0d389f112c55542f31a36b7c81a11071f5c9668b770c"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12AssetCache.cpp",
+      "sha256": "1a0527a05c38e8fdffb6873ee48d2404a99ed9c224379bff8b0b0aa4acccdc57"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12AssetCache.h",
+      "sha256": "7d23288db6363a3668ad36ccf4c0b77e6f048bde983dd37c75a04e35a6bb7f94"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12Camera.cpp",
+      "sha256": "a8daafdf6897c986fbcc51808f9bf48fa55e27bf54b8be81ec84ecc3b45436a8"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12Capabilities.cpp",
+      "sha256": "1df8b46c092aefbf3400184d247238a9de164a992b8e1f5ddceec7dee91e116f"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12Capabilities.h",
+      "sha256": "6ca62c7df3b307ea8ec5d9a49f67157c6a11b68986459e13ff0df8bedc57c54c"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12Common.cpp",
+      "sha256": "ee930b8ad9a91c86d2704ce2aa860fc5acffea6b7a0f8231d91c0542c9503bc2"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12Constants.h",
+      "sha256": "3ffcf6b3927eaf3737bf1765e47560c071739f57495437d560034cd9e6729eb5"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12DeferredRelease.h",
+      "sha256": "e8b727d40ce31c50b92733fa1cbd4abd776dd3a52bd2d2458ccc1dd4ae929830"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12DepthBuffer.cpp",
+      "sha256": "00ba4ce092ae12c8e159a5c54808434c0f37bacafaaa3ec9d79cdfa8d0562bd6"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12DepthBuffer.h",
+      "sha256": "7ceb8e9b80f0e0f3385afb4976338a29382508d6bd615cca6001522a8694eb53"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12DescriptorAllocator.cpp",
+      "sha256": "d779d6cc40b7af3bfea3447c62eed4c0a0630d3ae29c17f4b06543d5fe4fc458"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12DescriptorAllocator.h",
+      "sha256": "62f4079dc77c9ef49109e9b4dd06321840fcbaac46786803d511c597b68d84f9"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12DescriptorHeap.cpp",
+      "sha256": "ef2e4a6800a44484d346186e6af7457dcc06a8490956b8c63453357f506f6a10"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12DescriptorHeap.h",
+      "sha256": "a6c23b6cde1221a41ad9b882e08227ddc2c1b0eb5214382200372571a5717621"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12Device.cpp",
+      "sha256": "c4deca506d326f0383877a8e559d72d0386d3530562cbde88e36d71062c26cfb"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12Diagnostics.cpp",
+      "sha256": "e060ac1499263ad25ab02b6698ff329efc632809f6b208ddf184471897b8ef6c"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12Diagnostics.h",
+      "sha256": "eddc3a244d277169557a7ed95c17482ceb83b6c45c1098353f8bed0e1a7ff7a4"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12Events.h",
+      "sha256": "faea605d4a4ddf697000fb72ffb89103341fc469b89175fd94de441fe11e5309"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12FrameContext.h",
+      "sha256": "51417e3f3695c26a7368fd1448b7482751cf4f6e3b0e5cd20d9134297289184a"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12FrameReadback.cpp",
+      "sha256": "0fb509da8e1ad1f8fd9b07d5766e0e8fe0f39c5f30aa7789e55eef2e4398163c"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12FrameReadback.h",
+      "sha256": "f43122eee1e3be5e356883db70bb5449d13b82f6f224a327348f2c02bf25bd5b"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12GpuProfiler.cpp",
+      "sha256": "9d8f729ad7ee69e283013ae51c721228a68ad17aef33c44d1a9bee3db0ef5f2f"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12GpuProfiler.h",
+      "sha256": "ae33ca67abb950875b0a3caf9e601db282fa443252594e429fdae77e1ff668c0"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12IblSet.h",
+      "sha256": "c990a0737ae1b9f75cdc040d3e810a07c34abbc496f962e1f97025daefebc12a"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12Parity.h",
+      "sha256": "a33135c999ec68afeef3152d3ea15799513ed45cf0e27649edb456ffd0ef9b41"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12Png.cpp",
+      "sha256": "b90850bc6a18275150c571907cd56fd67581bd706b4e11d7545f0aab344207a6"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12Png.h",
+      "sha256": "1907961f6eae317922532805f613b45bcc757c8afdf1c4bb616fb625621bc8fe"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12PsoFactory.cpp",
+      "sha256": "450300a4261153922cade5d88f7dfdb85ea13e1a39bba92146b25dc3de3545ae"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12PsoFactory.h",
+      "sha256": "0b6bc7a72a73366cb15dc03450672ba81cd2541a9f74d8f5d5c9ade66f069e0a"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12Queue.cpp",
+      "sha256": "e8e387b59911d43c46442b4327160dcf7f03cc26c12d6b0419029e6a4f486301"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12Queue.h",
+      "sha256": "7ba84aac07118e8de5932bb6a18571e317dea9dd44cbb484b7256c575a6c7b97"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12Renderer.cpp",
+      "sha256": "48f479dd969fa20b8181206d76c287602392b3489412d5d2e59ca0f7b2fc0611"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12Renderer.h",
+      "sha256": "759e9f3b41c99d02b182482236457d986186584fceda5f0e828ddd9e67166e9f"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12RendererPasses.cpp",
+      "sha256": "8768169c997d3d6c49f3d00a4f769366d3e952aff15202bb0c76aee5eaa0026e"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12ResourceStateRegistry.cpp",
+      "sha256": "9e95d61bb05b02a80689e88d8aa8857a9ce6aaa4fc9b8c7d54fa990eb85c1203"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12ResourceStateRegistry.h",
+      "sha256": "8eeb42739a0889f6c42b332f28862da9f1ae285fb99aaa62f664a8ccae4dd653"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12ResourceStateTracker.cpp",
+      "sha256": "264b7c9fff21e582a62835572cfc2c68f2ce5b5b145df533baeffda76dafdf42"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12ResourceStateTracker.h",
+      "sha256": "1d7480b0e893a424af59ab4246d38bce974509581a0d0fd54858c7bc862aed4b"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12RhiBackend.cpp",
+      "sha256": "3f99cff8b33f44978ee144686717962576b160d0ee7a0cc08222383fb2daab52"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12RhiBackend.h",
+      "sha256": "a6d1bee0d4afc4a94e595330c22bbd433c47d7a87795d0c7cd2f148e43de75e5"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12RhiDiagnostics.cpp",
+      "sha256": "2d7a398eee3d89bc1bdf9a9ae82c248ba0e7675812b850f5d367770e38b2e4bb"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12RhiEnvironment.cpp",
+      "sha256": "6492d62bf16eb76c82794c4f75c18a602d1324e316135d8d02ababc131150f7b"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12RootSignature.cpp",
+      "sha256": "bd02c2641f9fc930ca70d1ac90ba98671aebece82bba750a6048b2e76420e98a"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12RootSignature.h",
+      "sha256": "d5e3052e27f86e5d7ea5c53208221bdb5729b130fb7c7030afb5e3af39b6b56c"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12SwapChain.cpp",
+      "sha256": "63ee14101db4c8786cba5d7587dad865de78ac6d902e934b3abb99ae02574b64"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12SwapChain.h",
+      "sha256": "b914d4cfd5f702b871e6d19329f36a11c2d8b728baac094166e1d09536a0c352"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12TextureUpload.cpp",
+      "sha256": "36c8e04159f026248ab0b2edfbd5b6f02407664aa57b9f21b8b434f97bb13269"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12TextureUpload.h",
+      "sha256": "573ab1226b9134514fc9d232e19b868da9ab9d7a615b62eaa464b7d138e05371"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12UploadManager.cpp",
+      "sha256": "7577544a85d77f4483ef3e8a7e64661ea284914a1ee8c080776ae48c0975ebcf"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12UploadManager.h",
+      "sha256": "c544fb7ec86ee5ef52fb66d517e0485e3d1a77bbf191e28a2af5033144169cff"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12UploadRing.cpp",
+      "sha256": "c755c149fd83807e03ab5b521b82239a82f67832824b5ebf80f95c0079186e0b"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12UploadRing.h",
+      "sha256": "9b72d1083911c0f077ec5636eb9d9b7df55e57aaa5063cb795f243a7b1710949"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12UploadRingAllocator.cpp",
+      "sha256": "ab89b36b5bda6f2e491b7fc1e0e13fed079af3018a9b8393bc3dd23229e08bf6"
+    },
+    {
+      "path": "engine/rhi/d3d12/src/D3D12UploadRingAllocator.h",
+      "sha256": "9ab1d6fde654063b93c8c53ad75966613c32aca9cd5e8599d2d7b1bec85ccade"
+    },
+    {
+      "path": "engine/rhi/factory/RhiFactory.cpp",
+      "sha256": "31e90113daf13f9f228dc94104b9d29a0c2195f26e715724c0f3ba0ebaebfb15"
+    },
+    {
+      "path": "engine/rhi/include/MiniEngine/Rhi/IRhiCommandList.h",
+      "sha256": "37eeb9746b876d332b04c7423d6a218600ec3aa9582aad34b1c7d93a57402183"
+    },
+    {
+      "path": "engine/rhi/include/MiniEngine/Rhi/IRhiDevice.h",
+      "sha256": "fe9d9229eb6812bf9164ad98eee3751f9fc6c65228e60fb8326fa6eded9a1d5e"
+    },
+    {
+      "path": "engine/rhi/include/MiniEngine/Rhi/IRhiGraphCommandSink.h",
+      "sha256": "23f413a95dfa5a65eb553e7deef982cb7a795809fef3efe5b80587c70c9e50a0"
+    },
+    {
+      "path": "engine/rhi/include/MiniEngine/Rhi/RhiCapabilities.h",
+      "sha256": "e221d6e2aeadd64b9a5d44a46cace37b1f23d1a8ec44acb35e43a2ad56024935"
+    },
+    {
+      "path": "engine/rhi/include/MiniEngine/Rhi/RhiDescriptors.h",
+      "sha256": "9a56204ac57a52a3592dc2a75dceede0c889c7b0b9f079a5ff0408d267fdd0e7"
+    },
+    {
+      "path": "engine/rhi/include/MiniEngine/Rhi/RhiError.h",
+      "sha256": "512bd4456d750b0eecc4a7378dd9660a236d6ce130c8f059c684549ce4fbd873"
+    },
+    {
+      "path": "engine/rhi/include/MiniEngine/Rhi/RhiFactory.h",
+      "sha256": "059cbfd13923f69d15d9b7e2c367f4f2d2ed16598c2243e20359fc9d488cdcc2"
+    },
+    {
+      "path": "engine/rhi/include/MiniEngine/Rhi/RhiHandle.h",
+      "sha256": "6acb671de1b7d0e802516c307d3a5f99f525a29a51d5993c652a60d8768110e0"
+    },
+    {
+      "path": "engine/rhi/include/MiniEngine/Rhi/RhiPipeline.h",
+      "sha256": "16435f7e91ea31fea7259cfce0fffd11a83100d499beb3dcdaf2a5a365faf95b"
+    },
+    {
+      "path": "engine/rhi/include/MiniEngine/Rhi/RhiResults.h",
+      "sha256": "a7c0d37ee352d7a3f249dbbf7a5db32da9910edac9b0a2f894daab2a78f4c911"
+    },
+    {
+      "path": "engine/rhi/include/MiniEngine/Rhi/RhiShaderPackage.h",
+      "sha256": "858594bdead85ed0324ba46be558452b4eeb05fd056aa061d1ae70d507b99908"
+    },
+    {
+      "path": "engine/rhi/include/MiniEngine/Rhi/RhiTypes.h",
+      "sha256": "5559fdc613fa27de841fda191c987d7312885fcde60249de368efb78e49f024f"
+    },
+    {
+      "path": "engine/rhi/include/MiniEngine/Rhi/RhiValidation.h",
+      "sha256": "d5df3a3a1f9efc920207f628b9f5fdf6bf4e3c149c03e778dd7f8b570223c2e7"
+    },
+    {
+      "path": "engine/rhi/src/CommandRecording.cpp",
+      "sha256": "dd285a8cf66dcafd7cf9787e570897df153e1c2c1f9ea1a2d829af1dcb92a034"
+    },
+    {
+      "path": "engine/rhi/src/CommandRecording.h",
+      "sha256": "df491440ad0c6bc59df9e8a6e4639143c90e4a51ebbfb25e7b12a98ccb9b0b87"
+    },
+    {
+      "path": "engine/rhi/src/CommandValidation.cpp",
+      "sha256": "bbf9f23381fd0ddd30b941b7438f04871a4262eb8bfd1e86156780061d3e8cde"
+    },
+    {
+      "path": "engine/rhi/src/CommandValidation.h",
+      "sha256": "e245f9f8749f769412c58274204db05363f141eb3a99bacbecf8b264415a27e0"
+    },
+    {
+      "path": "engine/rhi/src/DeferredRegistry.h",
+      "sha256": "4aa6f44589357492226d62e80aa518cb499b2af176e16fa948f4dd69d38c3e9a"
+    },
+    {
+      "path": "engine/rhi/src/DeviceLifetime.cpp",
+      "sha256": "fe6ad8027f7d3020f77928c5c1f71ea18e48d0991dd807f63827177c408ff363"
+    },
+    {
+      "path": "engine/rhi/src/DeviceLifetime.h",
+      "sha256": "71e31c8e0425f8848913b17624c40513fa285ca6e870d32c73936e51e45f6a2d"
+    },
+    {
+      "path": "engine/rhi/src/HandleRegistry.cpp",
+      "sha256": "dba3f18b929f24623e83e574fb87eb2e33d096f5a3685b981ed661411024aa36"
+    },
+    {
+      "path": "engine/rhi/src/HandleRegistry.h",
+      "sha256": "3b5bcdbfb5c60cec6f0d90b85bed753965cff1c712d9dec1c5a8c06f6a54244e"
+    },
+    {
+      "path": "engine/rhi/src/NativeDevice.cpp",
+      "sha256": "6f0fd25bc69eef32f94b8232a210177b9a98e99a9256ece835483731faadae59"
+    },
+    {
+      "path": "engine/rhi/src/NativeDevice.h",
+      "sha256": "adf6a2eff3c891637167667d7154119fa3205c8ed8c2342e379b250ada1b242f"
+    },
+    {
+      "path": "engine/rhi/src/NativeRhiBackend.h",
+      "sha256": "d674aff355e6df5462bd179bfa955c583813cffcc8fee48e0c8f9a4f016f26b6"
+    },
+    {
+      "path": "engine/rhi/src/RhiPipeline.cpp",
+      "sha256": "fbd5f38b0f1b77ee26a65601e8764f730cc4b4fa58e3b5e3801fe599840f34ae"
+    },
+    {
+      "path": "engine/rhi/src/RhiResults.cpp",
+      "sha256": "4b7bf1713bf49acbb9e1e08a396b6987a2ac004e92a06760c54a260d8a477391"
+    },
+    {
+      "path": "engine/rhi/src/RhiSelection.cpp",
+      "sha256": "666e0572d12cd3acc0d301b8adbdbdea2d92d3ab074e92a007e696468049fa86"
+    },
+    {
+      "path": "engine/rhi/src/RhiShaderPackage.cpp",
+      "sha256": "03e8bb247ae4f547ad67ed9bc432eefdc963074a1772b9ee5df9f175260071c0"
+    },
+    {
+      "path": "engine/rhi/src/RhiValidation.cpp",
+      "sha256": "05fcadc64772d8f52d5977b6235cd0ad63f5d876e04a5509c753d9ed50c134e4"
+    },
+    {
+      "path": "engine/rhi/src/ShaderRevisionTransaction.cpp",
+      "sha256": "fc1f16980ec6f23969da8e45b8686354b7af7d2592b4be7134159e9ddfa3173a"
+    },
+    {
+      "path": "engine/rhi/src/ShaderRevisionTransaction.h",
+      "sha256": "0eb82fbef8a41dfa5ec93a2722f7aab5a8ff535f00f1656ee57e14152a3dbcd6"
+    },
+    {
+      "path": "engine/tasks/include/MiniEngine/Tasks/Task.h",
+      "sha256": "53247e137a78cb08ed4c2329287fdac8898dd64f71e5514e07aa627ddf7f72bf"
+    },
+    {
+      "path": "engine/tasks/include/MiniEngine/Tasks/TaskGroup.h",
+      "sha256": "7d308251bb70f5341be381d4fe6ae7585bac344cfd2e587d1c3b95752b989ea8"
+    },
+    {
+      "path": "engine/tasks/include/MiniEngine/Tasks/TaskStatistics.h",
+      "sha256": "8fde2462242f41cb865df8ad114b6c38c2d31e20ea3dd8ab666fe42fef6aabdf"
+    },
+    {
+      "path": "engine/tasks/include/MiniEngine/Tasks/TaskSystem.h",
+      "sha256": "bc2967f64319ab43f81e8a481c363ceeaea92486f143314c76d08efd37f72d03"
+    },
+    {
+      "path": "engine/tasks/src/GlobalTaskQueue.h",
+      "sha256": "9c8c4aecaf7c1e86f1dc45828e417f23c39f39cc8a20aee4785ec2783fc0aa75"
+    },
+    {
+      "path": "engine/tasks/src/TaskSystem.cpp",
+      "sha256": "b92454d77c84aa9395566a82288ae29d439fd282c2611b84ce6b9055028fca70"
+    },
+    {
+      "path": "engine/tasks/src/WorkDeque.h",
+      "sha256": "0601a930da3be3919dee36753ceceaf84b899ec9e7510a621c4607dafbdf0604"
+    },
+    {
+      "path": "engine/world/include/MiniEngine/World/DirectionalLight.h",
+      "sha256": "e61d0935e2a59ceabc1390463873373cf0c2001d2d5ccfb4866bffa3fc0231c6"
+    },
+    {
+      "path": "engine/world/include/MiniEngine/World/Frustum.h",
+      "sha256": "3922e5b9318f921197f3e40b7b4cd8ca54a130d0d0f5c5539aa18d38a6d1b8ff"
+    },
+    {
+      "path": "engine/world/include/MiniEngine/World/RenderPacket.h",
+      "sha256": "0ff7958726e606e9713a85189ad0587bdf79136ddcbe4a2be2d81228aef8ee5b"
+    },
+    {
+      "path": "engine/world/include/MiniEngine/World/RenderProxyLayouts.h",
+      "sha256": "e96fdba47ec12830768482b1c9e5cd9b6407943c42440dd521f5dfdf186aa7c1"
+    },
+    {
+      "path": "engine/world/include/MiniEngine/World/RenderQueueBuilder.h",
+      "sha256": "108da428c8d852889d576dfe4778bc7d322a32de227fd1b4ccca6fb0e0a72f91"
+    },
+    {
+      "path": "engine/world/include/MiniEngine/World/World.h",
+      "sha256": "c3a1fbc7ad4866ba5d9cd65e4b108ce2cb081f4d724d50cd28253465943145b5"
+    },
+    {
+      "path": "engine/world/include/MiniEngine/World/WorldLoader.h",
+      "sha256": "ab81d9a049304ad32abc5155f8ad2cda5919863a97c3cc752369e3d41b38086d"
+    },
+    {
+      "path": "engine/world/include/MiniEngine/World/WorldTypes.h",
+      "sha256": "a80b3d345a28ef3f9725dac61ecb6ee5c78e58def556668447980e90940e9688"
+    },
+    {
+      "path": "engine/world/src/Frustum.cpp",
+      "sha256": "c02d26a4d251e38fde4c98df6abecc57da3fe2de4ab2c8b44dc190263bdace67"
+    },
+    {
+      "path": "engine/world/src/RenderProxyLayouts.cpp",
+      "sha256": "1f4fc517b997989035443e515b004ad93946880800af33259efcc2f0d2111627"
+    },
+    {
+      "path": "engine/world/src/RenderQueueBuilder.cpp",
+      "sha256": "9838510c70c2f885c881caba70e46a9bacdb013787a121d642084248dfe116ff"
+    },
+    {
+      "path": "engine/world/src/World.cpp",
+      "sha256": "6a53cfb0465a779c4cd1b7956a2a738de823c9ea31e5fdf04bf077b9086c1fb8"
+    },
+    {
+      "path": "engine/world/src/WorldLoader.cpp",
+      "sha256": "696a2021712d738e7d1562567c46c8618eacbdd10fa4ae3e14609db9f88c5508"
+    },
+    {
+      "path": "samples/common/ParityIdentity.h",
+      "sha256": "cd88a7cb275366f7845f6e74307d3d770c0c971e98529abffd504ff5456c9cf1"
+    },
+    {
+      "path": "samples/rhi_sandbox/CaptureScopes.h",
+      "sha256": "8bf72247a4b3129fa703ce19e3e1993a1a542d47e8e44812c911926373b2209c"
+    },
+    {
+      "path": "samples/rhi_sandbox/M6SceneRunner.cpp",
+      "sha256": "0c5ae119690503f0432f7981d67b14845c38a2e4fe9d18809b1808ce79a6004d"
+    },
+    {
+      "path": "samples/rhi_sandbox/M6SceneRunner.h",
+      "sha256": "c815c73ac25d19c33a671d5b96851ac51e8b84289cf640a5ae2679e22580ebaf"
+    },
+    {
+      "path": "samples/rhi_sandbox/M7SceneRunner.cpp",
+      "sha256": "c63d40fbd0cb1458e14c60549c44dadeb6bbf535a5f0bf6999d9d64f4d5edf95"
+    },
+    {
+      "path": "samples/rhi_sandbox/M7SceneRunner.h",
+      "sha256": "c9f252ccd47e3d21d6d946f99e0727c77d0b0d1af3c6cc978fc28e6cea8af30b"
+    },
+    {
+      "path": "samples/rhi_sandbox/RhiSelection.cpp",
+      "sha256": "97bc3d5be11d3488ad73ab004d8b071672e2755fb5670304827436b38ddf27fb"
+    },
+    {
+      "path": "samples/rhi_sandbox/RhiSelection.h",
+      "sha256": "02e8ac7e174e1e6cb726b17d022b890226edb41918a90a28ac96ebdbbe441d5a"
+    },
+    {
+      "path": "samples/rhi_sandbox/RhiUploadSink.cpp",
+      "sha256": "5726db2439e2d3471a9579221eb437f64a6ba5c7e8e33b44293de56374f593fc"
+    },
+    {
+      "path": "samples/rhi_sandbox/RhiUploadSink.h",
+      "sha256": "2d18094a22c7f4ab24c6261a06e5900b6836c2a73805369dbb30a6afe1cf5e25"
+    },
+    {
+      "path": "samples/rhi_sandbox/SmokeScene.cpp",
+      "sha256": "2c57008a6107bd9efda2e709fd5502cf4e87900340e594df0f9a82009d18670a"
+    },
+    {
+      "path": "samples/rhi_sandbox/SmokeScene.h",
+      "sha256": "d211f67ab7d4ca3e8b1a11f1527d6232b840f4406561e3d1a5292de340f0aaa0"
+    },
+    {
+      "path": "samples/rhi_sandbox/main.cpp",
+      "sha256": "b6692efd566f05352b387c257e6f535c04c76c0d6f5c6449a40940ed10f8fd0b"
+    },
+    {
+      "path": "shaders/d3d11/EquirectToCube.hlsl",
+      "sha256": "cc3eab8ca2cf3e03c913aa6f52b2c26b605c965f4744afa4ea6b1aaa2b0bd365"
+    },
+    {
+      "path": "shaders/d3d11/FullscreenTriangle.hlsli",
+      "sha256": "5b9a6d40f660d7e3e2ec1655c4cbf266b33ed9f2aed21566958e71b376fa17f2"
+    },
+    {
+      "path": "shaders/d3d11/GraphTriangle.hlsl",
+      "sha256": "83bfc1807b01642647bae2b2e73c85a9e5e344cf27c3869c266f4d1b2b3760d6"
+    },
+    {
+      "path": "shaders/d3d11/IntegrateBrdf.hlsl",
+      "sha256": "b1869db90dbf1507cb1c40696a9b1796934fadf6e7377ad8d04e2ac0b83e7b98"
+    },
+    {
+      "path": "shaders/d3d11/IrradianceConvolution.hlsl",
+      "sha256": "8e70de6a50e72d9b526389f5758736f6bb0cbb8245ac867d71a3d97397b70a2f"
+    },
+    {
+      "path": "shaders/d3d11/PbrCommon.hlsli",
+      "sha256": "5c95b22f17dc3fc8f1deccd05fba33386db5a12617d60c8b20836e5109a6d2e1"
+    },
+    {
+      "path": "shaders/d3d11/PbrForward.hlsl",
+      "sha256": "6b695236147964017bd0fa19f104aae9757c55849633af86d6f7347fa94bd1ee"
+    },
+    {
+      "path": "shaders/d3d11/PrefilterEnvironment.hlsl",
+      "sha256": "aeaf59065a7be444d2b28f81268d58a1414fdf44b2ee9f9ab39ad2ea5cc551ec"
+    },
+    {
+      "path": "shaders/d3d11/ShadowDepth.hlsl",
+      "sha256": "8f89c06a6c22b16ecac5ae725007c16abd21e801c16f303f80b15ff18067e234"
+    },
+    {
+      "path": "shaders/d3d11/ShadowSampling.hlsli",
+      "sha256": "8e91d4d370f1ed3cb725847821be0819ca4f279a050acaf838e73bf327018cb2"
+    },
+    {
+      "path": "shaders/d3d11/Skybox.hlsl",
+      "sha256": "57762fbfee46c53491e939cda68f6fe8721578c68f9a471fed35957ef7542226"
+    },
+    {
+      "path": "shaders/d3d11/TexturedCube.hlsl",
+      "sha256": "caba79c984f70f4dc7e2b7427d80fe07a7ae07a52ce0a665730b0f9c0f0e91dc"
+    },
+    {
+      "path": "shaders/d3d11/ToneMap.hlsl",
+      "sha256": "4b70fdd27943d6340a2afca1eac76f9b468ebb85e0a86d5b4553693b3e666958"
+    },
+    {
+      "path": "shaders/d3d12/BindingContract.hlsli",
+      "sha256": "e40cae223bcd0a181882e5a41e0b42ea6bc476cccf0e4c7ee0cfe7d21fb735c3"
+    },
+    {
+      "path": "shaders/d3d12/EquirectToCube.hlsl",
+      "sha256": "acdca3fc7cd4843420840aebc0566d157a14c0dfa949ffe84b0c52be0590087a"
+    },
+    {
+      "path": "shaders/d3d12/FullscreenTriangle.hlsli",
+      "sha256": "afc71303b838bed2bb9d60f47f348b5aab0c1599828697e569499c0fde5cc72f"
+    },
+    {
+      "path": "shaders/d3d12/GraphTriangle.hlsl",
+      "sha256": "83bfc1807b01642647bae2b2e73c85a9e5e344cf27c3869c266f4d1b2b3760d6"
+    },
+    {
+      "path": "shaders/d3d12/IntegrateBrdf.hlsl",
+      "sha256": "05fed676df9f098c314ab331865571990fb587907c00c7a4121c3a053577fbe7"
+    },
+    {
+      "path": "shaders/d3d12/IrradianceConvolution.hlsl",
+      "sha256": "041986004b596de5f025ba7e43ab253ccbb1099f07c0db4b730a1347b1ea4c9a"
+    },
+    {
+      "path": "shaders/d3d12/PbrCommon.hlsli",
+      "sha256": "7cc838b8d5783ba774fef7eed2375808d0681d22b03e1c3e8221daab2127033d"
+    },
+    {
+      "path": "shaders/d3d12/PbrForward.hlsl",
+      "sha256": "eab61a60eb316adda7ea0bc54f39e63211d59611efd5a91f76903700204dfe03"
+    },
+    {
+      "path": "shaders/d3d12/PrefilterEnvironment.hlsl",
+      "sha256": "73831a68b1c775af0be99ab2fea4cabe7a480cb35f0606019affdaf4ceb0cf77"
+    },
+    {
+      "path": "shaders/d3d12/ShadowDepth.hlsl",
+      "sha256": "e25deebf13c5aa15e77167fd0d61d3ccd39d440edd2de3e21fbc9aa394e14742"
+    },
+    {
+      "path": "shaders/d3d12/ShadowSampling.hlsli",
+      "sha256": "c0c79dac8c6cc2b4e68837c5454c9087ff9f9691dd3a14bfcd39f931a4ade5cc"
+    },
+    {
+      "path": "shaders/d3d12/Skybox.hlsl",
+      "sha256": "64221dc7ea61f213874c6392f27f035f0300fb8f960ad255683a5e98ad30d5ad"
+    },
+    {
+      "path": "shaders/d3d12/ToneMap.hlsl",
+      "sha256": "1cb218b696720d95e82a6e82473e405dffd4237677ff9785594bcd1a39d8b932"
+    },
+    {
+      "path": "shaders/d3d12/TriangleSmoke.hlsl",
+      "sha256": "8b3a447c2866c7c92feae317dabe0657b77a9713404476282ff4de9abf89c34b"
+    },
+    {
+      "path": "tests/assets/AssetHandleTests.cpp",
+      "sha256": "770b4f1266f1ed4031e791fa4fe2ff1083c9a5c82ff129c74c349ae0bf677e4d"
+    },
+    {
+      "path": "tests/assets/AssetLoadStateTests.cpp",
+      "sha256": "47642b56e45813085da9f5aa700ea8b03581d54e13580d2b550558059b562822"
+    },
+    {
+      "path": "tests/assets/AssetManagerTests.cpp",
+      "sha256": "20a9233033ee001513afc9a027e9f3ef5b6dfe483d5f420730f012b046767885"
+    },
+    {
+      "path": "tests/assets/AssetRegistryTests.cpp",
+      "sha256": "9801193f5450502ab43aaf7fbfa74cd1b8ad4ad3db025598dda5633d5b29b731"
+    },
+    {
+      "path": "tests/assets/AsyncAssetLoaderTests.cpp",
+      "sha256": "fc310ccd61d6d30b1451ec3059f0f2d1a8e3f812bb3930d0292c62466c3c4310"
+    },
+    {
+      "path": "tests/assets/BakedReaderTests.cpp",
+      "sha256": "5fa53fde813a67eb315b9bdb00728f551664d383ef3ffe763e01a0617095eadf"
+    },
+    {
+      "path": "tests/assets/BoundedQueueTests.cpp",
+      "sha256": "78ffecb6e70e312103570f31f6628eac2d728cf609dc018c37da587214801b8a"
+    },
+    {
+      "path": "tests/assets/Sha256Tests.cpp",
+      "sha256": "99d630c53737dc2952c9cb43a0c2d8f44fcc9084a58a3b8cc1c5c7fdda955994"
+    },
+    {
+      "path": "tests/assets/UploadCommitTests.cpp",
+      "sha256": "888f7092f89371987e53022aadeb2678e018fd82b02376a91c55e3aaec666645"
+    },
+    {
+      "path": "tests/core/BuildInfoTests.cpp",
+      "sha256": "da2f7bfdb52a8d4d171e1ff886a93137e95bd9d5d6b02c7f519de1b692edb24f"
+    },
+    {
+      "path": "tests/core/FileSystemTests.cpp",
+      "sha256": "bdc6a1cea79a912fa459e431ba9eb72479f1a37feafe920b1aeee1ad5b085b50"
+    },
+    {
+      "path": "tests/core/FixedStepTests.cpp",
+      "sha256": "132fe98e1b52abd102cdc3d3516195f5507a6c0e0419c8eebfac575fd5d16cac"
+    },
+    {
+      "path": "tests/core/InputTests.cpp",
+      "sha256": "08b53da81e5cc79cf67e4e84d72e0a3108e076b2533bcb0b6ff936e3a504beb7"
+    },
+    {
+      "path": "tests/core/LogTests.cpp",
+      "sha256": "2d68b965ad2680fe0e3a53aec3fc258e31de81e992f090614c2ea99ee1f81bc1"
+    },
+    {
+      "path": "tests/performance/BenchmarkSchemaTests.cpp",
+      "sha256": "9877d3309c93466c56191235f7918fed2aaf6a2e236d39a864839c2220b8c89c"
+    },
+    {
+      "path": "tests/performance/LayoutEquivalenceTests.cpp",
+      "sha256": "a2f9ffa3af1d669dba8332995555a53f35f6fdc26f1e132c562cf6d5058d1e69"
+    },
+    {
+      "path": "tests/performance/LayoutTestSupport.h",
+      "sha256": "66d3c394bfc8b799d07e5a5a6510dc09d6e3eea53cc3f41bb7dae88cf5decf24"
+    },
+    {
+      "path": "tests/performance/StatisticsTests.cpp",
+      "sha256": "d8f572280e08ba5a47398e8d0ea1cda05662c470b75f9dd7b55028073fdcaebb"
+    },
+    {
+      "path": "tests/platform/DirectoryWatcherWin32Tests.cpp",
+      "sha256": "dc5b9bc7c15786680141b183bbd417135a3b16f0a213a695188285aa3767ed6c"
+    },
+    {
+      "path": "tests/profiling/ProfileOffSmoke.cpp",
+      "sha256": "acdb35e660d2a7aea6184e04c95a8b3fdf7038bf5ef809ccd07606521927ffd3"
+    },
+    {
+      "path": "tests/render_graph/ContentStateTests.cpp",
+      "sha256": "b1245172259fee01a5109c81f7550017753d7e443035a53593c1a2dda1834f5a"
+    },
+    {
+      "path": "tests/render_graph/DependencyAlgorithmsTests.cpp",
+      "sha256": "d06301ad1b830143b717656836c639acf04749da8fc283e623c2b5cbeeddaab8"
+    },
+    {
+      "path": "tests/render_graph/GraphCompilerTests.cpp",
+      "sha256": "5d619354de4e8d049f644d29f3c08a049d496e44d44630c7c1d896eb0b6ce7a6"
+    },
+    {
+      "path": "tests/render_graph/GraphCpuCostTests.cpp",
+      "sha256": "e552ef92b6e9d9345c0c1aa2ebaa98ba17402738d3f61d3422ed27050889e4cc"
+    },
+    {
+      "path": "tests/render_graph/GraphDiagnosticsTests.cpp",
+      "sha256": "aeb5375c2947216d2c81176ae2d21dc9d2110c9a55fe7c47c7a5643f2da6b481"
+    },
+    {
+      "path": "tests/render_graph/M610RenderPipelineTests.cpp",
+      "sha256": "fa1ee33004ebb69c0c94e3693e2fa2fff52d4fd56a51a5684bfa203242a36ae8"
+    },
+    {
+      "path": "tests/render_graph/RenderGraphBuilderTests.cpp",
+      "sha256": "320b94e13e7c1fc4872a19bdf4d28ce8037d896154d8d86384fb53c49f68b6bf"
+    },
+    {
+      "path": "tests/render_graph/RenderGraphExecutionTests.cpp",
+      "sha256": "d4e7127457628a9d6b12188b428d7f99ad8efdb580b1691e019f4aa676843124"
+    },
+    {
+      "path": "tests/render_graph/RenderGraphHeaderSmoke.cpp",
+      "sha256": "24697e5e59f039fb1af992a1e7f22ccf32cc87219dde9ed8bde9fed197b061c6"
+    },
+    {
+      "path": "tests/render_graph/RenderGraphNativeTests.cpp",
+      "sha256": "43184fa144490b17e7fefadeb7b2ccf37afad0445d2dc88af9caaa7e51260660"
+    },
+    {
+      "path": "tests/render_graph/RenderGraphTestFixtures.h",
+      "sha256": "37846579014832496a36f48e8add60fd49c4060acf19ea3bbe7685e2caa67e6e"
+    },
+    {
+      "path": "tests/render_graph/RendererHeaderSmoke.cpp",
+      "sha256": "876ba5ed42f1ac8bf22c009653f2186213299aedf7510e0db155aa9a6abfb3ec"
+    },
+    {
+      "path": "tests/render_graph/TransientLifetimeTests.cpp",
+      "sha256": "a550e62cc94235686e3377a4d61253ba228bd8e95812802a1f385fc8447c2c2d"
+    },
+    {
+      "path": "tests/render_graph/TransientNativeTests.cpp",
+      "sha256": "a0671e2433814133725d31c7797b23ec9d7c83461e8b3d42807f393b70b5892c"
+    },
+    {
+      "path": "tests/render_graph/TransientPoolTests.cpp",
+      "sha256": "a37aebe871ac24e4b5c480ca0b26709659155ce01075396b9d4bf4a743c6714f"
+    },
+    {
+      "path": "tests/rendering/ImageComparisonTests.cpp",
+      "sha256": "1d87a17fffd472c6d3ed8792a15a896cb55585b395749cc336d439d46f41bbd7"
+    },
+    {
+      "path": "tests/rendering/PbrMathTests.cpp",
+      "sha256": "1d28defd97eed8061e63c75db19c1e2df79f0f3fd0067d7b0d1812b7e3910b9c"
+    },
+    {
+      "path": "tests/rendering/RenderPacketDeterminismTests.cpp",
+      "sha256": "0f9c514262861f3b9241c8e8b90b9e5c1f9f52632947b2cbd0066f66e1a90ea6"
+    },
+    {
+      "path": "tests/rendering/TextureFormatTests.cpp",
+      "sha256": "75b7baf00f38cb67970ed099a0f1a9049e240e1e2badd21a1287813ef2b6c189"
+    },
+    {
+      "path": "tests/rendering/TimingTests.cpp",
+      "sha256": "e0d21848cc4cfddeeeffea6af9be3dfb0a4ffe2c0311bbfff83c659266738d42"
+    },
+    {
+      "path": "tests/rhi/CommandValidationTests.cpp",
+      "sha256": "7ac4f31367263c79f93b833bff1177684e52cda9924dec432ddb804c9d3032e7"
+    },
+    {
+      "path": "tests/rhi/D3D11LifetimeDeviceTests.cpp",
+      "sha256": "332c76a87d9e5e9625e9d597c0675801548ae5e69ebc69437261ed8bb456578d"
+    },
+    {
+      "path": "tests/rhi/D3D12LifetimeDeviceTests.cpp",
+      "sha256": "8be6bcc83b17521dd4bc1cfa24b5e28ac7a6a0d10d89d430ec15ac4321e30c6f"
+    },
+    {
+      "path": "tests/rhi/DeviceLifetimeTests.cpp",
+      "sha256": "9ad891e0edfa37fc8b531830d615021d19068a2fb31988e482d914f01668d523"
+    },
+    {
+      "path": "tests/rhi/HandleRegistryTests.cpp",
+      "sha256": "e062b224cfb8b742cbe2daf5e96cf8948dac41bf0bef31c0e8450c20a3be74bf"
+    },
+    {
+      "path": "tests/rhi/M604D3D11Probe.cpp",
+      "sha256": "fce7b2e0ad2e647ba664100fa759d9f65686b5022d2ee057e569136236b72f7a"
+    },
+    {
+      "path": "tests/rhi/M604D3D11Probe.h",
+      "sha256": "ab63c56c1b20b5d905e8aa37726908b255b9a911455d8121581e258df6380d6e"
+    },
+    {
+      "path": "tests/rhi/M604D3D12Probe.cpp",
+      "sha256": "825b9f4b093683f20e15dd14454de9d7c55421b4de9eb821b313f57754bed534"
+    },
+    {
+      "path": "tests/rhi/M604D3D12Probe.h",
+      "sha256": "af6d63c7051894f0ed66a7d95654d49dae46c4c8c19ed407041e3f2c297694b1"
+    },
+    {
+      "path": "tests/rhi/M604PipelineDeviceTests.cpp",
+      "sha256": "f0d82f0bdd04f0246293cb653aaacadae70e38070c25581da0db11975bf51089"
+    },
+    {
+      "path": "tests/rhi/M606AdapterDeviceTests.cpp",
+      "sha256": "fe80d1f0caf40afb39c6ebc6e0bfa33472c7b80130d68b628b8234695c9f68e4"
+    },
+    {
+      "path": "tests/rhi/M606LegacyProbeTests.cpp",
+      "sha256": "fd2f15ad5611d1abdc319cb15b21de9d270135282142bdead34e9f1c6e90eca2"
+    },
+    {
+      "path": "tests/rhi/M606RegressionTests.cpp",
+      "sha256": "bf137dff29c9690deda73831db9aa5e64c3f0c0642daab93c05732999df65347"
+    },
+    {
+      "path": "tests/rhi/M610EnvironmentDeviceTests.cpp",
+      "sha256": "f3aaef59b17ab30c7ffe472d4cbd0fe8ff61eb7e5889e2fb60498b31e952a8bf"
+    },
+    {
+      "path": "tests/rhi/M611NegativeChannelTests.cpp",
+      "sha256": "e411ecbb15e650aa44a803c7b5f6a67098febab4143f1b6463b56667251c8c3e"
+    },
+    {
+      "path": "tests/rhi/NativeDeviceTests.cpp",
+      "sha256": "93944ac4b3eec417f284401b4a8c08f44e3d3a2f382d0fd4ffc2cdcf59eea721"
+    },
+    {
+      "path": "tests/rhi/PipelineContractTests.cpp",
+      "sha256": "c81321152df1cf0c1303500a4cc80cf744de0b50f615b7e4fe873d9b84116b5e"
+    },
+    {
+      "path": "tests/rhi/RhiBackendCapabilitiesTests.cpp",
+      "sha256": "c338a8a1cb5457dc5fe2000c588b3d68da79a60609039b7a5429aa28503ad8fa"
+    },
+    {
+      "path": "tests/rhi/RhiDescriptorTests.cpp",
+      "sha256": "985a0a20bdab32202dcdc8b0d784db609d6aef52cd4897b89282d69bffd53921"
+    },
+    {
+      "path": "tests/rhi/RhiPublicHeaderSmoke.cpp",
+      "sha256": "784a902be760f2a53d37a54fb54f9205ae9e1f438ff954ea037e3cfaac583942"
+    },
+    {
+      "path": "tests/rhi/RhiSelectionTests.cpp",
+      "sha256": "d72a9025e48661e9d349a3426fff9d8e717f837cd345d0d6c47290ad15907e7d"
+    },
+    {
+      "path": "tests/rhi/RhiUploadValidationTests.cpp",
+      "sha256": "972381d67d5b27c9c5058f6d01b169c0a2e09ff2c5b3f733573a109e22d33e43"
+    },
+    {
+      "path": "tests/rhi/ShaderPackageTests.cpp",
+      "sha256": "c0e0fc0ba2876a286d0f0084436e13077945a5b1b1f68c376b90aa789fd868f9"
+    },
+    {
+      "path": "tests/rhi/d3d11/D3D11AssetCacheTests.cpp",
+      "sha256": "fe0660fc503caa7f84643359a8c29a77d9f21266d365d6824c8d7a6e65661d50"
+    },
+    {
+      "path": "tests/rhi/d3d11/D3D11CameraTests.cpp",
+      "sha256": "a84739df7a2b1a60987d5b3dd9606be887dad2d0b1836551373f19d73bed799d"
+    },
+    {
+      "path": "tests/rhi/d3d11/D3D11HdrTargetTests.cpp",
+      "sha256": "e9571dcf76b441394fcc7c839af4f905ebe10d1214f5e28040d5f3897e2066fd"
+    },
+    {
+      "path": "tests/rhi/d3d11/GpuTimestampDeviceTests.cpp",
+      "sha256": "138075fbbf2464dc0f07e13746804d81e8a4b10d09c719617141b6750c1894d9"
+    },
+    {
+      "path": "tests/rhi/d3d11/HlslCompileGateTests.cpp",
+      "sha256": "94e831de5015252764110f8c0dfcdb040e1ec4c2498e053d7e83730b925dcfad"
+    },
+    {
+      "path": "tests/rhi/d3d11/PipelineStatisticsDeviceTests.cpp",
+      "sha256": "9f2d30c693f9e146208dd9a09aa354730e5060e236b3cc3b0273696045aa3220"
+    },
+    {
+      "path": "tests/rhi/d3d12/BindingContractDriftTests.cpp",
+      "sha256": "b0a15a28c2ae7888139a3b1e1f331d4bc25dc595447aaf9df3c5dc995f4e888e"
+    },
+    {
+      "path": "tests/rhi/d3d12/D3D12AssetCacheDeviceTests.cpp",
+      "sha256": "8c1fabfb7cbe9161eafd797b4301eb99404332bd806678589e79c5843ca542bd"
+    },
+    {
+      "path": "tests/rhi/d3d12/D3D12CameraParityTests.cpp",
+      "sha256": "67dcc82a8c9bfb3777d2bb728f6659764598d6eab7b464805773b1d292ac8cb1"
+    },
+    {
+      "path": "tests/rhi/d3d12/D3D12CbufferDriftTests.cpp",
+      "sha256": "adde2aa637e5422cbf64b89216ab37abc77d34042643585f5150d28efe093840"
+    },
+    {
+      "path": "tests/rhi/d3d12/D3D12CommonTests.cpp",
+      "sha256": "c8c4392f0b2ba5dc25053680cb95d46598ba000092895ecd7da29a9c04254d60"
+    },
+    {
+      "path": "tests/rhi/d3d12/D3D12ConstantsTests.cpp",
+      "sha256": "7639d2195dfb0833f3ec5f5b9aa76e9e6af9e3d9d823ea5dec71a2821253343d"
+    },
+    {
+      "path": "tests/rhi/d3d12/D3D12DescriptorHeapDeviceTests.cpp",
+      "sha256": "4acf79d899dd498340a78c940b6bc9a6f46d94e8461f27ebee0ae9ece8bf64bb"
+    },
+    {
+      "path": "tests/rhi/d3d12/D3D12DeviceTests.cpp",
+      "sha256": "b6bb0d9bdc20c00f742f0b6d6b95a5342282b475f6a9d84385b6482785f51b94"
+    },
+    {
+      "path": "tests/rhi/d3d12/D3D12DredDiagnosticsTests.cpp",
+      "sha256": "31010a1093c6d01dfd4de9ae3d69c2b6e90de93426a634dec1b9289ef41a4bfc"
+    },
+    {
+      "path": "tests/rhi/d3d12/D3D12DredE2ETests.cpp",
+      "sha256": "545a18fb9a8b25d87b9fcbac1e726399b5379b02b02aa2eb79b1a2fb2cc1e4fe"
+    },
+    {
+      "path": "tests/rhi/d3d12/D3D12DredLiveTests.cpp",
+      "sha256": "4b82666affc7631d785aa3a43e90324370f9651f71416023c101c0a70c15da83"
+    },
+    {
+      "path": "tests/rhi/d3d12/D3D12ForwardPassDeviceTests.cpp",
+      "sha256": "901d788f428b732c22a37d2705a4dd366aa3541fc948e8a57381e21ad3790c70"
+    },
+    {
+      "path": "tests/rhi/d3d12/D3D12FrameReadbackDeviceTests.cpp",
+      "sha256": "3b09fc6261132a99648eba5b29435430b36858cfa0f51d74b1ced7af90247a66"
+    },
+    {
+      "path": "tests/rhi/d3d12/D3D12PsoFactoryDeviceTests.cpp",
+      "sha256": "e588c57217e4fd0467a98880e6562396fa12441f7efc3bac1a33ea4c1c82bad6"
+    },
+    {
+      "path": "tests/rhi/d3d12/D3D12QueueDeviceTests.cpp",
+      "sha256": "1140a5dbe852638cb8727170fdbc376438557bc8be6a1b8af98ce3d1d22d9f56"
+    },
+    {
+      "path": "tests/rhi/d3d12/D3D12ResourceStateTrackerDeviceTests.cpp",
+      "sha256": "40d4ec3adc1bbcc869efcea0b804b645bf252ef435c3c3fb568b69af0a80f6a9"
+    },
+    {
+      "path": "tests/rhi/d3d12/D3D12RootSignatureDeviceTests.cpp",
+      "sha256": "0c33f9a1ecbce47d084485fa9b64db8c06e75d0910d1509ebbc708fbfb11df29"
+    },
+    {
+      "path": "tests/rhi/d3d12/D3D12StabilityMain.cpp",
+      "sha256": "8473d2b54bb96efcaf289594ca758544ed1fccd1acc98369d6ef895ea0717a1c"
+    },
+    {
+      "path": "tests/rhi/d3d12/D3D12StabilityPressure.cpp",
+      "sha256": "c77adc578b734e46d1555915c07af70af043b06139c8977cc7663413b25c7513"
+    },
+    {
+      "path": "tests/rhi/d3d12/D3D12StabilityPressure.h",
+      "sha256": "e83fde920e254f7595c0eaefecc3edfb7db2a6a146e071bcf500b7999467ebbf"
+    },
+    {
+      "path": "tests/rhi/d3d12/D3D12SwapChainDeviceTests.cpp",
+      "sha256": "a1483d2c1b8736d810d0342970c3e7055c3af65dab93d87e8de6a07d7258f25f"
+    },
+    {
+      "path": "tests/rhi/d3d12/D3D12TrianglePassDeviceTests.cpp",
+      "sha256": "62fc355c1985bf6f4db875fcb6bd985cdb0d1ffdcd43c75d229f2711a06d55db"
+    },
+    {
+      "path": "tests/rhi/d3d12/D3D12UploadDeviceTests.cpp",
+      "sha256": "f58528c4e1a8d10446e8b6f47305ded95a70bfb3b5ba0a28c8a091a8437b2742"
+    },
+    {
+      "path": "tests/rhi/d3d12/D3D12ValidationNegativeTests.cpp",
+      "sha256": "47ee660e96e83d81333427063fb5c70eb38ce679fe667bd811844a5e99ac4b3b"
+    },
+    {
+      "path": "tests/rhi/d3d12/DeferredReleaseTests.cpp",
+      "sha256": "6bdede191c8e93d16a3c8ba13fffbcdc774e4b01bb69aed3c627b7698ed20d4f"
+    },
+    {
+      "path": "tests/rhi/d3d12/DescriptorAllocatorTests.cpp",
+      "sha256": "4903ca4cd046c8ca7c7bcb2740550412c8528cde50fe6abebc0bfdeb1de50b7c"
+    },
+    {
+      "path": "tests/rhi/d3d12/FenceTimelineModel.h",
+      "sha256": "57c804488c45d27e8cf780d855e9ca7629a2b7481786d368baafe41feaa49bdf"
+    },
+    {
+      "path": "tests/rhi/d3d12/FenceTimelineTests.cpp",
+      "sha256": "f9a31f4e54c661dfb3797805975f26e0ac1fd5ee98f1eaf00d2539cfc823fedd"
+    },
+    {
+      "path": "tests/rhi/d3d12/HlslMathParityTests.cpp",
+      "sha256": "ccc2bcca4aae7638261af74b29ea6228bf75204b62bce120dd7771f2d3c054cd"
+    },
+    {
+      "path": "tests/rhi/d3d12/ParityMetadataTests.cpp",
+      "sha256": "af6c482dc566b5ae8492a8afc80fe07ce60cd766f9909a2abc083e76a8150aa1"
+    },
+    {
+      "path": "tests/rhi/d3d12/PipelineKeyTests.cpp",
+      "sha256": "f41b0843e28a465c4ab469794fbbc54b8d63af332604a899774d686acdbfe96c"
+    },
+    {
+      "path": "tests/rhi/d3d12/ResourceStateTrackerTests.cpp",
+      "sha256": "7dadd8e143a77cd352dceacb57aabfd2259e6bf9907565833bed470b5ab0f113"
+    },
+    {
+      "path": "tests/rhi/d3d12/RootBindingsContractTests.cpp",
+      "sha256": "1da09f3b5f492a7a578eacfb74c763889fec7e99e4cb6d378264e61db639ebbd"
+    },
+    {
+      "path": "tests/rhi/d3d12/ShaderCompileGateTests.cpp",
+      "sha256": "01ddbc45d5001c701eaf4bda2f9a21a292b8bb8a018e38d58d633c9979733d3d"
+    },
+    {
+      "path": "tests/rhi/d3d12/ShaderSemanticIdentityTests.cpp",
+      "sha256": "12965bc15ecd93dcd2c1fdc9d3bb059ee29a2301199870f5e7cb92c329ee8f53"
+    },
+    {
+      "path": "tests/rhi/d3d12/ShadowParityContractTests.cpp",
+      "sha256": "bae30f02cecbffced6f314685f12c67e0a8fe9982b1d5559a6b8dd7923338064"
+    },
+    {
+      "path": "tests/rhi/d3d12/SwapChainConfigTests.cpp",
+      "sha256": "5cebbd2df7670ffa02931a69a662fa7537bca7e6a985240bcf78182c96fd0b2c"
+    },
+    {
+      "path": "tests/rhi/d3d12/UploadRingTests.cpp",
+      "sha256": "3b3431513da719ef3abf08a15c6c804c53108082a546ecb46604d74016ebad59"
+    },
+    {
+      "path": "tests/tasks/TaskStealingTests.cpp",
+      "sha256": "a66cffd275b36ae49c85252eccd688604772f0c548a5c610589ef46d31547f3a"
+    },
+    {
+      "path": "tests/tasks/TaskStressTests.cpp",
+      "sha256": "3a2e4488c44b9eaa8fa98b1e981fb8d1f44519af57c6ef025622baa913f88d09"
+    },
+    {
+      "path": "tests/tasks/TaskSystemTests.cpp",
+      "sha256": "c464b637850b97f39081e62e14959d4a6ff0db33537f663dbc067bec53bd405d"
+    },
+    {
+      "path": "tests/tasks/TaskTestSupport.h",
+      "sha256": "4f023242cfe35b7200e68c9479f838342f7fd6ef61eddc13fddb030fa2d67325"
+    },
+    {
+      "path": "tests/tools/ArtifactWriterTests.cpp",
+      "sha256": "db4d11a3b3c45b674f691b7cab12e829cd32272bf41d87ace6b29c8d2aa4632f"
+    },
+    {
+      "path": "tests/tools/AssetCacheTests.cpp",
+      "sha256": "a9bbb80d725957acc6db612a98ac9d500a0cfc5d8fa907ce5946c3d4a1aead3a"
+    },
+    {
+      "path": "tests/tools/BuildKeyTests.cpp",
+      "sha256": "a5fe538a6196ccbf7b4707ef58aea8ec973ab6236394ac2bef871c7670531afa"
+    },
+    {
+      "path": "tests/tools/CanonicalRecipeTests.cpp",
+      "sha256": "a0eea2c835b5cfb02f4a55d5c25816b5b70a32c3714bb73d0007b8d7bd4807fa"
+    },
+    {
+      "path": "tests/tools/GltfGeometryTests.cpp",
+      "sha256": "fe82f4073ed803e107f0a9e4e2b997aa630a92681eb943437e4163de98f1c2d6"
+    },
+    {
+      "path": "tests/tools/GltfImportAdapterTests.cpp",
+      "sha256": "66a66686ea08fc9ab3f78bf3d3ed87a8079fe6b62b203bf93e3ddc743486358b"
+    },
+    {
+      "path": "tests/tools/HdrImageTests.cpp",
+      "sha256": "dcbee55dcd6d952e231476a4410b99fa375a1fb2e8eb3658e0c4018201578f37"
+    },
+    {
+      "path": "tests/tools/RecipeJsonTests.cpp",
+      "sha256": "5cbe18eb5110326649dff49aed580903e37fa9dc0151478753078389c22d2fbb"
+    },
+    {
+      "path": "tests/tools/Sha256BuilderTests.cpp",
+      "sha256": "14b2c8a7030cec2c46a9add0ce9a1debdcc5efe620b76bc1747c6b7c7ea39809"
+    },
+    {
+      "path": "tests/tools/SourceUriTests.cpp",
+      "sha256": "3dba845fb83162d8f62f3072fb5d650b20fb5a134be48b66ef714ac30731e4ac"
+    },
+    {
+      "path": "tests/tools/TextureMipBuilderTests.cpp",
+      "sha256": "a5583d160266c81372be903966c7cd6d330683ae8cd893612c55ec91528f1935"
+    },
+    {
+      "path": "tests/trace/TraceFixture.h",
+      "sha256": "342def6d81f9ac7899c2234c55203f18db96e9a8a43506f894b6a23af41f8842"
+    },
+    {
+      "path": "tests/trace/TraceRhi.cpp",
+      "sha256": "f925b040cc39adafd3348b3697c7fbe496e90e02ac2f645020cb5c374bcca2b4"
+    },
+    {
+      "path": "tests/trace/TraceRhi.h",
+      "sha256": "5c1ad09be80dd5326369bbf4191237678dc452452cbc3e8e228f40a4e9f19f42"
+    },
+    {
+      "path": "tests/trace/TraceRhiTests.cpp",
+      "sha256": "5d2ca545ac549c90e376daaf77d8730e6c8f7f393e9b0c44e867cb9afefa573e"
+    },
+    {
+      "path": "tests/world/CullingSceneTests.cpp",
+      "sha256": "87863c90de28e8b4f2da4b6ae13542f91bdae7d184d69ac3ed3e56a67b912069"
+    },
+    {
+      "path": "tests/world/FrustumTests.cpp",
+      "sha256": "5627a7b7e0c1148e4534999f505639c7ec21dab545ca15ba6428dfdfa9f09834"
+    },
+    {
+      "path": "tests/world/RenderQueueBuilderTests.cpp",
+      "sha256": "a1314803628158ad06c27fbea77c94d81c032401535ee6491497a2d7ea9f5963"
+    },
+    {
+      "path": "tests/world/WorldLoaderTests.cpp",
+      "sha256": "097aa78b57b2305212951ad598956aca7ce7cba61fdfeb9d2355d4dc663656bb"
+    },
+    {
+      "path": "tests/world/WorldTransformTests.cpp",
+      "sha256": "34bb23e5469648841284c0a4fbbbe2c29d89dcf0350515adc5bd1f0457632126"
+    },
+    {
+      "path": "tools/asset_cooker/deps/mikktspace/mikktspace.c",
+      "sha256": "de87e74107df766ce68108801262bd8d53899414236b59810509a8fc2a51e288"
+    },
+    {
+      "path": "tools/asset_cooker/deps/mikktspace/mikktspace.h",
+      "sha256": "17fc433894f24c73753d548086cc4d8c5c0379f4a6edfb98b5da243e4f0bc3d0"
+    },
+    {
+      "path": "tools/asset_cooker/deps/stb/StbImage.cpp",
+      "sha256": "dbf33c5bef45ce312815051d2d3d09c38cd50721bd0acd32b0008e162f53ed3f"
+    },
+    {
+      "path": "tools/asset_cooker/deps/stb/stb_image.h",
+      "sha256": "594c2fe35d49488b4382dbfaec8f98366defca819d916ac95becf3e75f4200b3"
+    },
+    {
+      "path": "tools/asset_cooker/src/AssetCache.cpp",
+      "sha256": "580052b38e69f1d3a3c71acc9881fe483ebdef9ef4390f72cc5fda99d4138c5d"
+    },
+    {
+      "path": "tools/asset_cooker/src/AssetCache.h",
+      "sha256": "8ae421fd3226ab3dddc69409707045e0ea3186f3006da6e10d4f2b09da68e688"
+    },
+    {
+      "path": "tools/asset_cooker/src/AtomicPublish.cpp",
+      "sha256": "4567e0167102576f5276bb1aab7305e9621fcfdfe1d2f7e6df598ca916fc1d02"
+    },
+    {
+      "path": "tools/asset_cooker/src/AtomicPublish.h",
+      "sha256": "a373d0afad38c515463502469a57f85dc132f63222cf1a2706dbae968694b33b"
+    },
+    {
+      "path": "tools/asset_cooker/src/BakedWriter.cpp",
+      "sha256": "6ba12a1f01ce957b9aa203c60a76854606cc2e7d19bba9277e6af618bdefcd25"
+    },
+    {
+      "path": "tools/asset_cooker/src/BakedWriter.h",
+      "sha256": "dc855526065626c44a0ddccddf8c1ccbb8ee449f60997d62161dadf64d1edbfc"
+    },
+    {
+      "path": "tools/asset_cooker/src/BuildKey.cpp",
+      "sha256": "852bbee6f61c43fbebceb56bb1fcdeed6e2b7ca588ff19119a406cca90dfc2b8"
+    },
+    {
+      "path": "tools/asset_cooker/src/BuildKey.h",
+      "sha256": "c3c71f8bf352738138f61e87b1d6d0bbcec89f1144b42ccc04e530106f0d2907"
+    },
+    {
+      "path": "tools/asset_cooker/src/CanonicalRecipe.cpp",
+      "sha256": "d6aa9715b2134b13de484d84a3ac2bffd3827f0dcd69c1bf9012869ffc7855fc"
+    },
+    {
+      "path": "tools/asset_cooker/src/CanonicalRecipe.h",
+      "sha256": "73cab1a0d73c2fd0e586be8dcfb0bec0b84d014e33f592c791d451ce7b0f3b90"
+    },
+    {
+      "path": "tools/asset_cooker/src/ContentHash.cpp",
+      "sha256": "d9b1af7d23c43ba772271bc1b8fe037bde1263438c55c137491552f9a63ee0fc"
+    },
+    {
+      "path": "tools/asset_cooker/src/ContentHash.h",
+      "sha256": "88955bedf2aabc7fa48393d9fd00532ed1005ead2750d7130b67309dc54ccfcd"
+    },
+    {
+      "path": "tools/asset_cooker/src/CookSession.cpp",
+      "sha256": "2c75a5419d1d29fc1550fb9de58da852209a8deb266c663f5a1bf7edd2d640f4"
+    },
+    {
+      "path": "tools/asset_cooker/src/CookSession.h",
+      "sha256": "1b5bdc28afa07def3a998303fc149de1783e92dd1bd1b72f6e916297a167ad6a"
+    },
+    {
+      "path": "tools/asset_cooker/src/DependencyRecord.cpp",
+      "sha256": "45437d59e8ae7a9c4509b7cd9fe28fd6b6d1de361200748dd96ba10b4498d145"
+    },
+    {
+      "path": "tools/asset_cooker/src/DependencyRecord.h",
+      "sha256": "f1db1ad1f7064d75a974d0db76e9266be7fc040878cf9c2781816cb7d0a73499"
+    },
+    {
+      "path": "tools/asset_cooker/src/GltfGeometry.cpp",
+      "sha256": "65c113ba0719fac20ba60c4487a8a32d4d476e104eb50c2aa8e575d1e50f22cf"
+    },
+    {
+      "path": "tools/asset_cooker/src/GltfGeometry.h",
+      "sha256": "4474f06f4f72c6d2e5196f086426446ec1c0f4e793135e17e8495bee87862932"
+    },
+    {
+      "path": "tools/asset_cooker/src/GltfImportAdapter.cpp",
+      "sha256": "114b0e38f8d4242fcda49ada1dd606be82d7ec9d56ff053ce45cd11dfde43355"
+    },
+    {
+      "path": "tools/asset_cooker/src/GltfImportAdapter.h",
+      "sha256": "6511c8fdbc815a05f9824e1c4f616600d696c86e55f7d6f7f776889397ae144f"
+    },
+    {
+      "path": "tools/asset_cooker/src/HdrImage.cpp",
+      "sha256": "04d5e6f6b323f1f12624a383d2667f3844c9371719712dcf77e449fc1dd28d75"
+    },
+    {
+      "path": "tools/asset_cooker/src/HdrImage.h",
+      "sha256": "8dc84a27acdc51c58c0694443b48a0a2a944710e3d66ba83d79b0014388449d1"
+    },
+    {
+      "path": "tools/asset_cooker/src/ManifestWriter.cpp",
+      "sha256": "ccecc47110bde007c8677dd95146b4227190f146d8d5d0590a0c252eaac328d2"
+    },
+    {
+      "path": "tools/asset_cooker/src/ManifestWriter.h",
+      "sha256": "63fb68d70cbaca2792c2075d8589844d6a00bc0afb9ed39223f295d8e5ef17c7"
+    },
+    {
+      "path": "tools/asset_cooker/src/MaterialArtifactWriter.cpp",
+      "sha256": "d056725e34b22baa03be691c6f0f68394c863548adacfd33412a9ff6d306efd6"
+    },
+    {
+      "path": "tools/asset_cooker/src/MaterialArtifactWriter.h",
+      "sha256": "040ec45bc18e733e952a27f2ccf76e907dbe7cbfaf24ffd141fd79fd285a526e"
+    },
+    {
+      "path": "tools/asset_cooker/src/MeshArtifactWriter.cpp",
+      "sha256": "9cda0ca1862b7aaa97ad32456af8ecfe1b4c859049c4425b8934a6b2677a6333"
+    },
+    {
+      "path": "tools/asset_cooker/src/MeshArtifactWriter.h",
+      "sha256": "c245fa6a04ffb0cd33d8125176152d9ea5d2f37b6ffa9d894cb1d8d959eba838"
+    },
+    {
+      "path": "tools/asset_cooker/src/MeworldWriter.cpp",
+      "sha256": "c4590fac19d92670a9b22386da54f76f45a97ff5c5bef0b2e0bae2c72aab1c26"
+    },
+    {
+      "path": "tools/asset_cooker/src/MeworldWriter.h",
+      "sha256": "bea95c5a7d2f76a1cb352fd975ef9ea725469b2a2d23f2087b22d7ded9b38dc4"
+    },
+    {
+      "path": "tools/asset_cooker/src/RecipeJson.cpp",
+      "sha256": "542bf5472b83cc0fd255555778b216d81f08170aa8a6066a3d5eb5f45c49a406"
+    },
+    {
+      "path": "tools/asset_cooker/src/RecipeJson.h",
+      "sha256": "5f3509404f915cfc998b397b1e4f19b5a7151cad642050ccc8843082b05cb719"
+    },
+    {
+      "path": "tools/asset_cooker/src/Sha256.cpp",
+      "sha256": "270bb5daebc12a5fb8433a13d82a2cb83fa4c2818f5efc45bbd094e4df1e4f2e"
+    },
+    {
+      "path": "tools/asset_cooker/src/Sha256.h",
+      "sha256": "8b1d674e5ce7f2bc94f7e70490be747c508ba8461ff62aa0e147148d85614779"
+    },
+    {
+      "path": "tools/asset_cooker/src/SourceUri.cpp",
+      "sha256": "326792cf9bc0a94cc7f9d89829edeeb489de1040309be4568fcc2905b51681fd"
+    },
+    {
+      "path": "tools/asset_cooker/src/SourceUri.h",
+      "sha256": "f5893da0a4def8e902c5570ea9bcf4f4840e20aa724dcfc02ecc1dd6791f7fd1"
+    },
+    {
+      "path": "tools/asset_cooker/src/TangentGenerator.cpp",
+      "sha256": "9c6b6f35ec03e83afec61b73268c2e31b50336eaf887da8661ba20f2300ccca6"
+    },
+    {
+      "path": "tools/asset_cooker/src/TangentGenerator.h",
+      "sha256": "4cb2a5c95bdce1ce57ca5738bb3bf5f9953f4692a5eeeab2e93682a8a09f7215"
+    },
+    {
+      "path": "tools/asset_cooker/src/TextureArtifactWriter.cpp",
+      "sha256": "69f2b1236b91d365ab7d760b37b2cbd47afce53d65945a339571474b70d8c093"
+    },
+    {
+      "path": "tools/asset_cooker/src/TextureArtifactWriter.h",
+      "sha256": "244d449cc12824c63b73a0736d735f4eb86f507797ce1ffd9a03bb5b7e97a4d0"
+    },
+    {
+      "path": "tools/asset_cooker/src/TextureMipBuilder.cpp",
+      "sha256": "af6d7ad064f1a6e058dd9a5ffc2d191e8ef1a7cb04309064eadfd776488f1c82"
+    },
+    {
+      "path": "tools/asset_cooker/src/TextureMipBuilder.h",
+      "sha256": "8d5043991f5c5c8af8e0260b4100a482fc1e8641730385fc21c7cd621048e5f5"
+    },
+    {
+      "path": "tools/asset_cooker/src/WicImage.cpp",
+      "sha256": "0e1c9782be83cf7d85f3e619fa252eb3dcfc23e7807324b160c77303de356820"
+    },
+    {
+      "path": "tools/asset_cooker/src/WicImage.h",
+      "sha256": "44aa420c0b238a1c619bd7b3072be1d45347fe1a14d39343498b6c5076515a1f"
+    },
+    {
+      "path": "tools/asset_cooker/src/main.cpp",
+      "sha256": "77cf779d0918ad89dabd74b5289eb10ce3e275f0677f203ebfa4524ca11ae89a"
+    },
+    {
+      "path": "tools/benchmark/LayoutBenchmarks.cpp",
+      "sha256": "76434d590c964baf23a73d9c70511d30f835a307e0a54dd27b5e566d60a1d44a"
+    },
+    {
+      "path": "tools/benchmark/include/MiniEngine/Benchmark/BenchmarkJson.h",
+      "sha256": "3a1f3e884b76cb9db7d7169f21f1a52bcf5a4529ac8885780c5abaa7b361b3e2"
+    },
+    {
+      "path": "tools/benchmark/include/MiniEngine/Benchmark/BenchmarkSchema.h",
+      "sha256": "ccab20ac8354a8582c1101ce99588c3a52c22d57731cf58cc4c35c7b5a9f8b38"
+    },
+    {
+      "path": "tools/benchmark/include/MiniEngine/Benchmark/Statistics.h",
+      "sha256": "7ad398503cbd3e388d0e36b11114955358321817b4876b6d695d227da8da18e9"
+    },
+    {
+      "path": "tools/benchmark/src/BenchmarkJson.cpp",
+      "sha256": "75105c3d27299ec429c710695d98eddea02bb2f98bdc3c5a3f41622c2e22f268"
+    },
+    {
+      "path": "tools/benchmark/src/Statistics.cpp",
+      "sha256": "79d337277f568b12adc8cf30cb1ab764910f47b98ae9a59db998142760a89db8"
+    },
+    {
+      "path": "tools/shader_compiler/src/DualShaderPackage.cpp",
+      "sha256": "ed3dff4cc4fa8a02aef33c9259ecc29fefe8fbebead7a0704ac4f65f114c2164"
+    },
+    {
+      "path": "tools/shader_compiler/src/DualShaderPackage.h",
+      "sha256": "b7a34d92198fcb3f4f8678fadfc3706fe5426764e28571a0afd5619fc7b13d1b"
+    },
+    {
+      "path": "tools/shader_compiler/src/DxcCompiler.cpp",
+      "sha256": "a540af1c1a4b36edb9466e4efdf185f6ed45ba8d734128ffdc23b99ab8d3bc16"
+    },
+    {
+      "path": "tools/shader_compiler/src/DxcCompiler.h",
+      "sha256": "7b93e60763456ea6ffc8d2604386cebab12385a236f0121cfb4bf791429fe8ab"
+    },
+    {
+      "path": "tools/shader_compiler/src/ShaderCompileRegistry.cpp",
+      "sha256": "4172f7225855e1e8936ccde68798e9c9cb967269fbea2aaf58b0d249194b3a1b"
+    },
+    {
+      "path": "tools/shader_compiler/src/ShaderCompileRegistry.h",
+      "sha256": "0df17893b99aecf91371a864a4589aec7a326841a33978479bf6e8edb6b6348e"
+    },
+    {
+      "path": "tools/shader_compiler/src/main.cpp",
+      "sha256": "68a763d6be49e7c61628e083d8c15ae88bccb167e4e2dc070424601ca3dc581c"
+    },
+    {
+      "path": "tools/tasks_bench/main.cpp",
+      "sha256": "e13b8b727d2aea3e0953ea5be2f331e303c6c52ec97760a042cbf6d8b9cb0b61"
+    }
+  ],
+  "testedCodeSnapshotSha256": "735b4094d26f5d5341138561c1a7baa40ff65f81789d9742d706d6853d5f77f1",
+  "snapshotMeaning": "当前实际 C++/HLSL 文件身份；工具/文档清单另行绑定。不是 runtimeCommit，也不替代最终提交后的重建。",
+  "pixelObservation": {
+    "meanAbsoluteRgbError": 0.09245551215277778,
+    "maxAbsoluteRgbError": 113,
+    "equalRgbPixelFraction": 0.8666189236111111,
+    "verdict": "descriptive only; not a new parity acceptance claim"
+  }
+}

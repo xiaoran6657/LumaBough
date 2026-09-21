@@ -1,0 +1,1072 @@
+{
+  "schemaVersion": 1,
+  "status": "COMPLETE_VALID_GROUP_FOR_CURRENT_SOURCE",
+  "performanceConclusion": {
+    "accepted": [],
+    "inconclusive": [
+      "packet-serial -> packet-parallel: -16.9029 percent median cpuFrameMs but candidate drift +3.2487 percent exceeds the 3 percent noise threshold; tail hitch protected metric also failed"
+    ],
+    "rejected": [
+      "stream-sync -> stream-async",
+      "stream-async -> stream-parallel",
+      "stream-sync -> stream-parallel"
+    ],
+    "scope": "single machine, 5 runs per cell, D3D12, VSync off, foreground gate on; no cross-machine or generic claim"
+  },
+  "sourceCommit": null,
+  "runtimeCommit": null,
+  "publicationCommit": null,
+  "historicalClaimStatus": "C-M9-002 remains BLOCKED; historical identity unchanged",
+  "reason": "lb-current-004 completed a full valid group for the frozen current source: one INCONCLUSIVE and three REJECTED comparisons, no ACCEPTED; earlier attempts (001/002/003) remain INVALID and were not spliced",
+  "attempts": [
+    {
+      "attempt": "lb-current-001",
+      "status": "INVALID",
+      "experimentIds": [
+        "E-LB-PACKET-001",
+        "E-LB-STREAMING-001"
+      ],
+      "plannedRuns": 25,
+      "successfulRuns": 17,
+      "attemptedRuns": 18,
+      "failedRun": {
+        "runId": "18-stream-sync-r4",
+        "status": "FAIL",
+        "receiptSha256": "d2b24785a92f08929fc14fd078e9a8a1018db480d52cc470f85b8fb1c0c704c3",
+        "rawSha256": "aead5e4a99b2280d27f17e48a173c3b757c68b25b77b1121044fddcaf53f52ef",
+        "notesSha256": "c9223147e4c4d914531b930755fac1612b60185aba9f6a65d0348d83ccca3730",
+        "foregroundRatio": 0,
+        "gpuValidSamples": 597
+      },
+      "preregistrationSha256": "ad12112bd1ea332c9fc6532a1a031f5c7aabe9546ad895587d4933aab58b1280",
+      "sourceSnapshotSha256": "c618b4f6c6416bfd96c95d05b884a440811f3c0d5aa3064d369bdfa2af733e75",
+      "sourceArchiveSha256": "79f4b4ec5d2f227911aaff91c98b2a88a88bb77624359e91c478abc75516afcc",
+      "executableSha256": "2e9a7e227fe1a76460e9e7b1182d90b726d6aa891e048f0989e39d0bfe6690b1",
+      "environmentSha256": "a332c51aef125616a9b681ed0b93b30fafb06c13069058bbfb6234f187ff848f",
+      "buildRecordSha256": "3bfac0aca5230f7f99ce90e3a14278bcce0560650b67acdde1f9b09385c5203b",
+      "buildInputsSha256": "70b88ce1fe37f144b36002a0d27b334ba45e4b88ef2f07cdc6c9237f7c3c39ba",
+      "driverSha256": "dd0f0a69cb338beb1ea2f448107c0130ad0e6bceebf03b55b242baf45eb5039c",
+      "analyzerSha256": "e3ec4545fc9feed6d1d3ad021870ca83f10a4d9d841ce0002ef1160c7fed6300",
+      "frozenIdentitiesVerified": true,
+      "allRetainedArtifactHashesVerified": true,
+      "incompleteGroupRejectedByAnalyzer": true,
+      "runs": [
+        {
+          "runId": "01-stream-sync-r1",
+          "status": "PASS",
+          "receiptSha256": "d6dbc6802d030612db8088357b6cd5bac61dfec243970b6641f35c049d8f7bb6",
+          "rawSha256": "2808d5a0b8cfe17c5bfe53a0e7cf72a965ef52204a098a4453ab1b60cf30ee21",
+          "notesSha256": "414486c349622019918b19cdfdcec6deedb40e122711bc2c432a1dfa0d00228f",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "02-packet-serial-r1",
+          "status": "PASS",
+          "receiptSha256": "916d45995fe98b229f6c1708f95d3d0dd0402f9330f0197eaa09ec5ea1f09c6b",
+          "rawSha256": "769c0f30e93240d74f6f121858af865bf6bb8a576b8e2f6557e5839d2169cf70",
+          "notesSha256": "d453c5ac088b48f5ac89fb772e61623c3997ee2fef88009458a61deb7aa7c739",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "03-packet-parallel-r1",
+          "status": "PASS",
+          "receiptSha256": "52de88dc6112236d6a0e6409e07ffe262aa9b78aae76887f4d519e7ab5879a73",
+          "rawSha256": "f73a8df04772eb3d450921096e98291df64120ba225b35d636d7c409d3ad75d8",
+          "notesSha256": "c8a0f73b2530de65cfc0b3e41e88c8f5526439d30b561b2558eabf56d3fc737a",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "04-stream-parallel-r1",
+          "status": "PASS",
+          "receiptSha256": "6ded66ddc554dfd1f1eb788950329bb87c7fabd6b8c3e30cc1d0d325f6fb3b90",
+          "rawSha256": "7f87efe3bf01fd1e40bcbaf01df93a85f686ddf3e1f5750275dbaec73fda97b7",
+          "notesSha256": "3ff666b363b3d123da9745544919825df304cdcffbb4429944f8a082e68b3651",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "05-stream-async-r1",
+          "status": "PASS",
+          "receiptSha256": "5d207f7c6262ff39178042b8faa079875d3e21474815cf1b9ab238a015568980",
+          "rawSha256": "043b571216dc09e70a770b3009a3d9437c1ca22f248f345ab6fbdb0fe6c73a38",
+          "notesSha256": "ccfefce2f9a18204d03f818061e6294a2480e67ba086968e52e5b3068ed9a434",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "06-stream-parallel-r2",
+          "status": "PASS",
+          "receiptSha256": "5f1d373416bc6e07f4c54d33a186770c8d75dc7016265aa3b9d9e188f424d0e2",
+          "rawSha256": "6b5ed1a9968216bed2cc0c7a31fc1aaec98f54a33ff5bc11dfaf8e08d28a05bf",
+          "notesSha256": "36bf36865912faf4e27b429df7c72370d480868e6ae23d0c12af02eac95dda21",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "07-stream-async-r2",
+          "status": "PASS",
+          "receiptSha256": "da4d08f59715838851f58101bb342f740e3133616a5e67f03cdfc3df71d59ef4",
+          "rawSha256": "be4ed8b10eace1031095b2d11500ac62d187befb17baad6897a40021c9abd66f",
+          "notesSha256": "316feb00ae76d82e9467229d1c3fddc760fe00aa3eda0f8e6983efe843e0e346",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "08-packet-serial-r2",
+          "status": "PASS",
+          "receiptSha256": "2b64f04dc13a81565add9288cc35fc6aebb25acf41bc946f79e01961a7a7a5d9",
+          "rawSha256": "441375c5ad3c436f15aaa2ea83949fc0089df4cce5dc16d33cb701a35b10253c",
+          "notesSha256": "d453c5ac088b48f5ac89fb772e61623c3997ee2fef88009458a61deb7aa7c739",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "09-stream-sync-r2",
+          "status": "PASS",
+          "receiptSha256": "85a2f0b7c0a9359dd7aebb7a0c86eea9b0fa4eb5021f844e3d5c2551792d806f",
+          "rawSha256": "3bf60cfbe7d7bbbe8ff4866ba21b7601eac7885b3ddd17f6578f5077ba9a8d13",
+          "notesSha256": "414486c349622019918b19cdfdcec6deedb40e122711bc2c432a1dfa0d00228f",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "10-packet-parallel-r2",
+          "status": "PASS",
+          "receiptSha256": "4adede7a4f350a1f75867863f002b83770d0ede0fdf9eff4783edf3b7f0a3641",
+          "rawSha256": "2751059502ff1e3f60a0473a823e7bdbbbccc905d06e3718082423e5be7891de",
+          "notesSha256": "c8a0f73b2530de65cfc0b3e41e88c8f5526439d30b561b2558eabf56d3fc737a",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "11-stream-async-r3",
+          "status": "PASS",
+          "receiptSha256": "e216a30a00a38dd6fd6723f805615bc151f7b05199b2152e95e28e970d4f4dff",
+          "rawSha256": "3eb3f99291a3071788035468e2597837bdd959fdc6c73e86712c41a41aa8a1d2",
+          "notesSha256": "b64c67cd90c775790c5e117a2e15c4bd7f7f2fcde4260af1f384fa94d4696386",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "12-packet-serial-r3",
+          "status": "PASS",
+          "receiptSha256": "9e603004493f5466e0bcb9d026120a46b5d97f6d7eb82428be8445aa8fbb2e84",
+          "rawSha256": "84623631fd1833eace56dfaec0aa2d41c9f05a9b6d0e5f470d0dcf60829b4be4",
+          "notesSha256": "d453c5ac088b48f5ac89fb772e61623c3997ee2fef88009458a61deb7aa7c739",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "13-stream-sync-r3",
+          "status": "PASS",
+          "receiptSha256": "e2b7a6e8d3772ec67d08e0329b6d589cc7c66111f55b541d8c522bcdc9cbbceb",
+          "rawSha256": "7b4c1a3e9332ab29e82d56fe5436e0746b60bbef44b1b686aa3e6c7e11032845",
+          "notesSha256": "414486c349622019918b19cdfdcec6deedb40e122711bc2c432a1dfa0d00228f",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "14-packet-parallel-r3",
+          "status": "PASS",
+          "receiptSha256": "a39b09ad6cc70386299e6443dfdfce18b4683f4f684204255cdf1690a5e753a7",
+          "rawSha256": "a8108e25bb5d08169bbf4908f89e64d9c8c58aed43b2d6eedc72fb028f1a1928",
+          "notesSha256": "c8a0f73b2530de65cfc0b3e41e88c8f5526439d30b561b2558eabf56d3fc737a",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "15-stream-parallel-r3",
+          "status": "PASS",
+          "receiptSha256": "7ea74e17797e1d1d4b9feae5fdb45a061351850c777325d37f342b2dbaf56d80",
+          "rawSha256": "ccc745f7915cf0b83563d57a50c85ded2f09c2554fbdbc2ecd15a1df1a289d97",
+          "notesSha256": "d382608ae5e24f956c0caa7fb0c5c2fec0d22e5e142a9a85f6258c999dffcee1",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "16-packet-serial-r4",
+          "status": "PASS",
+          "receiptSha256": "5d8b10da8aeb677e3d8aed09970f5125baa012f6337f2965abd143339eb95618",
+          "rawSha256": "a90340c957f3683195386bf3e1d04c74754fec808920a5693bb3b71ecb258cb6",
+          "notesSha256": "d453c5ac088b48f5ac89fb772e61623c3997ee2fef88009458a61deb7aa7c739",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "17-stream-async-r4",
+          "status": "PASS",
+          "receiptSha256": "aed50f7b63077532e4d8dbdcd9a56a6bb0e4036ec78e896663e1ab87c1bc1b7e",
+          "rawSha256": "2256b51c7b9d9550cb59b30c5ef160256c29e86f232c9afab6fdb7e912cd3ef0",
+          "notesSha256": "602b232e17689fe2445160cbb35d2da204f7d1fc8bff781bb0576755cc1b68ab",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "18-stream-sync-r4",
+          "status": "FAIL",
+          "receiptSha256": "d2b24785a92f08929fc14fd078e9a8a1018db480d52cc470f85b8fb1c0c704c3",
+          "rawSha256": "aead5e4a99b2280d27f17e48a173c3b757c68b25b77b1121044fddcaf53f52ef",
+          "notesSha256": "c9223147e4c4d914531b930755fac1612b60185aba9f6a65d0348d83ccca3730",
+          "foregroundRatio": 0,
+          "gpuValidSamples": 597
+        }
+      ]
+    },
+    {
+      "attempt": "lb-current-002",
+      "status": "INVALID",
+      "experimentIds": [
+        "E-LB-PACKET-002",
+        "E-LB-STREAMING-002"
+      ],
+      "plannedRuns": 25,
+      "successfulRuns": 21,
+      "attemptedRuns": 22,
+      "failedRun": {
+        "runId": "22-packet-serial-r5",
+        "status": "FAIL",
+        "receiptSha256": "b51f75bae7758aeaca0db5cd0aae3216cb8160eb78a32f7ac10354b6137e87f8",
+        "rawSha256": "759c1ec63af0e25610b873ee92058b31a84d486d2b950bc327e3a2e175eed02f",
+        "notesSha256": "52ecad197b90ceec8a38d1008d9ab84b82e7352bd647d180febfca27114a7638",
+        "foregroundRatio": 0.848333,
+        "gpuValidSamples": 597
+      },
+      "preregistrationSha256": "574759fbdb241040313c556257582a32cc15a20d1a19af9afc7cf290db28e1e9",
+      "sourceSnapshotSha256": "af9e08730c1220ecfecdaf179b8d848ddd3435facafdf253c7ff623cdb9d4e73",
+      "sourceArchiveSha256": "9d3eee822bb7b7dfea2706566e63ccc6c4a4c25fc94abbe864697a09b04bcce1",
+      "executableSha256": "bbc03c224248854462ed904c31dddd45c41873a46ca1718f11928ebb45f7ee8b",
+      "environmentSha256": "e06582c63b1b05622f76fbe103dfbbd9c350106ce3e02e4cdc97c335432c2a9b",
+      "buildRecordSha256": "fae8789088326cc4bb0ee9745faacb4d3159e8ceb4fb958df96181847bf36ea0",
+      "buildInputsSha256": "3537ee05bee399034841c623fd5c195f00d8e59c1a9a43e50b7ffefd904da022",
+      "driverSha256": "eb8b4dea0f0916b052d7380ea12fbc675be370aa44229a442d67ba0b849bdc79",
+      "analyzerSha256": "e3ec4545fc9feed6d1d3ad021870ca83f10a4d9d841ce0002ef1160c7fed6300",
+      "frozenIdentitiesVerified": true,
+      "allRetainedArtifactHashesVerified": true,
+      "incompleteGroupRejectedByAnalyzer": true,
+      "runs": [
+        {
+          "runId": "01-stream-sync-r1",
+          "status": "PASS",
+          "receiptSha256": "820d35f05f258554083ee3fa0798cda35104859acbf11b559e5866d2dc94099c",
+          "rawSha256": "9e328f3b74c5af9d557e26067a9c52440fc6ef76237bc802b721b8cd737fd74e",
+          "notesSha256": "414486c349622019918b19cdfdcec6deedb40e122711bc2c432a1dfa0d00228f",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "02-packet-serial-r1",
+          "status": "PASS",
+          "receiptSha256": "fc282fb21b591d27f2fed8985d15bfd30b3ceb258cea38ca4e5ee3456064cdf7",
+          "rawSha256": "3af15a71451a6883a282ae7e919376a8d9e8949678977bed32c8090d809550f3",
+          "notesSha256": "d453c5ac088b48f5ac89fb772e61623c3997ee2fef88009458a61deb7aa7c739",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "03-packet-parallel-r1",
+          "status": "PASS",
+          "receiptSha256": "a86306c17296f9d89f7b87ed58143387a3fe002263286c53c41850f8ca93aff9",
+          "rawSha256": "ac66cc22f2c540b13fe3c31650e49123d5bcb9202af40c20e0949f9a3ca2eea8",
+          "notesSha256": "c8a0f73b2530de65cfc0b3e41e88c8f5526439d30b561b2558eabf56d3fc737a",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "04-stream-parallel-r1",
+          "status": "PASS",
+          "receiptSha256": "8cde75b36e4f723740cfa206a3236755168d4c07ca3d5fd1d2f8c45fae4933e4",
+          "rawSha256": "f4081239f376d1208c71f17b6e2f86f858fb7f83db81c864ae18c43930fda0c8",
+          "notesSha256": "e13d6229601a423c93e19cd228981b1ff029d6e1498a28c72ad26e9ed490ac36",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "05-stream-async-r1",
+          "status": "PASS",
+          "receiptSha256": "58c0e3ba2d5dd546611f482c0929b084eb76a10d4917c5f47af4d54bf84c886b",
+          "rawSha256": "95849fcbd72a591e0e8b38d0b947326350387f935ac95d77fc765fceaa394b69",
+          "notesSha256": "4509e665a54e4b0843a8cd3ac26ef53b3ccc678f4e55c9895d6da1dd86e8121e",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "06-stream-parallel-r2",
+          "status": "PASS",
+          "receiptSha256": "9cabb20160510029a7d05c49b8bc311c11666c5e626ba1820560f462869cdc4d",
+          "rawSha256": "4d4e0f8f1e55982d80d6019348161a07bcd05e2e0c2fe87cf04ab6603a9bb632",
+          "notesSha256": "1b4d5db6d80db8c91f2bdd33e528c9d01d2fec2478f5ab19dab9840a65c2560a",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "07-stream-async-r2",
+          "status": "PASS",
+          "receiptSha256": "181a38827459a5c0291cfd5ba0a8fecf323913e139b0cf3a45e38e0a42339680",
+          "rawSha256": "c22d0987eb0f2c59cc1da6daf6935c8b4859abad8a38f937c6dad8fb62d7a699",
+          "notesSha256": "0b7a7290a4c362170de6cb92bb13ea28bf60cbc85552b5d8dd9adf84fc996cae",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "08-packet-serial-r2",
+          "status": "PASS",
+          "receiptSha256": "ef79739c4206683fea4aa8a47255b459a529b2f70e3dd61063de54a8547ebe0d",
+          "rawSha256": "d91d5b21cb7cf7861751c154c02085a091268210d36a616992777dcd3ed0eaa8",
+          "notesSha256": "d453c5ac088b48f5ac89fb772e61623c3997ee2fef88009458a61deb7aa7c739",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "09-stream-sync-r2",
+          "status": "PASS",
+          "receiptSha256": "39ee5e2f7af417409201ea4da9310e0582a27216072df161b66acdca2504a185",
+          "rawSha256": "072ff240f58806638c6a5a0c957053ccae7da5177cf24f809f0582ed3a40c737",
+          "notesSha256": "414486c349622019918b19cdfdcec6deedb40e122711bc2c432a1dfa0d00228f",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "10-packet-parallel-r2",
+          "status": "PASS",
+          "receiptSha256": "2f794bf5e9dbeb544b3922844a6cf7d3ac23702892dd35722bcdd1524fc6fef9",
+          "rawSha256": "aca6502e2d1f872c1a8ea205541cf233b6ac91e212adc8cb2331951b9adc6c46",
+          "notesSha256": "c8a0f73b2530de65cfc0b3e41e88c8f5526439d30b561b2558eabf56d3fc737a",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "11-stream-async-r3",
+          "status": "PASS",
+          "receiptSha256": "0e37e755e06ac16ba853fdee0711ebcd965eebfa793b385d5eb60e3c62ab4290",
+          "rawSha256": "3f04322038cce220d2dd8ea7ba5c15afc5f27becd48683b7bdd5a0270813ad8c",
+          "notesSha256": "82227d99066a26cd4ae4e12fcadbc78e272c8f7caef4f6433bffdd4467c46af2",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "12-packet-serial-r3",
+          "status": "PASS",
+          "receiptSha256": "c15399f0b8bd486c3ffb77a8fd105da84ce62ad8dbc0af72a4e21b6d32226795",
+          "rawSha256": "9596cf9a10dddd0e2c7051efac6c7628fdf3ee1b6c089d977255d4cae88c3046",
+          "notesSha256": "d453c5ac088b48f5ac89fb772e61623c3997ee2fef88009458a61deb7aa7c739",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "13-stream-sync-r3",
+          "status": "PASS",
+          "receiptSha256": "92e7de8f5f5e6938945082221b336e036d76155b09410d83819b3397a787f029",
+          "rawSha256": "e6a5524dc3bc38ac556f3424d2f8ad3f2032ead2588eef4b8fe1334d7ec43713",
+          "notesSha256": "414486c349622019918b19cdfdcec6deedb40e122711bc2c432a1dfa0d00228f",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "14-packet-parallel-r3",
+          "status": "PASS",
+          "receiptSha256": "79b17fb04465ec58dc44e7f48c7a5eb8db5daba4cae05930635888dd86d85dd9",
+          "rawSha256": "6ef355383b7fd0314c8b114f927dfebc8701d46a7a1f9274c18d9e0e6b4c4a59",
+          "notesSha256": "c8a0f73b2530de65cfc0b3e41e88c8f5526439d30b561b2558eabf56d3fc737a",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "15-stream-parallel-r3",
+          "status": "PASS",
+          "receiptSha256": "b8c7754129f97b0651949889189b4ca3ef3f0f6c0b8a135e8bcfac0ecc236ed6",
+          "rawSha256": "ebcc20a6522a1f4340467619c93f4c9741ae606397db95b6071bd5b71cedcffb",
+          "notesSha256": "9e3632527b2a1c9fcc0ebed19c8603541f99f2d5841c242dd1bb3a2ddd01287d",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "16-packet-serial-r4",
+          "status": "PASS",
+          "receiptSha256": "53b2ac864d639b2fa3fe69b2afdd2062761b8b68d324b344ed49cebdee013c39",
+          "rawSha256": "0f40a57d17604eff9ef12c321cec25b391a4f06d79d6766451786c1e274c9cf5",
+          "notesSha256": "d453c5ac088b48f5ac89fb772e61623c3997ee2fef88009458a61deb7aa7c739",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "17-stream-async-r4",
+          "status": "PASS",
+          "receiptSha256": "9a9e8013bea615b4de2721fbf7396d1198e271ecf1a50398289fb3ec0add7b01",
+          "rawSha256": "3a63c19a7856bfd5df844d28b3003e730c6fb365a80c7a20ca792981d252ebc7",
+          "notesSha256": "b75addc8d58e0109d3325005b1ab88c1cf93bc9fbc7b47e306aba0edd6d86523",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "18-stream-sync-r4",
+          "status": "PASS",
+          "receiptSha256": "34305694f96b54421718e9ac48b98185a95538323168a6b0e833256b0cdae663",
+          "rawSha256": "1c6ed6383687b42d4cb41861803e70313e95e5524b2c1401f97aeeccdddbaff8",
+          "notesSha256": "414486c349622019918b19cdfdcec6deedb40e122711bc2c432a1dfa0d00228f",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "19-stream-parallel-r4",
+          "status": "PASS",
+          "receiptSha256": "be5bb71c41d03bc2a761f6472bb4fb17d03f2bb7f7e07e64072dfc4b4b79d0b9",
+          "rawSha256": "a13298a0a93f041f076ab0865881acf52e4f57b01d48583fa6e0013a71a02d4f",
+          "notesSha256": "0173fbe2fe6c418167a0c9f8c02c8032f9a920339be1062d0251bd8d596ee41d",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "20-packet-parallel-r4",
+          "status": "PASS",
+          "receiptSha256": "aa4e0b9782d848e454a1a08afe56b17e3ba9e8a612f991eeb6e9c21780bfb2b2",
+          "rawSha256": "a825caefeeb1dbf59ec36cee883a175df6e47bab26029d7558527653cddad26c",
+          "notesSha256": "c8a0f73b2530de65cfc0b3e41e88c8f5526439d30b561b2558eabf56d3fc737a",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "21-stream-parallel-r5",
+          "status": "PASS",
+          "receiptSha256": "690a17971d7f0c3fe397502b9fd373820c973a4e200c394d7d43d12cc937215c",
+          "rawSha256": "265471594affb1353d6444f30e91a7aa46e81466d27e76bd69eef32fcc1dff4d",
+          "notesSha256": "b54af73eb0002c4d8a6f876442c83a4963e9dc946acb9696460fe77bffb8fa86",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "22-packet-serial-r5",
+          "status": "FAIL",
+          "receiptSha256": "b51f75bae7758aeaca0db5cd0aae3216cb8160eb78a32f7ac10354b6137e87f8",
+          "rawSha256": "759c1ec63af0e25610b873ee92058b31a84d486d2b950bc327e3a2e175eed02f",
+          "notesSha256": "52ecad197b90ceec8a38d1008d9ab84b82e7352bd647d180febfca27114a7638",
+          "foregroundRatio": 0.848333,
+          "gpuValidSamples": 597
+        }
+      ]
+    },
+    {
+      "attempt": "lb-current-003",
+      "status": "INVALID",
+      "experimentIds": [
+        "E-LB-PACKET-003",
+        "E-LB-STREAMING-003"
+      ],
+      "plannedRuns": 25,
+      "successfulRuns": 8,
+      "attemptedRuns": 9,
+      "failedRun": {
+        "runId": "09-stream-sync-r2",
+        "status": "FAIL",
+        "foregroundReadiness": {
+          "status": "TIMEOUT",
+          "waitMs": 60008,
+          "requiredStableMs": 1000,
+          "timeoutMs": 60000
+        },
+        "note": "no run.json; foreground never obtained before warmup"
+      },
+      "failureMode": "foreground readiness TIMEOUT before warmup (window never held foreground for 1000 ms within 60 s)",
+      "registrationDefectRepair": {
+        "defect": "first registration wrote experimentIds -002 while command()/verify_run() used -003",
+        "action": "registration removed, driver delta refrozen into source snapshot and source.zip, then re-registered",
+        "noRunReused": true
+      },
+      "preregistrationSha256": "beeacda2ed631657ee38e644e7c63437fb707cacc785f87435f33f7dcb316aa3",
+      "sourceSnapshotSha256": "b34cb287d04c7df79304ce60f73f4ed8f5b405c820cc78e6e93e93b0da0fb9b0",
+      "sourceArchiveSha256": "90a5d589b66a99eb9f238178fa3f31487d182ec6f8d66a1610dd6235a659efc1",
+      "executableSha256": "1a764f5593dedcdf517caa827fededad3941ad965e1d10f53db10b535aa0fedb",
+      "environmentSha256": "0c1ac1fd7a90ba7ae492e3d46d8912e5751bcd9997536bb95d613ffce3c543b6",
+      "buildRecordSha256": "fd93090fac716f58b9017c35194b7bf5f0eeb3366af8819effea9a2b667b8c52",
+      "buildInputsSha256": "4fcb7eccbe840634e1bf4c3335282054420421a9f992bf6c864d83e78eb73225",
+      "driverSha256": "91d5bfb087460c4da0451f23bb792b46dd293387bcbf1046667cfa57d1febb53",
+      "analyzerSha256": "e3ec4545fc9feed6d1d3ad021870ca83f10a4d9d841ce0002ef1160c7fed6300",
+      "frozenIdentitiesVerified": true,
+      "incompleteGroupRejectedByAnalyzer": true,
+      "runs": [
+        {
+          "runId": "01-stream-sync-r1",
+          "status": "PASS",
+          "receiptSha256": "670ef45e7d5bd960e9e1e3197410713de09a460f77303067f9feafd86441ba5a",
+          "rawSha256": "6705c97be436ec84e08f143310278bf8785142d67d1078af745b95ce4b3d31b5",
+          "notesSha256": "414486c349622019918b19cdfdcec6deedb40e122711bc2c432a1dfa0d00228f",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "02-packet-serial-r1",
+          "status": "PASS",
+          "receiptSha256": "1d323cd9d605f2bfc7ac334a7d5ad9bc3011b70bfa59e7f7efe5c3dc0a0b2714",
+          "rawSha256": "b217e9ef314314187e7979f6d1b30e63d0dcef77bb313f16b4e0aab4a4c2922d",
+          "notesSha256": "d453c5ac088b48f5ac89fb772e61623c3997ee2fef88009458a61deb7aa7c739",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "03-packet-parallel-r1",
+          "status": "PASS",
+          "receiptSha256": "1921af83ea2ca7a4f1f9571d08c7f77df29e2ac6ab8606249743d38449a1c6cb",
+          "rawSha256": "86749c2350bd643f07d52374faeecde4f82ff2192fec0e72ebb46247593ab130",
+          "notesSha256": "c8a0f73b2530de65cfc0b3e41e88c8f5526439d30b561b2558eabf56d3fc737a",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "04-stream-parallel-r1",
+          "status": "PASS",
+          "receiptSha256": "7248074cfde16e14be95f695b63c9141822f2378bda13320bef43d4d7f8f681c",
+          "rawSha256": "5f3450af57e5693e2788c689c136167fedf13736a984afd7d0c9af8168b53cfe",
+          "notesSha256": "a4f431ccab4ff9bf68a419c68b5bceae46c62d5a453200755f62f242e7da213e",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "05-stream-async-r1",
+          "status": "PASS",
+          "receiptSha256": "9c91fc5963df90e309e66dbe42471ec1d67973e7c109cf28a90822c885b04b84",
+          "rawSha256": "cf382de771273d05d2ed03b4480ce08792ee14a7ab2220f4a8868e90f547ffaf",
+          "notesSha256": "69401db15fe99c361cd98eec17b1a4d10081cbe160cffcc5250a2f225fc3d23b",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "06-stream-parallel-r2",
+          "status": "PASS",
+          "receiptSha256": "4ceb1ab028f0b17ca7e498fb1f21d139e2a8cca6236a29aed96ebe9cac7fa525",
+          "rawSha256": "68d121d598463d2975a9c3de6f7dfced151237106e15a6cc011da00037b29658",
+          "notesSha256": "833710fb3b528bf9bbeb68aabc84ef5f9cb6813e3ec68465c775ae8c4bf4475f",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "07-stream-async-r2",
+          "status": "PASS",
+          "receiptSha256": "e750208c0038913b38e983b888e4de9b6febe246c9f38ef49f6877d1fe6ffcee",
+          "rawSha256": "027aa028b273ed1e432ef19a32ffab1813c33503c1c153f2534506acbda1cf4e",
+          "notesSha256": "03f047690732ea37b1214e69afdc6a99bd2559e394df2681fc5f93c326f0d9ae",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "08-packet-serial-r2",
+          "status": "PASS",
+          "receiptSha256": "26bb4a4274553e91f532a4b4f6c2bbfb72e0e1eba85d6e98549ba289035da1d8",
+          "rawSha256": "e32f32783594292ffb4e382d79533353369ea1b74b5056cd429dfcf3df7d83d1",
+          "notesSha256": "d453c5ac088b48f5ac89fb772e61623c3997ee2fef88009458a61deb7aa7c739",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        }
+      ]
+    },
+    {
+      "attempt": "lb-current-004",
+      "status": "COMPLETE_VALID_GROUP",
+      "experimentIds": [
+        "E-LB-PACKET-004",
+        "E-LB-STREAMING-004"
+      ],
+      "plannedRuns": 25,
+      "successfulRuns": 25,
+      "attemptedRuns": 25,
+      "preregistrationSha256": "45778477c770a542df9517a809e15dea50dceb07d47a305dc55ec66b9322ecdb",
+      "registrationDefectRepair": {
+        "defect": "first registration for 004 used the stale ATTEMPT constant (-003)",
+        "action": "registration removed, ATTEMPT set to 004, driver refrozen into snapshot and source.zip, re-registered",
+        "noRunReused": true
+      },
+      "sourceSnapshotSha256": "56e15b71b34716e7f427d9b6e084dc549fb8657b39ff104ab1b507e17a4ed669",
+      "sourceArchiveSha256": "483432bb0c31a5895d5a22b925e2d37472c55aa434890f5440b70ba3c417b527",
+      "executableSha256": "325e9e43cb2e2d6e3ff3aaa1176d434b55a94909cccfc5d22610c2496d2144ad",
+      "environmentSha256": "175de9fee0ea43cb72aadbd6325ba0f58a9bd39cd30bb7436056a93d8c9a60eb",
+      "buildRecordSha256": "a6b4cf48c5def472444c002d54815a392bc6577a1a4a3289e970f02fbd86978e",
+      "buildInputsSha256": "67cfd4524567c7958c6e85b6cd904c58aa6927a7624dbcf595400d2f069421c2",
+      "driverSha256": "1257f0860915f878a1fcad0f6d44c7528bf0a52f264b6dcd56740a6a422c0d27",
+      "analyzerSha256": "e3ec4545fc9feed6d1d3ad021870ca83f10a4d9d841ce0002ef1160c7fed6300",
+      "analysisSha256": "f7d28a660d4844fdd8e46a187824c2938af22dd043c8b26c49cb934fad47b971",
+      "validation": "PASS_LOCAL",
+      "frozenIdentitiesVerified": true,
+      "launchCondition": "sampling windows only obtain foreground when the driver itself is started from a foreground-capable console; CREATE_NO_WINDOW+hide/DETACHED chains and a foreground-holding IDE produced readiness TIMEOUT",
+      "conclusions": [
+        {
+          "baseline": "packet-serial",
+          "candidate": "packet-parallel",
+          "baselineMedianMs": 70.1577,
+          "candidateMedianMs": 58.299,
+          "changePercent": -16.9029,
+          "noisePercent": 3,
+          "drift": {
+            "baselinePercent": -0.4520668650312082,
+            "candidatePercent": 3.248701658347255
+          },
+          "protectedPass": {
+            "p95Cpu": {
+              "pass": true
+            },
+            "gpuFrameMs": {
+              "pass": true
+            },
+            "residentBytes": {
+              "pass": true
+            },
+            "hitch": {
+              "pass": false
+            }
+          },
+          "result": "INCONCLUSIVE",
+          "reason": "chronological drift exceeds noise threshold"
+        },
+        {
+          "baseline": "stream-sync",
+          "candidate": "stream-async",
+          "baselineMedianMs": 35.1679,
+          "candidateMedianMs": 35.7689,
+          "changePercent": 1.7089,
+          "noisePercent": 3,
+          "drift": {
+            "baselinePercent": -0.6202079416853428,
+            "candidatePercent": 0.1585391717745589
+          },
+          "protectedPass": {
+            "p95Cpu": {
+              "pass": true
+            },
+            "gpuFrameMs": {
+              "pass": true
+            },
+            "residentBytes": {
+              "pass": true
+            },
+            "hitch": {
+              "pass": true
+            }
+          },
+          "result": "REJECTED",
+          "reason": "insufficient CPU improvement"
+        },
+        {
+          "baseline": "stream-async",
+          "candidate": "stream-parallel",
+          "baselineMedianMs": 35.7689,
+          "candidateMedianMs": 35.7593,
+          "changePercent": -0.0266,
+          "noisePercent": 3,
+          "drift": {
+            "baselinePercent": 0.1585391717745589,
+            "candidatePercent": -0.381430143504955
+          },
+          "protectedPass": {
+            "p95Cpu": {
+              "pass": true
+            },
+            "gpuFrameMs": {
+              "pass": true
+            },
+            "residentBytes": {
+              "pass": true
+            },
+            "hitch": {
+              "pass": true
+            }
+          },
+          "result": "REJECTED",
+          "reason": "insufficient CPU improvement"
+        },
+        {
+          "baseline": "stream-sync",
+          "candidate": "stream-parallel",
+          "baselineMedianMs": 35.1679,
+          "candidateMedianMs": 35.7593,
+          "changePercent": 1.6819,
+          "noisePercent": 3,
+          "drift": {
+            "baselinePercent": -0.6202079416853428,
+            "candidatePercent": -0.381430143504955
+          },
+          "protectedPass": {
+            "p95Cpu": {
+              "pass": true
+            },
+            "gpuFrameMs": {
+              "pass": true
+            },
+            "residentBytes": {
+              "pass": true
+            },
+            "hitch": {
+              "pass": true
+            }
+          },
+          "result": "REJECTED",
+          "reason": "insufficient CPU improvement"
+        }
+      ],
+      "runs": [
+        {
+          "runId": "01-stream-sync-r1",
+          "cell": "stream-sync",
+          "sequence": 1,
+          "status": "PASS",
+          "receiptSha256": "8484dec5a9e6c1172f0ae25d0cd89cff343f57e3744501a619437197dc759367",
+          "rawSha256": "50c585a796e016e23634eefecb6701e474a13f4ce0950c720c136469f3f19440",
+          "notesSha256": "414486c349622019918b19cdfdcec6deedb40e122711bc2c432a1dfa0d00228f",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "02-packet-serial-r1",
+          "cell": "packet-serial",
+          "sequence": 2,
+          "status": "PASS",
+          "receiptSha256": "122ff38216776437571c749008f7aa84ebc31be15bc4da29ca4ee7610c358611",
+          "rawSha256": "447fbed6c1f73d01d4bb4e9a03f06e4dc480aa2e5ab3734874323313334d5cfc",
+          "notesSha256": "d453c5ac088b48f5ac89fb772e61623c3997ee2fef88009458a61deb7aa7c739",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "03-packet-parallel-r1",
+          "cell": "packet-parallel",
+          "sequence": 3,
+          "status": "PASS",
+          "receiptSha256": "f9ccca06bfe17c846dc22b136bab4aede8834932079bd5d1b1e50bc2ac010f42",
+          "rawSha256": "6ea8c82a44b5bbdc849be789cd91906bf271001ef98d1da59491752734f99932",
+          "notesSha256": "c8a0f73b2530de65cfc0b3e41e88c8f5526439d30b561b2558eabf56d3fc737a",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "04-stream-parallel-r1",
+          "cell": "stream-parallel",
+          "sequence": 4,
+          "status": "PASS",
+          "receiptSha256": "6681d474995d9f47e7f48b7789dbf3d366b2f790e9c482dc7d2e4894c98a0b4c",
+          "rawSha256": "2e9ee05c8faa015348406e4343beb5ef24474ccbc99ec27cbc9c29f8e0331d54",
+          "notesSha256": "51bd4f24270527e45095c22cc62f0fed99c0ae7848103cafe7643e99a546404f",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "05-stream-async-r1",
+          "cell": "stream-async",
+          "sequence": 5,
+          "status": "PASS",
+          "receiptSha256": "48eb0a1537995406997d1943fb45dd6183c29f4d7162066ca60d3297ae73f315",
+          "rawSha256": "02d7afe4ae910c624124e95b6b776bdb8d00148ccc0f335aacf0c6ec41db0841",
+          "notesSha256": "62cf94f8cd11a8614ae6095cd7f99b7870c4c5ff6a2dda11c4acaa175b229934",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "06-stream-parallel-r2",
+          "cell": "stream-parallel",
+          "sequence": 6,
+          "status": "PASS",
+          "receiptSha256": "f4565800c7f686ac95a6ff0008629051c04df78cc6d156c44cbe9772f693f730",
+          "rawSha256": "51249d039c2e3b15c4e5c590c828d4b17f3e2e14202d7aa287d5349aabda44a4",
+          "notesSha256": "593a82144f69c80ba6c0768a30e89aa5172167deecb93da9ec0632ae9dfc7eff",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "07-stream-async-r2",
+          "cell": "stream-async",
+          "sequence": 7,
+          "status": "PASS",
+          "receiptSha256": "79214137dbb6ae2b7223f1fe3fc20c9f5bb2c393a52ac74984ce111b5464f50f",
+          "rawSha256": "4eddc33ed7019581b5ee0ae8e417788be1233f000d65c87efd8c8f72a9566410",
+          "notesSha256": "a931d7a5d06449f59380bc831da81bbf0c019d2d30cc9b318216e4c7ae908f05",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "08-packet-serial-r2",
+          "cell": "packet-serial",
+          "sequence": 8,
+          "status": "PASS",
+          "receiptSha256": "54a288b00a6a1b10266e84a1a69213291003259837055cd242c8e9b794f377b5",
+          "rawSha256": "effc5069ed3e46675b961c7470ec543d7f0bd897f7d00ef96b45e1ee1e5fe6f7",
+          "notesSha256": "d453c5ac088b48f5ac89fb772e61623c3997ee2fef88009458a61deb7aa7c739",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "09-stream-sync-r2",
+          "cell": "stream-sync",
+          "sequence": 9,
+          "status": "PASS",
+          "receiptSha256": "5153443fc087200437f4fdd8c5b43a9e20d925ba4809a1e9b9b3bce992f78f7a",
+          "rawSha256": "cdb6639e663c2d5760d0c73e767b3c70c34194f3bbf6ed93cd0d2880c82db92f",
+          "notesSha256": "414486c349622019918b19cdfdcec6deedb40e122711bc2c432a1dfa0d00228f",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "10-packet-parallel-r2",
+          "cell": "packet-parallel",
+          "sequence": 10,
+          "status": "PASS",
+          "receiptSha256": "5b6906d21dfdd3fdda76ebf5e3f920e7c10f34076c7ca9c7cd151444ed0facf0",
+          "rawSha256": "2822535fe27d754cb9e2d95d4993b7ac589320d8d02775544e02090803fdb39e",
+          "notesSha256": "c8a0f73b2530de65cfc0b3e41e88c8f5526439d30b561b2558eabf56d3fc737a",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "11-stream-async-r3",
+          "cell": "stream-async",
+          "sequence": 11,
+          "status": "PASS",
+          "receiptSha256": "35e4d8db7a13a2a485383b86b323f747557473f0fe5ce2d60b339f692d943ee7",
+          "rawSha256": "96ac46f6b20cd881601da942d6f5c6390ee89fc1e097e56a42e276ac732d4860",
+          "notesSha256": "c42ad0264cb41554b9411c623c673d0df1692a1de6fe4e42434c0fe865743660",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "12-packet-serial-r3",
+          "cell": "packet-serial",
+          "sequence": 12,
+          "status": "PASS",
+          "receiptSha256": "aa81d47ef9a7efb86cd8fead5957dce0bf99f54b167c894310f3b9598d0785ae",
+          "rawSha256": "ebd9c7e6ece58894024b4f4958ccfaff825c7d2844f69be603048fcce40ff354",
+          "notesSha256": "d453c5ac088b48f5ac89fb772e61623c3997ee2fef88009458a61deb7aa7c739",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "13-stream-sync-r3",
+          "cell": "stream-sync",
+          "sequence": 13,
+          "status": "PASS",
+          "receiptSha256": "37fd364cb7f26eb1a20521f786026a03a89709f2d9c36b4bb8d6e394eb7de107",
+          "rawSha256": "a1372fb3f755a880a3f9f7412576a96f69cf76b680f725da687a594826e10b20",
+          "notesSha256": "414486c349622019918b19cdfdcec6deedb40e122711bc2c432a1dfa0d00228f",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "14-packet-parallel-r3",
+          "cell": "packet-parallel",
+          "sequence": 14,
+          "status": "PASS",
+          "receiptSha256": "9b950ef1cde00501b37741fbd1c789126f64a6a969ad4530fcd9f64be86d1c8b",
+          "rawSha256": "fe160dbf5e3f5c2ee5eb2e1f41cabb3073893fb31ec0b6951772c7cbc362b4c1",
+          "notesSha256": "c8a0f73b2530de65cfc0b3e41e88c8f5526439d30b561b2558eabf56d3fc737a",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "15-stream-parallel-r3",
+          "cell": "stream-parallel",
+          "sequence": 15,
+          "status": "PASS",
+          "receiptSha256": "d9bcdd68b38ea9f7973623379696b394b107d0b483cdef02b3f27fc0e73ead7e",
+          "rawSha256": "0d30bb94113216fa462be7a67c0a9c633251b30241f25d9bcc89d42ba1aff607",
+          "notesSha256": "d64a14f60ab50f84d2a884fc9300cfea37288bbd46d96e10075fa1b2b5970f23",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "16-packet-serial-r4",
+          "cell": "packet-serial",
+          "sequence": 16,
+          "status": "PASS",
+          "receiptSha256": "f46f881085360b5189c21a8cb8680e13d6f42cd64db7cbf48e0f052d5cda3f68",
+          "rawSha256": "e04cf6b5384b80d5bf3551c9e9bb15750694fca37b7f2f55c877026becc8795d",
+          "notesSha256": "d453c5ac088b48f5ac89fb772e61623c3997ee2fef88009458a61deb7aa7c739",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "17-stream-async-r4",
+          "cell": "stream-async",
+          "sequence": 17,
+          "status": "PASS",
+          "receiptSha256": "6be925581dd88972ee06d41c526cd17d3b23af6f60e8d89bb9bfc658d6852a4b",
+          "rawSha256": "3efebcd166a6d431d79b2a57d46041b24fdf356070d4cee985fd46eec2830e44",
+          "notesSha256": "a13e21280716e7a820d30bef01d8136e90031513ebd74bcf20b3a5a483af6d86",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "18-stream-sync-r4",
+          "cell": "stream-sync",
+          "sequence": 18,
+          "status": "PASS",
+          "receiptSha256": "57354ff16361e7ee4019b65ab45b5b0fa626e4cd92a4dd911e19d07b352a7381",
+          "rawSha256": "41e3782174bb68d6a113b4a14779c3c079ae41341b71912c9e41b41ebef707f2",
+          "notesSha256": "414486c349622019918b19cdfdcec6deedb40e122711bc2c432a1dfa0d00228f",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "19-stream-parallel-r4",
+          "cell": "stream-parallel",
+          "sequence": 19,
+          "status": "PASS",
+          "receiptSha256": "7a0272bab0295dd166ed3e317f8e165b535448548d8e1416558a92405740e493",
+          "rawSha256": "7df2db1ca196a3ab6d3170f09357c4bf52ead4734dcfc9945f97800c25b39d0b",
+          "notesSha256": "bfa612d947e55d058261c1e50dd833acf0aad32e26527c187bdfe9bc676859d5",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "20-packet-parallel-r4",
+          "cell": "packet-parallel",
+          "sequence": 20,
+          "status": "PASS",
+          "receiptSha256": "fe5898488586daad76c37f39bfe9a0257ca4a361b6c9d989db6f1b750e185bc0",
+          "rawSha256": "e3dfd762d4425cad9809c2b9b57b4dce48d468719d543110ab9a073ccb9f6737",
+          "notesSha256": "c8a0f73b2530de65cfc0b3e41e88c8f5526439d30b561b2558eabf56d3fc737a",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "21-stream-parallel-r5",
+          "cell": "stream-parallel",
+          "sequence": 21,
+          "status": "PASS",
+          "receiptSha256": "248dbd041a2b16c9160766b6429fb7431aac5f4575b06d8ed2c84a2549bfb159",
+          "rawSha256": "6ccf4728b4fcd3b43c30c02d15435d351afcc0cd1ff7a3b52b05335cdcc02d7d",
+          "notesSha256": "572f940f63e2cfc5dd904cb533f3329457789bba1b28ae7d987933cf6679e4c6",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "22-packet-serial-r5",
+          "cell": "packet-serial",
+          "sequence": 22,
+          "status": "PASS",
+          "receiptSha256": "066f7298e40500ecb1ba1f9cef3a639b728f903da3e081a1b4f7a66b49000627",
+          "rawSha256": "f92b24bd333a46e0b8034bd74131b8766e30aa79b9ad44995072774d82236e63",
+          "notesSha256": "d453c5ac088b48f5ac89fb772e61623c3997ee2fef88009458a61deb7aa7c739",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "23-stream-sync-r5",
+          "cell": "stream-sync",
+          "sequence": 23,
+          "status": "PASS",
+          "receiptSha256": "c53cf9cd6e32619e43c0a83a006dd10c07b115830f2c4221f702533ebc06be78",
+          "rawSha256": "7008c950beed512f5401bdb126b25f03c1ac717b2b0db6d101145c789d483033",
+          "notesSha256": "414486c349622019918b19cdfdcec6deedb40e122711bc2c432a1dfa0d00228f",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "24-stream-async-r5",
+          "cell": "stream-async",
+          "sequence": 24,
+          "status": "PASS",
+          "receiptSha256": "de8b0f5c28fb3f9b16d1aaec361643b34173cdac8a2724aba861263df9355000",
+          "rawSha256": "13277804060581be36fdb4564d54a6f82f30fe22578cf31dba5dfff8c4c72242",
+          "notesSha256": "e30e5316d9e9bccbffbd8b7316379ea77c8985c2ccc1899fee09056bdb23f7e5",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        },
+        {
+          "runId": "25-packet-parallel-r5",
+          "cell": "packet-parallel",
+          "sequence": 25,
+          "status": "PASS",
+          "receiptSha256": "dfe9b50988a4927435056ea16bc21e38cacf6bcffba9335d1effb666d979c71d",
+          "rawSha256": "6e9e96223c131b0e972336550669a89be8c41445370354af6924b6af6fea6785",
+          "notesSha256": "c8a0f73b2530de65cfc0b3e41e88c8f5526439d30b561b2558eabf56d3fc737a",
+          "foregroundRatio": 1,
+          "gpuValidSamples": 597
+        }
+      ]
+    }
+  ],
+  "focusDiagnosis": {
+    "date": "2026-09-21",
+    "kind": "diagnosis only; no performance conclusion",
+    "session": {
+      "consoleSessionActive": true,
+      "idleTime": "none",
+      "screenSaverActive": false,
+      "note": "001/002 were recorded in an unattended session with no active desktop; state differs"
+    },
+    "probe": {
+      "durationSeconds": 120,
+      "intervalMs": 50,
+      "samples": 2375,
+      "samplesHoldingProbe": 2375,
+      "samplesAway": 0,
+      "holdRatio": 1,
+      "foregroundChanges": 1,
+      "setForegroundWindowGranted": true,
+      "culprits": [],
+      "artifact": "out/performance/lb-focus-diagnosis-2026-09-21/focus-probe-120s.json"
+    },
+    "realWorkloadRuns": {
+      "experimentId": "E-LB-FOCUS-DIAGNOSIS",
+      "runs": 3,
+      "foregroundRatios": [
+        1,
+        1,
+        1
+      ],
+      "validationMessages": 0,
+      "gpuFrameSamples": 597,
+      "note": "diagnostic runs, not part of any formal group; excluded from comparisons"
+    },
+    "unresolved": [
+      "focus stealer for 001/002 was not recorded and cannot be attributed retrospectively",
+      "historical per-run failure about 5 percent; three passes do not prove 25 consecutive passes"
+    ],
+    "prerequisitesForThirdGroup": [
+      "owner must not use the machine during the run window and must close/minimize other visible windows",
+      "no concurrent build, recording or capture during runs",
+      "new experiment id, new preregistration, fresh build, complete blocks"
+    ],
+    "prepared": {
+      "cookedManifestSha256": "4ae6eda980221395a80e3bb03374d051a07b8cd197f8a5c0b55097f427ba6260",
+      "cookedManifestMatches002FrozenCopy": true,
+      "machineManifestSha256": "d064057ecd4368d6e142ed309a50cd4c317b57c5a287b24536c656677cced738"
+    },
+    "currentForegroundHolder": {
+      "observedUtc": "2026-09-21T01:37",
+      "title": "LumaBough - CodeBuddy CN",
+      "image": "CodeBuddy CN.exe",
+      "session": 1,
+      "note": "agent IDE window held foreground; M7 never forces focus, so readiness waits and times out"
+    }
+  },
+  "tests": {
+    "toolTests": 42,
+    "contractTests": 42,
+    "readinessTimeout": "PASS; hidden window times out before warmup, no measured run.json",
+    "freshReleaseBuild": "PASS",
+    "debugValidationPilotsPerAttempt": 5,
+    "timingPilotsPerAttempt": 5
+  },
+  "limitations": [
+    "Local audit only; raw logs/source archives/binaries retained outside public file set",
+    "Foreground owner and cause of focus loss were not recorded",
+    "No third attempt initiated",
+    "Third complete group invalidated by foreground readiness timeout; focus stealer still unidentified",
+    "No retry, no replacement, no splicing of successful runs from any attempt",
+    "Effective group obtained only under a foreground-capable launch chain (visible console driver + IDE minimized); other launch/session states produced readiness timeouts",
+    "No thermal sensor; results are not a general speedup claim"
+  ],
+  "abortedPreparation": [
+    {
+      "attempt": "lb-current-004",
+      "status": "ABORTED_IN_PILOT",
+      "failedPilot": "timing-packet-parallel",
+      "foregroundReadiness": {
+        "status": "TIMEOUT",
+        "waitMs": 60014.3,
+        "requiredStableMs": 1000,
+        "timeoutMs": 60000
+      },
+      "registered": false,
+      "formalRuns": 0,
+      "executableSha256": "325e9e43cb2e2d6e3ff3aaa1176d434b55a94909cccfc5d22610c2496d2144ad"
+    }
+  ]
+}
