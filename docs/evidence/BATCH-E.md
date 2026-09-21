@@ -55,3 +55,4 @@
 - 成片身份（v8 重录，EXE f673d0ba…）：D3D12 542e3b3e829afdf81b706000b9c913a22212eda10b6ad790002f3cc1601517af（1,431,663 B）、D3D11 1602ca64ef79af1f71ae10958c50826b3e61a217ade04ef5560b40d71ced95c2；原片 3360x1834（已排除任务栏），字幕最短 1.5 秒
 - E4 第二次（v8，2026-09-21）：第二台机器 ZIP 校验通过；D3D12/D3D11 各 1202 帧 PASS、换目录 60 帧 PASS、负例 exit 2；Demo 事件路径 D3D12 PASS（末行 complete-clean-exit，anchor/color 均 6,220,817 B）
 - v8 跨机一致（同协议 headless 1920x1080 / 1202 帧 / --exercise-changes）：graphHash 0xBC2FC5CF0A38B0FD、commandHash d87bf3a6…、visibleSequenceHash 0x61E54BF2EB73DB0E 在两台机器上完全一致；本机 resizeCount=3 / reloadSuccess=1 / reloadRejected=1 / warningErrors=0
+- E4 第二台机器（v8）全部完成：D3D12 与 D3D11 的 Demo 事件路径均 PASS，两组 anchor 与末帧逐字节相等，两后端 resizeCount=3 / reloadSuccess=1 / reloadRejected=1 / warningErrors=0；候选门因此由 BLOCKED 转为 PASS（仅保留读者延后提示）

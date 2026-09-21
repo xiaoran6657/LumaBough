@@ -77,13 +77,27 @@
         "anchorPpmBytes": 6220817,
         "colorPpmBytes": 6220817,
         "packageExeSha256": "f673d0baf9168574a59a75cc9bb68c8c48d23a816ff4c30496a5d195aa6d5b18",
-        "note": "--exercise-changes --headless; anchor and color ppm sizes equal"
+        "note": "--exercise-changes --headless; anchor and color ppm sizes equal",
+        "anchorEqualsColor": true
       },
       {
         "id": "d3d11-events-1202",
-        "status": "pending",
+        "status": "PASS",
         "packageExeSha256": "f673d0baf9168574a59a75cc9bb68c8c48d23a816ff4c30496a5d195aa6d5b18",
-        "note": "owner to run the same command with --rhi=d3d11 and report the tour-events tail plus anchor/color equality"
+        "note": "--exercise-changes --headless; tour events, counters and anchor/color equality all as expected",
+        "exitCode": 0,
+        "graphHash": "0xBC2FC5CF0A38B0FD",
+        "resolution": "1920x1080",
+        "events": [
+          "temporary-frame-presented",
+          "original-extent-restored",
+          "complete-clean-exit"
+        ],
+        "resizeCount": 3,
+        "reloadSuccess": 1,
+        "reloadRejected": 1,
+        "warningErrors": 0,
+        "anchorEqualsColor": true
       },
       {
         "id": "negative-shaders-renamed",
@@ -95,7 +109,8 @@
       }
     ],
     "verifiedPackageZipSha256": "a94e41dbbb4438d82c1752734f8fd60cc224e7b95a63b6fa39c2e44fe96a5132",
-    "sourceCommit": "5d320c773c7c9943e28fde2185204d05ca9ca19c"
+    "sourceCommit": "5d320c773c7c9943e28fde2185204d05ca9ca19c",
+    "complete": true
   },
   "crossMachineIdentity": {
     "protocol": "headless 1920x1080, 1202 frames, --exercise-changes",
