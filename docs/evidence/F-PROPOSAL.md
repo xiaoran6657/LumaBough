@@ -36,7 +36,7 @@
 | `lumabough-5d320c7-v8.zip` | 3,466,423 B | `a94e41dbbb4438d82c1752734f8fd60cc224e7b95a63b6fa39c2e44fe96a5132` |
 | `lumabough-demo-d3d12.mp4` | 1,431,663 B | `542e3b3e829afdf81b706000b9c913a22212eda10b6ad790002f3cc1601517af` |
 | `lumabough-demo-d3d11.mp4` | 1,205,881 B | `1602ca64ef79af1f71ae10958c50826b3e61a217ade04ef5560b40d71ced95c2` |
-| `lumabough-performance-evidence-v1.zip` | 见第 4b 节 | 见第 4b 节 |
+| `lumabough-performance-evidence-v1.zip` | 1,082,886 B | `c33c5b39d05b77b5587acdfe85b9131e377aeb48828c61ebe21acc0c10489ff5` |
 | `SHA256SUMS-external.txt` | 小 | **包含以上每个附件自身的哈希**，供下载后先校验再解压 |
 
 ### 4b 性能证据包（去标识、可复算）
@@ -46,8 +46,9 @@
 `SANITIZATION.json`（每个被改写文件的 `originalSha256` → `publicSha256`）。
 脱敏内容：机器清单路径、EXE 绝对路径、主机名与适配器 LUID；保留实验 ID、运行顺序、有效性字段、统计与逐帧数组。
 结论不变：**1 INCONCLUSIVE + 3 REJECTED，无 ACCEPTED**；不把该实验当作 v8 的新性能测量。
-复算方式：用包内分析器 `--input <解压目录> --output <新目录>`，它会校验运行顺序、控制变量、
-前台门、GPU 样本数与"存储统计 vs 逐帧重算"一致，然后重出比较表。
+复算方式：`python analyzer/summarize_portfolio_experiment.py --input . --output recompute.json`
+（本机已实测：`validation=PASS_LOCAL`，四个比较与冻结结论逐项一致）。
+细节与限制见 [公开性能证据包](PERFORMANCE-EVIDENCE-PACK.md)。
 
 ## 5. README 草稿（要点）
 

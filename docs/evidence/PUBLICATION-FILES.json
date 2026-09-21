@@ -615,8 +615,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 15464,
-      "sha256": "08e25cb456a7de2f489e13b1a47f4d1574a1631b20c6c1395cd4f5cc502d3a32",
+      "size": 15568,
+      "sha256": "f4e186128b297d0db4445aacac370fc32a91473d29a6489fe031ca7277e8b0fe",
       "reason": "明确逐文件审阅；实验源码/工具、统计测试或去标识摘要与状态文档；不含原始日志/机器路径/二进制；用户授权当前源码新性能实验；仅本地候选、受全部发布门约束"
     },
     {
@@ -6843,8 +6843,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 11752,
-      "sha256": "b8b0797d497579ddff98e619d9387ce0060ec853880598f8cf0114f9a360c293",
+      "size": 12103,
+      "sha256": "24c132837801648fbf51fe022c9c2bf23cc796987e5cf807536c599b0c0ce715",
       "reason": "E批次记录：候选范围与提交身份、打包、隐私与独立运行；不含机器私有信息；仅本地候选"
     },
     {
@@ -6870,8 +6870,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 19813,
-      "sha256": "f39b864fe41baf05093c5f53edd8f7144f034fa0dcbbff2fdb8c805b2910618f",
+      "size": 22383,
+      "sha256": "b222668a48f93786e66d32d96c463e77bfda3a0c58370390badb2a0d05383146",
       "reason": "E3新增：112 项逐项处置（keep/脱敏/排除 + 理由 + matchSha256），status=proposed 待所有者批准"
     },
     {
@@ -6933,9 +6933,36 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 6802,
-      "sha256": "f215b4494db8f76e93c9eec51bf829d04a7b85bd6e0e1049df5d556bb1dc98a4",
+      "size": 6907,
+      "sha256": "0388de4c6eb30979e8981bc0dcc9691843d738f3b2eec43ef87913ddaf9c6865",
       "reason": "E5新增：F 发布提案草案（仓库/ref/文件集合/附件/文案/风险与回退/授权清单）"
+    },
+    {
+      "path": "tools/performance/make_public_performance_evidence.py",
+      "category": "tools",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 9299,
+      "sha256": "9f661048e935fde9947d6771f217205512279fd942dc6d567e1edeb01d3f9c30",
+      "reason": "P7/E5新增：把冻结逐帧数据整理成去标识、可复算的公开证据包（脱敏+original→public哈希绑定+确定性ZIP）"
+    },
+    {
+      "path": "tests/tools/contracts/test_public_performance_evidence.py",
+      "category": "tests",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 1651,
+      "sha256": "dc38999eb9786875ac87ac5f8b0fdb7f2e8eb66c53b33e6e56a810c6293fd329",
+      "reason": "E5新增：证据包脱敏契约测试（绝对路径压缩、非路径文本不动）"
+    },
+    {
+      "path": "docs/evidence/PERFORMANCE-EVIDENCE-PACK.md",
+      "category": "docs",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 3135,
+      "sha256": "c6d2c98cba3307f9ce37dcc248f72e17e022ffe360bbed1d4ceaa1d0e530d46b",
+      "reason": "E5新增：证据包身份、脱敏范围、复算命令与实测复算结果、限制"
     }
   ],
   "pending": [],

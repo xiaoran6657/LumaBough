@@ -501,6 +501,62 @@
       "disposition": "keep",
       "reason": "所有者账号名出现在提案的仓库路径里（与 LICENSE 署名同一身份），非机器名泄露",
       "status": "proposed"
+    },
+    {
+      "rule": "absolute-path",
+      "path": "tests/tools/contracts/test_public_performance_evidence.py",
+      "matchSha256": "d74b6113a61305d039b13399b8fc9a220ec87754597f5c27eedd038bd78c1c98",
+      "disposition": "keep",
+      "reason": "测试用合成路径（脱敏契约测试的输入），非真实机器路径",
+      "status": "proposed"
+    },
+    {
+      "rule": "absolute-path",
+      "path": "tests/tools/contracts/test_public_performance_evidence.py",
+      "matchSha256": "f34d2e199f4cb6a7a37c18bbbabc615475e7aac2bf4b00f608615312322cebfc",
+      "disposition": "keep",
+      "reason": "测试用合成路径（脱敏契约测试的输入），非真实机器路径",
+      "status": "proposed"
+    },
+    {
+      "rule": "absolute-path",
+      "path": "tests/tools/contracts/test_public_performance_evidence.py",
+      "matchSha256": "22f71c1a98a32cd7109b068978d9f085a69bca738557bab4232cafa6b4c841e0",
+      "disposition": "keep",
+      "reason": "测试用合成路径（脱敏契约测试的输入），非真实机器路径",
+      "status": "proposed"
+    },
+    {
+      "rule": "unc-path",
+      "path": "tests/tools/contracts/test_public_performance_evidence.py",
+      "matchSha256": "3a44ca293ced8d7bf5957e744982be0fa1c2671871f86038bacbac0da675e6bd",
+      "disposition": "keep",
+      "reason": "测试用合成路径（脱敏契约测试的输入），非真实机器路径",
+      "status": "proposed"
+    },
+    {
+      "rule": "unc-path",
+      "path": "tests/tools/contracts/test_public_performance_evidence.py",
+      "matchSha256": "ad0fd009968c68ef074af253b65f152689a21cfdcf614ba453de93a83ab4ed72",
+      "disposition": "keep",
+      "reason": "测试用合成路径（脱敏契约测试的输入），非真实机器路径",
+      "status": "proposed"
+    },
+    {
+      "rule": "unc-path",
+      "path": "tests/tools/contracts/test_public_performance_evidence.py",
+      "matchSha256": "bc1281ba0ebd6a59a478a04d553aa755036e38b5738f1a1335567c40700d9868",
+      "disposition": "keep",
+      "reason": "测试用合成路径（脱敏契约测试的输入），非真实机器路径",
+      "status": "proposed"
+    },
+    {
+      "rule": "unc-path",
+      "path": "tests/tools/contracts/test_public_performance_evidence.py",
+      "matchSha256": "a02e4f8865544a62508cad5628923c3604ed27c1bb44df9072e3ebda245bec2b",
+      "disposition": "keep",
+      "reason": "测试用合成路径（脱敏契约测试的输入），非真实机器路径",
+      "status": "proposed"
     }
   ]
 }

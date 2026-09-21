@@ -57,3 +57,4 @@
 - v8 跨机一致（同协议 headless 1920x1080 / 1202 帧 / --exercise-changes）：graphHash 0xBC2FC5CF0A38B0FD、commandHash d87bf3a6…、visibleSequenceHash 0x61E54BF2EB73DB0E 在两台机器上完全一致；本机 resizeCount=3 / reloadSuccess=1 / reloadRejected=1 / warningErrors=0
 - E4 第二台机器（v8）全部完成：D3D12 与 D3D11 的 Demo 事件路径均 PASS，两组 anchor 与末帧逐字节相等，两后端 resizeCount=3 / reloadSuccess=1 / reloadRejected=1 / warningErrors=0；候选门因此由 BLOCKED 转为 PASS（仅保留读者延后提示）
 - 二次审查处置：构建敏感清单补 tools/benchmark、tools/assets 与 tools/CMakeLists.txt（含负例测试）；E4 门禁新增完整性检查（六个必需运行 ID、不重复、complete=true、正例 0/负例 2、逐条绑定本包 EXE，含负例测试）；候选裁定与 F 提案统一到 v8（158 受覆盖 + 2 自排除 = 160 条目）
+- 性能证据附件（P2-5 收口）：tools/performance/make_public_performance_evidence.py 生成去标识逐帧证据包，56 文件 / 1,082,886 B / ZIP SHA-256 c33c5b39d05b77b5587acdfe85b9131e377aeb48828c61ebe21acc0c10489ff5；包内分析器实跑复算与冻结结论逐项一致（1 INCONCLUSIVE + 3 REJECTED），证据包隐私扫描 0 项
