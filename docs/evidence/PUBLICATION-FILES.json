@@ -6906,8 +6906,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 5249,
-      "sha256": "b68b72070d6364d09355bb0f48bd1492a11590a7423bc56d90e0d22f778f77f6",
+      "size": 5258,
+      "sha256": "4c42ca186d8b7dab4055bb0c4048cedf2f6b160161445bcd0f2ff785fb5fb879",
       "reason": "E4新增：第二台机器逐项结果、跨机身份、首轮失败与修复、读者状态（供 candidate 门读取）"
     },
     {
