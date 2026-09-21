@@ -1,0 +1,105 @@
+# Build output
+/build/
+/out/
+/cmake-build-*/
+
+# CMake and generated tool state
+CMakeUserPresets.json
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+compile_commands.json
+# ctest 在源码根目录裸跑时会在仓库根产生运行时产物（LastTest.log 等）
+/Testing/
+
+# Visual Studio
+/.vs/
+*.suo
+*.user
+*.userosscache
+*.VC.db
+*.VC.VC.opendb
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.tlog
+.idea/
+
+# Python 字节码：tools/ 与 tests/tools/ 的模块互相 import 时会在源码目录旁
+# 生成 __pycache__，与仓库内产物无关，不入库。
+__pycache__/
+*.pyc
+
+# Compiled artifacts
+*.obj
+*.o
+*.pdb
+*.ilk
+*.idb
+*.exp
+*.exe
+*.dll
+*.lib
+
+# Captures, logs, and local caches
+*.rdc
+*.wpix
+*.log
+/.cache/
+
+# M7 本地性能产物：raw JSON/Tracy capture/ETL 与 profile 构建目录都不入 Git；
+# 公共仓库只保留精选 manifest、SHA-256、URL 与摘要；原始证据留 out。
+/artifacts/m7/
+*.tracy
+*.tracy.*
+*.etl
+/build-*-profile*/
+
+# M9 作品集产物：视频、Capture、PDB、原始 profiling 数据与发布包走 Release/外部存储，
+# 不进 Git（*.rdc / *.wpix / *.tracy / *.pdb / *.ilk 已由上方规则覆盖）；
+# 采集与打包现场落在以下目录，保证冻结证据不弄脏工作树（M9-12 清单的同名增量以此段为准）。
+/artifacts/m9/
+/dist/portfolio/
+/captures/
+*.mp4
+*.mov
+*.mkv
+
+# M5 生成物：DXC 产出的 DXIL 字节码与 PIX 捕获（*.wpix 已在上方忽略），
+# 编译期 *.pdb 亦已在上方忽略。二者都含机器相关信息，验收时从外部路径定位。
+*.dxil
+*.dxbc
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+/docs/pictures
+/docs/logs
+
+# Cooker 产物写往 --output（仓库默认 out/，已在上方忽略）；
+# /assets/cache|staging、/build/*/asset-cache 与实现不符，已移除（审计 4）。
+*.tmp
+# glTF validator 在源文件旁落 <name>.report.json（cook --validator 的运行产物）
+*.report.json
+
+# Agent 工具数据（各人本机的工作日志与记忆）：属个人运行时数据，不入库。
+# 提交前核对曾发现它未被忽略，会让 `git add -A` 把记忆文件带进里程碑提交。
+/.workbuddy-ai/
+# LumaBough public boundary
+/.agents/
+/.codex/
+/.vscode/
+/artifacts/
+/dist/
+/docs/mvp/
+/docs/learning/
+/docs/mvp-Neuro/
+/.agents

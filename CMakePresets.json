@@ -1,0 +1,175 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 4,
+    "minor": 2,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "windows-msvc-debug",
+      "displayName": "Windows VS 2026 MSVC Debug",
+      "generator": "Visual Studio 18 2026",
+      "architecture": {
+        "value": "x64",
+        "strategy": "set"
+      },
+      "toolset": {
+        "value": "v145",
+        "strategy": "set"
+      },
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "cacheVariables": {
+        "BUILD_TESTING": "ON"
+      },
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      }
+    },
+    {
+      "name": "windows-msvc-profile",
+      "displayName": "Windows VS 2026 MSVC Profile (Release 优化 + PDB)",
+      "description": "M7-01：性能证据专用构建。Release 同源优化（/O2 /Ob2 /DNDEBUG）加 /Zi 与 PDB；ME_ENABLE_TRACY=OFF。",
+      "generator": "Visual Studio 18 2026",
+      "architecture": {
+        "value": "x64",
+        "strategy": "set"
+      },
+      "toolset": {
+        "value": "v145",
+        "strategy": "set"
+      },
+      "binaryDir": "${sourceDir}/out/build/windows-msvc-profile",
+      "cacheVariables": {
+        "BUILD_TESTING": "ON",
+        "CMAKE_MSVC_DEBUG_INFORMATION_FORMAT": "ProgramDatabase",
+        "ME_ENABLE_TRACY": "OFF"
+      },
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      }
+    },
+    {
+      "name": "windows-msvc-profile-tracy",
+      "displayName": "Windows VS 2026 MSVC Profile + Tracy (观测构建)",
+      "description": "M7-02：与 profile 完全相同的优化级别，额外开启 ME_ENABLE_TRACY（Tracy v0.13.1 固定版本）。必须是独立 build directory，避免与 off 构建混用 cache。",
+      "generator": "Visual Studio 18 2026",
+      "architecture": {
+        "value": "x64",
+        "strategy": "set"
+      },
+      "toolset": {
+        "value": "v145",
+        "strategy": "set"
+      },
+      "binaryDir": "${sourceDir}/out/build/windows-msvc-profile-tracy",
+      "cacheVariables": {
+        "BUILD_TESTING": "ON",
+        "CMAKE_MSVC_DEBUG_INFORMATION_FORMAT": "ProgramDatabase",
+        "ME_ENABLE_TRACY": "ON"
+      },
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "windows-msvc-debug",
+      "configurePreset": "windows-msvc-debug",
+      "configuration": "Debug",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      }
+    },
+    {
+      "name": "windows-msvc-profile",
+      "configurePreset": "windows-msvc-profile",
+      "configuration": "Release",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      }
+    },
+    {
+      "name": "windows-msvc-profile-tracy",
+      "configurePreset": "windows-msvc-profile-tracy",
+      "configuration": "Release",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      }
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "windows-msvc-debug",
+      "configurePreset": "windows-msvc-debug",
+      "configuration": "Debug",
+      "environment": {
+        "TEMP": "${sourceDir}/out/tmp",
+        "TMP": "${sourceDir}/out/tmp",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "output": {
+        "outputOnFailure": true
+      },
+      "execution": {
+        "noTestsAction": "error",
+        "stopOnFailure": true
+      }
+    },
+    {
+      "name": "windows-msvc-profile",
+      "configurePreset": "windows-msvc-profile",
+      "configuration": "Release",
+      "environment": {
+        "TEMP": "${sourceDir}/out/tmp",
+        "TMP": "${sourceDir}/out/tmp",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "output": {
+        "outputOnFailure": true
+      },
+      "execution": {
+        "noTestsAction": "error",
+        "stopOnFailure": true
+      }
+    },
+    {
+      "name": "windows-msvc-profile-tracy",
+      "configurePreset": "windows-msvc-profile-tracy",
+      "configuration": "Release",
+      "environment": {
+        "TEMP": "${sourceDir}/out/tmp",
+        "TMP": "${sourceDir}/out/tmp",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "output": {
+        "outputOnFailure": true
+      },
+      "execution": {
+        "noTestsAction": "error",
+        "stopOnFailure": true
+      }
+    }
+  ],
+  "workflowPresets": [
+    {
+      "name": "windows-msvc-debug",
+      "displayName": "Configure, build, and test Windows VS 2026 MSVC Debug",
+      "steps": [
+        {
+          "type": "configure",
+          "name": "windows-msvc-debug"
+        },
+        {
+          "type": "build",
+          "name": "windows-msvc-debug"
+        },
+        {
+          "type": "test",
+          "name": "windows-msvc-debug"
+        }
+      ]
+    }
+  ]
+}

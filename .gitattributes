@@ -1,0 +1,12 @@
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.dds binary
+*.ktx binary
+*.ktx2 binary
+*.glb binary
+*.fbx binary
+*.rdc binary
+*.wpix binary
