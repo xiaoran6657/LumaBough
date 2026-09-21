@@ -7,7 +7,19 @@ import unittest
 
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "tools/portfolio"))
-from validate_publication import e4_reader_errors, validate_package_files
+from validate_publication import (E4_REQUIRED_RUNS, build_sensitive, e4_reader_errors,
+                                  e4_run_errors, validate_package_files)
+
+EXE = "e" * 64
+
+
+def e4_record(**overrides):
+    runs = [{"id": run_id, "exitCode": code, "packageExeSha256": EXE,
+             "status": "expected-failure" if code else "PASS"} for run_id, code in E4_REQUIRED_RUNS]
+    record = {"secondMachine": {"complete": True, "runs": runs}}
+    record["secondMachine"].update(overrides.pop("secondMachine", {}))
+    record.update(overrides)
+    return record
 
 
 def blob(name, payload):
@@ -79,6 +91,48 @@ class CandidateGateTests(unittest.TestCase):
             "selfExcluded": ["PACKAGE-MANIFEST.json", "SHA256SUMS.txt", "extra.bin"]}).encode()
         errors, _ = validate_package_files(files)
         self.assertTrue(any("selfExcluded must be exactly" in e for e in errors))
+
+    def test_build_sensitive_list_covers_linked_inputs(self):
+        for path in ("tools/benchmark/foo.cpp", "tools/CMakeLists.txt", "tools/assets/gen.py",
+                     "tools/shader_compiler/generate_rhi_package.py", "tools/asset_cooker/src/SourceUri.cpp",
+                     "engine/rhi/d3d12/src/D3D12Device.cpp", "samples/rhi_sandbox/M6SceneRunner.cpp",
+                     "shaders/d3d12/PbrForward.hlsl", "assets/recipes/m9-portfolio-video.json",
+                     "tests/rhi/CMakeLists.txt", "cmake/MiniEngineWarnings.cmake",
+                     "CMakeLists.txt", "CMakePresets.json"):
+            self.assertTrue(build_sensitive(path), path)
+        for path in ("docs/evidence/BATCH-E.md", "tools/portfolio/scan_privacy.py", "AGENTS.md", "README.md"):
+            self.assertFalse(build_sensitive(path), path)
+
+    def test_complete_e4_record_passes(self):
+        self.assertEqual([], e4_run_errors(e4_record(), EXE))
+
+    def test_incomplete_or_inconsistent_e4_records_fail(self):
+        # 清空全部运行并声明未完成
+        self.assertTrue(e4_run_errors({"secondMachine": {"complete": False, "runs": []}}, EXE))
+        # 缺一个运行
+        record = e4_record()
+        record["secondMachine"]["runs"] = [r for r in record["secondMachine"]["runs"]
+                                           if r["id"] != "d3d11-events-1202"]
+        self.assertTrue(any("incomplete" in e for e in e4_run_errors(record, EXE)))
+        # 重复记录同一个运行
+        record = e4_record()
+        record["secondMachine"]["runs"].append(dict(record["secondMachine"]["runs"][0]))
+        self.assertTrue(any("more than once" in e for e in e4_run_errors(record, EXE)))
+        # 正例退出码被改成 2
+        record = e4_record()
+        record["secondMachine"]["runs"][0]["exitCode"] = 2
+        self.assertTrue(any("exit code" in e for e in e4_run_errors(record, EXE)))
+        # 负例退出码被改成 0
+        record = e4_record()
+        record["secondMachine"]["runs"][-1]["exitCode"] = 0
+        self.assertTrue(any("exit code" in e for e in e4_run_errors(record, EXE)))
+        # complete=false 但运行齐全
+        self.assertTrue(any("not marked complete" in e
+                            for e in e4_run_errors(e4_record(secondMachine={"complete": False}), EXE)))
+        # 绑定到别的包
+        record = e4_record()
+        record["secondMachine"]["runs"][0]["packageExeSha256"] = "f" * 64
+        self.assertTrue(any("different package" in e for e in e4_run_errors(record, EXE)))
 
     def test_reader_status_semantics(self):
         self.assertEqual([], e4_reader_errors({"reader": {"status": "passed"}}))

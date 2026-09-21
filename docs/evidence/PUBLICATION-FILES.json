@@ -6625,8 +6625,8 @@
     {
       "path": "tools/portfolio/validate_publication.py",
       "category": "tools",
-      "size": 11692,
-      "sha256": "cb83c2dce8aeb9d68cd6e55564d2c12d27ae4425f2e38e9b0289bb69d5a5a8a3",
+      "size": 13597,
+      "sha256": "87c5b295341c98c1c551158d7d03c5ae13004d28344bd922b4f7a73a2c2d56a1",
       "sourcePath": null,
       "sourceSha256": null,
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
@@ -6843,8 +6843,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 11393,
-      "sha256": "30ca60e9ad7ea509f7132a7969ea925c1853fd7728e619840d30ae3046f698cf",
+      "size": 11752,
+      "sha256": "b8b0797d497579ddff98e619d9387ce0060ec853880598f8cf0114f9a360c293",
       "reason": "E批次记录：候选范围与提交身份、打包、隐私与独立运行；不含机器私有信息；仅本地候选"
     },
     {
@@ -6870,8 +6870,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 19444,
-      "sha256": "11044af73596a62a1451e9c21602ca0d9b74d4b0dfa4b1c4dc93140c8ffb17b6",
+      "size": 19813,
+      "sha256": "f39b864fe41baf05093c5f53edd8f7144f034fa0dcbbff2fdb8c805b2910618f",
       "reason": "E3新增：112 项逐项处置（keep/脱敏/排除 + 理由 + matchSha256），status=proposed 待所有者批准"
     },
     {
@@ -6915,8 +6915,8 @@
       "category": "tests",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 4880,
-      "sha256": "d664fd61e63f1e6c67c78d0ba4a24465a23dc3559906eccdbd74e9bf99544e82",
+      "size": 7959,
+      "sha256": "ce931432fb6ec13b327b977654a0bb9e0eaa422af1a4ccf318ba2a99fd74f91c",
       "reason": "E5新增：候选门字节核对（manifest/SHA256SUMS/EXE 不一致必须报错）"
     },
     {
@@ -6924,8 +6924,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 3561,
-      "sha256": "ec0ce47a998c3929481502f05fdd6369c5ebe77fa0e8a6e2a063f6c9ebfb09d3",
+      "size": 4508,
+      "sha256": "1340b003b4d6fc137064dfe0035ba48e84c53905ffedb8d319fd6389e2708820",
       "reason": "E5新增：候选绑定、门禁逐项含义、缩减承诺与未授权项"
     },
     {
@@ -6933,8 +6933,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 4893,
-      "sha256": "7e4ece5b4e003754b1df872af0f3c016e95164b7a6a536fe2a1586111fb18d82",
+      "size": 6802,
+      "sha256": "f215b4494db8f76e93c9eec51bf829d04a7b85bd6e0e1049df5d556bb1dc98a4",
       "reason": "E5新增：F 发布提案草案（仓库/ref/文件集合/附件/文案/风险与回退/授权清单）"
     }
   ],

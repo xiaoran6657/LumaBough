@@ -17,11 +17,21 @@ E4_RESULTS = "docs/evidence/E4-RESULTS.json"
 PRIVACY_BASELINE = "docs/evidence/PRIVACY-DISPOSITIONS.json"
 PRIVACY_SCANNER = "tools/portfolio/scan_privacy.py"
 # 构建敏感输入：改动这些必须在 builtAtCommit 之后重建（文档与 portfolio 工具不影响 EXE/场景）。
+# tools/benchmark 链接进 EXE（MiniEngineBenchmark）、tools/assets 生成烘焙输入、tools/CMakeLists.txt 决定子目录集合。
 BUILD_SENSITIVE_PREFIXES = ("engine/", "samples/", "shaders/", "assets/", "tests/", "cmake/",
-                            "tools/shader_compiler/", "tools/asset_cooker/")
-BUILD_SENSITIVE_FILES = ("CMakeLists.txt", "CMakePresets.json")
+                            "tools/shader_compiler/", "tools/asset_cooker/", "tools/benchmark/", "tools/assets/")
+BUILD_SENSITIVE_FILES = ("CMakeLists.txt", "CMakePresets.json", "tools/CMakeLists.txt")
 # 包内免逐文件校验的清单文件只允许这两个（包自身引用自己不可行）。
 SELF_EXCLUDED = ("PACKAGE-MANIFEST.json", "SHA256SUMS.txt")
+# E4 第二台机器必须覆盖的六个运行：ID → 期望退出码（正例 0，负例 2）。
+E4_REQUIRED_RUNS = (("d3d12-1202", 0), ("d3d11-1202", 0), ("d3d12-cwd-60", 0),
+                    ("d3d12-events-1202", 0), ("d3d11-events-1202", 0),
+                    ("negative-shaders-renamed", 2))
+
+
+def build_sensitive(path):
+    """该路径是否属于"改了就必须重建"的构建输入。"""
+    return path.startswith(BUILD_SENSITIVE_PREFIXES) or path in BUILD_SENSITIVE_FILES
 
 def links(root, files):
     errors = []
@@ -141,8 +151,7 @@ def validate_candidate(root, data, package):
     else:
         changed = subprocess.run(["git", "-C", str(root), "diff", "--name-only", built + ".." + head],
                                  capture_output=True, text=True).stdout.split()
-        stale = [c for c in changed
-                 if c.startswith(BUILD_SENSITIVE_PREFIXES) or c in BUILD_SENSITIVE_FILES]
+        stale = [c for c in changed if build_sensitive(c)]
         if stale:
             errors.append("runtime inputs changed after builtAtCommit: " + ", ".join(stale[:5]))
     scan = subprocess.run([sys.executable, str(root / PRIVACY_SCANNER), "--source-set", "--git",
@@ -156,15 +165,42 @@ def validate_candidate(root, data, package):
         errors.append("E4 record was produced for a different EXE")
     if package.suffix.lower() == ".zip" and e4["package"]["zipSha256"] != hashlib.sha256(package.read_bytes()).hexdigest():
         errors.append("E4 record was produced for a different package archive")
-    bad = [r["id"] for r in e4["secondMachine"]["runs"] if r["status"] not in ("PASS", "expected-failure")]
-    if bad:
-        errors.append("E4 second-machine runs not passing: " + ", ".join(bad))
-    # 运行必须绑定到本包的 EXE：换包之后旧记录不能自动沿用。
-    stale = [r["id"] for r in e4["secondMachine"]["runs"]
-             if r.get("packageExeSha256") != manifest.get("exeSha256")]
-    if stale:
-        errors.append("E4 second-machine runs were produced for a different package: " + ", ".join(stale))
+    errors += e4_run_errors(e4, manifest.get("exeSha256"))
     errors += e4_reader_errors(e4)
+    return errors
+
+
+def e4_run_errors(e4, exe_sha):
+    """E4 运行记录必须完整、不重复、绑定本包 EXE，且退出码符合正负例预期。"""
+    errors = []
+    second = e4.get("secondMachine", {})
+    runs = second.get("runs", [])
+    ids = [r.get("id") for r in runs]
+    expected = {run_id: code for run_id, code in E4_REQUIRED_RUNS}
+    for run_id in sorted(set(ids)):
+        if ids.count(run_id) > 1:
+            errors.append("E4 run is recorded more than once: " + run_id)
+    missing = [run_id for run_id in expected if run_id not in ids]
+    if missing:
+        errors.append("E4 second-machine record is incomplete, missing: " + ", ".join(missing))
+    unknown = [run_id for run_id in ids if run_id not in expected]
+    if unknown:
+        errors.append("E4 second-machine record has unknown runs: " + ", ".join(sorted(set(unknown))))
+    if second.get("complete") is not True:
+        errors.append("E4 second-machine record is not marked complete")
+    for run in runs:
+        run_id = run.get("id")
+        if run_id not in expected:
+            continue
+        if run.get("exitCode") != expected[run_id]:
+            errors.append("E4 run exit code is not the expected one: " + str(run_id)
+                          + " (expected " + str(expected[run_id]) + ", got " + str(run.get("exitCode")) + ")")
+        wanted = "expected-failure" if expected[run_id] else "PASS"
+        if run.get("status") != wanted:
+            errors.append("E4 run status is not " + wanted + ": " + str(run_id))
+        # 运行必须绑定到本包的 EXE：换包之后旧记录不能自动沿用。
+        if run.get("packageExeSha256") != exe_sha:
+            errors.append("E4 run was produced for a different package: " + str(run_id))
     return errors
 
 
