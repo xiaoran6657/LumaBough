@@ -7,7 +7,8 @@
 
 | 项 | 值 |
 | --- | --- |
-| ZIP | `out/e-batch/package/lumabough-0403d20-v7.zip`（v5 及更早的包**不要再用**：换机必失败） |
+| ZIP | `out/e-batch/package/lumabough-0403d20-v7.zip`，157 文件，3,464,797 B（v5 及更早的包**不要再用**：换机必失败） |
+| ZIP SHA-256 | `071fbc41c6fa7fed772d9607776e6bbd901a14146d48c2efd7e1223fc413f77f` |
 | EXE SHA-256 | `7e75b7767d0b4273b4b77c8d14e0e5ded682b9538581265f16951e17cffc6f28` |
 | 二进制内嵌提交 | `0403d203419694cd185d3223ba77c75175456bcf` |
 | 场景 manifest SHA-256 | `4ae6eda980221395a80e3bb03374d051a07b8cd197f8a5c0b55097f427ba6260` |

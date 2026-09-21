@@ -36,3 +36,4 @@
 - 修复后隔离验证：EXE 内 revisions/m6-04 引用数 0；把构建树 shaders/ 整个改名后，包内双后端 60 帧与 1202 帧全部 PASS（graphHash 0xBC2FC5CF0A38B0FD）
 - 修复后身份与重跑：EXE 7e75b7767d0b4273b4b77c8d14e0e5ded682b9538581265f16951e17cffc6f28（内嵌 0403d20）；彩排 6/6；D3D11 Capture Screenshot=798、D3D12 Capture Screenshot=677、两次运行 warningErrors=0 且 anchor.ppm 与 color.ppm 逐字节一致；成片重录 D3D12 216e9b44…、D3D11 3a1aea63…
 - E4 第二次：待所有者用修复后的 ZIP 重跑（步骤见 E4 操作手册；程序化捕获要求目标目录先存在，否则应用启动即退出，本轮踩到并已记入手册）
+- 最终包 v7：157 文件 / 10,092,318 B，ZIP 3,464,797 B / SHA-256 071fbc41c6fa7fed772d9607776e6bbd901a14146d48c2efd7e1223fc413f77f；扫描器复扫 116 项全部已批准、退出 0
