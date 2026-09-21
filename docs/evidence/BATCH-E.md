@@ -28,3 +28,4 @@
 - E3 结果：116 项待审（48 唯一键；block 20 / review 96），处置全部提议 keep，状态 proposed 待所有者批准；未裁定 0、待批准 116（门禁退出码 1）
 - E3 修复：包 v4 不含 scene/reports（烘焙报告含烘焙机绝对源路径）；CMakeLists 注释泛化；包清单显式标注自引用排除项；包 v4 = 148 文件 / 10,074,798 B
 - E3 未决：116 项处置需所有者 approved；详细方法与逐项理由见 [隐私终审](PRIVACY-REVIEW.md) 与 [处置基线](PRIVACY-DISPOSITIONS.json)
+- E3 交付形态：ZIP 150 文件 / 3,455,630 B / SHA-256 1f8a1c1dae5b3790c508d7de5b6a20f905cc0375edf9c2a8b95ff214211d4e7f（确定性：排序 + 固定时间戳）；ZIP 与目录字节都扫过，findings 同键

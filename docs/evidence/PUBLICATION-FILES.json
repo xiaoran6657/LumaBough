@@ -6843,8 +6843,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 4062,
-      "sha256": "114e386ee1ce4f8b9673337afc3363b0859e0008f4d50d733438f5505248d688",
+      "size": 4278,
+      "sha256": "4f035b8be407ccb254fa8bafd7c93f1bd7aa41f51ab96a9378207175f9865b38",
       "reason": "E批次记录：候选范围与提交身份、打包、隐私与独立运行；不含机器私有信息；仅本地候选"
     },
     {
@@ -6888,8 +6888,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 3352,
-      "sha256": "7551013acacdb4254f89e9f2c2533f1816b9e21236ed46e0fa5567fe13cd1a5b",
+      "size": 3528,
+      "sha256": "e66704a8b7d1f1ef7400322be9f2025bc793fcb3812017ddd6f6f9236323e588",
       "reason": "E3新增：三目标扫描方法、112 项处置汇总与修复记录；原始报告留本地"
     }
   ],
