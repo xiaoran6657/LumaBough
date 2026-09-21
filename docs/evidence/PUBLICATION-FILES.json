@@ -6843,8 +6843,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 7245,
-      "sha256": "112972f09970038761722871dba75602edab5ac77844018fde12077063b309ef",
+      "size": 7610,
+      "sha256": "ccf65dff68e6b71ecde3ebb85f1691f8a33a34b0378c024e34fde8ea1d0c4741",
       "reason": "E批次记录：候选范围与提交身份、打包、隐私与独立运行；不含机器私有信息；仅本地候选"
     },
     {

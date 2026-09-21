@@ -41,3 +41,4 @@
 - 跨机身份（重要）：两机 shaderSemanticSha256 均为 7aeedd02…、assetManifestSha256 4ae6eda9…、environmentArtifactSha256 3416f0cd…；把本机改为 1920×1061（第二台机器客户区被工作区裁到 1061）后，graphHash 0x76556127671CCB84 与 commandHash 3d95ea89… 与第二台机器逐字节一致
 - 已知差异（非缺陷）：graphHash/commandHash 随 extent 变化，跨机对比必须同 extent；第二台机器 --height=1080 被桌面工作区裁成 1061，故与首次本机 1080 的哈希不同。手册已加 extent 记录要求
 - E4 仍缺：第二台机器的 Demo 事件路径（手册 2.4b：--exercise-changes，期望末行 complete-clean-exit、resizeCount=3、reloadSuccess=1、reloadRejected=1）与真实读者反馈；两者未完成前 E4 不标通过
+- E4 第二次补充（第二台机器，headless 1920×1080）：D3D12 --exercise-changes 1202 帧 PASS、exit 0，graphHash 0xBC2FC5CF0A38B0FD 与本机 headless 同协议一致；tour-events 末三行 temporary-frame-presented(602,1936) / original-extent-restored(602,1920) / complete-clean-exit(1202)，产物含 anchor.json/anchor.ppm/color.ppm/metadata.json
