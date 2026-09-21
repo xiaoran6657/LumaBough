@@ -59,3 +59,4 @@
 - 二次审查处置：构建敏感清单补 tools/benchmark、tools/assets 与 tools/CMakeLists.txt（含负例测试）；E4 门禁新增完整性检查（六个必需运行 ID、不重复、complete=true、正例 0/负例 2、逐条绑定本包 EXE，含负例测试）；候选裁定与 F 提案统一到 v8（158 受覆盖 + 2 自排除 = 160 条目）
 - 性能证据附件（P2-5 收口）：tools/performance/make_public_performance_evidence.py 生成去标识逐帧证据包，56 文件 / 1,082,886 B / ZIP SHA-256 c33c5b39d05b77b5587acdfe85b9131e377aeb48828c61ebe21acc0c10489ff5；包内分析器实跑复算与冻结结论逐项一致（1 INCONCLUSIVE + 3 REJECTED），证据包隐私扫描 0 项
 - 二次审查（第二轮）收口：build_sensitive() 精确排除 tests/tools 的 Python 契约测试（打包器改为直接调用该入口，含正负例）；8 个处置键按所有者书面建议批准；计数更正为 771 受审 + 清单 = 772 Git 文件；聚合外部校验已覆盖四个附件
+- 构建敏感例外收紧到精确文件：只有 tests/tools 下的 .py 被豁免，同目录 .cpp/.h/CMakeLists.txt 仍是构建输入（新增同目录保护测试）；复核 5d320c7..HEAD 的 17 个改动里敏感文件为 0，v8 无需重建、E4 无需重跑

@@ -111,6 +111,16 @@ class CandidateGateTests(unittest.TestCase):
                      "tests/render_graph/GraphDiagnosticsTests.cpp"):
             self.assertTrue(build_sensitive(path), path)
 
+    def test_only_python_tests_are_exempt_inside_tests_tools(self):
+        # 例外必须精确到 Python 测试文件；同目录的 C++ 与 CMake 仍是构建输入。
+        for path in ("tests/tools/test_compare_m5_parity.py", "tests/tools/test_m610_parity.py",
+                     "tests/tools/contracts/test_public_performance_evidence.py"):
+            self.assertFalse(build_sensitive(path), path)
+        for path in ("tests/tools/CMakeLists.txt", "tests/tools/AssetCacheTests.cpp",
+                     "tests/tools/GltfImportAdapterTests.cpp", "tests/tools/RecipeJsonTests.cpp",
+                     "tests/tools/SourceUriTests.cpp", "tests/tools/BuildKeyTests.cpp"):
+            self.assertTrue(build_sensitive(path), path)
+
     def test_complete_e4_record_passes(self):
         self.assertEqual([], e4_run_errors(e4_record(), EXE))
 

@@ -6625,8 +6625,8 @@
     {
       "path": "tools/portfolio/validate_publication.py",
       "category": "tools",
-      "size": 13864,
-      "sha256": "af5986151fa84045ac664e78b5d6571b7a71a0ca47af83d926ecb63dbdaca361",
+      "size": 13995,
+      "sha256": "895401c5bc468ac88ebefe164874ebce1c45989a7d29dadb8cad93d334da59cd",
       "sourcePath": null,
       "sourceSha256": null,
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
@@ -6843,8 +6843,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 12410,
-      "sha256": "f2283ec4303c8afe932e04d1cbc781d2e2c4ca87e29a91dd9e3f4c8acf15c107",
+      "size": 12678,
+      "sha256": "b2efecb7e0119f055262b8ee93608ac25bfe0d7bb0d8a99c4657a65d8b6dfb74",
       "reason": "E批次记录：候选范围与提交身份、打包、隐私与独立运行；不含机器私有信息；仅本地候选"
     },
     {
@@ -6915,8 +6915,8 @@
       "category": "tests",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 8457,
-      "sha256": "988295dc92f19ca5706037a6631ec3ef27d489a8eb73e959408a7ab19a1a2adb",
+      "size": 9207,
+      "sha256": "d767bee7c89667b11a3533c21e56d4a6f7a69ef31ac78a8331da24426ae48b44",
       "reason": "E5新增：候选门字节核对（manifest/SHA256SUMS/EXE 不一致必须报错）"
     },
     {
