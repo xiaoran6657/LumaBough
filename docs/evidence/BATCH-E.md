@@ -53,3 +53,5 @@
 - P2 性能材料：NEW-PERFORMANCE 已标注该缺口（逐 run 汇总 vs P7 要求的逐帧输入），缩减范围待所有者确认；F 提案改为源码/ZIP/成片三个公开范围，并更正资产源树与文件数（769 Git 文件、ZIP 159 条目/157 受覆盖），外部校验文件须含 ZIP 自身哈希
 - 整改后重跑（EXE f673d0baf9168574a59a75cc9bb68c8c48d23a816ff4c30496a5d195aa6d5b18，内嵌 5d320c7）：彩排 6/6、D3D11 Capture Screenshot=798、D3D12 Capture Screenshot=677、RHI CPU 测试 116 项通过；E4 第二台机器需按 v8 重跑（记录已改绑并标记 pendingRerun，门禁会拒绝沿用旧包结果）
 - 成片身份（v8 重录，EXE f673d0ba…）：D3D12 542e3b3e829afdf81b706000b9c913a22212eda10b6ad790002f3cc1601517af（1,431,663 B）、D3D11 1602ca64ef79af1f71ae10958c50826b3e61a217ade04ef5560b40d71ced95c2；原片 3360x1834（已排除任务栏），字幕最短 1.5 秒
+- E4 第二次（v8，2026-09-21）：第二台机器 ZIP 校验通过；D3D12/D3D11 各 1202 帧 PASS、换目录 60 帧 PASS、负例 exit 2；Demo 事件路径 D3D12 PASS（末行 complete-clean-exit，anchor/color 均 6,220,817 B）
+- v8 跨机一致（同协议 headless 1920x1080 / 1202 帧 / --exercise-changes）：graphHash 0xBC2FC5CF0A38B0FD、commandHash d87bf3a6…、visibleSequenceHash 0x61E54BF2EB73DB0E 在两台机器上完全一致；本机 resizeCount=3 / reloadSuccess=1 / reloadRejected=1 / warningErrors=0

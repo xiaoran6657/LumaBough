@@ -6843,8 +6843,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 10577,
-      "sha256": "ffd7ee3796aa7ced3950e0134eb1b3413228c1b739c898a8ad5e4256c1bff639",
+      "size": 11107,
+      "sha256": "06c67fe89d903b7137bf5af11de3a3d6fc11eaa01f3b237bc61e46cde84e310c",
       "reason": "E批次记录：候选范围与提交身份、打包、隐私与独立运行；不含机器私有信息；仅本地候选"
     },
     {
@@ -6906,8 +6906,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 6340,
-      "sha256": "ca8c1851822127c5ae4a8b565884b935ee02e7a119bbce32178afb38ed408981",
+      "size": 6091,
+      "sha256": "d5d3463240551da43d381e3d05b4c600ef3c14cfad6292c0dea582968594ec01",
       "reason": "E4新增：第二台机器逐项结果、跨机身份、首轮失败与修复、读者状态（供 candidate 门读取）"
     },
     {

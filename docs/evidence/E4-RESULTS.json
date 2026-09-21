@@ -44,8 +44,8 @@
         "status": "PASS",
         "graphHash": "0x76556127671CCB84",
         "resolution": "1920x1061",
-        "note": "window client area clamped by the desktop work area (requested 1080)",
-        "packageExeSha256": "7e75b7767d0b4273b4b77c8d14e0e5ded682b9538581265f16951e17cffc6f28"
+        "packageExeSha256": "f673d0baf9168574a59a75cc9bb68c8c48d23a816ff4c30496a5d195aa6d5b18",
+        "note": "window client area clamped by the desktop work area (requested 1080)"
       },
       {
         "id": "d3d11-1202",
@@ -53,15 +53,15 @@
         "status": "PASS",
         "graphHash": "0x76556127671CCB84",
         "resolution": "1920x1061",
-        "packageExeSha256": "7e75b7767d0b4273b4b77c8d14e0e5ded682b9538581265f16951e17cffc6f28"
+        "packageExeSha256": "f673d0baf9168574a59a75cc9bb68c8c48d23a816ff4c30496a5d195aa6d5b18"
       },
       {
         "id": "d3d12-cwd-60",
         "exitCode": 0,
         "status": "PASS",
         "graphHash": "0x435B344F438E02DA",
-        "note": "started from a different working directory with absolute paths",
-        "packageExeSha256": "7e75b7767d0b4273b4b77c8d14e0e5ded682b9538581265f16951e17cffc6f28"
+        "packageExeSha256": "f673d0baf9168574a59a75cc9bb68c8c48d23a816ff4c30496a5d195aa6d5b18",
+        "note": "started from a different working directory with absolute paths"
       },
       {
         "id": "d3d12-events-1202",
@@ -74,42 +74,28 @@
           "original-extent-restored",
           "complete-clean-exit"
         ],
-        "resizeCount": 3,
-        "reloadSuccess": 1,
-        "reloadRejected": 1,
-        "warningErrors": 0,
-        "anchorEqualsColor": true,
-        "packageExeSha256": "7e75b7767d0b4273b4b77c8d14e0e5ded682b9538581265f16951e17cffc6f28"
+        "anchorPpmBytes": 6220817,
+        "colorPpmBytes": 6220817,
+        "packageExeSha256": "f673d0baf9168574a59a75cc9bb68c8c48d23a816ff4c30496a5d195aa6d5b18",
+        "note": "--exercise-changes --headless; anchor and color ppm sizes equal"
       },
       {
         "id": "d3d11-events-1202",
-        "exitCode": 0,
-        "status": "PASS",
-        "graphHash": "0xBC2FC5CF0A38B0FD",
-        "resolution": "1920x1080",
-        "events": [
-          "temporary-frame-presented",
-          "original-extent-restored",
-          "complete-clean-exit"
-        ],
-        "resizeCount": 3,
-        "reloadSuccess": 1,
-        "reloadRejected": 1,
-        "warningErrors": 0,
-        "anchorEqualsColor": true,
-        "packageExeSha256": "7e75b7767d0b4273b4b77c8d14e0e5ded682b9538581265f16951e17cffc6f28"
+        "status": "pending",
+        "packageExeSha256": "f673d0baf9168574a59a75cc9bb68c8c48d23a816ff4c30496a5d195aa6d5b18",
+        "note": "owner to run the same command with --rhi=d3d11 and report the tour-events tail plus anchor/color equality"
       },
       {
         "id": "negative-shaders-renamed",
         "exitCode": 2,
         "status": "expected-failure",
+        "packageExeSha256": "f673d0baf9168574a59a75cc9bb68c8c48d23a816ff4c30496a5d195aa6d5b18",
         "message": "shader artifact missing: <package>\\runtime\\shaders/d3d11/GraphTriangle.VSMain.vs.dxbc",
-        "note": "loud failure with the resolved path; restored afterwards",
-        "packageExeSha256": "7e75b7767d0b4273b4b77c8d14e0e5ded682b9538581265f16951e17cffc6f28"
+        "note": "loud failure with the resolved path; restored afterwards"
       }
     ],
-    "verifiedPackageZipSha256": "071fbc41c6fa7fed772d9607776e6bbd901a14146d48c2efd7e1223fc413f77f",
-    "pendingRerun": "v8（二进制去路径 + 包内许可重整 + README 修正）改变了包字节；第二台机器必须用 v8 重跑，旧记录只对 v7 有效"
+    "verifiedPackageZipSha256": "a94e41dbbb4438d82c1752734f8fd60cc224e7b95a63b6fa39c2e44fe96a5132",
+    "sourceCommit": "5d320c773c7c9943e28fde2185204d05ca9ca19c"
   },
   "crossMachineIdentity": {
     "protocol": "headless 1920x1080, 1202 frames, --exercise-changes",
@@ -124,7 +110,8 @@
     "assetManifestSha256": "4ae6eda980221395a80e3bb03374d051a07b8cd197f8a5c0b55097f427ba6260",
     "environmentArtifactSha256": "3416f0cd007b4faea66c21fefbd183f97cf1a8690401aa955c4501e15bfa0618",
     "extentSensitivity": "graphHash/commandHash depend on the render extent; compare only at equal extents",
-    "pixelNote": "pixel hashes differ across GPUs and backends by design; identity is asserted through the hashes above"
+    "pixelNote": "pixel hashes differ across GPUs and backends by design; identity is asserted through the hashes above",
+    "note": "v8 复测：commandHash 在同等 extent 下与首台机器一致；graphHash/visibleSequenceHash 亦一致"
   },
   "reader": {
     "status": "deferred-by-owner",
