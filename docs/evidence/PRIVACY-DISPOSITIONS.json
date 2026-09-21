@@ -573,6 +573,36 @@
       "status": "approved",
       "approvedBy": "owner",
       "approvedAt": "2026-09-21"
+    },
+    {
+      "rule": "machine-name",
+      "path": "docs/evidence/PUBLICATION-RECORD.md",
+      "matchSha256": "a5a7744cfb98b38e30dc2a5b49f639ec9d54127d4ae7facd5d8a6415ef0c18f6",
+      "disposition": "keep",
+      "reason": "发布记录里的所有者账号/仓库地址（与 LICENSE 署名同一身份），非机器名泄露",
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-22"
+    },
+    {
+      "rule": "machine-name",
+      "path": "docs/evidence/PUBLICATION-RECORD.md",
+      "matchSha256": "a5a7744cfb98b38e30dc2a5b49f639ec9d54127d4ae7facd5d8a6415ef0c18f6",
+      "disposition": "keep",
+      "reason": "发布记录里的所有者账号/仓库地址（与 LICENSE 署名同一身份），非机器名泄露",
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-22"
+    },
+    {
+      "rule": "machine-name",
+      "path": "docs/evidence/PUBLICATION-RECORD.md",
+      "matchSha256": "a5a7744cfb98b38e30dc2a5b49f639ec9d54127d4ae7facd5d8a6415ef0c18f6",
+      "disposition": "keep",
+      "reason": "发布记录里的所有者账号/仓库地址（与 LICENSE 署名同一身份），非机器名泄露",
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-22"
     }
   ]
 }

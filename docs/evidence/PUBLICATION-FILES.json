@@ -6843,8 +6843,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 12678,
-      "sha256": "b2efecb7e0119f055262b8ee93608ac25bfe0d7bb0d8a99c4657a65d8b6dfb74",
+      "size": 13003,
+      "sha256": "a141765e99e57f7357817df83d3ebb40983756a528fd8f36083f4736d4c415da",
       "reason": "E批次记录：候选范围与提交身份、打包、隐私与独立运行；不含机器私有信息；仅本地候选"
     },
     {
@@ -6870,8 +6870,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 22903,
-      "sha256": "906ef33a4a138a3934977fb4cd111169a4f233f875e9d64e2c6f273eabd03219",
+      "size": 24214,
+      "sha256": "bf2d69b34f7137cfcbc01154b567e06c424d426eb059baf304272ed86f19c6d9",
       "reason": "E3新增：112 项逐项处置（keep/脱敏/排除 + 理由 + matchSha256），status=proposed 待所有者批准"
     },
     {
@@ -6963,6 +6963,15 @@
       "size": 3135,
       "sha256": "c6d2c98cba3307f9ce37dcc248f72e17e022ffe360bbed1d4ceaa1d0e530d46b",
       "reason": "E5新增：证据包身份、脱敏范围、复算命令与实测复算结果、限制"
+    },
+    {
+      "path": "docs/evidence/PUBLICATION-RECORD.md",
+      "category": "docs",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 3922,
+      "sha256": "5da6ab82b75bc87d28e6cc48eb6e31d672825acc1030530061fb1bd65a2914bc",
+      "reason": "F新增：远端/提交/tag/Release/附件哈希/tree核验/匿名核验结果与环境备注"
     }
   ],
   "pending": [],
