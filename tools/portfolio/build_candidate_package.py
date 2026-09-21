@@ -6,6 +6,7 @@ from pathlib import Path
 CRT=['msvcp140.dll','msvcp140_atomic_wait.dll','vcruntime140.dll','vcruntime140_1.dll']
 # 与 --crt-dir 下的实际 Redist 文件一致（打包时逐字节复制并记录 SHA-256）。
 CRT_VERSION='14.51.36247.0'
+from validate_publication import BUILD_SENSITIVE_FILES, BUILD_SENSITIVE_PREFIXES
 def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def read(p): return json.loads(Path(p).read_text(encoding='utf-8'))
 def linkish(p): return Path(p).is_symlink() or (hasattr(Path(p),'is_junction') and Path(p).is_junction())
@@ -37,7 +38,8 @@ def main():
     if built!=commit:
         changed=subprocess.run(['git','-C',str(R),'diff','--name-only',built+'..'+commit],capture_output=True,text=True,check=True).stdout.split()
         # 只有 docs/、tools/、tests/ 允许在构建之后继续改动：它们不进 EXE。engine/samples/shaders/assets 一旦改动必须重建。
-        bad=[c for c in changed if not c.startswith(('docs/','tools/','tests/'))]
+        # 与候选门共用同一份"构建敏感输入"定义：只有影响 EXE/场景的改动才要求重建。
+        bad=[c for c in changed if c.startswith(BUILD_SENSITIVE_PREFIXES) or c in BUILD_SENSITIVE_FILES]
         if bad: raise SystemExit('runtime code changed since --built-at; rebuild required: '+', '.join(bad))
     plan={}
     plan['runtime/MiniEngineSandbox.exe']=exe
