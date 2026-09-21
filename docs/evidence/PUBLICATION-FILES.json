@@ -1819,8 +1819,8 @@
     {
       "path": "engine/core/src/Log.cpp",
       "category": "engine",
-      "size": 1686,
-      "sha256": "79e151325eb882d0a3141568bfd8cbe8d1f46e52773519b7c3f9cc5e3c3ec170",
+      "size": 2091,
+      "sha256": "ae45f87bff9d8e399797532a25a1de7a87d54b7436aee36153de2a001fe4cec8",
       "sourcePath": "engine/core/src/Log.cpp",
       "sourceSha256": "79e151325eb882d0a3141568bfd8cbe8d1f46e52773519b7c3f9cc5e3c3ec170",
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
@@ -3583,8 +3583,8 @@
     {
       "path": "samples/rhi_sandbox/M6SceneRunner.cpp",
       "category": "samples",
-      "size": 41045,
-      "sha256": "31d219a259e5989ca918f7bbb3344408774aa4251f4b8b6834926ce4c8441620",
+      "size": 41795,
+      "sha256": "99f8dd3880b7160f94a37fdc973663fd126ea1f89740a11c31375a88e3fe8bcd",
       "sourcePath": "samples/rhi_sandbox/M6SceneRunner.cpp",
       "sourceSha256": "0c5ae119690503f0432f7981d67b14845c38a2e4fe9d18809b1808ce79a6004d",
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
@@ -6843,8 +6843,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 1405,
-      "sha256": "685c785ef12b14e0a339d2e776ea431b4b63946286d4208154d56cb2e9371aed",
+      "size": 2362,
+      "sha256": "56fa9cfa98ec94cf2bc1c554b78a4eb1fa9bcc50b1597081695d4ebaff60df10",
       "reason": "E批次记录：候选范围与提交身份、打包、隐私与独立运行；不含机器私有信息；仅本地候选"
     },
     {
@@ -6852,8 +6852,8 @@
       "category": "tools",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 5655,
-      "sha256": "6e4e662134df8017230424b2688a7e83ac78dad9c8d4234767862b9d00f44fc9",
+      "size": 6508,
+      "sha256": "73030e12f20c41293556a6af73da6567861921806e47a10d09193c7e2031e710",
       "reason": "E2新增：候选运行包打包器（显式输入、fresh 输出、干净工作树闸门、排除 PDB/工具链）；仅本地候选"
     }
   ],

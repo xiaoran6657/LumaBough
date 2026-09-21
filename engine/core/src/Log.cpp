@@ -58,11 +58,23 @@ void ResetLogSink()
     GetLogSink() = {};
 }
 
+// E2/E3：只打印文件名，不带构建机绝对路径（源路径是编译期信息，公开包里不需要也不该暴露）。
+const char* FileNameOnly(const char* path) noexcept
+{
+    const char* name = path;
+    for (const char* cursor = path; *cursor != '\0'; ++cursor)
+    {
+        if (*cursor == '\\' || *cursor == '/')
+            name = cursor + 1;
+    }
+    return name;
+}
+
 void WriteLog(const LogLevel level, const std::string_view message, const std::source_location location)
 {
     std::ostringstream stream;
-    stream << "[" << ToString(level) << "] " << message << " (" << location.file_name() << ":" << location.line()
-           << ")\n";
+    stream << "[" << ToString(level) << "] " << message << " (" << FileNameOnly(location.file_name()) << ":"
+           << location.line() << ")\n";
 
     const std::string line = stream.str();
     const std::scoped_lock lock{GetLogMutex()};

@@ -269,6 +269,21 @@ class SceneEnvironment final
 // M7-12：RenderDocScope / PixScope 已抽到共享头（M6/M7 两个运行器复用同一实现）。
 } // namespace
 
+// E2：着色器语义哈希给的是**语义身份**，运行包里没有源码树，因此优先取可执行文件旁的
+// shaders/（打包时随 EXE 一起携带），只有那里没有 shaders/ 时才退回构建期源码根。
+fs::path ShaderSemanticRoot()
+{
+    std::array<wchar_t, 4096> buffer{};
+    const std::uint32_t written =
+        static_cast<std::uint32_t>(GetModuleFileNameW(nullptr, buffer.data(), static_cast<DWORD>(buffer.size())));
+    if (written == 0 || written == buffer.size())
+        return fs::path(M610_PROJECT_ROOT);
+    const fs::path beside = fs::path(buffer.data()).parent_path();
+    if (fs::is_directory(beside / "shaders"))
+        return beside;
+    return fs::path(M610_PROJECT_ROOT);
+}
+
 int RunM6Scene(const RhiLaunchOptions& options)
 {
     using namespace Rhi;
@@ -637,7 +652,7 @@ int RunM6Scene(const RhiLaunchOptions& options)
                        << Quoted(Assets::ToHexDigest(scene.assets.ActiveManifestDigest()))
                        << ",\"environmentArtifactSha256\":" << Quoted(scene.environmentHash)
                        << ",\"shaderSemanticSha256\":"
-                       << Quoted(Samples::ShaderSemanticHash(M610_PROJECT_ROOT, std::string(ToString(options.backend))))
+                       << Quoted(Samples::ShaderSemanticHash(ShaderSemanticRoot(), std::string(ToString(options.backend))))
                        << ",\"visibleSequenceHash\":" << Quoted(PacketHash(lastPacket))
                        << ",\"cameraValues\":" << Quoted(Samples::CameraIdentity(lastPacket))
                        << ",\"lightValues\":" << Quoted(Samples::LightIdentity(lastPacket))
@@ -755,7 +770,7 @@ int RunM6Scene(const RhiLaunchOptions& options)
                  << "\"assetManifestSha256\":" << Quoted(Assets::ToHexDigest(scene.assets.ActiveManifestDigest()))
                  << ',' << "\"environmentArtifactSha256\":" << Quoted(scene.environmentHash) << ','
                  << "\"shaderSemanticSha256\":"
-                 << Quoted(Samples::ShaderSemanticHash(M610_PROJECT_ROOT, std::string(ToString(options.backend))))
+                 << Quoted(Samples::ShaderSemanticHash(ShaderSemanticRoot(), std::string(ToString(options.backend))))
                  << ',' << "\"visibleSequenceHash\":" << Quoted(PacketHash(lastPacket)) << ','
                  << "\"cameraValues\":" << Quoted(Samples::CameraIdentity(lastPacket)) << ','
                  << "\"lightValues\":" << Quoted(Samples::LightIdentity(lastPacket)) << ','

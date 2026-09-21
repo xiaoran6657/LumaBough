@@ -45,6 +45,10 @@ def main():
             plan['runtime/'+f.relative_to(a.exe_dir).as_posix()]=f
     for f in sorted(a.scene.rglob('*')):
         if f.is_file(): plan['scene/'+f.relative_to(a.scene).as_posix()]=f
+    # d3d12 的 HLSL 源：运行包需要它才能算着色器语义哈希（EXE 旁的 shaders/d3d12 只有编译产物）。
+    for f in sorted((R / 'shaders/d3d12').rglob('*')):
+        if f.is_file() and f.suffix.lower() in {'.hlsl', '.hlsli'}:
+            plan['runtime/shaders/d3d12/' + f.name] = f
     lic={'licenses/LICENSE':'LICENSE','licenses/THIRD-PARTY-NOTICES.md':'THIRD-PARTY-NOTICES.md','licenses/ASSET-LICENSES.md':'assets/LICENSES.md'}
     for k,v in lic.items(): plan[k]=R/v
     plan['licenses/WinPixEventRuntime-license.txt']=a.pix_src/'license.txt'
