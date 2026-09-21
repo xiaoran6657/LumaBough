@@ -134,6 +134,37 @@ def window_client_rect(hwnd: int) -> tuple[int, int, int, int]:
     return origin.x, origin.y, width - width % 2, height - height % 2
 
 
+def window_work_area(hwnd: int) -> tuple[int, int, int, int] | None:
+    """窗口所在显示器的**工作区**（排除任务栏）；取不到时返回 None。"""
+    class MONITORINFO(ctypes.Structure):
+        _fields_ = [("cbSize", w.DWORD), ("rcMonitor", w.RECT), ("rcWork", w.RECT), ("dwFlags", w.DWORD)]
+
+    u.MonitorFromWindow.argtypes = [w.HWND, w.DWORD]
+    u.GetMonitorInfoW.argtypes = [w.HANDLE, ctypes.POINTER(MONITORINFO)]
+    monitor = u.MonitorFromWindow(hwnd, 2)  # MONITOR_DEFAULTTONEAREST
+    info = MONITORINFO()
+    info.cbSize = ctypes.sizeof(MONITORINFO)
+    if not monitor or not u.GetMonitorInfoW(monitor, ctypes.byref(info)):
+        return None
+    work = info.rcWork
+    return work.left, work.top, work.right - work.left, work.bottom - work.top
+
+
+def clamp_to_work_area(rect: tuple[int, int, int, int],
+                       work: tuple[int, int, int, int] | None) -> tuple[int, int, int, int]:
+    """把取景框裁进工作区：客户区比工作区高时（窗口延伸到任务栏下方）会抓到任务栏。"""
+    if work is None:
+        return rect
+    left, top, width, height = rect
+    wl, wt, ww, wh = work
+    x0, y0 = max(left, wl), max(top, wt)
+    x1, y1 = min(left + width, wl + ww), min(top + height, wt + wh)
+    if x1 - x0 < 64 or y1 - y0 < 64:
+        raise RuntimeError("capture rectangle does not fit inside the monitor work area")
+    width, height = x1 - x0, y1 - y0
+    return x0, y0, width - width % 2, height - height % 2
+
+
 def start_capture(ffmpeg: Path, fps: int, output: Path, rect: tuple[int, int, int, int]) -> subprocess.Popen:
     left, top, width, height = rect
     # ddagrab 输出 d3d11 硬件帧，必须 hwdownload 后才能进软件编码链。
@@ -216,6 +247,23 @@ def temporary_segment(profile: list[tuple[float, float]], minimum_seconds: float
     return longest[0], longest[-1]
 
 
+MIN_CUE_SECONDS = 1.5
+
+
+def reflow_cues(times: dict) -> dict:
+    """E5：短视频里 reject 一类的窗口只有 0.05–0.3 秒，正常播放读不清；统一补到最短停留，
+    并把后续字幕顺延（顺序不变、不重叠）。"""
+    out: dict = {}
+    cursor = 0.0
+    for key, _text in CUES:
+        start, end = times[key]
+        start = max(start, cursor)
+        end = max(end, start + MIN_CUE_SECONDS)
+        out[key] = (start, end)
+        cursor = end
+    return out
+
+
 def subtitle_filter(times: dict, font: Path, backend: str) -> str:
     font_path = str(font).replace("\\", "/").replace(":", "\\:")
     parts = []
@@ -279,7 +327,10 @@ def main(argv: list[str] | None = None) -> int:
             if time.monotonic() >= deadline:
                 raise SystemExit("demo window did not reach foreground; refusing to record a covered window")
             time.sleep(0.5)
-        capture_rect = window_client_rect(hwnd)
+        client_rect = window_client_rect(hwnd)
+        capture_rect = clamp_to_work_area(client_rect, window_work_area(hwnd))
+        if capture_rect != client_rect:
+            print(f"capture rect clamped to the monitor work area: {client_rect} -> {capture_rect}", flush=True)
         minimize_own_console()
         capture = start_capture(options.ffmpeg, options.fps, raw, capture_rect)
         process.wait()
@@ -313,6 +364,7 @@ def finish(options: argparse.Namespace, recipe: dict, run_dir: Path, raw: Path, 
             "reject": (temp_start + 1.2, temp_end),
             "restored": (temp_end, 10_000.0),
         }
+    times = reflow_cues(times)
     # 目标尺寸固定为 1920×1080：gdigrab 在 DPI 缩放下抓的是物理像素（本机 175% → 3360×1890）。
     filters = f"scale=1920:1080:flags=lanczos,setsar=1,{subtitle_filter(times, options.font, options.backend.upper())}"
     encode = [str(options.ffmpeg), "-y", "-hide_banner", "-loglevel", "warning", "-i", str(raw),
@@ -329,6 +381,7 @@ def finish(options: argparse.Namespace, recipe: dict, run_dir: Path, raw: Path, 
         "rawBytes": raw.stat().st_size, "videoBytes": final.stat().st_size,
         "fps": options.fps, "dpiAwareness": DPI_AWARENESS,
         "cueTimesSeconds": {key: list(value) for key, value in times.items()},
+        "cueMinSeconds": MIN_CUE_SECONDS,
         "captureRectPhysicalPixels": ({"left": capture_rect[0], "top": capture_rect[1],
                                        "width": capture_rect[2], "height": capture_rect[3]}
                                       if capture_rect else None),

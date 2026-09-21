@@ -361,8 +361,8 @@
     {
       "path": "cmake/MiniEngineWarnings.cmake",
       "category": "cmake",
-      "size": 523,
-      "sha256": "a108828501f988023aacbea509832a3824e87f0c5b17e43909d004d5e6808f1b",
+      "size": 778,
+      "sha256": "1dab66684c3f03de8bd6a31b1f5e05f0bcc63871d02f1cdce8305f09f181be63",
       "sourcePath": "cmake/MiniEngineWarnings.cmake",
       "sourceSha256": "a108828501f988023aacbea509832a3824e87f0c5b17e43909d004d5e6808f1b",
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
@@ -3565,8 +3565,8 @@
     {
       "path": "samples/rhi_sandbox/CMakeLists.txt",
       "category": "samples",
-      "size": 3300,
-      "sha256": "625e818caf3054cc096ca487773d507548f8ac7f5f5b06422518d15677440701",
+      "size": 3491,
+      "sha256": "d449067a3b17cfd1cc2416e7f51e47f256ad165e93575206d4e3260f0c0b4a96",
       "sourcePath": "samples/rhi_sandbox/CMakeLists.txt",
       "sourceSha256": "c1725d7a75c5ec4f97926aace1d9d8e1ee02853320fb88825fafc5cdc966556c",
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
@@ -3583,8 +3583,8 @@
     {
       "path": "samples/rhi_sandbox/M6SceneRunner.cpp",
       "category": "samples",
-      "size": 42281,
-      "sha256": "be5ba3a5da9c60792a0cd76e685f994dad5a16db3dad54677d2a3e5f6f4b44c8",
+      "size": 42263,
+      "sha256": "52a5b95b1e77e4448ba0be3f2b341ba9329674720113d96987ae0dee99766466",
       "sourcePath": "samples/rhi_sandbox/M6SceneRunner.cpp",
       "sourceSha256": "0c5ae119690503f0432f7981d67b14845c38a2e4fe9d18809b1808ce79a6004d",
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
@@ -3601,8 +3601,8 @@
     {
       "path": "samples/rhi_sandbox/M7SceneRunner.cpp",
       "category": "samples",
-      "size": 141868,
-      "sha256": "2aa1bf188b560bdaf99c7c75fc54db7389593be2dbb54d2a8c9505643c43db02",
+      "size": 141872,
+      "sha256": "c2d8da6f1d2c29141ee4a5ecd5669d3ea2f36b5a0ca73f4989abe96f43e18734",
       "sourcePath": "samples/rhi_sandbox/M7SceneRunner.cpp",
       "sourceSha256": "06b4323f3b16969522111892cf633164d4a0fcb5f726dbcae1542ab5aaba934f",
       "reason": "明确逐文件审阅；实验源码/工具、统计测试或去标识摘要与状态文档；不含原始日志/机器路径/二进制；用户授权当前源码新性能实验；仅本地候选、受全部发布门约束"
@@ -3628,8 +3628,8 @@
     {
       "path": "samples/rhi_sandbox/RhiSelection.h",
       "category": "samples",
-      "size": 7083,
-      "sha256": "0fd849e7281a1d4cbe7fac8c951300fd86cffd19e87aea611ab0bede9be1ba75",
+      "size": 7884,
+      "sha256": "f86580902a05b46f2617db2f9fc9ae5a858a77e3afafbe4babb0e1b11730cc54",
       "sourcePath": "samples/rhi_sandbox/RhiSelection.h",
       "sourceSha256": "02e8ac7e174e1e6cb726b17d022b890226edb41918a90a28ac96ebdbbe441d5a",
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
@@ -6625,8 +6625,8 @@
     {
       "path": "tools/portfolio/validate_publication.py",
       "category": "tools",
-      "size": 10568,
-      "sha256": "d82b4576e6e97b4794fc2e28c0b5fdfdede8f4eda4e2f783fedf9553faeaafca",
+      "size": 11355,
+      "sha256": "90300ec7e7c6ae9bba6e6de7c284e5b791948789e33f4588ef3a43dc88a5523c",
       "sourcePath": null,
       "sourceSha256": null,
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
@@ -6834,8 +6834,8 @@
       "category": "tools",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 17173,
-      "sha256": "b341d6c684f5fc657678cc0b2c58c7d0a35770da860b9c40cf29f446e26fa548",
+      "size": 19519,
+      "sha256": "79133cdc3caecd744fe3314448ba1ce067abeff315cac1f0dd6edf43424dcb37",
       "reason": "D"
     },
     {
@@ -6852,8 +6852,8 @@
       "category": "tools",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 7811,
-      "sha256": "6dc84e03e4c05f12ca32ee91ee653998818324fb004d68038759112b379ce6cf",
+      "size": 10070,
+      "sha256": "6ee4f22439c2b602b2965a46a8a0f885545ab8408c878dcae13048f686ea9b50",
       "reason": "E2新增：候选运行包打包器（显式输入、fresh 输出、干净工作树闸门、排除 PDB/工具链）；仅本地候选"
     },
     {
@@ -6915,8 +6915,8 @@
       "category": "tests",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 4183,
-      "sha256": "43c81f014fc2ad4143f529bd0496ef4d3c23512744f186cfec0a2b95036e0dba",
+      "size": 4880,
+      "sha256": "d664fd61e63f1e6c67c78d0ba4a24465a23dc3559906eccdbd74e9bf99544e82",
       "reason": "E5新增：候选门字节核对（manifest/SHA256SUMS/EXE 不一致必须报错）"
     },
     {

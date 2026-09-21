@@ -16,7 +16,12 @@ from validate_import import MANIFEST, relative, validate_tree, validate_evidence
 E4_RESULTS = "docs/evidence/E4-RESULTS.json"
 PRIVACY_BASELINE = "docs/evidence/PRIVACY-DISPOSITIONS.json"
 PRIVACY_SCANNER = "tools/portfolio/scan_privacy.py"
-BUILD_SENSITIVE = ("engine/", "samples/", "shaders/", "assets/")
+# 构建敏感输入：改动这些必须在 builtAtCommit 之后重建（文档与 portfolio 工具不影响 EXE/场景）。
+BUILD_SENSITIVE_PREFIXES = ("engine/", "samples/", "shaders/", "assets/", "tests/", "cmake/",
+                            "tools/shader_compiler/", "tools/asset_cooker/")
+BUILD_SENSITIVE_FILES = ("CMakeLists.txt", "CMakePresets.json")
+# 包内免逐文件校验的清单文件只允许这两个（包自身引用自己不可行）。
+SELF_EXCLUDED = ("PACKAGE-MANIFEST.json", "SHA256SUMS.txt")
 
 def links(root, files):
     errors = []
@@ -104,10 +109,14 @@ def validate_package_files(files):
             errors.append("package file does not match its manifest: " + name)
         if sums.get(name) != row["sha256"]:
             errors.append("SHA256SUMS.txt disagrees with the manifest: " + name)
+    declared = tuple(manifest.get("selfExcluded", []))
+    if declared != SELF_EXCLUDED:
+        # 免校验名单由门禁固定，包不能自己扩大（否则任何无哈希文件都能借它绕过）。
+        errors.append("selfExcluded must be exactly " + ", ".join(SELF_EXCLUDED) + "; got " + ", ".join(declared))
     for name in files:
-        if name not in manifest["files"] and name not in manifest.get("selfExcluded", []):
+        if name not in manifest["files"] and name not in declared:
             errors.append("package file is not covered by the manifest: " + name)
-    for name in manifest.get("selfExcluded", []):
+    for name in declared:
         if name not in files:
             errors.append("selfExcluded file is missing: " + name)
     exe = files.get("runtime/MiniEngineSandbox.exe")
@@ -132,7 +141,8 @@ def validate_candidate(root, data, package):
     else:
         changed = subprocess.run(["git", "-C", str(root), "diff", "--name-only", built + ".." + head],
                                  capture_output=True, text=True).stdout.split()
-        stale = [c for c in changed if c.startswith(BUILD_SENSITIVE)]
+        stale = [c for c in changed
+                 if c.startswith(BUILD_SENSITIVE_PREFIXES) or c in BUILD_SENSITIVE_FILES]
         if stale:
             errors.append("runtime inputs changed after builtAtCommit: " + ", ".join(stale[:5]))
     scan = subprocess.run([sys.executable, str(root / PRIVACY_SCANNER), "--source-set", "--git",

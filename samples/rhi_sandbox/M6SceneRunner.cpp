@@ -277,7 +277,7 @@ fs::path ShaderSemanticRoot(const std::string_view backend)
     const std::uint32_t written =
         static_cast<std::uint32_t>(GetModuleFileNameW(nullptr, buffer.data(), static_cast<DWORD>(buffer.size())));
     if (written == 0 || written == buffer.size())
-        return fs::path(M610_PROJECT_ROOT);
+        return ProjectRootFallback();
     const fs::path beside = fs::path(buffer.data()).parent_path();
     // 只有 EXE 旁真的带了该后端的 HLSL 源，才算"自足"；否则退回源码树（开发机）。
     for (const auto& entry : fs::directory_iterator(beside / "shaders" / backend, fs::directory_options::skip_permission_denied))
@@ -288,7 +288,7 @@ fs::path ShaderSemanticRoot(const std::string_view backend)
         if (extension == ".hlsl" || extension == ".hlsli")
             return beside;
     }
-    return fs::path(M610_PROJECT_ROOT);
+    return ProjectRootFallback();
 }
 
 int RunM6Scene(const RhiLaunchOptions& options)
@@ -306,7 +306,7 @@ int RunM6Scene(const RhiLaunchOptions& options)
     if (!directory.empty())
         fs::create_directories(directory);
     const fs::path manifest =
-        fs::absolute(options.manifest.empty() ? fs::path(M610_PROJECT_ROOT) / "out/m4-09/scene/manifest.json"
+        fs::absolute(options.manifest.empty() ? ProjectRootFallback() / "out/m4-09/scene/manifest.json"
                                               : fs::path(options.manifest));
     Scene scene(manifest);
     InputState input;

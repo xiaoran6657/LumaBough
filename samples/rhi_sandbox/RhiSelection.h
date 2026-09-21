@@ -1,11 +1,32 @@
 #pragma once
 #include <MiniEngine/Rhi/RhiFactory.h>
 #include <cstdint>
+#include <cstdlib>
+#include <filesystem>
 #include <span>
 #include <string>
 
 namespace MiniEngine::Sandbox
 {
+// E5：不再把构建机的绝对工程路径编进二进制（二进制字符串审查的整改）。
+// 开发机需要覆盖时用环境变量 M610_PROJECT_ROOT；未设置时返回空路径（即按当前工作目录解析）。
+inline std::filesystem::path ProjectRootFallback()
+{
+#if defined(_MSC_VER)
+    char* buffer = nullptr;
+    std::size_t size = 0;
+    std::filesystem::path value;
+    if (_dupenv_s(&buffer, &size, "M610_PROJECT_ROOT") == 0 && buffer != nullptr && *buffer != '\0')
+        value = std::filesystem::path(buffer);
+    std::free(buffer);
+    return value;
+#else
+    if (const char* value = std::getenv("M610_PROJECT_ROOT"); value != nullptr && *value != '\0')
+        return std::filesystem::path(value);
+    return {};
+#endif
+}
+
 struct RhiLaunchOptions final
 {
     Rhi::RhiBackend backend = Rhi::RhiBackend::D3D12;

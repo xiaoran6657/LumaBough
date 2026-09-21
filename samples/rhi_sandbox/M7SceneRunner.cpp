@@ -1470,7 +1470,7 @@ int RunM7Scene(const RhiLaunchOptions& options)
     ME_PROFILE_THREAD("Main");
     Profiling::SetDetailEnabled(options.profileDetail);
 
-    const fs::path projectRoot = M610_PROJECT_ROOT;
+    const fs::path projectRoot = ProjectRootFallback();
     const fs::path cameraPathFile = options.cameraPath.empty() ? projectRoot / "assets/tests/m7/fixed-camera.bin"
                                                                : fs::absolute(options.cameraPath);
     const fs::path streamScriptFile = options.streamScript.empty()

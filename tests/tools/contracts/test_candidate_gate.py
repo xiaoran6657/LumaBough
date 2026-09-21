@@ -68,6 +68,18 @@ class CandidateGateTests(unittest.TestCase):
         self.assertTrue(any("does not match exeSha256" in e for e in errors))
 
 
+    def test_package_cannot_widen_the_self_excluded_list(self):
+        exe = b"exe-bytes"
+        files = dict([blob("runtime/MiniEngineSandbox.exe", exe), blob("extra.bin", b"no hash for me")])
+        rows, sums, exe_sha = self.manifest_for(files, hashlib.sha256(exe).hexdigest())
+        rows.pop("extra.bin")
+        files["SHA256SUMS.txt"] = sums
+        files["PACKAGE-MANIFEST.json"] = json.dumps({
+            "files": rows, "exeSha256": exe_sha,
+            "selfExcluded": ["PACKAGE-MANIFEST.json", "SHA256SUMS.txt", "extra.bin"]}).encode()
+        errors, _ = validate_package_files(files)
+        self.assertTrue(any("selfExcluded must be exactly" in e for e in errors))
+
     def test_reader_status_semantics(self):
         self.assertEqual([], e4_reader_errors({"reader": {"status": "passed"}}))
         self.assertEqual([], e4_reader_errors({"reader": {"status": "deferred-by-owner"}}))

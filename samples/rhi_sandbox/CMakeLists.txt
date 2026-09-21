@@ -25,7 +25,9 @@ execute_process(COMMAND git rev-parse --verify HEAD WORKING_DIRECTORY "${PROJECT
 if(NOT revision_result EQUAL 0)
     set(m610_source_commit "uncommitted")
 endif()
-target_compile_definitions(MiniEngineSandbox PRIVATE M610_PROJECT_ROOT="${PROJECT_SOURCE_DIR}"
+# E5：不再定义 M610_PROJECT_ROOT——它会把构建机绝对路径编进 EXE（二进制字符串审查整改）。
+# 开发机需要覆盖时在运行时设同名环境变量；见 RhiSelection.h 的 ProjectRootFallback()。
+target_compile_definitions(MiniEngineSandbox PRIVATE
     M610_BUILD_CONFIG="$<CONFIG>" M610_SOURCE_COMMIT="${m610_source_commit}")
 
 # M6-10：环境预计算复用 legacy 的固定 HLSL/DXIL 和完整调试包。
