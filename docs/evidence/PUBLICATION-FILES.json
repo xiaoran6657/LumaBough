@@ -535,8 +535,8 @@
       "reason": "D批次记录：双后端anchor Capture、工具链身份与阻断项；已去除机器/私人路径；原始Capture与视频留本地不进本集合；仅本地候选，受全局发布门约束",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 15926,
-      "sha256": "cbd990a057892e519ea909a1d7069d72b2d51d3515d002e719b07103f287209e"
+      "size": 16114,
+      "sha256": "9424b0f10f6421fcc6af64bae064a0105cded4605e6d5bd10fa4e7cd9a2661b4"
     },
     {
       "path": "docs/evidence/CLAIM-LEDGER.csv",
@@ -1326,8 +1326,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 4132,
-      "sha256": "7f1b9d9fc7cd42fed559e52bf06998b33b290cd5b9f1d3021b9a08360aeae019",
+      "size": 4152,
+      "sha256": "99cca5868a150429f36ad0b59d062d8a5aedb4d5f399b4134bf3ef4bd8b24c99",
       "reason": "所有者授权修订P/D/E/F串行任务；明确逐文件审阅的任务/导航/状态文档，不包含原始产物；仅本地候选，受发布门约束"
     },
     {
