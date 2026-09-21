@@ -535,8 +535,8 @@
       "reason": "D批次记录：双后端anchor Capture、工具链身份与阻断项；已去除机器/私人路径；原始Capture与视频留本地不进本集合；仅本地候选，受全局发布门约束",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 15369,
-      "sha256": "587d2bb8edf2529d425433586991ac9d168b8e82cd8ef7edf2367a7c1829453a"
+      "size": 15532,
+      "sha256": "25b68ab02db0512ba940c10c084bce7048a7f90a777ba8c38663d1df5cc5f587"
     },
     {
       "path": "docs/evidence/CLAIM-LEDGER.csv",
@@ -6837,6 +6837,15 @@
       "size": 17173,
       "sha256": "b341d6c684f5fc657678cc0b2c58c7d0a35770da860b9c40cf29f446e26fa548",
       "reason": "D"
+    },
+    {
+      "path": "docs/evidence/BATCH-E.md",
+      "category": "docs",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 1295,
+      "sha256": "6ee7642bd169d6dc5930c43623b77b7a0a6bd006ed96f2b40a6e787f6eb3b9dd",
+      "reason": "E批次记录：候选范围与提交身份、打包、隐私与独立运行；不含机器私有信息；仅本地候选"
     }
   ],
   "pending": [],
