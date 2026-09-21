@@ -1,7 +1,7 @@
 """E2：候选运行包打包器（可复用、输入显式、默认拒绝）。
 只带"运行必需 + 许可与说明"：不复制开发工具、SDK、资产源树、PDB、Capture 或视频。"
 """
-import argparse,hashlib,json,shutil,subprocess,sys
+import argparse,hashlib,json,shutil,subprocess,sys,zipfile
 from pathlib import Path
 CRT=['msvcp140.dll','msvcp140_atomic_wait.dll','vcruntime140.dll','vcruntime140_1.dll']
 def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
@@ -20,6 +20,7 @@ def main():
     ap.add_argument('--crt-dir',type=Path,default=Path('C:/Program Files (x86)/Microsoft Visual Studio/18/BuildTools/VC/Redist/MSVC/14.51.36231/x64/Microsoft.VC145.CRT'))
     ap.add_argument('--pix-src',type=Path,default=R/'out/build/windows-msvc-debug/_deps/miniengine_pix-src')
     ap.add_argument('--built-at',default=None,help='构建该二进制的提交（默认=当前 HEAD）')
+    ap.add_argument('--zip',type=Path,default=None,help='同时产出确定性交付 ZIP')
     a=ap.parse_args()
     out=a.output.resolve()
     if out.exists(): raise SystemExit('output must be fresh: '+str(out))
@@ -78,6 +79,15 @@ def main():
     (out/'PACKAGE-MANIFEST.json').write_text(json.dumps(man,ensure_ascii=False,indent=2)+chr(10),encoding='utf-8')
     sums=chr(10).join(v['sha256']+'  '+k for k,v in files.items())+chr(10)
     (out/'SHA256SUMS.txt').write_text(sums,encoding='utf-8')
+    if a.zip:
+        # 确定性交付 ZIP：排序 + 固定时间戳，条目名与包内相对路径一致（扫描/清单同一套键）。
+        names=sorted(p.relative_to(out).as_posix() for p in out.rglob('*') if p.is_file())
+        with zipfile.ZipFile(a.zip,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
+            for name in names:
+                info=zipfile.ZipInfo(name,date_time=(2026,1,1,0,0,0))
+                info.compress_type=zipfile.ZIP_DEFLATED; info.external_attr=0o644<<16
+                z.writestr(info,(out/name).read_bytes())
+        print(json.dumps({'zip':str(a.zip),'zipBytes':Path(a.zip).stat().st_size,'zipSha256':sha(a.zip)},ensure_ascii=False))
     print(json.dumps({'files':len(files),'bytes':sum(v['size'] for v in files.values()),'commit':commit,'exeSha256':exe_sha},ensure_ascii=False))
     return 0
 if __name__=='__main__': sys.exit(main())

@@ -6852,8 +6852,8 @@
       "category": "tools",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 7002,
-      "sha256": "b191b39909d246446bce560e75c86b57a01d13f7a7e5f9d071e8ade23fe3a524",
+      "size": 7811,
+      "sha256": "6dc84e03e4c05f12ca32ee91ee653998818324fb004d68038759112b379ce6cf",
       "reason": "E2新增：候选运行包打包器（显式输入、fresh 输出、干净工作树闸门、排除 PDB/工具链）；仅本地候选"
     },
     {
