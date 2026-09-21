@@ -7,11 +7,14 @@
 
 | 项 | 值 |
 | --- | --- |
-| ZIP | `out/e-batch/package/lumabough-b7012b7-v5.zip`，150 文件，3,455,635 B |
-| ZIP SHA-256 | `668b88bf7fd912904b54cda09b87751e5c04c44a8b61aa0eef8af69807441280` |
-| EXE SHA-256 | `9dd31e66ee472c7ced99985f4593d8bb0bf6f82a6abd4a9a6a0369d7ced6e709` |
-| 二进制内嵌提交 | `b7012b7168cbd423addb68ec27c7c6845a9bfcac` |
+| ZIP | `out/e-batch/package/lumabough-0403d20-v7.zip`（v5 及更早的包**不要再用**：换机必失败） |
+| EXE SHA-256 | `7e75b7767d0b4273b4b77c8d14e0e5ded682b9538581265f16951e17cffc6f28` |
+| 二进制内嵌提交 | `0403d203419694cd185d3223ba77c75175456bcf` |
 | 场景 manifest SHA-256 | `4ae6eda980221395a80e3bb03374d051a07b8cd197f8a5c0b55097f427ba6260` |
+
+**第一次 E4 失败的原因（已修复，记录在此避免重踩）**：旧包把构建机的绝对 `.dxil/.dxbc` 路径写进了 EXE，
+换机后 `shader artifact missing`。修复后 `runtime\shaders\d3d11` 里应有 `.dxbc`、`runtime\shaders\d3d12` 里应有 `.dxil`——
+解压后请先确认这两点再跑。
 
 ## 1. 第二台机器的最低要求
 
@@ -103,6 +106,11 @@ Rename-Item .\runtime\shaders\d3d11_off d3d11
 | 2.5 换目录退出码 | |
 | 2.6 负例错误文本（可选） | |
 | 异常与截图 | |
+
+补充两条本轮踩到的坑：
+
+- 解压后确认 `runtime\shaders\d3d11` 有 `.dxbc`、`runtime\shaders\d3d12` 有 `.dxil`；缺了就说明拿到的是旧包。
+- 程序化捕获（`--pix-capture` / `--renderdoc-capture`）要求**目标目录先存在**，否则应用启动即退出且没有捕获文件。
 
 失败时请一并提供：完整 stdout/stderr、`out-run-*\metadata.json`、出错命令原文。
 

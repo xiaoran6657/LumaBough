@@ -30,3 +30,9 @@
 - E3 未决：116 项处置需所有者 approved；详细方法与逐项理由见 [隐私终审](PRIVACY-REVIEW.md) 与 [处置基线](PRIVACY-DISPOSITIONS.json)
 - E3 交付形态：ZIP 150 文件 / 3,455,635 B / SHA-256 668b88bf7fd912904b54cda09b87751e5c04c44a8b61aa0eef8af69807441280（打包器 --zip 确定性产出）；ZIP 与目录字节都扫过，findings 同键
 - E3 通过（2026-09-21）：所有者批准 48 个唯一键（116 项）全部处置；扫描器退出码 0（未裁定 0、待批准 0）
+- E4 第一次（第二台机器：Windows 11 + RTX 3090 Ti，管理员 PowerShell）：解压与 ZIP 哈希校验通过；两个后端都 MiniEngineSandbox failed: shader artifact missing、退出码 2、无产物。**E4 未通过**
+- 根因（E4 价值所在）：生成的 M604ShaderFixtures.h 把构建机绝对路径写进 EXE（out/build/.../revisions/<rev>/<backend>/<name>），换机后文件不存在。同机的包内运行 PASS 因此是假通过（构建树仍在），此前已标注的隔离限制被证实
+- 修复：生成器改发 shaders/<backend>/<name> 并把运行期字节码平铺发布（d3d11 的 .dxbc 原先只在 revisions 里）；ReadPackageBytes 以 EXE 目录解析，失败信息带完整路径；CMake POST_BUILD 把平铺产物复制到 EXE 旁
+- 修复后隔离验证：EXE 内 revisions/m6-04 引用数 0；把构建树 shaders/ 整个改名后，包内双后端 60 帧与 1202 帧全部 PASS（graphHash 0xBC2FC5CF0A38B0FD）
+- 修复后身份与重跑：EXE 7e75b7767d0b4273b4b77c8d14e0e5ded682b9538581265f16951e17cffc6f28（内嵌 0403d20）；彩排 6/6；D3D11 Capture Screenshot=798、D3D12 Capture Screenshot=677、两次运行 warningErrors=0 且 anchor.ppm 与 color.ppm 逐字节一致；成片重录 D3D12 216e9b44…、D3D11 3a1aea63…
+- E4 第二次：待所有者用修复后的 ZIP 重跑（步骤见 E4 操作手册；程序化捕获要求目标目录先存在，否则应用启动即退出，本轮踩到并已记入手册）
