@@ -6969,8 +6969,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 4468,
-      "sha256": "18f5e6938aa1b79e432088fed18d44ef9bf4e9e1729c4fc0a4380918d5b0481a",
+      "size": 6118,
+      "sha256": "dd14b3f29d933a1ec0dd5b39e7306b1f8292a5018baa8d0b2085258cab5d86cd",
       "reason": "F新增：远端/提交/tag/Release/附件哈希/tree核验/匿名核验结果与环境备注"
     },
     {

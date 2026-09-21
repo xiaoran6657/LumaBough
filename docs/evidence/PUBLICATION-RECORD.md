@@ -43,9 +43,12 @@ https://github.com/xiaoran6657/LumaBough/releases/tag/v0.1.0-preview 。
 提交时的原始草稿只在本地 `out/f5/release-notes.md` 留存（未纳入 Git，不随仓库发布）。
 文案内容包含附件哈希、已验证范围、未验证项（无真实读者走查）、不含内容与复跑命令。
 
-## 匿名核验（本轮）
+## 匿名核验
 
-方法：独立 HTTP 客户端，**无登录、无认证头、无 Cookie，不使用 gh**；只取状态码与内容类型，不只看 200。
+方法：独立 HTTP 客户端，**无登录、无认证头、无 Cookie，不使用 gh**；核对状态码、内容类型与实际内容，
+不只看 200。两轮分别对应可见性变更前与变更后。
+
+### 变更前（private）
 
 | 目标 | 结果 | 说明 |
 | --- | --- | --- |
@@ -53,16 +56,44 @@ https://github.com/xiaoran6657/LumaBough/releases/tag/v0.1.0-preview 。
 | Release 页 | **404** | 同上 |
 | 附件下载 URL | **404** | 同上 |
 
-即：**已核实"当前未被匿名访问"**，但 F3 要求的"匿名可浏览 + 实际下载 + 哈希与 smoke 核验"
-在 private 下无法完成——它不是失败，而是等待转 public 的授权。
+### 变更后（public，本轮完成）
+
+| 目标 | 结果 |
+| --- | --- |
+| 仓库主页 | 200 `text/html` |
+| README 预览图（raw） | 200 `image/png` 324,110 B |
+| Release 页 | 200 `text/html` |
+
+匿名**实际下载**并与本地候选逐一比对：
+
+| 附件 | 下载后 SHA-256 | 与本地一致 |
+| --- | --- | --- |
+| `lumabough-5d320c7-v8.zip` | `a94e41dbbb4438d82c1752734f8fd60cc224e7b95a63b6fa39c2e44fe96a5132` | ✓ |
+| `lumabough-demo-d3d12.mp4` | `542e3b3e829afdf81b706000b9c913a22212eda10b6ad790002f3cc1601517af` | ✓ |
+| `lumabough-demo-d3d11.mp4` | `1602ca64ef79af1f71ae10958c50826b3e61a217ade04ef5560b40d71ced95c2` | ✓ |
+| `lumabough-performance-evidence-v1.zip` | `c33c5b39d05b77b5587acdfe85b9131e377aeb48828c61ebe21acc0c10489ff5` | ✓ |
+
+下载包解压到**新目录**后的核验：
+
+- 按包内 `SHA256SUMS.txt` 校验：158 个受覆盖文件**全部匹配**，多出的 2 个是包内标注的自排除清单文件
+- 在新解压目录运行：D3D12 1202 帧 PASS、D3D11 1202 帧 PASS、D3D12 `--exercise-changes` 1202 帧 PASS
+  （末行 `complete-clean-exit`）
+- 关键身份：`graphHash 0xBC2FC5CF0A38B0FD`、`commandHash d87bf3a6…`、
+  `visibleSequenceHash 0x61E54BF2EB73DB0E`、`warningErrors 0`、EXE 内嵌 `sourceCommit=5d320c7`
+  ——与第一台、第二台机器的记录一致
+
+公开时间与方法：2026-09-22，PowerShell `Invoke-WebRequest`（无凭据、无 Cookie、不使用 gh），
+产物保留在 `out/f5/anon/`（下载包、附件与新解压目录的运行输出）。
 
 ## 待授权 / 未完成
 
-- [ ] 转 public（唯一阻断项；授权后我做匿名下载、哈希比对与新解压目录 smoke）
-- [ ] 匿名下载 ZIP 并与 `a94e41db…` 比对、按 `SHA256SUMS.txt` 校验逐文件
-- [ ] 匿名核对 README 图片与链接、Release 页、每个附件
+- [x] 转 public（已按授权执行；`gh repo edit --visibility public --accept-visibility-change-consequences`）
+- [x] 匿名下载 ZIP 并与 `a94e41db…` 比对、按 `SHA256SUMS.txt` 校验逐文件
+- [x] 匿名核对 README 图片与链接、Release 页、每个附件
+- [ ] **2 个处置键待批准**（`PUBLICATION-RECORD.md` 与 `RELEASE-NOTES-v0.1.0-preview.md` 里的账号/仓库地址，
+  均为 `proposed`；批准前候选门仍会报待批准项）
 - [ ] 真实读者走查仍按所有者决定延后（不因发布而改变声明）
-- [ ] 路线图 F 行在以上完成后才可标"完成"
+- [ ] 路线图 F 行在上述处置键批准后标"完成"
 
 ## 事故处理约定
 
