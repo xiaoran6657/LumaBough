@@ -19,4 +19,8 @@ C++20、四空格、Allman braces、UTF-8。面向所有者的 docs 用简体中
 不要自动批准扫描报告中的条目。不要复制旧 Git 历史、内部工作流或私人记录。
 许可、隐私和依赖门未通过前不能公开。commit / push / 发布以用户本轮授权为准。
 
-最新实际状态见 [新性能实验记录](docs/evidence/NEW-PERFORMANCE.md)：001/002 均 INVALID，新比较仍 BLOCKED；禁止拼接或覆盖旧正式组。C 历史身份缺口保持原样，第三组尚未启动。
+最新实际状态见 [新性能实验记录](docs/evidence/NEW-PERFORMANCE.md)：001/002/003 均 INVALID，
+lb-current-004 取得有效组（1 INCONCLUSIVE + 3 REJECTED，无 ACCEPTED），**不宣称当前加速**；
+禁止拼接或覆盖旧正式组。C 历史身份缺口保持原样。
+（本段为当前结论；文件中其它位置若出现"未启动第三组"等表述，属当时快照，见
+[批次记录](docs/evidence/BATCH-E.md) 与 [候选裁定](docs/evidence/CANDIDATE-REVIEW.md)。）

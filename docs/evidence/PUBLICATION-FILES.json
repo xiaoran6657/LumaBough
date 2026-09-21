@@ -64,8 +64,8 @@
     {
       "path": "AGENTS.md",
       "category": "AGENTS.md",
-      "size": 1795,
-      "sha256": "291c1e24a4f130f44c34ede1bfc9a9447f307cbb021374ce4f12fda56ae5022b",
+      "size": 2079,
+      "sha256": "66defe30241e786ef015e5fa0a744505a3db088283045e72ad72d53eefc7d6fd",
       "sourcePath": "AGENTS.md",
       "sourceSha256": "b37032a0e6015007e2612af01cd8958943f5fde0d63f5fc0bd0bcecdce513d88",
       "reason": "所有者授权修订P/D/E/F串行任务；明确逐文件审阅的任务/导航/状态文档，不包含原始产物；仅本地候选，受发布门约束"
@@ -535,8 +535,8 @@
       "reason": "D批次记录：双后端anchor Capture、工具链身份与阻断项；已去除机器/私人路径；原始Capture与视频留本地不进本集合；仅本地候选，受全局发布门约束",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 16114,
-      "sha256": "9424b0f10f6421fcc6af64bae064a0105cded4605e6d5bd10fa4e7cd9a2661b4"
+      "size": 16504,
+      "sha256": "5347ddbc402e8d35d3ffe0e602f57e74bd2237ab37f4f0d928c0a826a71cbbb2"
     },
     {
       "path": "docs/evidence/CLAIM-LEDGER.csv",
@@ -595,8 +595,8 @@
     {
       "path": "docs/evidence/LICENSING-REVIEW.md",
       "category": "docs",
-      "size": 1168,
-      "sha256": "eaf45ba9fa027d6ea408dadeadd29018ef40aeae8826b5985dae4d340c790c59",
+      "size": 2446,
+      "sha256": "21dd9bc3bfeb177c30b673afd8fb97c6ede9228398f29925183c6f319035dca2",
       "sourcePath": null,
       "sourceSha256": null,
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
@@ -615,8 +615,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 14853,
-      "sha256": "f482c1a0b032f0e01caa9af450759dec22cc800c88a0a74a8cf7df6e1931c747",
+      "size": 15464,
+      "sha256": "08e25cb456a7de2f489e13b1a47f4d1574a1631b20c6c1395cd4f5cc502d3a32",
       "reason": "明确逐文件审阅；实验源码/工具、统计测试或去标识摘要与状态文档；不含原始日志/机器路径/二进制；用户授权当前源码新性能实验；仅本地候选、受全部发布门约束"
     },
     {
@@ -6625,8 +6625,8 @@
     {
       "path": "tools/portfolio/validate_publication.py",
       "category": "tools",
-      "size": 11355,
-      "sha256": "90300ec7e7c6ae9bba6e6de7c284e5b791948789e33f4588ef3a43dc88a5523c",
+      "size": 11692,
+      "sha256": "cb83c2dce8aeb9d68cd6e55564d2c12d27ae4425f2e38e9b0289bb69d5a5a8a3",
       "sourcePath": null,
       "sourceSha256": null,
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
@@ -6843,8 +6843,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 8381,
-      "sha256": "312017e93b5c2e88938b7793b3c5283ad22271797cc2a4155c7b3ff77fa6f7b8",
+      "size": 10299,
+      "sha256": "675650076d48ebd17b0f91a31824ec7d8df0e1f8866a487296c8301cd310f68d",
       "reason": "E批次记录：候选范围与提交身份、打包、隐私与独立运行；不含机器私有信息；仅本地候选"
     },
     {
@@ -6897,8 +6897,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 8084,
-      "sha256": "0a165ecd36b97d69697e7d2c05d316605dd31a612e22dc4ca732744b4e4ef27d",
+      "size": 8395,
+      "sha256": "d87c702f0ed8c7822d57695e5fccc945ac0c7f0b7a9f55e0c62497c92f89fec9",
       "reason": "E4新增：第二台机器与真实读者走查的具体步骤、记录表与回传要求"
     },
     {
@@ -6906,8 +6906,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 5258,
-      "sha256": "4c42ca186d8b7dab4055bb0c4048cedf2f6b160161445bcd0f2ff785fb5fb879",
+      "size": 6168,
+      "sha256": "989184953ac4d04ebee1eb0ddc641c439b682057a43a1deac80a49147ec84a11",
       "reason": "E4新增：第二台机器逐项结果、跨机身份、首轮失败与修复、读者状态（供 candidate 门读取）"
     },
     {
@@ -6933,8 +6933,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 4086,
-      "sha256": "86133f13b682c1e3934fc5246169aefb7e4085255d38d094232dc4c3a68d1e85",
+      "size": 4893,
+      "sha256": "7e4ece5b4e003754b1df872af0f3c016e95164b7a6a536fe2a1586111fb18d82",
       "reason": "E5新增：F 发布提案草案（仓库/ref/文件集合/附件/文案/风险与回退/授权清单）"
     }
   ],

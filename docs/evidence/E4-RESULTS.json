@@ -3,14 +3,15 @@
   "stage": "E4",
   "date": "2026-09-21",
   "package": {
-    "zip": "out/e-batch/package/lumabough-0403d20-v7.zip",
-    "zipBytes": 3464797,
-    "zipSha256": "071fbc41c6fa7fed772d9607776e6bbd901a14146d48c2efd7e1223fc413f77f",
-    "files": 157,
-    "bytes": 10092318,
-    "exeSha256": "7e75b7767d0b4273b4b77c8d14e0e5ded682b9538581265f16951e17cffc6f28",
-    "builtAtCommit": "0403d203419694cd185d3223ba77c75175456bcf",
-    "packagingCommit": "e27f8c20d3fc584e01206636a62c63d934eb311e"
+    "zip": "out/e-batch/package/lumabough-5d320c7-v8.zip",
+    "zipBytes": null,
+    "zipSha256": null,
+    "files": null,
+    "bytes": null,
+    "exeSha256": null,
+    "builtAtCommit": null,
+    "packagingCommit": null,
+    "note": "打包后由 tools/portfolio/rebind_e4.py 回填实际字节身份"
   },
   "firstAttempt": {
     "date": "2026-09-21",
@@ -43,21 +44,24 @@
         "status": "PASS",
         "graphHash": "0x76556127671CCB84",
         "resolution": "1920x1061",
-        "note": "window client area clamped by the desktop work area (requested 1080)"
+        "note": "window client area clamped by the desktop work area (requested 1080)",
+        "packageExeSha256": "7e75b7767d0b4273b4b77c8d14e0e5ded682b9538581265f16951e17cffc6f28"
       },
       {
         "id": "d3d11-1202",
         "exitCode": 0,
         "status": "PASS",
         "graphHash": "0x76556127671CCB84",
-        "resolution": "1920x1061"
+        "resolution": "1920x1061",
+        "packageExeSha256": "7e75b7767d0b4273b4b77c8d14e0e5ded682b9538581265f16951e17cffc6f28"
       },
       {
         "id": "d3d12-cwd-60",
         "exitCode": 0,
         "status": "PASS",
         "graphHash": "0x435B344F438E02DA",
-        "note": "started from a different working directory with absolute paths"
+        "note": "started from a different working directory with absolute paths",
+        "packageExeSha256": "7e75b7767d0b4273b4b77c8d14e0e5ded682b9538581265f16951e17cffc6f28"
       },
       {
         "id": "d3d12-events-1202",
@@ -65,12 +69,17 @@
         "status": "PASS",
         "graphHash": "0xBC2FC5CF0A38B0FD",
         "resolution": "1920x1080",
-        "events": ["temporary-frame-presented", "original-extent-restored", "complete-clean-exit"],
+        "events": [
+          "temporary-frame-presented",
+          "original-extent-restored",
+          "complete-clean-exit"
+        ],
         "resizeCount": 3,
         "reloadSuccess": 1,
         "reloadRejected": 1,
         "warningErrors": 0,
-        "anchorEqualsColor": true
+        "anchorEqualsColor": true,
+        "packageExeSha256": "7e75b7767d0b4273b4b77c8d14e0e5ded682b9538581265f16951e17cffc6f28"
       },
       {
         "id": "d3d11-events-1202",
@@ -78,25 +87,36 @@
         "status": "PASS",
         "graphHash": "0xBC2FC5CF0A38B0FD",
         "resolution": "1920x1080",
-        "events": ["temporary-frame-presented", "original-extent-restored", "complete-clean-exit"],
+        "events": [
+          "temporary-frame-presented",
+          "original-extent-restored",
+          "complete-clean-exit"
+        ],
         "resizeCount": 3,
         "reloadSuccess": 1,
         "reloadRejected": 1,
         "warningErrors": 0,
-        "anchorEqualsColor": true
+        "anchorEqualsColor": true,
+        "packageExeSha256": "7e75b7767d0b4273b4b77c8d14e0e5ded682b9538581265f16951e17cffc6f28"
       },
       {
         "id": "negative-shaders-renamed",
         "exitCode": 2,
         "status": "expected-failure",
         "message": "shader artifact missing: <package>\\runtime\\shaders/d3d11/GraphTriangle.VSMain.vs.dxbc",
-        "note": "loud failure with the resolved path; restored afterwards"
+        "note": "loud failure with the resolved path; restored afterwards",
+        "packageExeSha256": "7e75b7767d0b4273b4b77c8d14e0e5ded682b9538581265f16951e17cffc6f28"
       }
-    ]
+    ],
+    "verifiedPackageZipSha256": "071fbc41c6fa7fed772d9607776e6bbd901a14146d48c2efd7e1223fc413f77f",
+    "pendingRerun": "v8（二进制去路径 + 包内许可重整 + README 修正）改变了包字节；第二台机器必须用 v8 重跑，旧记录只对 v7 有效"
   },
   "crossMachineIdentity": {
     "protocol": "headless 1920x1080, 1202 frames, --exercise-changes",
-    "machines": ["AMD Radeon RX 9070 (first)", "NVIDIA GeForce RTX 3090 Ti (second)"],
+    "machines": [
+      "AMD Radeon RX 9070 (first)",
+      "NVIDIA GeForce RTX 3090 Ti (second)"
+    ],
     "graphHash": "0xBC2FC5CF0A38B0FD",
     "commandHash": "d87bf3a62817b8f7d2c4f2ce975b86f8a7e22a8de5c4070a96e1f429db666801",
     "visibleSequenceHash": "0x61E54BF2EB73DB0E",
@@ -110,8 +130,18 @@
     "status": "deferred-by-owner",
     "decidedAt": "2026-09-21",
     "decision": "所有者决定本次跳过真实读者走查（部分跳过，后续再看）；因此公开时必须缩减承诺：不得声称经过真实读者验证，也不得把跑通示例当作可用性证据",
-    "notValidated": ["首次读者是否能按包内文档独立跑通", "文档中的误解点与耗时", "能力范围表述是否可被读者正确复述"],
-    "checklist": ["extract", "run per RUN.md", "find graphHash and one event record", "state the supported scope in one sentence", "report raw confusion without being prompted"],
+    "notValidated": [
+      "首次读者是否能按包内文档独立跑通",
+      "文档中的误解点与耗时",
+      "能力范围表述是否可被读者正确复述"
+    ],
+    "checklist": [
+      "extract",
+      "run per RUN.md",
+      "find graphHash and one event record",
+      "state the supported scope in one sentence",
+      "report raw confusion without being prompted"
+    ],
     "note": "the owner's decision is recorded verbatim; the agent does not mark this item as passed"
   }
 }

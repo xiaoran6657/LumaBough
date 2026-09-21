@@ -45,3 +45,10 @@
 - E4 仍缺：真实读者反馈（手册第 4 节）；未完成前 E4 不标通过
 - E4 第二次补充（第二台机器，headless 1920×1080）：D3D12 --exercise-changes 1202 帧 PASS、exit 0，graphHash 0xBC2FC5CF0A38B0FD 与本机 headless 同协议一致；tour-events 末三行 temporary-frame-presented(602,1936) / original-extent-restored(602,1920) / complete-clean-exit(1202)，产物含 anchor.json/anchor.ppm/color.ppm/metadata.json
 - E5 候选门已实现：validate_publication.py --stage candidate --package <zip|dir> 核对清单/链接 + 包内 manifest/SHA256SUMS/EXE 与实际字节 + builtAtCommit 与 HEAD 关系 + E3 隐私门 + E4 记录绑定；当前 BLOCKED 项：1 条新增处置待批准（E4 记录里复述的错误原文，属误报）、E4 读者反馈未完成
+- 外部审查（2026-09-21，基线 bf8cff1）处理：P1 二进制路径已**移除**（裁剪 __FILE__ 前缀 + 去掉 M610_PROJECT_ROOT 宏，改为可选环境变量）；EXE 内绝对路径字符串 0 条（只剩 asset:// 场景 URI）
+- P2 门禁：selfExcluded 由门禁固定为两个清单文件（包不能自行扩大免校验范围，已有契约测试）；构建敏感路径扩展为 engine/samples/shaders/assets/tests/cmake/tools-shader_compiler/tools-asset_cooker + 根 CMakeLists/CMakePresets
+- P2 许可：包内 notices 改为运行包副本（相对链接改写为纯文本路径），新增 licenses/REDISTRIBUTABLES.md（4 个 VC DLL 版本 14.51.36247.0 + 逐字节 SHA-256 + Microsoft 条款链接 + WinPixEventRuntime + MIT 只覆盖自有部分）；LICENSING-REVIEW 已补二进制再分发记录
+- P2 手册/状态：E4 手册的包身份与命令统一到 v8（此前顶部改 v7、命令仍指向 v5）；包内 README 的换行字面量已修正；AGENTS/NEW-PERFORMANCE/BATCH-D 增加历史快照与最新结论的分隔说明
+- P2 成片：取景框裁进显示器工作区（原片 3360x1834，不再带入任务栏）；字幕最短停留 1.5 秒（reject 由 0.05/0.30 秒补到 1.5 秒）；两份成片按 v8 EXE 重录
+- P2 性能材料：NEW-PERFORMANCE 已标注该缺口（逐 run 汇总 vs P7 要求的逐帧输入），缩减范围待所有者确认；F 提案改为源码/ZIP/成片三个公开范围，并更正资产源树与文件数（769 Git 文件、ZIP 159 条目/157 受覆盖），外部校验文件须含 ZIP 自身哈希
+- 整改后重跑（EXE f673d0baf9168574a59a75cc9bb68c8c48d23a816ff4c30496a5d195aa6d5b18，内嵌 5d320c7）：彩排 6/6、D3D11 Capture Screenshot=798、D3D12 Capture Screenshot=677、RHI CPU 测试 116 项通过；E4 第二台机器需按 v8 重跑（记录已改绑并标记 pendingRerun，门禁会拒绝沿用旧包结果）

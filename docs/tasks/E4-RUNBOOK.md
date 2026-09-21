@@ -7,15 +7,19 @@
 
 | 项 | 值 |
 | --- | --- |
-| ZIP | `out/e-batch/package/lumabough-0403d20-v7.zip`，157 文件，3,464,797 B（v5 及更早的包**不要再用**：换机必失败） |
-| ZIP SHA-256 | `071fbc41c6fa7fed772d9607776e6bbd901a14146d48c2efd7e1223fc413f77f` |
-| EXE SHA-256 | `7e75b7767d0b4273b4b77c8d14e0e5ded682b9538581265f16951e17cffc6f28` |
-| 二进制内嵌提交 | `0403d203419694cd185d3223ba77c75175456bcf` |
+| ZIP | `out/e-batch/package/lumabough-5d320c7-v8.zip`（v5 及更早的包**不要再用**：换机必失败） |
+| ZIP SHA-256 | 打包后回填（见 `docs/evidence/E4-RESULTS.json`） |
+| EXE SHA-256 | 打包后回填（同上） |
+| 二进制内嵌提交 | `5d320c773c7c9943e28fde2185204d05ca9ca19c` |
 | 场景 manifest SHA-256 | `4ae6eda980221395a80e3bb03374d051a07b8cd197f8a5c0b55097f427ba6260` |
 
 **第一次 E4 失败的原因（已修复，记录在此避免重踩）**：旧包把构建机的绝对 `.dxil/.dxbc` 路径写进了 EXE，
 换机后 `shader artifact missing`。修复后 `runtime\shaders\d3d11` 里应有 `.dxbc`、`runtime\shaders\d3d12` 里应有 `.dxil`——
 解压后请先确认这两点再跑。
+
+**v8 相对 v7 的变化**（因此需要重跑，旧记录只对 v7 有效）：EXE 内不再含任何构建机绝对路径
+（`__FILE__` 前缀裁剪 + 去掉 `M610_PROJECT_ROOT` 宏，改为可选环境变量）；包内许可说明按运行包重排
+（相对链接改写为纯文本路径，新增 `licenses/REDISTRIBUTABLES.md`）；包内 README 的换行修正。
 
 ## 1. 第二台机器的最低要求
 
@@ -29,8 +33,8 @@
 ### 2.1 校验与解压
 
 ```powershell
-Get-FileHash .\lumabough-b7012b7-v5.zip -Algorithm SHA256   # 期望 668b88bf…（见上表）
-Expand-Archive .\lumabough-b7012b7-v5.zip -DestinationPath .\lb-e4
+Get-FileHash .\lumabough-5d320c7-v8.zip -Algorithm SHA256   # 与 E4-RESULTS.json 里的 zipSha256 一致
+Expand-Archive .\lumabough-5d320c7-v8.zip -DestinationPath .\lb-e4
 cd .\lb-e4
 ```
 
@@ -68,7 +72,7 @@ Get-ChildItem out-run-d3d12 | Select-Object Name, Length
 Get-Content out-run-d3d12\metadata.json -Raw | Select-String -Pattern 'sourceCommit|shaderSemanticSha256|warningErrors|resolution'
 ```
 
-要记进记录表的关键值：`sourceCommit` 应含 `0403d20`；`warningErrors` 应为 0；
+要记进记录表的关键值：`sourceCommit` 应含 `5d320c7`；`warningErrors` 应为 0；
 `shaderSemanticSha256` 应为 `7aeedd02…`；**`resolution` 记录实际客户区**（窗口被桌面工作区裁过时会小于 `--height`，
 例如 1920×1080 的窗口得到 1920×1061——`graphHash`/`commandHash` 随 extent 变化，跨机对比必须同 extent）。
 `out-run-d3d11` 同样记录一份。

@@ -159,6 +159,11 @@ def validate_candidate(root, data, package):
     bad = [r["id"] for r in e4["secondMachine"]["runs"] if r["status"] not in ("PASS", "expected-failure")]
     if bad:
         errors.append("E4 second-machine runs not passing: " + ", ".join(bad))
+    # 运行必须绑定到本包的 EXE：换包之后旧记录不能自动沿用。
+    stale = [r["id"] for r in e4["secondMachine"]["runs"]
+             if r.get("packageExeSha256") != manifest.get("exeSha256")]
+    if stale:
+        errors.append("E4 second-machine runs were produced for a different package: " + ", ".join(stale))
     errors += e4_reader_errors(e4)
     return errors
 

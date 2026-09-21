@@ -136,6 +136,12 @@ SHA-256 `4ae6eda980221395a80e3bb03374d051a07b8cd197f8a5c0b55097f427ba6260`，与
 源码 ZIP 和逐文件哈希是本次实际绑定方式，不能把内嵌 uncommitted 当成提交身份。
 历史 C-M9-002 与历史 PERFORMANCE-SUMMARY 保持 BLOCKED，不因这些新运行而改变。
 
+> 状态更新（2026-09-21，E 批次）：本节以下内容描述 001–003 时期的状态，属**历史快照**。
+> 当前结论是 lb-current-004 的有效组（25/25）：1 INCONCLUSIVE + 3 REJECTED，**无 ACCEPTED**；
+> 仓库此后已建立本地 HEAD 与提交身份，第三组未启动，采样路径未改动。
+> 另：公开材料目前只有逐 run 汇总，没有逐帧数组与完整复算输入——按 [P 任务](../tasks/P-performance.md)
+> 的交付要求，需要补充去标识数值输入，或由所有者明确接受"公开摘要、原始复核仅本地"（待确认）。
+
 ## 采样前检查修复
 
 只修改 samples/rhi_sandbox/M7SceneRunner.cpp 的 benchmark 前置检查：

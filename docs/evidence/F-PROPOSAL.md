@@ -16,19 +16,23 @@
 发布提交 = 本提案获批后的一次干净提交（含裁定记录与本文档）。
 tag 指向该提交；不导入 MiniEngine 历史，不使用 `git add .` 之类的全量添加。
 
-## 3. 源文件集合
+## 3. 三个公开范围（分别授权）
 
-就是 `PUBLICATION-FILES.json` 列出的 766 个文件，由 `--stage entry` 与 `--stage candidate` 强制：
+| 范围 | 内容 | 现状 |
+| --- | --- | --- |
+| 源码仓库 | `PUBLICATION-FILES.json` 的 768 个文件 + 清单自身（共 769 个 Git 文件），**包含** `assets/source/` 的 11 个源资产（glTF/bin/HDR，许可见 `assets/LICENSES.md`） | 由 entry/candidate 门强制 |
+| 运行 ZIP | 157 个受清单覆盖的文件 + 2 个包内清单文件（ZIP 共 159 条目） | 附件，见第 4 节 |
+| 成片 | D 批次双后端 mp4（每份约 1.4–1.6 MB） | **需要单独决定**：随 Release 附件、单独展示页，或不公开 |
 
-- 不含 `out/`、PDB、Capture、视频、资产源树（`localOnlyRoots` 明确列出）；
-- 不改动、不覆盖历史失败记录；C/P/D/E 记录原样保留。
+源码仓库不含 `out/`、PDB、Capture、视频（`localOnlyRoots` 明确列出）；不改动、不覆盖历史失败记录。
+运行 ZIP 不含资产源树（只带烘焙后的 `scene/`）。成片目前只留本地 `out`，若公开需要按第 8 节单独授权。
 
 ## 4. 附件（Release assets）
 
 | 附件 | 大小 | SHA-256 |
 | --- | --- | --- |
-| `lumabough-0403d20-v7.zip` | 3,464,797 B | `071fbc41c6fa7fed772d9607776e6bbd901a14146d48c2efd7e1223fc413f77f` |
-| `SHA256SUMS.txt`（可选，内容与包内一致） | 与包内一致 | 与包内一致 |
+| `lumabough-5d320c7-v8.zip` | 打包后回填 | 打包后回填（见 `E4-RESULTS.json`） |
+| `SHA256SUMS-external.txt` | 小 | **必须包含 ZIP 自身哈希**，供下载后校验；不能只复制包内逐文件校验表 |
 
 包内不含 DXC/VS/SDK、资产源树、PDB、Capture 或视频；D3D11 用随包 HLSL，
 D3D12 与 M604 双变体包用随包字节码（`.dxbc`/`.dxil`），全部按 EXE 目录解析。
@@ -67,6 +71,8 @@ D3D12 与 M604 双变体包用随包字节码（`.dxbc`/`.dxil`），全部按 E
 
 - [ ] 目标仓库与可见性
 - [ ] 发布提交范围与 tag 名
-- [ ] 是否附带 ZIP 与 SHA256SUMS
+- [ ] 是否附带 ZIP 与 `SHA256SUMS-external.txt`
+- [ ] **成片是否公开**（范围三：随 Release、单独展示页或不公开）
+- [ ] 性能材料范围：补充去标识逐帧输入，或明确接受"公开摘要、原始复核仅本地"
 - [ ] README 与 Release 文案
 - [ ] 明确允许 push 的具体动作（含凭据方式）
