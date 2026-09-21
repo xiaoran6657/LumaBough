@@ -19,12 +19,13 @@
 
 ## 远端 tree 核验
 
-`git ls-tree -r --name-only origin/main` 与本地 `git ls-files`、以及公开清单逐项比对：
+`git ls-tree -r --name-only <ref>` 与本地 `git ls-files`、以及公开清单逐项比对。
+**两个快照分别核验，不要把旧快照描述成当前 main**：
 
-- 远端文件 **772** 个，本地跟踪 **772** 个，公开清单 **771** 个 + 清单自身
-- `remote == local`：**True**
-- `remote == manifest ∪ {清单自身}`：**True**
-- 缺失 / 多余：**0 / 0**
+| 快照 | 提交 | 受审文件 | 加清单自身 | 比对结果 |
+| --- | --- | --- | --- | --- |
+| 发布 tag `v0.1.0-preview` | `f26b8b98a727532081d0793bf34c54b230cd7173` | 771 | **772** | 与本地 blob、清单完全一致；缺失/多余 0/0 |
+| 当前 `main` | 本文件所在提交（发布后追加的记录提交） | 772 | **773** | 与本地 blob、清单完全一致；缺失/多余 0/0 |
 
 ## 附件（GitHub 侧实算哈希）
 
@@ -36,8 +37,11 @@
 | `lumabough-performance-evidence-v1.zip` | 1,082,886 | uploaded | `sha256:c33c5b39d05b77b5587acdfe85b9131e377aeb48828c61ebe21acc0c10489ff5` | ✓ |
 | `SHA256SUMS-external.txt` | 569 | uploaded | `sha256:1424122bb500139b424e9be01f45db41b43ae2021469c50e4038adca5c63aaf9` | ✓ |
 
-Release 文案见 `out/f5/release-notes.md`（随本提交一并归档），内容包含附件哈希、已验证范围、
-未验证项（无真实读者走查）、不含内容与复跑命令。
+Release 文案的**仓库内永久快照**：[RELEASE-NOTES-v0.1.0-preview.md](RELEASE-NOTES-v0.1.0-preview.md)
+（已纳入公开清单）；远端 Release 页面：
+https://github.com/xiaoran6657/LumaBough/releases/tag/v0.1.0-preview 。
+提交时的原始草稿只在本地 `out/f5/release-notes.md` 留存（未纳入 Git，不随仓库发布）。
+文案内容包含附件哈希、已验证范围、未验证项（无真实读者走查）、不含内容与复跑命令。
 
 ## 匿名核验（本轮）
 

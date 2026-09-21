@@ -6870,8 +6870,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 24214,
-      "sha256": "bf2d69b34f7137cfcbc01154b567e06c424d426eb059baf304272ed86f19c6d9",
+      "size": 23989,
+      "sha256": "2177efb97b97e3060d868de5b871e058eea54d8e4a8c3fd6e98817e49f4df71c",
       "reason": "E3新增：112 项逐项处置（keep/脱敏/排除 + 理由 + matchSha256），status=proposed 待所有者批准"
     },
     {
@@ -6969,9 +6969,18 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 3922,
-      "sha256": "5da6ab82b75bc87d28e6cc48eb6e31d672825acc1030530061fb1bd65a2914bc",
+      "size": 4468,
+      "sha256": "18f5e6938aa1b79e432088fed18d44ef9bf4e9e1729c4fc0a4380918d5b0481a",
       "reason": "F新增：远端/提交/tag/Release/附件哈希/tree核验/匿名核验结果与环境备注"
+    },
+    {
+      "path": "docs/evidence/RELEASE-NOTES-v0.1.0-preview.md",
+      "category": "docs",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 3781,
+      "sha256": "0e67da8b5dd80d8b7bafef2dcfd62f10f3b40829239332fa969c73fd3aa3440f",
+      "reason": "F新增：v0.1.0-preview 的 Release 文案仓库内快照（便于不访问远端也能读到发布说明）"
     }
   ],
   "pending": [],
