@@ -649,8 +649,8 @@
     {
       "path": "docs/evidence/README.md",
       "category": "docs",
-      "size": 2225,
-      "sha256": "2a9917cdf210d1ec50eeec7b24cb7a35611a4840eb26fe28bc91ca8b26eeca89",
+      "size": 2313,
+      "sha256": "359511255f23b76f635fbba1449ae3913a6d68049fa87e81704b3f08c24744bd",
       "sourcePath": null,
       "sourceSha256": null,
       "reason": "所有者授权修订P/D/E/F串行任务；明确逐文件审阅的任务/导航/状态文档，不包含原始产物；仅本地候选，受发布门约束"
@@ -1335,8 +1335,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 4375,
-      "sha256": "7988f94b9f024d4078686a2fbff80eef38a6e87b78a716ff00327306d833f6ab",
+      "size": 4484,
+      "sha256": "83ecd09ec86a8288433ae1096ecc03e3895c6b208cd4bffa5c779b95489ff1b9",
       "reason": "所有者授权修订P/D/E/F串行任务；明确逐文件审阅的任务/导航/状态文档，不包含原始产物；仅本地候选，受发布门约束"
     },
     {
@@ -6891,6 +6891,15 @@
       "size": 3628,
       "sha256": "3cdf7adac7f9c1c6f7023e6d84576b3d18477d08e915e3d5507836795ae8e5d3",
       "reason": "E3新增：三目标扫描方法、112 项处置汇总与修复记录；原始报告留本地"
+    },
+    {
+      "path": "docs/tasks/E4-RUNBOOK.md",
+      "category": "docs",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 6289,
+      "sha256": "473595777ddfef194a3b2f91cdecef8e1a37fb82bd664c335c2b79334f989dae",
+      "reason": "E4新增：第二台机器与真实读者走查的具体步骤、记录表与回传要求"
     }
   ],
   "pending": [],

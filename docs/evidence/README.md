@@ -34,5 +34,6 @@ entry 只证明当前本地清单、链接与验证范围。candidate、publishe
 ## E 批次（候选包、隐私终审、独立运行）
 
 [批次记录](BATCH-E.md) · [隐私与内容终审](PRIVACY-REVIEW.md) · [逐项处置基线](PRIVACY-DISPOSITIONS.json)。
-E1/E2 完成（候选包 v4：148 文件 / 10,074,798 B，包内 manifest 与 SHA256SUMS）；E3 扫描完成、
-116 项处置待所有者批准；E4 独立运行与真实读者待所有者安排。
+E1/E2 完成（候选包 v5：148 文件 / 10,074,798 B，交付 ZIP 3,455,635 B，包内 manifest 与 SHA256SUMS）；
+E3 通过（116 项处置由所有者批准，扫描器退出 0）；E4 独立运行与真实读者待安排，步骤见
+[E4 操作手册](../tasks/E4-RUNBOOK.md)。
