@@ -6855,6 +6855,15 @@
       "size": 6732,
       "sha256": "ee7eaf348670d3c24ce0672d59abd751a1990090d1866517a8a392ca8c8d7041",
       "reason": "E2新增：候选运行包打包器（显式输入、fresh 输出、干净工作树闸门、排除 PDB/工具链）；仅本地候选"
+    },
+    {
+      "path": "tools/portfolio/scan_privacy.py",
+      "category": "tools",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 11448,
+      "sha256": "6fca516ddc80a1225cd7e7a82e47c611584ed3556a63974a4085952cd6e4df40",
+      "reason": "E3新增：隐私/内容扫描器（三目标分开扫、只产出待审项、裁定读基线）；仅本地候选"
     }
   ],
   "pending": [],
