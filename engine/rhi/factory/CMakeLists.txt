@@ -1,0 +1,7 @@
+add_library(MiniEngineRhiFactory STATIC RhiFactory.cpp)
+target_include_directories(MiniEngineRhiFactory PRIVATE "../src" "../d3d11/src" "../d3d12/src" "../d3d11/include" "../d3d12/include")
+target_link_libraries(MiniEngineRhiFactory PUBLIC MiniEngineRhiPublic PRIVATE MiniEngineD3D11RhiAdapter MiniEngineD3D12RhiAdapter)
+target_compile_definitions(MiniEngineRhiFactory PRIVATE UNICODE _UNICODE WIN32_LEAN_AND_MEAN NOMINMAX)
+target_compile_features(MiniEngineRhiFactory PUBLIC cxx_std_20)
+set_target_properties(MiniEngineRhiFactory PROPERTIES CXX_EXTENSIONS OFF)
+miniengine_set_project_warnings(MiniEngineRhiFactory)

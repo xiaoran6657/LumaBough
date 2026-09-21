@@ -1,0 +1,5 @@
+if(WIN32)
+    add_subdirectory(windows)
+else()
+    message(FATAL_ERROR "M1 currently supports Windows only")
+endif()
