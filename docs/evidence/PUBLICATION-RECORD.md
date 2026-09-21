@@ -102,5 +102,9 @@ https://github.com/xiaoran6657/LumaBough/releases/tag/v0.1.0-preview 。
 
 ## 环境备注
 
-本机 git 配置了本地 HTTP 代理（地址不随本文件公开），该代理下 TLS 握手失败；
-本次推送/取回统一使用 `git -c http.proxy=` 直连成功，未修改所有者的代理配置。
+本机 git 配置了本地 HTTP 代理（地址不随本文件公开）。实测三种组合：
+- 代理 + schannel（默认）：TLS 握手失败；
+- 直连（`git -c http.proxy=`）：前两次成功，随后出现空回复/连接超时；
+- **代理 + `git -c http.sslBackend=openssl`：稳定成功**（本次最终采用）。
+
+均为一次性 `-c` 覆盖，未修改所有者的代理与 SSL 配置。

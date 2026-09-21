@@ -397,8 +397,8 @@
     {
       "path": "docs/ROADMAP.md",
       "category": "docs",
-      "size": 3115,
-      "sha256": "b2d23eec94369669be3d534520de60c4a22b5d6ff140b4241f919a85cf5bc21e",
+      "size": 3171,
+      "sha256": "9bfed940142cd5e7b39a7436767b63db4be6494201645fb3f350a6e87837b0fb",
       "sourcePath": null,
       "sourceSha256": null,
       "reason": "所有者授权修订P/D/E/F串行任务；明确逐文件审阅的任务/导航/状态文档，不包含原始产物；仅本地候选，受发布门约束"
@@ -6969,8 +6969,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 6118,
-      "sha256": "dd14b3f29d933a1ec0dd5b39e7306b1f8292a5018baa8d0b2085258cab5d86cd",
+      "size": 6319,
+      "sha256": "f34ff1da4a4d4350230ea1d1f113529d29538470094fe2f4b1c771f68b4eb0b9",
       "reason": "F新增：远端/提交/tag/Release/附件哈希/tree核验/匿名核验结果与环境备注"
     },
     {

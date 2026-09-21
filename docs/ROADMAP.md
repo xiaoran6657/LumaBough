@@ -12,7 +12,7 @@ Core 固定为 D3D11 + D3D12；Vulkan 不在范围。唯一工作仓库为 LumaB
 | P | 焦点诊断、补充性能实验、独立结论 | 已完成：有效组（lb-current-004，25/25）= 1 INCONCLUSIVE + 3 REJECTED，无 ACCEPTED；001/002/003 INVALID；静态报告写回等 F：[记录](evidence/NEW-PERFORMANCE.md) · [任务](tasks/P-performance.md) |
 | D | 最终 anchor Capture；聚焦动态内容的视频 | Capture 完成、已完成（Capture 复核 + 双后端成片）：[记录](evidence/BATCH-D.md) · [任务](tasks/D-capture-video.md) |
 | E | 候选包、许可隐私终审、独立运行与真实读者审阅 | 候选通过（范围缩减：读者延后）：[裁定](evidence/CANDIDATE-REVIEW.md) · [记录](evidence/BATCH-E.md) · [任务](tasks/E-candidate-review.md) |
-| F | 授权发布、匿名访问与下载核验 | 私有远端与 `v0.1.0-preview`（预发布）已发布，附件哈希与远端 tree 已核验；**匿名下载核验待转 public 授权**：[发布记录](evidence/PUBLICATION-RECORD.md) · [提案](evidence/F-PROPOSAL.md) · [任务](tasks/F-publication.md) |
+| F | 授权发布、匿名访问与下载核验 | 已公开：`xiaoran6657/LumaBough` public + `v0.1.0-preview` 预发布，匿名下载/哈希/新解压目录运行均通过；**待 2 个处置键批准后才标完成**：[发布记录](evidence/PUBLICATION-RECORD.md) · [Release 文案](evidence/RELEASE-NOTES-v0.1.0-preview.md) · [任务](tasks/F-publication.md) |
 
 P 收口可以是有效的正结果、负结果或不确定结果；INVALID 不算有效比较。
 本轮 P 已给出有效组的负/不确定结论：没有 ACCEPTED 比较，因此**仍不宣称当前加速**；
