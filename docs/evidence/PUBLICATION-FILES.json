@@ -3583,8 +3583,8 @@
     {
       "path": "samples/rhi_sandbox/M6SceneRunner.cpp",
       "category": "samples",
-      "size": 41795,
-      "sha256": "99f8dd3880b7160f94a37fdc973663fd126ea1f89740a11c31375a88e3fe8bcd",
+      "size": 42281,
+      "sha256": "be5ba3a5da9c60792a0cd76e685f994dad5a16db3dad54677d2a3e5f6f4b44c8",
       "sourcePath": "samples/rhi_sandbox/M6SceneRunner.cpp",
       "sourceSha256": "0c5ae119690503f0432f7981d67b14845c38a2e4fe9d18809b1808ce79a6004d",
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"

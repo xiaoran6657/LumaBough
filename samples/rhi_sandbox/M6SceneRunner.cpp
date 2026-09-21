@@ -271,7 +271,7 @@ class SceneEnvironment final
 
 // E2：着色器语义哈希给的是**语义身份**，运行包里没有源码树，因此优先取可执行文件旁的
 // shaders/（打包时随 EXE 一起携带），只有那里没有 shaders/ 时才退回构建期源码根。
-fs::path ShaderSemanticRoot()
+fs::path ShaderSemanticRoot(const std::string_view backend)
 {
     std::array<wchar_t, 4096> buffer{};
     const std::uint32_t written =
@@ -279,8 +279,15 @@ fs::path ShaderSemanticRoot()
     if (written == 0 || written == buffer.size())
         return fs::path(M610_PROJECT_ROOT);
     const fs::path beside = fs::path(buffer.data()).parent_path();
-    if (fs::is_directory(beside / "shaders"))
-        return beside;
+    // 只有 EXE 旁真的带了该后端的 HLSL 源，才算"自足"；否则退回源码树（开发机）。
+    for (const auto& entry : fs::directory_iterator(beside / "shaders" / backend, fs::directory_options::skip_permission_denied))
+    {
+        if (!entry.is_regular_file())
+            continue;
+        const auto extension = entry.path().extension().string();
+        if (extension == ".hlsl" || extension == ".hlsli")
+            return beside;
+    }
     return fs::path(M610_PROJECT_ROOT);
 }
 
@@ -652,7 +659,7 @@ int RunM6Scene(const RhiLaunchOptions& options)
                        << Quoted(Assets::ToHexDigest(scene.assets.ActiveManifestDigest()))
                        << ",\"environmentArtifactSha256\":" << Quoted(scene.environmentHash)
                        << ",\"shaderSemanticSha256\":"
-                       << Quoted(Samples::ShaderSemanticHash(ShaderSemanticRoot(), std::string(ToString(options.backend))))
+                       << Quoted(Samples::ShaderSemanticHash(ShaderSemanticRoot(ToString(options.backend)), std::string(ToString(options.backend))))
                        << ",\"visibleSequenceHash\":" << Quoted(PacketHash(lastPacket))
                        << ",\"cameraValues\":" << Quoted(Samples::CameraIdentity(lastPacket))
                        << ",\"lightValues\":" << Quoted(Samples::LightIdentity(lastPacket))
@@ -770,7 +777,7 @@ int RunM6Scene(const RhiLaunchOptions& options)
                  << "\"assetManifestSha256\":" << Quoted(Assets::ToHexDigest(scene.assets.ActiveManifestDigest()))
                  << ',' << "\"environmentArtifactSha256\":" << Quoted(scene.environmentHash) << ','
                  << "\"shaderSemanticSha256\":"
-                 << Quoted(Samples::ShaderSemanticHash(ShaderSemanticRoot(), std::string(ToString(options.backend))))
+                 << Quoted(Samples::ShaderSemanticHash(ShaderSemanticRoot(ToString(options.backend)), std::string(ToString(options.backend))))
                  << ',' << "\"visibleSequenceHash\":" << Quoted(PacketHash(lastPacket)) << ','
                  << "\"cameraValues\":" << Quoted(Samples::CameraIdentity(lastPacket)) << ','
                  << "\"lightValues\":" << Quoted(Samples::LightIdentity(lastPacket)) << ','
