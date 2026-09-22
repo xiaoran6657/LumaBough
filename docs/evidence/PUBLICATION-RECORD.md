@@ -1,7 +1,11 @@
 # F 发布记录（执行部分）
 
-状态：**远端已创建并发布预发布版本（私有）**；匿名下载核验与"标记 F 完成"仍待转 public 的授权。
-本文件只记录真实执行结果；未执行的部分明确标注为待授权，不写成已完成。
+状态：**已公开**。远端为 public，`v0.1.0-preview`（预发布）已发布，匿名浏览、附件下载、哈希比对与
+新解压目录运行均通过。本文件只记录真实执行结果；未闭合项在末尾明确标注，不写成已完成。
+
+**审批顺序（如实记录，不回填）**：仓库转 public 发生在 **2026-09-22**，当时三个账号名处置键尚未闭合；
+这三个键由所有者于 **2026-09-22 明确批准**（`approvedAt=2026-09-22`），**不是**"公开前门禁已通过"。
+批准记录见 [逐项处置基线](PRIVACY-DISPOSITIONS.json) 的 `approvalNote` 字段。
 
 ## 远端与提交
 
@@ -9,7 +13,7 @@
 | --- | --- |
 | 账号 / 仓库 | `xiaoran6657` / `LumaBough`（由本次执行创建；创建前只读查询确认不存在） |
 | 远端 URL | https://github.com/xiaoran6657/LumaBough |
-| 可见性 | **private**（按提案先私有；转 public 需单独授权） |
+| 可见性 | 创建时为 **private**（按提案先私有），**2026-09-22 按授权转为 public**；下方"变更前"一节保留 private 期间的匿名核验记录 |
 | 分支 | `main` |
 | 发布提交（tag 指向） | `f26b8b98a727532081d0793bf34c54b230cd7173` |
 | tag | `v0.1.0-preview`（annotated） |
@@ -25,7 +29,10 @@
 | 快照 | 提交 | 受审文件 | 加清单自身 | 比对结果 |
 | --- | --- | --- | --- | --- |
 | 发布 tag `v0.1.0-preview` | `f26b8b98a727532081d0793bf34c54b230cd7173` | 771 | **772** | 与本地 blob、清单完全一致；缺失/多余 0/0 |
-| 当前 `main` | 本文件所在提交（发布后追加的记录提交） | 772 | **773** | 与本地 blob、清单完全一致；缺失/多余 0/0 |
+| 当前 `main` | 本文件所在提交（发布后追加的记录提交；含 Release 文案快照） | 773 | **774** | 与本地 blob、清单完全一致；缺失/多余 0/0 |
+
+当前 main 比发布 tag 多出的文件就是发布后追加的记录与 Release 文案快照（`PUBLICATION-RECORD.md`、
+`RELEASE-NOTES-v0.1.0-preview.md`）；远端集合与公开清单一致，没有意外多传文件。
 
 ## 附件（GitHub 侧实算哈希）
 
@@ -90,10 +97,20 @@ https://github.com/xiaoran6657/LumaBough/releases/tag/v0.1.0-preview 。
 - [x] 转 public（已按授权执行；`gh repo edit --visibility public --accept-visibility-change-consequences`）
 - [x] 匿名下载 ZIP 并与 `a94e41db…` 比对、按 `SHA256SUMS.txt` 校验逐文件
 - [x] 匿名核对 README 图片与链接、Release 页、每个附件
-- [ ] **2 个处置键待批准**（`PUBLICATION-RECORD.md` 与 `RELEASE-NOTES-v0.1.0-preview.md` 里的账号/仓库地址，
-  均为 `proposed`；批准前候选门仍会报待批准项）
+- [x] **3 个处置键已由所有者批准**（`ROADMAP.md`、`PUBLICATION-RECORD.md`、`RELEASE-NOTES-v0.1.0-preview.md`
+  里的账号/仓库地址；`approvedAt=2026-09-22`，晚于转公开时间）
+- [x] 候选门在最终提交上复跑通过（见下方"最终门禁输出"）
 - [ ] 真实读者走查仍按所有者决定延后（不因发布而改变声明）
-- [ ] 路线图 F 行在上述处置键批准后标"完成"
+
+## 最终门禁输出（处置键批准后）
+
+~~~text
+PASS entry: 773 reviewed files; publication=BLOCKED
+PASS candidate: 773 reviewed files, package bytes, privacy gate and E4 record verified; publication=BLOCKED
+NOTICE: E4 reader validation was deferred by the owner; the publication must not claim reader validation
+~~~
+
+隐私扫描：144 项 finding、0 未裁定、0 待批准、60 个唯一键全部 approved（退出码 0）。
 
 ## 事故处理约定
 

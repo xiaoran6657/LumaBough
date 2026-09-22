@@ -580,8 +580,10 @@
       "matchSha256": "a5a7744cfb98b38e30dc2a5b49f639ec9d54127d4ae7facd5d8a6415ef0c18f6",
       "disposition": "keep",
       "reason": "发布记录里的所有者账号/仓库地址（与 LICENSE 署名同一身份），非机器名泄露",
-      "status": "proposed",
-      "note": "同类内容（提案中的所有者账号/仓库地址）此前由所有者批准保留；本条为该新文件里的同一账号，仍待所有者明确授权后转 approved"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-22",
+      "approvalNote": "该批准发生在仓库转 public 之后（2026-09-22）；转公开当时这三个键尚未闭合，未回填成公开前已通过门禁"
     },
     {
       "rule": "machine-name",
@@ -589,8 +591,21 @@
       "matchSha256": "a5a7744cfb98b38e30dc2a5b49f639ec9d54127d4ae7facd5d8a6415ef0c18f6",
       "disposition": "keep",
       "reason": "Release 文案快照里的所有者账号/仓库地址（与 LICENSE 署名同一身份），非机器名泄露",
-      "status": "proposed",
-      "note": "同类内容此前由所有者批准保留；本条为新增文件，仍待所有者明确授权后转 approved"
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-22",
+      "approvalNote": "该批准发生在仓库转 public 之后（2026-09-22）；转公开当时这三个键尚未闭合，未回填成公开前已通过门禁"
+    },
+    {
+      "rule": "machine-name",
+      "path": "docs/ROADMAP.md",
+      "matchSha256": "a5a7744cfb98b38e30dc2a5b49f639ec9d54127d4ae7facd5d8a6415ef0c18f6",
+      "disposition": "keep",
+      "reason": "所有者账号名出现在路线图的公开地址行（与 LICENSE 署名同一身份），非机器名泄露",
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-22",
+      "approvalNote": "该批准发生在仓库转 public 之后（2026-09-22）；转公开当时这三个键尚未闭合，未回填成公开前已通过门禁"
     }
   ]
 }

@@ -397,8 +397,8 @@
     {
       "path": "docs/ROADMAP.md",
       "category": "docs",
-      "size": 3171,
-      "sha256": "9bfed940142cd5e7b39a7436767b63db4be6494201645fb3f350a6e87837b0fb",
+      "size": 3343,
+      "sha256": "f9c457166be5d444212f3cdf89c94e84b0a479dfd1677138794c2466ff55ca9b",
       "sourcePath": null,
       "sourceSha256": null,
       "reason": "所有者授权修订P/D/E/F串行任务；明确逐文件审阅的任务/导航/状态文档，不包含原始产物；仅本地候选，受发布门约束"
@@ -6843,8 +6843,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 13003,
-      "sha256": "a141765e99e57f7357817df83d3ebb40983756a528fd8f36083f4736d4c415da",
+      "size": 13346,
+      "sha256": "df3661bd9ebeff6efb2b6af3b28ceb3d5db9a112c0f755dcb395920fc03e5215",
       "reason": "E批次记录：候选范围与提交身份、打包、隐私与独立运行；不含机器私有信息；仅本地候选"
     },
     {
@@ -6870,8 +6870,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 23989,
-      "sha256": "2177efb97b97e3060d868de5b871e058eea54d8e4a8c3fd6e98817e49f4df71c",
+      "size": 24715,
+      "sha256": "a5cdf2f4510e94473eb264a738fd1d09fe83f890a892215ea71603dd0ae51fb2",
       "reason": "E3新增：112 项逐项处置（keep/脱敏/排除 + 理由 + matchSha256），status=proposed 待所有者批准"
     },
     {
@@ -6969,8 +6969,8 @@
       "category": "docs",
       "sourcePath": null,
       "sourceSha256": null,
-      "size": 6319,
-      "sha256": "f34ff1da4a4d4350230ea1d1f113529d29538470094fe2f4b1c771f68b4eb0b9",
+      "size": 7537,
+      "sha256": "13a7c1576ab146a952e9153cad1f50f5160ecba62444c40a4894545b3a45bb1b",
       "reason": "F新增：远端/提交/tag/Release/附件哈希/tree核验/匿名核验结果与环境备注"
     },
     {
