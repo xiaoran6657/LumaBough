@@ -1,4 +1,26 @@
-# 历史性能重算与适用边界
+# 性能报告：当前独立实验与历史复核
+
+## 当前独立实验 lb-current-004
+
+**25/25 次运行构成有效组，四项比较为 1 INCONCLUSIVE + 3 REJECTED，无 ACCEPTED。**
+有效组表示采样与完整性门通过，不表示优化有效。001/002/003 均 INVALID，未拼接或替换失败运行。
+
+| 比较 | cpuFrameMs 基线 → 候选（ms） | 变化 | 裁定与限制 |
+|---|---:|---:|---|
+| packet-serial → packet-parallel（50,000 代理，w8/c256） | 70.158 → 58.299 | −16.90% | INCONCLUSIVE：候选漂移 +3.25% 超过 3%；尾部 hitch 3.37% 也超过允许 1.03% |
+| stream-sync → stream-async（500 代理） | 35.168 → 35.769 | +1.71% | REJECTED：CPU 改善不足 |
+| stream-async → stream-parallel | 35.769 → 35.759 | −0.03% | REJECTED：CPU 改善不足 |
+| stream-sync → stream-parallel | 35.168 → 35.759 | +1.68% | REJECTED：CPU 改善不足 |
+
+单机、D3D12、1920×1080、VSync off，五 cell 各五次，warmup 120 + measure 600；
+主指标为五个 run median 的 median。packet 的数值下降不能单独作为加速承诺，
+也不代表发布运行包 v8 的性能。实验 EXE、预注册与启动条件见[完整记录](../evidence/NEW-PERFORMANCE.md)。
+
+公众可下载[逐帧证据包并复算](../evidence/PERFORMANCE-EVIDENCE-PACK.md)，无需私有仓库或 GPU；
+[发布产物索引](../evidence/ARTIFACT-INDEX.md)提供 Release 与校验文件。
+历史 −16.44% 属另一组数据及旧判定器，不与当前 −16.90% 混用；历史源码身份缺口仍未解决。
+
+## 历史性能重算与适用边界
 
 25 次运行的 15,000 个逐帧样本已重新计算分布，且与原统计一致。固定历史比较器复现原裁定。**这是历史数值复核，不是本仓库当前构建的性能重测，也尚不能称完整历史构建复现。**
 
@@ -31,10 +53,10 @@ protocol.json 从历史比较输出和完整 run 集合重建，未冒充原始�
 
 所有 25 个 raw 记录同一 EXE SHA-256 c39e76f9d46f18993421fbaed30203a7630ebbd8c9ca24d910b2cc96ee6e567c，以及配置时写入的 sourceCommit=0c7a1a3b9c6f442148ed703fb4fa9282537b6d67。但在实验前的提交链中，dbef1fb 已修改 RenderPacketBuilder.cpp、TaskSystem.h 和 TaskSystem.cpp；CMake 的该字段只在配置时更新。此前把预注册提交 2429dc1 当作实际运行源码提交也没有证据支持。
 
-因此实际 sourceCommit 保持 null，单列 embeddedSourceCommit、预注册和报告身份；不选一个看似合理的提交代填。当前尚缺匹配历史 EXE 的完整源码快照/可验证构建绑定，C-M9-002 保持 BLOCKED / LOCAL。数值复算可用，并不补足源码身份。下一步推荐在 LumaBough 冻结一次明确源码与二进制的新实验，产生独立实验 ID；旧结果继续保留为历史复核，不能用新数据倒填旧实验。若以后找到匹配的历史构建清单或源码校验和，也可单独闭合旧身份。
+因此实际 sourceCommit 保持 null，单列 embeddedSourceCommit、预注册和报告身份；不选一个看似合理的提交代填。当前尚缺匹配历史 EXE 的完整源码快照/可验证构建绑定，C-M9-002 保持 BLOCKED / LOCAL。数值复算可用，并不补足源码身份。后续已另行完成独立 lb-current-004 实验（见本文开头）；旧结果继续保留为历史复核，不能用新数据倒填旧实验。若以后找到匹配的历史构建清单或源码校验和，也可单独闭合旧身份。
 
 [机器可读摘要](../evidence/PERFORMANCE-SUMMARY.json)是数据入口。旧 10k soak 只支持池指标口径，不能证明零泄漏；修复后仅有 2k 证据的限制见[勘正](../evidence/HISTORICAL-CLAIMS.md)。C 批次未把它升级为新稳定性结论。
 
 ## 当前源码新实验状态
 
-已另行实施两组独立实验，均因正式采样的前台覆盖不足而 INVALID，未生成新的加速结论。源码与新构建已冻结，失败数据完整保留；见[新实验记录](../evidence/NEW-PERFORMANCE.md)。本文历史数值及其身份阻断保持原样。
+001/002/003 保留为 INVALID；004 已取得 25/25 有效运行，结论为 1 INCONCLUSIVE + 3 REJECTED，无 ACCEPTED。公开逐帧证据包已交付；见[新实验记录](../evidence/NEW-PERFORMANCE.md)与[复算说明](../evidence/PERFORMANCE-EVIDENCE-PACK.md)。本文历史数值及其身份阻断保持原样。

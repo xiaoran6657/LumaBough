@@ -606,6 +606,28 @@
       "approvedBy": "owner",
       "approvedAt": "2026-09-22",
       "approvalNote": "该批准发生在仓库转 public 之后（2026-09-22）；转公开当时这三个键尚未闭合，未回填成公开前已通过门禁"
+    },
+    {
+      "rule": "machine-name",
+      "path": "docs/evidence/ARTIFACT-INDEX.md",
+      "matchSha256": "a5a7744cfb98b38e30dc2a5b49f639ec9d54127d4ae7facd5d8a6415ef0c18f6",
+      "disposition": "keep",
+      "reason": "公开 Release URL 中的账号，与已公开仓库相同；非私人机器资料",
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-22T23:40:33+08:00",
+      "approvalNote": "所有者在本轮 T1 确认问题中明确选择：批准保留两项；仅限该公开链接账号与明确标为历史结果的 FAQ 数值"
+    },
+    {
+      "rule": "history-number",
+      "path": "docs/portfolio/FAQ.md",
+      "matchSha256": "cb99c4f2d893e0c3dfe0c0cb2e5b8e18b0033cb362e027e01e2e5df4925b68d4",
+      "disposition": "keep",
+      "reason": "FAQ 明确区分历史结果与当前实验，保留实际源码身份未证明和不外推限制",
+      "status": "approved",
+      "approvedBy": "owner",
+      "approvedAt": "2026-09-22T23:40:33+08:00",
+      "approvalNote": "所有者在本轮 T1 确认问题中明确选择：批准保留两项；仅限该公开链接账号与明确标为历史结果的 FAQ 数值"
     }
   ]
 }

@@ -3,7 +3,7 @@
 日期：2026-09-21。范围：LumaBough 本地当前源码。
 **当前状态：lb-current-004 取得完整有效组（25/25 通过），结论为 1 个 INCONCLUSIVE + 3 个 REJECTED，没有 ACCEPTED。**
 历史声明 C-M9-002 与历史 PERFORMANCE-SUMMARY 仍 **BLOCKED**，本结果不复原、不倒填、不代表历史身份修复。
-未提交、未推送、未公开。
+本记录最初形成时尚未提交、推送或公开；后续已发布去标识逐帧证据包，见[复算说明](PERFORMANCE-EVIDENCE-PACK.md)和[发布记录](PUBLICATION-RECORD.md)。实验原始冻结文件仍留本地。
 
 ## 实际结果
 
@@ -58,7 +58,7 @@ EXE `325e9e43cb2e2d6e3ff3aaa1176d434b55a94909cccfc5d22610c2496d2144ad`；
 
 去标识复算材料：[NEW-PERFORMANCE-RUNS.json](NEW-PERFORMANCE-RUNS.json)（25 次运行的逐 run 分布、CPU 阶段分解、
 受保护指标、逐文件哈希与四条比较的判定；不含机器路径、用户名与原始逐帧数组）。
-逐帧中位数本身的复核需要本地原始文件，这一限制写在材料里。
+该 JSON 本身不含逐帧数组；逐帧中位数现在可通过[公开证据包](PERFORMANCE-EVIDENCE-PACK.md)复核，不再要求访问私有原始文件。
 
 **结论（独立、只对本机本构建）**：
 1. 50,000 代理的 packet 构建：并行的中位 CPU 帧时间比串行低约 16.9%，

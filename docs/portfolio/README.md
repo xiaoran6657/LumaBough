@@ -1,13 +1,14 @@
 # 作品集材料
 
-当前提供根 README 的真实渲染预览、[静态架构](../architecture/README.md)和[证据入口](../evidence/README.md)。
-构建与运行见[开发指南](../DEVELOPMENT.md)。
+获准范围的 v0.1.0-preview 已公开。[发布产物与下载](../evidence/ARTIFACT-INDEX.md)包含运行 ZIP、双后端视频、逐帧性能证据包及外部校验表。
 
-[连续 Demo](DEMO.md)已完成六次双后端彩排；[历史性能重算](PERFORMANCE.md)数值复核通过，但历史源码身份仍阻断。
-[当前源码新性能实验](../evidence/NEW-PERFORMANCE.md)两组均 INVALID，尚无有效比较。
+- [架构与三张图](../architecture/README.md)：模块、帧流程、资源和线程所有权。
+- [连续 Demo 与能力边界](DEMO.md)：双后端三轮彩排；最终 Capture 与成片见[D 记录](../evidence/BATCH-D.md)。
+- [性能报告](PERFORMANCE.md)：004 有效组 25/25，1 INCONCLUSIVE + 3 REJECTED，无 ACCEPTED；历史身份限制保留。
+- [公开性能复算](../evidence/PERFORMANCE-EVIDENCE-PACK.md)：25 × 600 逐帧输入、冻结协议与分析器。
+- [FAQ](FAQ.md)：目标、贡献、取舍、失败案例与复现。
+- [开发指南](../DEVELOPMENT.md)、[证据入口](../evidence/README.md)、[发布记录](../evidence/PUBLICATION-RECORD.md)。
 
-后续按[串行任务计划](../tasks/README.md)推进：P 补充性能 → D 最终 anchor Capture/动态视频 → E 候选终审 → F 授权发布。
-最终 Capture、成片、运行包及匿名发布验收尚未完成，不能从旧静态预览或彩排推定通过。
-
-视频仅展示真实连续过程；定位、目标、做了什么/没做什么、架构总图、性能统计、关键收获与入口使用静态文档及图片。
-当前 Demo 的实际能力和不支持的展示见 Demo 文档，避免把程序化事件写成用户交互或文件监听热更新。
+视频展示程序化 RHI 尺寸/恢复与 shader 候选处理，不能写成文件监听热更新或用户自由交互。
+定位、架构、统计和边界由静态材料承担。原始 Capture/PDB 留本地，不在公开附件中。
+第二台机器和匿名下载后运行已验证；真实读者走查按所有者决定延后，不能声称已验证易用性。

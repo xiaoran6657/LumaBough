@@ -1,6 +1,6 @@
 # D：最终 anchor Capture；动态视频
 
-状态：所有者已指派并实施中（P 仍 BLOCKED，按"不宣称当前加速、保留阻断"的缩减范围进行）。只在 LumaBough 工作，按 D1 → D2 → D3 → D4 串行进行。
+状态：D 已收口，成片已随 Release 公开；P 后续已完成 004 有效组，但无 ACCEPTED，不宣称当前加速。下文保留 D1 → D4 的实施要求，原始 Capture/PDB 留本地。
 本轮进度见 [D 记录](../evidence/BATCH-D.md)：D1/D2 完成（双后端 anchor Capture 已采集并做无 GUI 结构核对），D3 视频已完成（ffmpeg 方案 B，双后端成片均已录制；现行产物见 E 记录），D2 的 GUI 人工复核已由所有者完成（2026-09-21，双后端通过），本阶段收口。
 输入：[Demo 实际能力](../portfolio/DEMO.md)、[C 记录](../evidence/BATCH-C.md)、当前 P 收口记录、assets/recipes/m9-portfolio-demo.json。
 C 的六次彩排不是本阶段最终 Capture；portfolio-capture 目前仅验证为 CPU 证据标记。

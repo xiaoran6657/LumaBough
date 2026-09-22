@@ -1,5 +1,7 @@
 # P：补充性能实验
 
+当前交付补充：静态[性能报告](../portfolio/PERFORMANCE.md)与[公开逐帧复算包](../evidence/PERFORMANCE-EVIDENCE-PACK.md)已衔接；无需为文档维护重新采样。下文实施过程与失败规则保留。
+
 状态：**已取得有效组并给出独立结论**（P1–P7 主体完成）。001/002/003 仍 INVALID，未被拼接。
 
 结论（lb-current-004，25/25 通过；详见 [NEW-PERFORMANCE.md](../evidence/NEW-PERFORMANCE.md)）：

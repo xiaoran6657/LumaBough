@@ -1,5 +1,13 @@
 # 公开性能证据包（去标识、可复算）
 
+下载：[Release 产物索引](ARTIFACT-INDEX.md)。选择 lumabough-performance-evidence-v1.zip 与 SHA256SUMS-external.txt，先核对 ZIP SHA-256。解压到任意新目录，在含 PREREGISTRATION.json 和 analyzer/ 的目录运行：
+
+~~~powershell
+python -B analyzer/summarize_portfolio_experiment.py --input . --output ../recompute.json
+~~~
+
+需要 Python，不需要 GPU、运行包或私有仓库。下方 out 路径是制作时本地记录，不是下载后的必要目录结构。
+
 状态：**已生成并通过端到端复算**。这是 lb-current-004 冻结数据的去标识副本，用来让公众在不访问任何
 私有数据的情况下复算结论；它**不是**新的性能测量，也不代表运行包 v8 的性能。
 

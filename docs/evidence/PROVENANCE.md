@@ -1,5 +1,7 @@
 # 来源与公开边界
 
+当前发布身份见[发布记录](PUBLICATION-RECORD.md)：运行构建与发布 tag 已分别绑定。以下批次 B 的 null/uncommitted/未发布描述保留为当时快照，不是当前远端状态。PUBLICATION-FILES 的 entry/BLOCKED 是清单校验 schema，不是发布状态查询。
+
 LumaBough 从所有者的私有 MiniEngine 工程独立导入。初始手动复制 669 个文件：
 663 个源库 tracked 文件与 6 个 Python 缓存，逐字节匹配；没有复制旧 Git 历史。
 来源 HEAD 为 9012c54f0dc3af1ab269c4721740503f9a7beb9a；当时源工作区另有 M9 规划修订，

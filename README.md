@@ -19,12 +19,16 @@ Release 的 `v0.1.0-preview` 提供**运行 ZIP、双后端演示视频与去标
 | 模块、帧流程与线程所有权 | [架构与三张图](docs/architecture/README.md) |
 | 哪些结论有证据，哪些仍待补齐 | [声明与证据入口](docs/evidence/README.md) |
 | 如何构建、运行和测试 | [开发指南](docs/DEVELOPMENT.md) |
+| 当前性能结论、逐帧输入与复算 | [性能报告](docs/portfolio/PERFORMANCE.md)、[公开复算包](docs/evidence/PERFORMANCE-EVIDENCE-PACK.md) |
+| 运行包、视频与外部校验表 | [发布产物及下载](docs/evidence/ARTIFACT-INDEX.md) |
+| 项目目标、贡献与限制 | [FAQ](docs/portfolio/FAQ.md) |
 
 ## 当前范围
 
 源码包含 D3D11 / D3D12 后端、图编译与瞬态资源复用、离线资产烘焙、
 确定性 packet 构建、任务调度和 revision 资产加载契约。
-这些是源码导览；公开能力结论仍以 [Claim Ledger](docs/evidence/CLAIM-LEDGER.csv) 为准。
+这些是源码导览；当前受测范围见[候选裁定](docs/evidence/CANDIDATE-REVIEW.md)与[公开证据入口](docs/evidence/README.md)。
+[Claim Ledger](docs/evidence/CLAIM-LEDGER.csv)保留原七项声明及各自限制，不作为全部新交付的总状态。
 历史原工程的 PASS 不自动迁移为本仓库的运行或发布结论。
 
 只支持 Windows x64。Vulkan 未实施。设备丢失会报告失败，不承诺自动恢复；
@@ -63,4 +67,4 @@ out/build/windows-msvc-debug/samples/rhi_sandbox/Release/MiniEngineSandbox.exe -
 
 [文档目录](docs/README.md) · [路线图](docs/ROADMAP.md) · [变更记录](docs/CHANGELOG.md)
 
-本地 [连续 Demo](docs/portfolio/DEMO.md) 已完成双后端三轮彩排；[历史性能重算](docs/portfolio/PERFORMANCE.md)保留正反结果与源码身份限制。
+[连续 Demo](docs/portfolio/DEMO.md)已完成双后端三轮彩排与后续成片交付；[性能报告](docs/portfolio/PERFORMANCE.md)区分当前 004 有效组与历史数值复核。当前为 **1 INCONCLUSIVE + 3 REJECTED，无 ACCEPTED**，不宣称已验证加速。

@@ -1,16 +1,15 @@
 # 路线图
 
 Core 固定为 D3D11 + D3D12；Vulkan 不在范围。唯一工作仓库为 LumaBough。
-后续按 **P → D → E → F** 串行实施：同一时刻只有一个实施阶段，不设并行 agent、独立性能仓库或额外开发仓库。
-本次只修订计划；阶段文档不是执行、提交、推送或公开授权。新 agent 从[交接入口](tasks/README.md)开始。
+获准范围已按 **P → D → E → F** 串行完成，发布见下表。后续维护仍串行进行；任务文档不自动授权提交、推送或新发布。新 agent 从[交接入口](tasks/README.md)开始。
 
 | 阶段 | 范围 | 当前状态 / 任务入口 |
 |---|---|---|
 | A | 独立导入、公开边界、声明勘正、MIT | 已实施：[历史记录](evidence/IMPORT-REVIEW.md) |
 | B | 目录、依赖、公开入口与架构、构建回归 | 已完成：[验证记录](evidence/BATCH-B.md) |
 | C | Demo / rehearsal；历史性能重算 | Demo/数值通过，历史源码绑定阻断：[记录](evidence/BATCH-C.md) |
-| P | 焦点诊断、补充性能实验、独立结论 | 已完成：有效组（lb-current-004，25/25）= 1 INCONCLUSIVE + 3 REJECTED，无 ACCEPTED；001/002/003 INVALID；静态报告写回等 F：[记录](evidence/NEW-PERFORMANCE.md) · [任务](tasks/P-performance.md) |
-| D | 最终 anchor Capture；聚焦动态内容的视频 | Capture 完成、已完成（Capture 复核 + 双后端成片）：[记录](evidence/BATCH-D.md) · [任务](tasks/D-capture-video.md) |
+| P | 焦点诊断、补充性能实验、独立结论 | 已完成：有效组（lb-current-004，25/25）= 1 INCONCLUSIVE + 3 REJECTED，无 ACCEPTED；001/002/003 INVALID；静态报告与公开复算入口已同步：[记录](evidence/NEW-PERFORMANCE.md) · [任务](tasks/P-performance.md) |
+| D | 最终 anchor Capture；聚焦动态内容的视频 | 已完成（本地 Capture 复核 + 公开双后端成片）：[记录](evidence/BATCH-D.md) · [任务](tasks/D-capture-video.md) |
 | E | 候选包、许可隐私终审、独立运行与真实读者审阅 | 候选通过（范围缩减：读者延后）：[裁定](evidence/CANDIDATE-REVIEW.md) · [记录](evidence/BATCH-E.md) · [任务](tasks/E-candidate-review.md) |
 | F | 授权发布、匿名访问与下载核验 | **完成**：`xiaoran6657/LumaBough` public + `v0.1.0-preview` 预发布；远端 tree 与清单一致、五个附件匿名下载哈希一致、新解压目录双后端与 Demo 事件路径通过；处置键于公开后按真实时间批准，最终提交门禁通过。真实读者仍按所有者决定延后（公开文案已如实说明）：[发布记录](evidence/PUBLICATION-RECORD.md) · [Release 文案](evidence/RELEASE-NOTES-v0.1.0-preview.md) · [任务](tasks/F-publication.md) |
 
