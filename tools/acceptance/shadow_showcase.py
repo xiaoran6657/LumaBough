@@ -12,6 +12,7 @@ from datetime import datetime, timezone
 import hashlib
 import json
 import math
+import os
 from pathlib import Path
 import stat
 import struct
@@ -25,6 +26,7 @@ PARAM_KEYS = {"scene", "shadow", "lightSize", "bias", "samples", "indirect", "wi
 OUTPUT_ROLES = {"color", "visibility", "diagnostic", "linearHdr", "diagnostics", "shadowDepth", "visibilityRaw"}
 IDENTITY_ROLES = {"executable", "shaderSource", "shaderBinary", "shaderInclude"}
 SHA_LENGTH = 64
+SEALED_MARKERS = ("artifact-manifest.json", "evidence-manifest.json")
 
 
 class EvidenceError(ValueError):
@@ -72,6 +74,18 @@ def reject_reparse(path: Path) -> None:
 
 def new_directory(path: Path) -> None:
     reject_reparse(path)
+    # 同时检查原始路径和折叠 .. 后的路径，避免不存在的中间目录掩盖封存祖先。
+    # 标记按目录项存在即拒绝；不依赖清单格式正确或符号链接目标可读。
+    absolute = Path(os.path.abspath(path))
+    reject_reparse(absolute)
+    for location in dict.fromkeys((path.absolute(), absolute)):
+        for candidate in (location, *location.parents):
+            for marker in SEALED_MARKERS:
+                try:
+                    (candidate / marker).lstat()
+                except (FileNotFoundError, NotADirectoryError):
+                    continue
+                raise EvidenceError(f"sealed output ancestor: {candidate} ({marker})")
     if path.exists():
         raise EvidenceError(f"output already exists; choose a new run directory: {path}")
     path.mkdir(parents=True, exist_ok=False)

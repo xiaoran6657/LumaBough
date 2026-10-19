@@ -63,6 +63,8 @@ out/build/shadow-showcase/Release/LightingShowcase.exe --scene cornell --indirec
 python tools/acceptance/shadow_showcase.py collect --exe out/build/shadow-showcase/Release/LightingShowcase.exe --output out/showcase-selected
 ```
 
+采集/分析请使用 main 的当前工具：输出须为未封存范围内的新目录，目标及祖先若含 `artifact-manifest.json` 或 `evidence-manifest.json` 会在任何工具写入前拒绝；封存输入仍可只读重分析到外部新目录。旧发布 tag 保持冻结，封存保护的同日修复与复验见[维护记录](../../evidence/SHADOW-LAB-REVIEW.md)。
+
 ## 结果和边界
 
 图像来自实际 D3D12 GPU 输出，采用曝光 1、Reinhard 与 sRGB 显示转换。运行器同时生成 HDR、visibility、中间量和身份记录；验证方法与当前验收结果见 [独立审查记录](../../evidence/SHADOW-LAB-REVIEW.md)。

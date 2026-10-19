@@ -370,11 +370,11 @@
     {
       "path": "docs/CHANGELOG.md",
       "category": "docs",
-      "size": 3844,
-      "sha256": "0dc12483a84ddb808c41c54f61c5bde2b71b1b7074412c0f634442f68eee09c5",
+      "size": 4270,
+      "sha256": "ade333ded1463d621cd04c6c4d563e87de0e34d2228bc443281d1e3f420907cb",
       "sourcePath": "docs/CHANGELOG.md",
-      "sourceSha256": "0dc12483a84ddb808c41c54f61c5bde2b71b1b7074412c0f634442f68eee09c5",
-      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
+      "sourceSha256": "ade333ded1463d621cd04c6c4d563e87de0e34d2228bc443281d1e3f420907cb",
+      "reason": "2026-10-19 所有者要求修复封存输出祖先保护 P2；逐文件审查、相关工具与公开集合复验，不改隐私批准基线。"
     },
     {
       "path": "docs/DEVELOPMENT.md",
@@ -748,11 +748,11 @@
     {
       "path": "docs/evidence/SHADOW-LAB-REVIEW.md",
       "category": "docs",
-      "size": 4980,
-      "sha256": "06e282641bd79fee3c19bba7752d9c5ddda8162ed7c18cc99a0cf8b6b3d033aa",
+      "size": 6498,
+      "sha256": "e2537159efce60207f6dea8443c99b561c017e4ebca19e137667b047fb5bd319",
       "sourcePath": "docs/evidence/SHADOW-LAB-REVIEW.md",
-      "sourceSha256": "06e282641bd79fee3c19bba7752d9c5ddda8162ed7c18cc99a0cf8b6b3d033aa",
-      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
+      "sourceSha256": "e2537159efce60207f6dea8443c99b561c017e4ebca19e137667b047fb5bd319",
+      "reason": "2026-10-19 所有者要求修复封存输出祖先保护 P2；逐文件审查、相关工具与公开集合复验，不改隐私批准基线。"
     },
     {
       "path": "docs/evidence/T1-DOCUMENTATION-REVIEW.md",
@@ -1432,11 +1432,11 @@
     {
       "path": "docs/showcase/shadow-lab/README.md",
       "category": "shadow-showcase",
-      "size": 5316,
-      "sha256": "fd27f1ced87709be65cafda1b3347fca9077c8f9f1cc51300da60150f662766d",
+      "size": 5697,
+      "sha256": "e864f60c7ca5ec18ea4a95cebbde67459c75d137c4e027a2f1c9480442eb4a45",
       "sourcePath": "docs/showcase/shadow-lab/README.md",
-      "sourceSha256": "fd27f1ced87709be65cafda1b3347fca9077c8f9f1cc51300da60150f662766d",
-      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
+      "sourceSha256": "e864f60c7ca5ec18ea4a95cebbde67459c75d137c4e027a2f1c9480442eb4a45",
+      "reason": "2026-10-19 所有者要求修复封存输出祖先保护 P2；逐文件审查、相关工具与公开集合复验，不改隐私批准基线。"
     },
     {
       "path": "docs/showcase/shadow-lab/manifest.json",
@@ -5788,11 +5788,11 @@
     {
       "path": "tests/tools/test_shadow_showcase.py",
       "category": "tests",
-      "size": 17701,
-      "sha256": "de1935c49b79590fbe7e24c707d1314c91accc7bdddb101f030a5773bf2151b5",
+      "size": 23860,
+      "sha256": "c1f1bb70be2a72eff3fe615dfcf55252af607e13397775641d397655908b52df",
       "sourcePath": "tests/tools/test_shadow_showcase.py",
-      "sourceSha256": "de1935c49b79590fbe7e24c707d1314c91accc7bdddb101f030a5773bf2151b5",
-      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
+      "sourceSha256": "c1f1bb70be2a72eff3fe615dfcf55252af607e13397775641d397655908b52df",
+      "reason": "2026-10-19 所有者要求修复封存输出祖先保护 P2；逐文件审查、相关工具与公开集合复验，不改隐私批准基线。"
     },
     {
       "path": "tests/trace/TraceFixture.h",
@@ -5914,11 +5914,11 @@
     {
       "path": "tools/acceptance/shadow_showcase.py",
       "category": "tools",
-      "size": 39936,
-      "sha256": "695d7b2f61990c3618911ac58e30d6e05d5a745c1d8aa9817f2badd4a1ebbb9d",
+      "size": 40710,
+      "sha256": "65efeb80321c1025d32f07e095c8f36339b1d830c753f3ad8f79f0ac2557cc34",
       "sourcePath": "tools/acceptance/shadow_showcase.py",
-      "sourceSha256": "695d7b2f61990c3618911ac58e30d6e05d5a745c1d8aa9817f2badd4a1ebbb9d",
-      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
+      "sourceSha256": "65efeb80321c1025d32f07e095c8f36339b1d830c753f3ad8f79f0ac2557cc34",
+      "reason": "2026-10-19 所有者要求修复封存输出祖先保护 P2；逐文件审查、相关工具与公开集合复验，不改隐私批准基线。"
     },
     {
       "path": "tools/asset_cooker/CMakeLists.txt",

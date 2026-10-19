@@ -1,5 +1,9 @@
 # 变更记录
 
+## 2026-10-19 · 采集工具封存输出保护修复
+
+修复 `shadow_showcase.py collect/analyze` 可向另一份封存目录子树写入的问题；创建输出前检查目标及全部祖先的两类封存标记，覆盖相对路径和 `..` 别名。36 项测试及独立路径矩阵通过，旧输入外部重分析仍通过；既有 tag、图片和运行包未替换，见[维护验收](evidence/SHADOW-LAB-REVIEW.md)。
+
 ## 2026-10-19 · 软阴影与光照展示
 
 新增可独立构建的 `LightingShowcase`：硬阴影、固定核 PCF、PCSS、光源尺寸/bias/采样预算对照，包含逐 tap 接收平面深度校正与 Cornell 风格一次 Lambert 反弹。提供原始 GPU 图、线性诊断和精选采集工具；公开运行包的独立构建、许可隐私及复验见[本批记录](evidence/SHADOW-LAB-REVIEW.md)。本批不产生实时帧率或当前加速声明。

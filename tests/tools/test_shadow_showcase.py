@@ -13,6 +13,7 @@ import sys
 import tempfile
 import time
 import unittest
+from unittest import mock
 
 
 MODULE_PATH = Path(__file__).resolve().parents[2] / "tools" / "acceptance" / "shadow_showcase.py"
@@ -230,6 +231,117 @@ class ShadowShowcaseEvidenceTests(unittest.TestCase):
         with self.assertRaisesRegex(tool.EvidenceError, "sealed source"):
             tool.analyze(self.root, self.root / "analysis")
         self.assertFalse((self.root / "analysis").exists())
+
+
+class ShadowShowcaseOutputSafetyTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.root = Path(self.temp.name)
+        self.source = self.root / "input"
+        self.source.mkdir()
+        (self.source / "suite.json").write_text('{"schemaVersion":1,"collectionComplete":false}', encoding="utf-8")
+
+    def tearDown(self):
+        self.temp.cleanup()
+
+    def sealed_directory(self, marker):
+        sealed = self.root / marker.removesuffix(".json")
+        sealed.mkdir()
+        (sealed / "owner.txt").write_bytes(b"frozen fixture, preserve bytes and directory entries")
+        tool.seal(sealed)
+        if marker != "artifact-manifest.json":
+            (sealed / "artifact-manifest.json").rename(sealed / marker)
+        return sealed
+
+    def snapshot(self):
+        return {p.relative_to(self.root).as_posix(): None if p.is_dir() else tool.sha256(p)
+                for p in self.root.rglob("*")}
+
+    def test_output_rejects_sealed_target_parent_and_distant_ancestor(self):
+        for marker in ("artifact-manifest.json", "evidence-manifest.json"):
+            sealed = self.sealed_directory(marker)
+            for output in (sealed, sealed / "new", sealed / "deep" / "new"):
+                with self.subTest(marker=marker, output=output):
+                    before = self.snapshot()
+                    with self.assertRaisesRegex(tool.EvidenceError, "sealed output ancestor"):
+                        tool.new_directory(output)
+                    self.assertEqual(self.snapshot(), before)
+            if marker == "artifact-manifest.json":
+                tool.verify_seal(sealed)
+
+    def test_missing_intermediate_and_parent_alias_cannot_hide_sealed_output(self):
+        for marker in ("artifact-manifest.json", "evidence-manifest.json"):
+            sealed = self.sealed_directory(marker)
+            output = self.root / "not-created" / ".." / sealed.name / "new"
+            before = self.snapshot()
+            with self.subTest(marker=marker), self.assertRaisesRegex(tool.EvidenceError, "sealed output ancestor"):
+                tool.new_directory(output)
+            self.assertEqual(self.snapshot(), before)
+            self.assertFalse((self.root / "not-created").exists())
+
+    def test_analyze_rejects_other_sealed_directory_before_failure_receipt(self):
+        for marker in ("artifact-manifest.json", "evidence-manifest.json"):
+            sealed = self.sealed_directory(marker)
+            before = self.snapshot()
+            with self.subTest(marker=marker), mock.patch.object(tool, "write_json", wraps=tool.write_json) as writer:
+                with self.assertRaisesRegex(tool.EvidenceError, "sealed output ancestor"):
+                    tool.analyze(self.source, sealed / "deep" / "analysis")
+                writer.assert_not_called()
+            self.assertEqual(self.snapshot(), before)
+            if marker == "artifact-manifest.json":
+                tool.verify_seal(sealed)
+
+    def test_collect_rejects_sealed_ancestor_before_any_writer_or_process(self):
+        for marker in ("artifact-manifest.json", "evidence-manifest.json"):
+            sealed = self.sealed_directory(marker)
+            before = self.snapshot()
+            with self.subTest(marker=marker), mock.patch.object(tool, "source_binding", return_value={}), \
+                    mock.patch.object(tool, "write_json", wraps=tool.write_json) as writer, \
+                    mock.patch.object(tool, "run_process") as process:
+                with self.assertRaisesRegex(tool.EvidenceError, "sealed output ancestor"):
+                    tool.collect(Path(sys.executable), sealed / "deep" / "collection", self.root, 64, 64, 1.)
+                writer.assert_not_called()
+                process.assert_not_called()
+            self.assertEqual(self.snapshot(), before)
+            if marker == "artifact-manifest.json":
+                tool.verify_seal(sealed)
+
+    def test_cli_collect_and_analyze_reject_absolute_and_relative_sealed_outputs(self):
+        for marker in ("artifact-manifest.json", "evidence-manifest.json"):
+            sealed = self.sealed_directory(marker)
+            for command in ("collect", "analyze"):
+                for relative in (False, True):
+                    output = Path(sealed.name) / "deep" / "new" if relative else sealed / "deep" / "new"
+                    args = (["--input", str(self.source)] if command == "analyze" else
+                            ["--exe", sys.executable, "--source-root", str(MODULE_PATH.parents[2]), "--width", "64", "--height", "64"])
+                    before = self.snapshot()
+                    with self.subTest(marker=marker, command=command, relative=relative):
+                        process = subprocess.run([sys.executable, "-B", str(MODULE_PATH), command, *args, "--output", str(output)],
+                                                 cwd=self.root, capture_output=True, check=False, timeout=30)
+                        self.assertEqual(process.returncode, 1, process.stderr)
+                        self.assertIn(b"sealed output ancestor", process.stderr)
+                        self.assertEqual(self.snapshot(), before)
+            if marker == "artifact-manifest.json":
+                tool.verify_seal(sealed)
+
+    def test_sealed_input_allows_external_output_and_normal_failure_receipt(self):
+        tool.seal(self.source)
+        output = self.root / "outside" / "analysis"
+        with self.assertRaisesRegex(tool.EvidenceError, "incomplete"):
+            tool.analyze(self.source, output)
+        self.assertEqual(json.loads((output / "failure.json").read_text())["status"], "FAIL")
+        tool.verify_seal(self.source)
+
+    def test_live_collection_can_create_analysis_before_parent_is_sealed(self):
+        collection = self.root / "live-collection"
+        tool.new_directory(collection)
+        analysis = collection / "analysis"
+        tool.new_directory(analysis)
+        (analysis / "result.txt").write_bytes(b"live fixture")
+        tool.seal(analysis)
+        tool.seal(collection)
+        tool.verify_seal(analysis)
+        tool.verify_seal(collection)
 
 
 class ShadowShowcaseGeometryTests(unittest.TestCase):
