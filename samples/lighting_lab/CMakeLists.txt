@@ -14,8 +14,8 @@ else()
 endif()
 
 # 演示发布包使用不含源码绝对路径/调试信息的独立 DXIL；不改变历史探针编译契约。
-get_filename_component(showcase_sdk_root
-    "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows Kits\\Installed Roots;KitsRoot10]" ABSOLUTE)
+cmake_host_system_information(RESULT showcase_sdk_root QUERY WINDOWS_REGISTRY
+    "HKLM/SOFTWARE/Microsoft/Windows Kits/Installed Roots" VALUE "KitsRoot10")
 find_program(SHOWCASE_DXC_EXECUTABLE dxc.exe HINTS
     "${showcase_sdk_root}/bin/${CMAKE_VS_WINDOWS_TARGET_PLATFORM_VERSION}/x64" REQUIRED)
 set(showcase_shader_dir "${CMAKE_CURRENT_BINARY_DIR}/compiled-shaders")

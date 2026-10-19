@@ -1,6 +1,12 @@
 # 产物索引
 
-## 当前公开交付
+## 软阴影展示
+
+[v0.2.0-shadow-lab Release](https://github.com/xiaoran6657/LumaBough/releases/tag/v0.2.0-shadow-lab)提供独立 Windows x64 原生 D3D12 离屏演示。下载 `lumabough-shadow-lab-windows-x64.zip` 和 `SHA256SUMS-external.txt`，解压后按 `RUN.md` 运行。支持域与实际验包结果见[本批记录](SHADOW-LAB-REVIEW.md)，对照图和参数见[实验页](../showcase/shadow-lab/README.md)。
+
+此包不包含旧 Sandbox 或历史性能测试；正常运行不需要开发 SDK 或 Python。
+
+## 历史预览
 
 [v0.1.0-preview Release 与全部附件](https://github.com/xiaoran6657/LumaBough/releases/tag/v0.1.0-preview)已公开。
 下载后先用 SHA256SUMS-external.txt 校验文件；运行包解压后还可按包内 SHA256SUMS.txt 校验。

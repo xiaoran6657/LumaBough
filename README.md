@@ -9,7 +9,7 @@
 - [对照图、参数和算法解释](docs/showcase/shadow-lab/README.md)
 - [原生演示的构建与运行](samples/lighting_lab/README.md)
 - [本批独立审查、复验与支持范围](docs/evidence/SHADOW-LAB-REVIEW.md)
-- [v0.2.0-shadow-lab 运行包](https://github.com/xiaoran6657/LumaBough/releases/tag/v0.2.0-shadow-lab)
+- [v0.2.0-shadow-lab 运行包](docs/evidence/ARTIFACT-INDEX.md#软阴影展示)
 
 首版是原生 D3D12 compute 离屏程序，以预设和命令行参数生成实际 GPU 图片、线性数据及诊断。几何由程序生成；阴影图以 GPU 光线/AABB 相交产生。直接光采用中心点代理，光源面积用于可见性近似。Cornell 风格小室使用一次 Lambert 反弹；不声明通用 mesh 光栅管线、常驻交互或完整 GI。
 
@@ -33,7 +33,7 @@ EXE 通过自身位置加载随附 shader。正常运行不需要 Python、DXC�
 - [完整工程开发指南](docs/DEVELOPMENT.md)
 - [原双后端演示](docs/portfolio/DEMO.md)
 - [历史性能结果与边界](docs/portfolio/PERFORMANCE.md)
-- [旧预览运行包 v0.1.0-preview](https://github.com/xiaoran6657/LumaBough/releases/tag/v0.1.0-preview)
+- [旧预览运行包 v0.1.0-preview](docs/evidence/ARTIFACT-INDEX.md#历史预览)
 
 旧预览包的双后端场景、旧性能实验和本次软阴影展示分别保留身份与支持域。历史性能为 1 INCONCLUSIVE + 3 REJECTED，无当前加速声明；本次单次 GPU dispatch 时间不替代完整帧率或性能 benchmark。Vulkan 未进入此公开工程，设备丢失不承诺自动恢复，glTF 导入仍为受限子集。
 

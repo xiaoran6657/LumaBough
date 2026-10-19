@@ -100,10 +100,10 @@
     {
       "path": "README.md",
       "category": "README.md",
-      "size": 3486,
-      "sha256": "e118f646fd051c646a4ca0c7f34beb600baafbfe1fa3bea206f17875ca44e298",
+      "size": 3438,
+      "sha256": "898f05401bb3edfeafdd4038e9ef1d455f5ac28b887bae13f9ba2df6c756a0c1",
       "sourcePath": "README.md",
-      "sourceSha256": "e118f646fd051c646a4ca0c7f34beb600baafbfe1fa3bea206f17875ca44e298",
+      "sourceSha256": "898f05401bb3edfeafdd4038e9ef1d455f5ac28b887bae13f9ba2df6c756a0c1",
       "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
     },
     {
@@ -496,11 +496,11 @@
     {
       "path": "docs/evidence/ARTIFACT-INDEX.md",
       "category": "docs",
-      "size": 2761,
-      "sha256": "877f1eb081f5a75508a270cc0c07458a875959b1ad779b524d1d2a690183d165",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "reason": "所有者明确指派 T1：修正当前性能与产物导航、补公开 FAQ；逐文件审阅，仅本地修改，外部推送另行授权"
+      "size": 3278,
+      "sha256": "9c3b60a0b5327d1661a90899e6cbc5e394073b1c0fd7ccb579a29ebb1e6fd729",
+      "sourcePath": "docs/evidence/ARTIFACT-INDEX.md",
+      "sourceSha256": "9c3b60a0b5327d1661a90899e6cbc5e394073b1c0fd7ccb579a29ebb1e6fd729",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
     },
     {
       "path": "docs/evidence/BATCH-B.md",
@@ -3790,10 +3790,10 @@
     {
       "path": "samples/lighting_lab/CMakeLists.txt",
       "category": "shadow-showcase",
-      "size": 3148,
-      "sha256": "2a4381b12e546b6bc2b67fe3b2df5aa327ef78adc7db019ad24b99f379086645",
+      "size": 3164,
+      "sha256": "af52088c3566eddeaebc1398584985863a67d6276ef71491fd2e0023504be6a6",
       "sourcePath": "samples/lighting_lab/CMakeLists.txt",
-      "sourceSha256": "2a4381b12e546b6bc2b67fe3b2df5aa327ef78adc7db019ad24b99f379086645",
+      "sourceSha256": "af52088c3566eddeaebc1398584985863a67d6276ef71491fd2e0023504be6a6",
       "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
     },
     {
