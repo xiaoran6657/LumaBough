@@ -748,10 +748,10 @@
     {
       "path": "docs/evidence/SHADOW-LAB-REVIEW.md",
       "category": "docs",
-      "size": 610,
-      "sha256": "b678e29a7193ec5f7019dea91fd7e56871c1f4fc7c4c4a17ddf8a7bab5f27221",
+      "size": 4980,
+      "sha256": "06e282641bd79fee3c19bba7752d9c5ddda8162ed7c18cc99a0cf8b6b3d033aa",
       "sourcePath": "docs/evidence/SHADOW-LAB-REVIEW.md",
-      "sourceSha256": "b678e29a7193ec5f7019dea91fd7e56871c1f4fc7c4c4a17ddf8a7bab5f27221",
+      "sourceSha256": "06e282641bd79fee3c19bba7752d9c5ddda8162ed7c18cc99a0cf8b6b3d033aa",
       "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
     },
     {
@@ -1432,10 +1432,10 @@
     {
       "path": "docs/showcase/shadow-lab/README.md",
       "category": "shadow-showcase",
-      "size": 5000,
-      "sha256": "9908689fa5fe3708ff92c3b4c269264b4ee18c9defd3dd29c72e8ffe78b2dc0c",
+      "size": 5316,
+      "sha256": "fd27f1ced87709be65cafda1b3347fca9077c8f9f1cc51300da60150f662766d",
       "sourcePath": "docs/showcase/shadow-lab/README.md",
-      "sourceSha256": "9908689fa5fe3708ff92c3b4c269264b4ee18c9defd3dd29c72e8ffe78b2dc0c",
+      "sourceSha256": "fd27f1ced87709be65cafda1b3347fca9077c8f9f1cc51300da60150f662766d",
       "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
     },
     {

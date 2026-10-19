@@ -36,6 +36,8 @@
 
 诊断图编码：红色为平均 blocker 深度除以 8，绿色为过滤 UV 半径乘以 50，蓝色为 `1-visibility`，然后限制到 8bit。数值核验使用原始 float32 文件；图像只供定位区域。
 
+实现时曾出现墙面条带：滤波区域内，墙面自身的深度梯度被误判为遮挡。现在按每个采样 texel 的位置，用接收表面的局部平面计算参考深度，再施加显式 bias。这样可区分接收面变化与真正 blocker；大 bias 和有限采样的误差仍单独展示。
+
 | 直接光 | 直接光加一次反弹 |
 |---|---|
 | ![Cornell 直接光](media/cornell-direct.png) | ![Cornell 一次反弹](media/cornell-bounce.png) |
