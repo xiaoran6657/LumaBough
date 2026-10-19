@@ -1,70 +1,44 @@
 # LumaBough · 光枝
 
-一个 Windows / C++20 渲染工程作品集：用 D3D11 与 D3D12 实现同一套
-RenderPacket、Render Graph 和资源生命周期，记录性能优化的收益与适用边界。
+围绕软阴影与光照的 C++20 / D3D12 学习实验：在固定场景中比较硬阴影、PCF、PCSS，查看光源尺寸、bias 和采样预算如何改变结果，并用 Cornell 风格小室观察一次漫反射反弹。
 
-展示名称为 **LumaBough**；内部 namespace、CMake targets 和程序名保留 MiniEngine。
-这是从私有开发工程筛选出的独立源码库，未导入私人历史。
-
-![固定 PBR 场景的实际运行截图](docs/portfolio/media/render-preview.png)
-
-截图是本仓库构建的固定场景输出；[采集身份与验证范围](docs/evidence/BATCH-B.md)。
-Release 的 `v0.1.0-preview` 提供**运行 ZIP、双后端演示视频与去标识性能证据包**，
-它们是本仓库源码在指定提交上构建并通过核验的产物，见 [候选裁定](docs/evidence/CANDIDATE-REVIEW.md)。
+![PCSS 阴影测试台的真实 GPU 输出](docs/showcase/shadow-lab/media/shadow-pcss.png)
 
 ## 从这里开始
 
-| 了解什么 | 入口 |
-|---|---|
-| 模块、帧流程与线程所有权 | [架构与三张图](docs/architecture/README.md) |
-| 哪些结论有证据，哪些仍待补齐 | [声明与证据入口](docs/evidence/README.md) |
-| 如何构建、运行和测试 | [开发指南](docs/DEVELOPMENT.md) |
-| 当前性能结论、逐帧输入与复算 | [性能报告](docs/portfolio/PERFORMANCE.md)、[公开复算包](docs/evidence/PERFORMANCE-EVIDENCE-PACK.md) |
-| 运行包、视频与外部校验表 | [发布产物及下载](docs/evidence/ARTIFACT-INDEX.md) |
-| 项目目标、贡献与限制 | [FAQ](docs/portfolio/FAQ.md) |
+- [对照图、参数和算法解释](docs/showcase/shadow-lab/README.md)
+- [原生演示的构建与运行](samples/lighting_lab/README.md)
+- [本批独立审查、复验与支持范围](docs/evidence/SHADOW-LAB-REVIEW.md)
+- [v0.2.0-shadow-lab 运行包](https://github.com/xiaoran6657/LumaBough/releases/tag/v0.2.0-shadow-lab)
 
-## 当前范围
+首版是原生 D3D12 compute 离屏程序，以预设和命令行参数生成实际 GPU 图片、线性数据及诊断。几何由程序生成；阴影图以 GPU 光线/AABB 相交产生。直接光采用中心点代理，光源面积用于可见性近似。Cornell 风格小室使用一次 Lambert 反弹；不声明通用 mesh 光栅管线、常驻交互或完整 GI。
 
-源码包含 D3D11 / D3D12 后端、图编译与瞬态资源复用、离线资产烘焙、
-确定性 packet 构建、任务调度和 revision 资产加载契约。
-这些是源码导览；当前受测范围见[候选裁定](docs/evidence/CANDIDATE-REVIEW.md)与[公开证据入口](docs/evidence/README.md)。
-[Claim Ledger](docs/evidence/CLAIM-LEDGER.csv)保留原七项声明及各自限制，不作为全部新交付的总状态。
-历史原工程的 PASS 不自动迁移为本仓库的运行或发布结论。
+## 独立构建
 
-只支持 Windows x64。Vulkan 未实施。设备丢失会报告失败，不承诺自动恢复；
-资产导入支持有边界的 glTF 子集，不是完整编辑器或通用商业引擎。
-并行 packet 的历史收益只适用于 packet 成本占比较高的场景；
-“池内存恒定”不等于“进程无泄漏”，见 [历史结论与勘正](docs/evidence/HISTORICAL-CLAIMS.md)。
+Windows x64、Visual Studio 2026 C++、Windows SDK/DXC、CMake 4.2+。此目标可单独配置，不下载整个工程的第三方依赖：
 
-## 源码构建与运行
+```powershell
+cmake -S samples/lighting_lab -B out/build/shadow-showcase -G "Visual Studio 18 2026" -A x64
+cmake --build out/build/shadow-showcase --config Release --target LightingShowcase
+out/build/shadow-showcase/Release/LightingShowcase.exe --scene shadow-bench --shadow pcss --light-size 0.65 --bias 0.004 --samples 64 --width 960 --height 600 --output out/shadow-example
+```
 
-前置：Visual Studio 2026 C++ / MSVC v145、Windows SDK（含 DXC）、CMake 4.2+、Python。
-首次配置会下载固定版本依赖。命令从仓库根执行：
+EXE 通过自身位置加载随附 shader。正常运行不需要 Python、DXC、SDK 或测试框架；每次使用新的输出目录。下载运行包后按其中 `RUN.md` 启动，并核对 `SHA256SUMS.txt`。`--debug` 仅用于已安装 Graphics Tools 的验证。
 
-~~~powershell
-. ./tools/dev/Enter-MiniEngineDevShell.ps1
-cmake --preset windows-msvc-debug
-cmake --build --preset windows-msvc-debug --config Release --parallel 6
-ctest --preset windows-msvc-debug -C Release --output-on-failure
-out/build/windows-msvc-debug/samples/rhi_sandbox/Release/MiniEngineSandbox.exe --rhi=d3d12 --smoke-level=6 --frames=9
-~~~
+## 渲染工程背景
 
-上面的 smoke 不需要烘焙场景。PBR 场景、双后端运行、测试分类及环境排错见
-[开发指南](docs/DEVELOPMENT.md)。
+项目的基础工程保留 D3D11 / D3D12、RenderPacket、Render Graph、资源生命周期、确定性 packet 构建和 revision 资产加载。内部 namespace、target 和程序名保留 MiniEngine；本公开工程由开发工程选择性迁移，没有导入私人 Git 历史。
 
-若不想构建：下载 Release `v0.1.0-preview` 里的运行 ZIP，解压后按包内 `RUN.md` 两条命令即可双后端运行，
-不需要 Visual Studio、SDK、DXC 或 Python；下载后请先按 `SHA256SUMS-external.txt` 校验哈希。
-**已验证范围**：Windows 10/11 x64、D3D11 与 D3D12、场景 `m4-visual-baseline`，第二台机器独立运行通过；
-**未做**真实读者走查，`m7-*` 性能场景与 GPU Capture 工具链不在包内。见
-[支持矩阵与候选裁定](docs/evidence/CANDIDATE-REVIEW.md)。
+- [架构与三张图](docs/architecture/README.md)
+- [完整工程开发指南](docs/DEVELOPMENT.md)
+- [原双后端演示](docs/portfolio/DEMO.md)
+- [历史性能结果与边界](docs/portfolio/PERFORMANCE.md)
+- [旧预览运行包 v0.1.0-preview](https://github.com/xiaoran6657/LumaBough/releases/tag/v0.1.0-preview)
 
-## 许可与贡献
+旧预览包的双后端场景、旧性能实验和本次软阴影展示分别保留身份与支持域。历史性能为 1 INCONCLUSIVE + 3 REJECTED，无当前加速声明；本次单次 GPU dispatch 时间不替代完整帧率或性能 benchmark。Vulkan 未进入此公开工程，设备丢失不承诺自动恢复，glTF 导入仍为受限子集。
 
-项目自有代码采用 [MIT](LICENSE)。第三方代码、模型和纹理保留各自的
-[许可与署名](THIRD-PARTY-NOTICES.md)；请勿把测试资产中的第三方标志用于项目品牌。
-修改前阅读 [仓库指南](AGENTS.md)。可见渲染改动提供复现参数与画面，工具改动跑相应契约测试；
-未授权的资产、构建输出、原始 capture 和私人机器配置不进入源码清单。
+## 来源、协作与许可
 
-[文档目录](docs/README.md) · [路线图](docs/ROADMAP.md) · [变更记录](docs/CHANGELOG.md)
+Agent 辅助完成实现、实验核验和文档整理。工程交付与所有者个人学习进度分别记录，不将协作产出表述为纯手工独立实现。新增场景及图像由本项目程序生成，没有导入 GAMES202 作业代码、课程模型或 Cornell 实测资产；论文与算法来源见[实验说明](docs/showcase/shadow-lab/README.md#参考)。
 
-[连续 Demo](docs/portfolio/DEMO.md)已完成双后端三轮彩排与后续成片交付；[性能报告](docs/portfolio/PERFORMANCE.md)区分当前 004 有效组与历史数值复核。当前为 **1 INCONCLUSIVE + 3 REJECTED，无 ACCEPTED**，不宣称已验证加速。
+自有部分采用 [MIT](LICENSE)。既有第三方代码和资产保留各自[许可与署名](THIRD-PARTY-NOTICES.md)。[文档目录](docs/README.md) · [路线图](docs/ROADMAP.md) · [变更记录](docs/CHANGELOG.md)

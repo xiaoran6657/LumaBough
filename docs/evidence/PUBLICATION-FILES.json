@@ -23,7 +23,7 @@
     "anonymous-public-access",
     "publication-authorization"
   ],
-  "decisionMeaning": "历史授权沿革（不代表当前远端状态）：沿用所有者批准的B范围，并按用户C批次授权纳入逐项审阅的67个新增文件；仅本地候选，未授权公开；新性能实验按12项明确提案更新5新增/7修改，两个正式组均INVALID，不增加性能通过声明；按所有者串行交接计划请求更新11项文档（5新增/6修改），未执行后续阶段；T1 按所有者本次指派明确更新17项文档（16修改/1新增FAQ），保留历史身份与发布边界，不批准任何新隐私命中；另纳入本批验证记录并更新处置提案，未将 proposed 自动批准；两项新增保留处置现已获所有者本轮明确批准，详见处置基线；本批修正尚未推送",
+  "decisionMeaning": "历史授权沿革（不代表当前远端状态）：沿用所有者批准的B范围，并按用户C批次授权纳入逐项审阅的67个新增文件；仅本地候选，未授权公开；新性能实验按12项明确提案更新5新增/7修改，两个正式组均INVALID，不增加性能通过声明；按所有者串行交接计划请求更新11项文档（5新增/6修改），未执行后续阶段；T1 按所有者本次指派明确更新17项文档（16修改/1新增FAQ），保留历史身份与发布边界，不批准任何新隐私命中；另纳入本批验证记录并更新处置提案，未将 proposed 自动批准；两项新增保留处置现已获所有者本轮明确批准，详见处置基线；本批修正尚未推送；2026-10-19 按所有者批准的软阴影展示范围逐文件新增/更新，独立运行包使用单独合同，旧候选/性能结论保持原样，不新增隐私保留批准",
   "files": [
     {
       "path": ".clang-format",
@@ -100,11 +100,11 @@
     {
       "path": "README.md",
       "category": "README.md",
-      "size": 4423,
-      "sha256": "6b2d2165014dc1e85a40938882671b803ba7e3a96f2d31e2cae2f77d43e7af5c",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "reason": "所有者明确指派 T1：修正当前性能与产物导航、补公开 FAQ；逐文件审阅，仅本地修改，外部推送另行授权"
+      "size": 3486,
+      "sha256": "e118f646fd051c646a4ca0c7f34beb600baafbfe1fa3bea206f17875ca44e298",
+      "sourcePath": "README.md",
+      "sourceSha256": "e118f646fd051c646a4ca0c7f34beb600baafbfe1fa3bea206f17875ca44e298",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
     },
     {
       "path": "THIRD-PARTY-NOTICES.md",
@@ -370,11 +370,11 @@
     {
       "path": "docs/CHANGELOG.md",
       "category": "docs",
-      "size": 3384,
-      "sha256": "cece0473c07e385c149b24ae3d77193bb591bc4a7227659e4c9f5ec763bbc107",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "reason": "所有者明确指派 T1：修正当前性能与产物导航、补公开 FAQ；逐文件审阅，仅本地修改，外部推送另行授权"
+      "size": 3844,
+      "sha256": "0dc12483a84ddb808c41c54f61c5bde2b71b1b7074412c0f634442f68eee09c5",
+      "sourcePath": "docs/CHANGELOG.md",
+      "sourceSha256": "0dc12483a84ddb808c41c54f61c5bde2b71b1b7074412c0f634442f68eee09c5",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
     },
     {
       "path": "docs/DEVELOPMENT.md",
@@ -388,20 +388,20 @@
     {
       "path": "docs/README.md",
       "category": "docs",
-      "size": 936,
-      "sha256": "cc3e628809dbbf2910db8b8a263a7f8d9e8a752976bc6516b062b1429feb0235",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "reason": "所有者授权修订P/D/E/F串行任务；明确逐文件审阅的任务/导航/状态文档，不包含原始产物；仅本地候选，受发布门约束"
+      "size": 1178,
+      "sha256": "536aec9e4c9a2255f7d3e72ca465547f2af6154f2a06a2e30bc361e972ef39f4",
+      "sourcePath": "docs/README.md",
+      "sourceSha256": "536aec9e4c9a2255f7d3e72ca465547f2af6154f2a06a2e30bc361e972ef39f4",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
     },
     {
       "path": "docs/ROADMAP.md",
       "category": "docs",
-      "size": 3257,
-      "sha256": "8d1f08fd59a1d19f84b2f3d7a94ea68ed49c098bd773475c0f6423f240feceb1",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "reason": "所有者明确指派 T1：修正当前性能与产物导航、补公开 FAQ；逐文件审阅，仅本地修改，外部推送另行授权"
+      "size": 3514,
+      "sha256": "f74f26aed29bd6c3b95f5a2abf7fc11558beda32233bc8d76b00a9ba87b12c56",
+      "sourcePath": "docs/ROADMAP.md",
+      "sourceSha256": "f74f26aed29bd6c3b95f5a2abf7fc11558beda32233bc8d76b00a9ba87b12c56",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
     },
     {
       "path": "docs/architecture/DECISIONS.md",
@@ -521,15 +521,6 @@
       "sha256": "796ec08fe89ac23fc832c8e7337a7bf1fba397b9084337140e758ce9785cd6b6"
     },
     {
-      "path": "docs/evidence/NEW-PERFORMANCE-RUNS.json",
-      "category": "docs",
-      "reason": "P批次新增：去标识复算材料（逐 run 分布、CPU 阶段分解、受保护指标、判定与哈希；不含机器路径与逐帧数组）；仅本地候选，受全部发布门约束",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "size": 103516,
-      "sha256": "7cd188b8f0432999c3d08efb123f61d65313d3d4db590dbfd4dc822bc7eb2fb7"
-    },
-    {
       "path": "docs/evidence/BATCH-D.md",
       "category": "docs",
       "reason": "D批次记录：双后端anchor Capture、工具链身份与阻断项；已去除机器/私人路径；原始Capture与视频留本地不进本集合；仅本地候选，受全局发布门约束",
@@ -537,6 +528,24 @@
       "sourceSha256": null,
       "size": 16504,
       "sha256": "5347ddbc402e8d35d3ffe0e602f57e74bd2237ab37f4f0d928c0a826a71cbbb2"
+    },
+    {
+      "path": "docs/evidence/BATCH-E.md",
+      "category": "docs",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 13346,
+      "sha256": "df3661bd9ebeff6efb2b6af3b28ceb3d5db9a112c0f755dcb395920fc03e5215",
+      "reason": "E批次记录：候选范围与提交身份、打包、隐私与独立运行；不含机器私有信息；仅本地候选"
+    },
+    {
+      "path": "docs/evidence/CANDIDATE-REVIEW.md",
+      "category": "docs",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 5826,
+      "sha256": "31863f32a8c26d66c6f038d29720a86d840a9f67c6c4ebf1c098208dd59a8617",
+      "reason": "E5新增：候选绑定、门禁逐项含义、缩减承诺与未授权项"
     },
     {
       "path": "docs/evidence/CLAIM-LEDGER.csv",
@@ -566,6 +575,15 @@
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
     },
     {
+      "path": "docs/evidence/E4-RESULTS.json",
+      "category": "docs",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 6536,
+      "sha256": "8855429441e74ce1455ed555af2c95a0c145be82de9257fc38b76a6aaf09b0b3",
+      "reason": "E4新增：第二台机器逐项结果、跨机身份、首轮失败与修复、读者状态（供 candidate 门读取）"
+    },
+    {
       "path": "docs/evidence/EVIDENCE-MANIFEST.json",
       "category": "docs",
       "size": 10551,
@@ -573,6 +591,15 @@
       "sourcePath": null,
       "sourceSha256": null,
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
+    },
+    {
+      "path": "docs/evidence/F-PROPOSAL.md",
+      "category": "docs",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 7012,
+      "sha256": "0c2b6eb96a0cf3a3d24a83790b5bdf4edb22a323176a40c8842b06498bb71664",
+      "reason": "E5新增：F 发布提案草案（仓库/ref/文件集合/附件/文案/风险与回退/授权清单）"
     },
     {
       "path": "docs/evidence/HISTORICAL-CLAIMS.md",
@@ -611,6 +638,15 @@
       "reason": "明确逐文件审阅；实验源码/工具、统计测试或去标识摘要与状态文档；不含原始日志/机器路径/二进制；用户授权当前源码新性能实验；仅本地候选、受全部发布门约束"
     },
     {
+      "path": "docs/evidence/NEW-PERFORMANCE-RUNS.json",
+      "category": "docs",
+      "reason": "P批次新增：去标识复算材料（逐 run 分布、CPU 阶段分解、受保护指标、判定与哈希；不含机器路径与逐帧数组）；仅本地候选，受全部发布门约束",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 103516,
+      "sha256": "7cd188b8f0432999c3d08efb123f61d65313d3d4db590dbfd4dc822bc7eb2fb7"
+    },
+    {
       "path": "docs/evidence/NEW-PERFORMANCE.md",
       "category": "docs",
       "sourcePath": null,
@@ -629,6 +665,15 @@
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
     },
     {
+      "path": "docs/evidence/PERFORMANCE-EVIDENCE-PACK.md",
+      "category": "docs",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 3578,
+      "sha256": "696a5b8ef9b039242d1e349d605695e0dbb265a4fd51de77703421f70b6fc09e",
+      "reason": "所有者明确指派 T1：修正当前性能与产物导航、补公开 FAQ；逐文件审阅，仅本地修改，外部推送另行授权"
+    },
+    {
       "path": "docs/evidence/PERFORMANCE-SUMMARY.json",
       "category": "batch-c-reviewed-proposal",
       "reason": "C批次明确选中并逐项审阅：指定实验完整脱敏数值、取证/重算工具及中文报告；仅本地候选",
@@ -636,6 +681,24 @@
       "sourceSha256": null,
       "size": 27450,
       "sha256": "e5d549bc4399085a94cef1f00e9806c6f40d91cf683c03205d1f0bf2dc6c6994"
+    },
+    {
+      "path": "docs/evidence/PRIVACY-DISPOSITIONS.json",
+      "category": "docs",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 25279,
+      "sha256": "e1be1d1894edf0fdfe9c489bce482c2d9544a6da3fbd08ee9c87271e7ed90a9d",
+      "reason": "逐项隐私处置基线；T1 仅新增两项，经所有者明确批准，保留原条目与审批时间"
+    },
+    {
+      "path": "docs/evidence/PRIVACY-REVIEW.md",
+      "category": "docs",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 3628,
+      "sha256": "3cdf7adac7f9c1c6f7023e6d84576b3d18477d08e915e3d5507836795ae8e5d3",
+      "reason": "E3新增：三目标扫描方法、112 项处置汇总与修复记录；原始报告留本地"
     },
     {
       "path": "docs/evidence/PROVENANCE.md",
@@ -647,13 +710,31 @@
       "reason": "所有者明确指派 T1：修正当前性能与产物导航、补公开 FAQ；逐文件审阅，仅本地修改，外部推送另行授权"
     },
     {
-      "path": "docs/evidence/README.md",
+      "path": "docs/evidence/PUBLICATION-RECORD.md",
       "category": "docs",
-      "size": 2194,
-      "sha256": "f7231229cb477c60057a2611019fd4358deaf0a534d36a37168f287884d60903",
       "sourcePath": null,
       "sourceSha256": null,
-      "reason": "所有者明确指派 T1：修正当前性能与产物导航、补公开 FAQ；逐文件审阅，仅本地修改，外部推送另行授权"
+      "size": 7537,
+      "sha256": "13a7c1576ab146a952e9153cad1f50f5160ecba62444c40a4894545b3a45bb1b",
+      "reason": "F新增：远端/提交/tag/Release/附件哈希/tree核验/匿名核验结果与环境备注"
+    },
+    {
+      "path": "docs/evidence/README.md",
+      "category": "docs",
+      "size": 2485,
+      "sha256": "4362fcc690ac807df842076e1c9805367a58010f4d56640d47a1de43be4f95ff",
+      "sourcePath": "docs/evidence/README.md",
+      "sourceSha256": "4362fcc690ac807df842076e1c9805367a58010f4d56640d47a1de43be4f95ff",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
+    },
+    {
+      "path": "docs/evidence/RELEASE-NOTES-v0.1.0-preview.md",
+      "category": "docs",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 3781,
+      "sha256": "0e67da8b5dd80d8b7bafef2dcfd62f10f3b40829239332fa969c73fd3aa3440f",
+      "reason": "F新增：v0.1.0-preview 的 Release 文案仓库内快照（便于不访问远端也能读到发布说明）"
     },
     {
       "path": "docs/evidence/RENDER-PREVIEW.json",
@@ -663,6 +744,24 @@
       "sourcePath": null,
       "sourceSha256": null,
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
+    },
+    {
+      "path": "docs/evidence/SHADOW-LAB-REVIEW.md",
+      "category": "docs",
+      "size": 610,
+      "sha256": "b678e29a7193ec5f7019dea91fd7e56871c1f4fc7c4c4a17ddf8a7bab5f27221",
+      "sourcePath": "docs/evidence/SHADOW-LAB-REVIEW.md",
+      "sourceSha256": "b678e29a7193ec5f7019dea91fd7e56871c1f4fc7c4c4a17ddf8a7bab5f27221",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
+    },
+    {
+      "path": "docs/evidence/T1-DOCUMENTATION-REVIEW.md",
+      "category": "docs",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "reason": "T1 的真实复算与门禁记录；两项新增隐私处置经所有者明确批准",
+      "size": 2622,
+      "sha256": "e683bbba6261d1b78f7b5e591027441c00e2f878cb7a669049fda86e043bf347"
     },
     {
       "path": "docs/evidence/THIRD-PARTY-SOURCES.json",
@@ -1295,6 +1394,15 @@
       "sha256": "3d4f1dd7a2329b4ca6f721cc042f1783c412e20c57b4e2e3dc582f19dc562dff"
     },
     {
+      "path": "docs/portfolio/FAQ.md",
+      "category": "docs",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 4695,
+      "sha256": "39441417e8dc6413eb1977651feda77d1e6f12a6a3e92a96d1bb7162be24d79b",
+      "reason": "所有者明确指派 T1：修正当前性能与产物导航、补公开 FAQ；逐文件审阅，仅本地修改，外部推送另行授权"
+    },
+    {
       "path": "docs/portfolio/PERFORMANCE.md",
       "category": "batch-c-reviewed-proposal",
       "reason": "所有者明确指派 T1：修正当前性能与产物导航、补公开 FAQ；逐文件审阅，仅本地修改，外部推送另行授权",
@@ -1322,6 +1430,114 @@
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
     },
     {
+      "path": "docs/showcase/shadow-lab/README.md",
+      "category": "shadow-showcase",
+      "size": 5000,
+      "sha256": "9908689fa5fe3708ff92c3b4c269264b4ee18c9defd3dd29c72e8ffe78b2dc0c",
+      "sourcePath": "docs/showcase/shadow-lab/README.md",
+      "sourceSha256": "9908689fa5fe3708ff92c3b4c269264b4ee18c9defd3dd29c72e8ffe78b2dc0c",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
+    },
+    {
+      "path": "docs/showcase/shadow-lab/manifest.json",
+      "category": "shadow-showcase",
+      "size": 5048,
+      "sha256": "3e6d0ad7d6cc42b74ae48c223b3dd5ed34f12b0eac1a2794505c21c259bfa56c",
+      "sourcePath": "docs/showcase/shadow-lab/manifest.json",
+      "sourceSha256": "3e6d0ad7d6cc42b74ae48c223b3dd5ed34f12b0eac1a2794505c21c259bfa56c",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
+    },
+    {
+      "path": "docs/showcase/shadow-lab/media/cornell-bounce.png",
+      "category": "shadow-showcase",
+      "size": 147104,
+      "sha256": "0e41aadcb223fcfe5381724fd4ad4624522dc34e3534e9398c145fe85df7dcbd",
+      "sourcePath": "docs/showcase/shadow-lab/media/cornell-bounce.png",
+      "sourceSha256": "0e41aadcb223fcfe5381724fd4ad4624522dc34e3534e9398c145fe85df7dcbd",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
+    },
+    {
+      "path": "docs/showcase/shadow-lab/media/cornell-direct.png",
+      "category": "shadow-showcase",
+      "size": 78627,
+      "sha256": "b3fc36e59883e284d33fc219852b20e0bf52ee1877435f7b33862f48030f561c",
+      "sourcePath": "docs/showcase/shadow-lab/media/cornell-direct.png",
+      "sourceSha256": "b3fc36e59883e284d33fc219852b20e0bf52ee1877435f7b33862f48030f561c",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
+    },
+    {
+      "path": "docs/showcase/shadow-lab/media/shadow-bias-high.png",
+      "category": "shadow-showcase",
+      "size": 55497,
+      "sha256": "d11b86759ec8fa1554e4fcb220c58811f30747158975b5bb0a76869e0ef95d03",
+      "sourcePath": "docs/showcase/shadow-lab/media/shadow-bias-high.png",
+      "sourceSha256": "d11b86759ec8fa1554e4fcb220c58811f30747158975b5bb0a76869e0ef95d03",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
+    },
+    {
+      "path": "docs/showcase/shadow-lab/media/shadow-hard.png",
+      "category": "shadow-showcase",
+      "size": 41027,
+      "sha256": "a4796f5b30ad54cbbbd0da1a44e82155921a3cbf7b957bfaf16cf32f126af288",
+      "sourcePath": "docs/showcase/shadow-lab/media/shadow-hard.png",
+      "sourceSha256": "a4796f5b30ad54cbbbd0da1a44e82155921a3cbf7b957bfaf16cf32f126af288",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
+    },
+    {
+      "path": "docs/showcase/shadow-lab/media/shadow-light-large.png",
+      "category": "shadow-showcase",
+      "size": 60762,
+      "sha256": "42e8ad333d59844c9bbfcb098a5815ecee4552505f78f2491560f17f7fba73c2",
+      "sourcePath": "docs/showcase/shadow-lab/media/shadow-light-large.png",
+      "sourceSha256": "42e8ad333d59844c9bbfcb098a5815ecee4552505f78f2491560f17f7fba73c2",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
+    },
+    {
+      "path": "docs/showcase/shadow-lab/media/shadow-light-small.png",
+      "category": "shadow-showcase",
+      "size": 47707,
+      "sha256": "58d274258e3286eb0efcd64125042f01c864e83d16c9ffb91172fb4ffead53da",
+      "sourcePath": "docs/showcase/shadow-lab/media/shadow-light-small.png",
+      "sourceSha256": "58d274258e3286eb0efcd64125042f01c864e83d16c9ffb91172fb4ffead53da",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
+    },
+    {
+      "path": "docs/showcase/shadow-lab/media/shadow-pcf.png",
+      "category": "shadow-showcase",
+      "size": 66255,
+      "sha256": "fd4447e37851efd9fb22e20aa78f42e15c5b4f7f45c8fc0d1223d81752300b69",
+      "sourcePath": "docs/showcase/shadow-lab/media/shadow-pcf.png",
+      "sourceSha256": "fd4447e37851efd9fb22e20aa78f42e15c5b4f7f45c8fc0d1223d81752300b69",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
+    },
+    {
+      "path": "docs/showcase/shadow-lab/media/shadow-pcss-diagnostic.png",
+      "category": "shadow-showcase",
+      "size": 29964,
+      "sha256": "23f778bb3825b13f0a4be34987b2cd1854f20e547e5342afb89b00944ac37a1a",
+      "sourcePath": "docs/showcase/shadow-lab/media/shadow-pcss-diagnostic.png",
+      "sourceSha256": "23f778bb3825b13f0a4be34987b2cd1854f20e547e5342afb89b00944ac37a1a",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
+    },
+    {
+      "path": "docs/showcase/shadow-lab/media/shadow-pcss.png",
+      "category": "shadow-showcase",
+      "size": 55492,
+      "sha256": "d0a062df8e5cab6804c05f495064f841a4e00a7fee72ef7a64998cc8f055005c",
+      "sourcePath": "docs/showcase/shadow-lab/media/shadow-pcss.png",
+      "sourceSha256": "d0a062df8e5cab6804c05f495064f841a4e00a7fee72ef7a64998cc8f055005c",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
+    },
+    {
+      "path": "docs/showcase/shadow-lab/media/shadow-samples-low.png",
+      "category": "shadow-showcase",
+      "size": 46881,
+      "sha256": "ed7de0d562044fd90d7727c28ce849da49e184ca3f1898f808959deaa6d765b3",
+      "sourcePath": "docs/showcase/shadow-lab/media/shadow-samples-low.png",
+      "sourceSha256": "ed7de0d562044fd90d7727c28ce849da49e184ca3f1898f808959deaa6d765b3",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
+    },
+    {
       "path": "docs/tasks/D-capture-video.md",
       "category": "docs",
       "sourcePath": null,
@@ -1338,6 +1554,15 @@
       "size": 4581,
       "sha256": "c6ff71aba765ac618cf001dc9df3152d83ec9e3b6fca79b8355357ef2c97dc77",
       "reason": "所有者明确指派 T1：修正当前性能与产物导航、补公开 FAQ；逐文件审阅，仅本地修改，外部推送另行授权"
+    },
+    {
+      "path": "docs/tasks/E4-RUNBOOK.md",
+      "category": "docs",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 8395,
+      "sha256": "d87c702f0ed8c7822d57695e5fccc945ac0c7f0b7a9f55e0c62497c92f89fec9",
+      "reason": "E4新增：第二台机器与真实读者走查的具体步骤、记录表与回传要求"
     },
     {
       "path": "docs/tasks/F-publication.md",
@@ -3547,11 +3772,11 @@
     {
       "path": "samples/CMakeLists.txt",
       "category": "samples",
-      "size": 315,
-      "sha256": "9ab8671415cb1205fb4630e8ea5420f72142abeb32a0f3c08858be9b4808eaac",
+      "size": 346,
+      "sha256": "53b4c70ee17c7b3de3be1e60345eb33737d2a26d8a4a5f4e399c5049c1b8f670",
       "sourcePath": "samples/CMakeLists.txt",
-      "sourceSha256": "9ab8671415cb1205fb4630e8ea5420f72142abeb32a0f3c08858be9b4808eaac",
-      "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
+      "sourceSha256": "53b4c70ee17c7b3de3be1e60345eb33737d2a26d8a4a5f4e399c5049c1b8f670",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
     },
     {
       "path": "samples/common/ParityIdentity.h",
@@ -3561,6 +3786,33 @@
       "sourcePath": "samples/common/ParityIdentity.h",
       "sourceSha256": "cd88a7cb275366f7845f6e74307d3d770c0c971e98529abffd504ff5456c9cf1",
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
+    },
+    {
+      "path": "samples/lighting_lab/CMakeLists.txt",
+      "category": "shadow-showcase",
+      "size": 3148,
+      "sha256": "2a4381b12e546b6bc2b67fe3b2df5aa327ef78adc7db019ad24b99f379086645",
+      "sourcePath": "samples/lighting_lab/CMakeLists.txt",
+      "sourceSha256": "2a4381b12e546b6bc2b67fe3b2df5aa327ef78adc7db019ad24b99f379086645",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
+    },
+    {
+      "path": "samples/lighting_lab/LightingShowcase.cpp",
+      "category": "shadow-showcase",
+      "size": 36273,
+      "sha256": "0742d9b8cf63a22bbc9db9f14a39f86f79fde12b39a27761853569142b0a1b39",
+      "sourcePath": "samples/lighting_lab/LightingShowcase.cpp",
+      "sourceSha256": "0742d9b8cf63a22bbc9db9f14a39f86f79fde12b39a27761853569142b0a1b39",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
+    },
+    {
+      "path": "samples/lighting_lab/README.md",
+      "category": "shadow-showcase",
+      "size": 1605,
+      "sha256": "6264aefde255f7ded7e116e5ea3aed3d4a88de2fdce2e0aacb81957ed974b3b2",
+      "sourcePath": "samples/lighting_lab/README.md",
+      "sourceSha256": "6264aefde255f7ded7e116e5ea3aed3d4a88de2fdce2e0aacb81957ed974b3b2",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
     },
     {
       "path": "samples/rhi_sandbox/CMakeLists.txt",
@@ -3858,6 +4110,15 @@
       "sourcePath": "shaders/d3d12/IrradianceConvolution.hlsl",
       "sourceSha256": "785611556c358ebb8cc6a4e96b4b848797308d848fa0de634269488ea3ff3892",
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
+    },
+    {
+      "path": "shaders/d3d12/LightingShowcase.hlsl",
+      "category": "shaders",
+      "size": 9966,
+      "sha256": "509d3d3fca424bab321a088d3a466e16fc5138ca12cd7232a41aef1ff78c0c51",
+      "sourcePath": "shaders/d3d12/LightingShowcase.hlsl",
+      "sourceSha256": "509d3d3fca424bab321a088d3a466e16fc5138ca12cd7232a41aef1ff78c0c51",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
     },
     {
       "path": "shaders/d3d12/PbrCommon.hlsli",
@@ -5266,11 +5527,11 @@
     {
       "path": "tests/tools/CMakeLists.txt",
       "category": "tests",
-      "size": 4789,
-      "sha256": "8ca87c3b8c416c643c72e6e98d4bdbc2406dab9973b11f7bbd8f22a4702c8400",
+      "size": 4980,
+      "sha256": "905e1707c02fcd18da2d588a326a4b5dc0cba2ea9e58ba8d9054d6623c8eedfd",
       "sourcePath": "tests/tools/CMakeLists.txt",
-      "sourceSha256": "2143e5e481ab6dd3382ca350b5beab2db7d98738593a0984edfd858f6830d7ab",
-      "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
+      "sourceSha256": "905e1707c02fcd18da2d588a326a4b5dc0cba2ea9e58ba8d9054d6623c8eedfd",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
     },
     {
       "path": "tests/tools/CanonicalRecipeTests.cpp",
@@ -5345,6 +5606,15 @@
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
     },
     {
+      "path": "tests/tools/contracts/test_candidate_gate.py",
+      "category": "tests",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 9207,
+      "sha256": "d767bee7c89667b11a3533c21e56d4a6f7a69ef31ac78a8331da24426ae48b44",
+      "reason": "E5新增：候选门字节核对（manifest/SHA256SUMS/EXE 不一致必须报错）"
+    },
+    {
       "path": "tests/tools/contracts/test_import.py",
       "category": "tests",
       "size": 4900,
@@ -5417,15 +5687,6 @@
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
     },
     {
-      "path": "tests/tools/test_prepare_portfolio_experiment.py",
-      "category": "tests",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "size": 7705,
-      "sha256": "ea5178ad1b92ed6f5e809c4bd857ab97370ec6c74e5c4e2a11122f2a32546dfa",
-      "reason": "P批次新增：准备工具的安全闸门回归（路径逃逸、链接/联接点、哈希漂移、空文件、fresh 目录）；不含机器路径；仅本地候选，受全部发布门约束"
-    },
-    {
       "path": "tests/tools/contracts/test_new_performance.py",
       "category": "tests",
       "sourcePath": null,
@@ -5442,6 +5703,24 @@
       "sourceSha256": null,
       "size": 3127,
       "sha256": "22474b6de376c721363f42def2d584dd6f6aa9d2018adbf73b4637988ae0778b"
+    },
+    {
+      "path": "tests/tools/contracts/test_public_performance_evidence.py",
+      "category": "tests",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 1651,
+      "sha256": "dc38999eb9786875ac87ac5f8b0fdb7f2e8eb66c53b33e6e56a810c6293fd329",
+      "reason": "E5新增：证据包脱敏契约测试（绝对路径压缩、非路径文本不动）"
+    },
+    {
+      "path": "tests/tools/contracts/test_scan_privacy.py",
+      "category": "tests",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 3490,
+      "sha256": "2df370fcf4c5eef0039ddda7e4a9875771da300f991675c24b0c892ef8d84284",
+      "reason": "E3新增：扫描器契约测试（未裁定/待批准/已批准三种门禁结果）"
     },
     {
       "path": "tests/tools/test_compare_m5_parity.py",
@@ -5496,6 +5775,24 @@
       "sourcePath": "tests/tools/test_m612_collect_summary.py",
       "sourceSha256": "059c10647f7a475871e70752b0c4373d4854e4eedd38340b8de3dc3cecc77596",
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
+    },
+    {
+      "path": "tests/tools/test_prepare_portfolio_experiment.py",
+      "category": "tests",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 7705,
+      "sha256": "ea5178ad1b92ed6f5e809c4bd857ab97370ec6c74e5c4e2a11122f2a32546dfa",
+      "reason": "P批次新增：准备工具的安全闸门回归（路径逃逸、链接/联接点、哈希漂移、空文件、fresh 目录）；不含机器路径；仅本地候选，受全部发布门约束"
+    },
+    {
+      "path": "tests/tools/test_shadow_showcase.py",
+      "category": "tests",
+      "size": 17701,
+      "sha256": "de1935c49b79590fbe7e24c707d1314c91accc7bdddb101f030a5773bf2151b5",
+      "sourcePath": "tests/tools/test_shadow_showcase.py",
+      "sourceSha256": "de1935c49b79590fbe7e24c707d1314c91accc7bdddb101f030a5773bf2151b5",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
     },
     {
       "path": "tests/trace/TraceFixture.h",
@@ -5613,6 +5910,15 @@
       "sourcePath": "tools/README.md",
       "sourceSha256": "9f735c29b801ceeade2ef1b4ccca958fcea32a087ffc5c6aa8b2d05316ee5f9d",
       "reason": "明确逐文件审阅；实验源码/工具、统计测试或去标识摘要与状态文档；不含原始日志/机器路径/二进制；用户授权当前源码新性能实验；仅本地候选、受全部发布门约束"
+    },
+    {
+      "path": "tools/acceptance/shadow_showcase.py",
+      "category": "tools",
+      "size": 39936,
+      "sha256": "695d7b2f61990c3618911ac58e30d6e05d5a745c1d8aa9817f2badd4a1ebbb9d",
+      "sourcePath": "tools/acceptance/shadow_showcase.py",
+      "sourceSha256": "695d7b2f61990c3618911ac58e30d6e05d5a745c1d8aa9817f2badd4a1ebbb9d",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
     },
     {
       "path": "tools/asset_cooker/CMakeLists.txt",
@@ -6398,6 +6704,24 @@
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
     },
     {
+      "path": "tools/performance/make_public_performance_evidence.py",
+      "category": "tools",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 9299,
+      "sha256": "9f661048e935fde9947d6771f217205512279fd942dc6d567e1edeb01d3f9c30",
+      "reason": "P7/E5新增：把冻结逐帧数据整理成去标识、可复算的公开证据包（脱敏+original→public哈希绑定+确定性ZIP）"
+    },
+    {
+      "path": "tools/performance/prepare_portfolio_experiment.py",
+      "category": "tools",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 16352,
+      "sha256": "2bfe6c18dd47b1af5b604d200787a265449b6aa0e7c47173d0e0d656449e94d6",
+      "reason": "P批次新增：可复用的构建准备工具（逐文件冻结、依赖哈希校验、链接/联接点与路径逃逸闸门、全新构建与烘焙）；不含机器私有信息；仅本地候选，受全部发布门约束"
+    },
+    {
       "path": "tools/performance/run_m7_combined.ps1",
       "category": "tools",
       "size": 13331,
@@ -6488,24 +6812,6 @@
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
     },
     {
-      "path": "tools/performance/start_portfolio_experiment.ps1",
-      "category": "tools",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "size": 2374,
-      "sha256": "1e551299b2cc7eca0f8e8c74e61bc093d79bb731d198cf2e8202dc8d6dd7447c",
-      "reason": "P批次新增：所有者在独立本地终端启动采集的可见控制台入口（不做焦点强夺、run 前检查预注册）；不含机器私有信息；仅本地候选，受全部发布门约束"
-    },
-    {
-      "path": "tools/performance/prepare_portfolio_experiment.py",
-      "category": "tools",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "size": 16352,
-      "sha256": "2bfe6c18dd47b1af5b604d200787a265449b6aa0e7c47173d0e0d656449e94d6",
-      "reason": "P批次新增：可复用的构建准备工具（逐文件冻结、依赖哈希校验、链接/联接点与路径逃逸闸门、全新构建与烘焙）；不含机器私有信息；仅本地候选，受全部发布门约束"
-    },
-    {
       "path": "tools/performance/run_portfolio_experiment.py",
       "category": "tools",
       "sourcePath": null,
@@ -6513,6 +6819,15 @@
       "size": 15593,
       "sha256": "1257f0860915f878a1fcad0f6d44c7528bf0a52f264b6dcd56740a6a422c0d27",
       "reason": "明确逐文件审阅；实验源码/工具、统计测试或去标识摘要与状态文档；不含原始日志/机器路径/二进制；用户授权当前源码新性能实验；仅本地候选、受全部发布门约束"
+    },
+    {
+      "path": "tools/performance/start_portfolio_experiment.ps1",
+      "category": "tools",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 2374,
+      "sha256": "1e551299b2cc7eca0f8e8c74e61bc093d79bb731d198cf2e8202dc8d6dd7447c",
+      "reason": "P批次新增：所有者在独立本地终端启动采集的可见控制台入口（不做焦点强夺、run 前检查预注册）；不含机器私有信息；仅本地候选，受全部发布门约束"
     },
     {
       "path": "tools/performance/summarize_m7_baseline.ps1",
@@ -6596,6 +6911,15 @@
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
     },
     {
+      "path": "tools/portfolio/build_candidate_package.py",
+      "category": "tools",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 10209,
+      "sha256": "566433895358bac61bed6ae47ec7b57bd2f51479b9e4ddea6b9f441cd1b96982",
+      "reason": "E2新增：候选运行包打包器（显式输入、fresh 输出、干净工作树闸门、排除 PDB/工具链）；仅本地候选"
+    },
+    {
       "path": "tools/portfolio/recompute_performance.py",
       "category": "batch-c-reviewed-proposal",
       "reason": "C批次明确选中并逐项审阅：指定实验完整脱敏数值、取证/重算工具及中文报告；仅本地候选",
@@ -6605,6 +6929,15 @@
       "sha256": "3782be063a359e1cbfc9e77d95fd82a1e1608764d70d08fafa1f9fbf8255fa33"
     },
     {
+      "path": "tools/portfolio/record_demo_video.py",
+      "category": "tools",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 19519,
+      "sha256": "79133cdc3caecd744fe3314448ba1ce067abeff315cac1f0dd6edf43424dcb37",
+      "reason": "D"
+    },
+    {
       "path": "tools/portfolio/run_demo.py",
       "category": "batch-c-reviewed-proposal",
       "reason": "C批次明确选中并逐项审阅：指定实验完整脱敏数值、取证/重算工具及中文报告；D批次仅新增停留/临时尺寸选项透传与连续重复事件折叠，事件判定不变；仅本地候选",
@@ -6612,6 +6945,15 @@
       "sourceSha256": null,
       "size": 6499,
       "sha256": "81049ac6dff5353c7667caf17ed6954b7c89d6d7177b4a5e09d7903714f4ba39"
+    },
+    {
+      "path": "tools/portfolio/scan_privacy.py",
+      "category": "tools",
+      "sourcePath": null,
+      "sourceSha256": null,
+      "size": 12463,
+      "sha256": "24bb65acb512e1499c8e1d2fb6b96287830ac6dff7216d6ac050c075dd4eca64",
+      "reason": "E3新增：隐私/内容扫描器（三目标分开扫、只产出待审项、裁定读基线）；仅本地候选"
     },
     {
       "path": "tools/portfolio/validate_import.py",
@@ -6697,11 +7039,11 @@
     {
       "path": "tools/shader_compiler/src/ShaderCompileRegistry.cpp",
       "category": "tools",
-      "size": 2582,
-      "sha256": "4172f7225855e1e8936ccde68798e9c9cb967269fbea2aaf58b0d249194b3a1b",
+      "size": 2647,
+      "sha256": "4af59d6e0271c4fbd70c879f6e7c55cb78c394e210feab4d8771bc5c3fface83",
       "sourcePath": "tools/shader_compiler/src/ShaderCompileRegistry.cpp",
-      "sourceSha256": "4172f7225855e1e8936ccde68798e9c9cb967269fbea2aaf58b0d249194b3a1b",
-      "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
+      "sourceSha256": "4af59d6e0271c4fbd70c879f6e7c55cb78c394e210feab4d8771bc5c3fface83",
+      "reason": "2026-10-19 所有者授权的软阴影展示范围；本批逐文件审查与公开仓复验；新增隐私命中未自动批准。"
     },
     {
       "path": "tools/shader_compiler/src/ShaderCompileRegistry.h",
@@ -6828,177 +7170,6 @@
       "sourcePath": "tools/run_m606_window_stress.py",
       "sourceSha256": "d2a2bf5c33f1e1112b84fb61f74607006e2b830501fdd36b566d85725f8d098e",
       "reason": "B 内容/依赖/许可复核；所有者显式确认逐文件范围；受全局发布门约束"
-    },
-    {
-      "path": "tools/portfolio/record_demo_video.py",
-      "category": "tools",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "size": 19519,
-      "sha256": "79133cdc3caecd744fe3314448ba1ce067abeff315cac1f0dd6edf43424dcb37",
-      "reason": "D"
-    },
-    {
-      "path": "docs/evidence/BATCH-E.md",
-      "category": "docs",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "size": 13346,
-      "sha256": "df3661bd9ebeff6efb2b6af3b28ceb3d5db9a112c0f755dcb395920fc03e5215",
-      "reason": "E批次记录：候选范围与提交身份、打包、隐私与独立运行；不含机器私有信息；仅本地候选"
-    },
-    {
-      "path": "tools/portfolio/build_candidate_package.py",
-      "category": "tools",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "size": 10209,
-      "sha256": "566433895358bac61bed6ae47ec7b57bd2f51479b9e4ddea6b9f441cd1b96982",
-      "reason": "E2新增：候选运行包打包器（显式输入、fresh 输出、干净工作树闸门、排除 PDB/工具链）；仅本地候选"
-    },
-    {
-      "path": "tools/portfolio/scan_privacy.py",
-      "category": "tools",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "size": 12463,
-      "sha256": "24bb65acb512e1499c8e1d2fb6b96287830ac6dff7216d6ac050c075dd4eca64",
-      "reason": "E3新增：隐私/内容扫描器（三目标分开扫、只产出待审项、裁定读基线）；仅本地候选"
-    },
-    {
-      "path": "docs/evidence/PRIVACY-DISPOSITIONS.json",
-      "category": "docs",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "size": 25279,
-      "sha256": "e1be1d1894edf0fdfe9c489bce482c2d9544a6da3fbd08ee9c87271e7ed90a9d",
-      "reason": "逐项隐私处置基线；T1 仅新增两项，经所有者明确批准，保留原条目与审批时间"
-    },
-    {
-      "path": "tests/tools/contracts/test_scan_privacy.py",
-      "category": "tests",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "size": 3490,
-      "sha256": "2df370fcf4c5eef0039ddda7e4a9875771da300f991675c24b0c892ef8d84284",
-      "reason": "E3新增：扫描器契约测试（未裁定/待批准/已批准三种门禁结果）"
-    },
-    {
-      "path": "docs/evidence/PRIVACY-REVIEW.md",
-      "category": "docs",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "size": 3628,
-      "sha256": "3cdf7adac7f9c1c6f7023e6d84576b3d18477d08e915e3d5507836795ae8e5d3",
-      "reason": "E3新增：三目标扫描方法、112 项处置汇总与修复记录；原始报告留本地"
-    },
-    {
-      "path": "docs/tasks/E4-RUNBOOK.md",
-      "category": "docs",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "size": 8395,
-      "sha256": "d87c702f0ed8c7822d57695e5fccc945ac0c7f0b7a9f55e0c62497c92f89fec9",
-      "reason": "E4新增：第二台机器与真实读者走查的具体步骤、记录表与回传要求"
-    },
-    {
-      "path": "docs/evidence/E4-RESULTS.json",
-      "category": "docs",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "size": 6536,
-      "sha256": "8855429441e74ce1455ed555af2c95a0c145be82de9257fc38b76a6aaf09b0b3",
-      "reason": "E4新增：第二台机器逐项结果、跨机身份、首轮失败与修复、读者状态（供 candidate 门读取）"
-    },
-    {
-      "path": "tests/tools/contracts/test_candidate_gate.py",
-      "category": "tests",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "size": 9207,
-      "sha256": "d767bee7c89667b11a3533c21e56d4a6f7a69ef31ac78a8331da24426ae48b44",
-      "reason": "E5新增：候选门字节核对（manifest/SHA256SUMS/EXE 不一致必须报错）"
-    },
-    {
-      "path": "docs/evidence/CANDIDATE-REVIEW.md",
-      "category": "docs",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "size": 5826,
-      "sha256": "31863f32a8c26d66c6f038d29720a86d840a9f67c6c4ebf1c098208dd59a8617",
-      "reason": "E5新增：候选绑定、门禁逐项含义、缩减承诺与未授权项"
-    },
-    {
-      "path": "docs/evidence/F-PROPOSAL.md",
-      "category": "docs",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "size": 7012,
-      "sha256": "0c2b6eb96a0cf3a3d24a83790b5bdf4edb22a323176a40c8842b06498bb71664",
-      "reason": "E5新增：F 发布提案草案（仓库/ref/文件集合/附件/文案/风险与回退/授权清单）"
-    },
-    {
-      "path": "tools/performance/make_public_performance_evidence.py",
-      "category": "tools",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "size": 9299,
-      "sha256": "9f661048e935fde9947d6771f217205512279fd942dc6d567e1edeb01d3f9c30",
-      "reason": "P7/E5新增：把冻结逐帧数据整理成去标识、可复算的公开证据包（脱敏+original→public哈希绑定+确定性ZIP）"
-    },
-    {
-      "path": "tests/tools/contracts/test_public_performance_evidence.py",
-      "category": "tests",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "size": 1651,
-      "sha256": "dc38999eb9786875ac87ac5f8b0fdb7f2e8eb66c53b33e6e56a810c6293fd329",
-      "reason": "E5新增：证据包脱敏契约测试（绝对路径压缩、非路径文本不动）"
-    },
-    {
-      "path": "docs/evidence/PERFORMANCE-EVIDENCE-PACK.md",
-      "category": "docs",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "size": 3578,
-      "sha256": "696a5b8ef9b039242d1e349d605695e0dbb265a4fd51de77703421f70b6fc09e",
-      "reason": "所有者明确指派 T1：修正当前性能与产物导航、补公开 FAQ；逐文件审阅，仅本地修改，外部推送另行授权"
-    },
-    {
-      "path": "docs/evidence/PUBLICATION-RECORD.md",
-      "category": "docs",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "size": 7537,
-      "sha256": "13a7c1576ab146a952e9153cad1f50f5160ecba62444c40a4894545b3a45bb1b",
-      "reason": "F新增：远端/提交/tag/Release/附件哈希/tree核验/匿名核验结果与环境备注"
-    },
-    {
-      "path": "docs/evidence/RELEASE-NOTES-v0.1.0-preview.md",
-      "category": "docs",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "size": 3781,
-      "sha256": "0e67da8b5dd80d8b7bafef2dcfd62f10f3b40829239332fa969c73fd3aa3440f",
-      "reason": "F新增：v0.1.0-preview 的 Release 文案仓库内快照（便于不访问远端也能读到发布说明）"
-    },
-    {
-      "path": "docs/evidence/T1-DOCUMENTATION-REVIEW.md",
-      "category": "docs",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "reason": "T1 的真实复算与门禁记录；两项新增隐私处置经所有者明确批准",
-      "size": 2622,
-      "sha256": "e683bbba6261d1b78f7b5e591027441c00e2f878cb7a669049fda86e043bf347"
-    },
-    {
-      "path": "docs/portfolio/FAQ.md",
-      "category": "docs",
-      "sourcePath": null,
-      "sourceSha256": null,
-      "size": 4695,
-      "sha256": "39441417e8dc6413eb1977651feda77d1e6f12a6a3e92a96d1bb7162be24d79b",
-      "reason": "所有者明确指派 T1：修正当前性能与产物导航、补公开 FAQ；逐文件审阅，仅本地修改，外部推送另行授权"
     }
   ],
   "pending": [],

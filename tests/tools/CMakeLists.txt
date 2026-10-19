@@ -99,3 +99,5 @@ gtest_discover_tests(
     MiniEngineToolTests
     DISCOVERY_TIMEOUT 30
 )
+find_package(Python3 REQUIRED COMPONENTS Interpreter)
+add_test(NAME ShadowShowcaseToolContract COMMAND "${Python3_EXECUTABLE}" -B "${PROJECT_SOURCE_DIR}/tests/tools/test_shadow_showcase.py")

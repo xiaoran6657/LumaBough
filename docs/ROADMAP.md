@@ -1,5 +1,7 @@
 # 路线图
 
+2026-10-19 新增聚焦软阴影的展示入口：[实验与限制](showcase/shadow-lab/README.md)、[本批验收](evidence/SHADOW-LAB-REVIEW.md)。采用固定程序几何的原生 D3D12 离屏目标；历史双后端和性能记录保持各自身份。
+
 Core 固定为 D3D11 + D3D12；Vulkan 不在范围。唯一工作仓库为 LumaBough。
 获准范围已按 **P → D → E → F** 串行完成，发布见下表。后续维护仍串行进行；任务文档不自动授权提交、推送或新发布。新 agent 从[交接入口](tasks/README.md)开始。
 

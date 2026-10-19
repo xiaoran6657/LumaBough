@@ -1,5 +1,8 @@
 # 文档目录
 
+- [软阴影与光照实验](showcase/shadow-lab/README.md)：硬阴影、PCF、PCSS 参数对照、诊断与 Cornell 风格一次反弹。
+- [本批复验记录](evidence/SHADOW-LAB-REVIEW.md)：原生 D3D12 离屏入口的独立支持域和运行包。
+
 - [开发与运行](DEVELOPMENT.md)：环境、构建、测试、固定场景和排错。
 - [架构](architecture/README.md)：模块、帧流程、资产生命周期。
 - [关键决策](architecture/DECISIONS.md)：约束、代价与适用范围。

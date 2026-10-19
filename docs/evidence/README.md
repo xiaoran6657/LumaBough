@@ -1,5 +1,7 @@
 # 公开证据入口
 
+本次新增展示以[软阴影验收](SHADOW-LAB-REVIEW.md)为准，原生 D3D12 离屏支持域及新运行包独立复验。精选图与参数见[实验页](../showcase/shadow-lab/README.md)。下文的 Sandbox 候选门和旧性能结论保留原记录，不用于替代本批验收。
+
 获准范围的 P → D → E → F 已完成，当前发布状态以[发布记录](PUBLICATION-RECORD.md)为准。
 [产物索引与下载](ARTIFACT-INDEX.md)提供运行包、双后端视频、性能证据包和校验表。
 当前受测范围见[候选裁定](CANDIDATE-REVIEW.md)，原七条[声明 Ledger](CLAIM-LEDGER.csv)保留历史限制，不承担全部当前交付状态。

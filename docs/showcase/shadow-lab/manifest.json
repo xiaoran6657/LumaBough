@@ -1,0 +1,185 @@
+{
+  "schemaVersion": 1,
+  "tag": "v0.2.0-shadow-lab",
+  "version": "v0.2.0-shadow-lab",
+  "backend": "D3D12-native",
+  "kind": "native GPU output; portable selected images",
+  "files": [
+    {
+      "path": "media/shadow-hard.png",
+      "bytes": 41027,
+      "sha256": "a4796f5b30ad54cbbbd0da1a44e82155921a3cbf7b957bfaf16cf32f126af288",
+      "width": 960,
+      "height": 600,
+      "parameters": {
+        "scene": "shadow-bench",
+        "shadow": "hard",
+        "lightSize": 0.6499999762,
+        "bias": 0.00400000019,
+        "samples": 64,
+        "indirect": "direct",
+        "width": 960,
+        "height": 600
+      }
+    },
+    {
+      "path": "media/shadow-pcf.png",
+      "bytes": 66255,
+      "sha256": "fd4447e37851efd9fb22e20aa78f42e15c5b4f7f45c8fc0d1223d81752300b69",
+      "width": 960,
+      "height": 600,
+      "parameters": {
+        "scene": "shadow-bench",
+        "shadow": "pcf",
+        "lightSize": 0.6499999762,
+        "bias": 0.00400000019,
+        "samples": 64,
+        "indirect": "direct",
+        "width": 960,
+        "height": 600
+      }
+    },
+    {
+      "path": "media/shadow-pcss.png",
+      "bytes": 55492,
+      "sha256": "d0a062df8e5cab6804c05f495064f841a4e00a7fee72ef7a64998cc8f055005c",
+      "width": 960,
+      "height": 600,
+      "parameters": {
+        "scene": "shadow-bench",
+        "shadow": "pcss",
+        "lightSize": 0.6499999762,
+        "bias": 0.00400000019,
+        "samples": 64,
+        "indirect": "direct",
+        "width": 960,
+        "height": 600
+      }
+    },
+    {
+      "path": "media/shadow-light-small.png",
+      "bytes": 47707,
+      "sha256": "58d274258e3286eb0efcd64125042f01c864e83d16c9ffb91172fb4ffead53da",
+      "width": 960,
+      "height": 600,
+      "parameters": {
+        "scene": "shadow-bench",
+        "shadow": "pcss",
+        "lightSize": 0.150000006,
+        "bias": 0.00400000019,
+        "samples": 64,
+        "indirect": "direct",
+        "width": 960,
+        "height": 600
+      }
+    },
+    {
+      "path": "media/shadow-light-large.png",
+      "bytes": 60762,
+      "sha256": "42e8ad333d59844c9bbfcb098a5815ecee4552505f78f2491560f17f7fba73c2",
+      "width": 960,
+      "height": 600,
+      "parameters": {
+        "scene": "shadow-bench",
+        "shadow": "pcss",
+        "lightSize": 1.200000048,
+        "bias": 0.00400000019,
+        "samples": 64,
+        "indirect": "direct",
+        "width": 960,
+        "height": 600
+      }
+    },
+    {
+      "path": "media/shadow-bias-high.png",
+      "bytes": 55497,
+      "sha256": "d11b86759ec8fa1554e4fcb220c58811f30747158975b5bb0a76869e0ef95d03",
+      "width": 960,
+      "height": 600,
+      "parameters": {
+        "scene": "shadow-bench",
+        "shadow": "pcss",
+        "lightSize": 0.6499999762,
+        "bias": 0.3000000119,
+        "samples": 64,
+        "indirect": "direct",
+        "width": 960,
+        "height": 600
+      }
+    },
+    {
+      "path": "media/shadow-samples-low.png",
+      "bytes": 46881,
+      "sha256": "ed7de0d562044fd90d7727c28ce849da49e184ca3f1898f808959deaa6d765b3",
+      "width": 960,
+      "height": 600,
+      "parameters": {
+        "scene": "shadow-bench",
+        "shadow": "pcss",
+        "lightSize": 0.6499999762,
+        "bias": 0.00400000019,
+        "samples": 8,
+        "indirect": "direct",
+        "width": 960,
+        "height": 600
+      }
+    },
+    {
+      "path": "media/cornell-direct.png",
+      "bytes": 78627,
+      "sha256": "b3fc36e59883e284d33fc219852b20e0bf52ee1877435f7b33862f48030f561c",
+      "width": 960,
+      "height": 600,
+      "parameters": {
+        "scene": "cornell",
+        "shadow": "pcss",
+        "lightSize": 0.6499999762,
+        "bias": 0.00400000019,
+        "samples": 64,
+        "indirect": "direct",
+        "width": 960,
+        "height": 600
+      }
+    },
+    {
+      "path": "media/cornell-bounce.png",
+      "bytes": 147104,
+      "sha256": "0e41aadcb223fcfe5381724fd4ad4624522dc34e3534e9398c145fe85df7dcbd",
+      "width": 960,
+      "height": 600,
+      "parameters": {
+        "scene": "cornell",
+        "shadow": "pcss",
+        "lightSize": 0.6499999762,
+        "bias": 0.00400000019,
+        "samples": 64,
+        "indirect": "bounce",
+        "width": 960,
+        "height": 600
+      }
+    },
+    {
+      "path": "media/shadow-pcss-diagnostic.png",
+      "bytes": 29964,
+      "sha256": "23f778bb3825b13f0a4be34987b2cd1854f20e547e5342afb89b00944ac37a1a",
+      "width": 960,
+      "height": 600,
+      "parameters": {
+        "scene": "shadow-bench",
+        "shadow": "pcss",
+        "lightSize": 0.6499999762,
+        "bias": 0.00400000019,
+        "samples": 64,
+        "indirect": "direct",
+        "width": 960,
+        "height": 600
+      },
+      "encoding": "R=meanBlockerDepth/8; G=filterUvRadius*50; B=1-visibility; clamp to 8bit"
+    }
+  ],
+  "notes": [
+    "程序生成固定几何，非通用光栅管线或 Cornell 标定数据复现。",
+    "图片是离屏预设结果，不是实时性能录像。",
+    "Agent 辅助实现、验证与文档整理。"
+  ]
+}

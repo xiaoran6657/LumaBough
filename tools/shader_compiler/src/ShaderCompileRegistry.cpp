@@ -14,6 +14,7 @@ namespace
 // D3D12 入口清单（08 篇交付 5 个 pass shader + 1 个 smoke）。
 // 说明：`ShadowDepth.hlsl` 只有 VS（depth-only，PSO 的 PS 为空）；其余 pass 成对。
 constexpr ShaderEntry kEntries[]{
+    {"shaders/d3d12/LightingShowcase.hlsl", "CSMain", "cs_6_0"},
     // M6-10：逐级迁移使用的固定彩色三角形。
     {"shaders/d3d12/GraphTriangle.hlsl", "VSMain", "vs_6_0"},
     {"shaders/d3d12/GraphTriangle.hlsl", "PSMain", "ps_6_0"},
